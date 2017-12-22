@@ -66,10 +66,18 @@
             this.PortraitsGoofy = new System.Windows.Forms.ToolTip(this.components);
             this.FogEffects = new System.Windows.Forms.ToolTip(this.components);
             this.EnglishLanguage = new System.Windows.Forms.ToolTip(this.components);
+            this.buttonVPNstart = new System.Windows.Forms.Button();
+            this.buttonVPNinvkey = new System.Windows.Forms.Button();
+            this.invkeytextBox = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonVPNinvclose = new System.Windows.Forms.Button();
+            this.buttonVPNinvOK = new System.Windows.Forms.Button();
+            this.buttonVPNconsole = new System.Windows.Forms.Button();
             this.voicespanel.SuspendLayout();
             this.languagepanel.SuspendLayout();
             this.musicpanel.SuspendLayout();
             this.portraitspanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -543,6 +551,97 @@
             this.EnglishLanguage.InitialDelay = 50;
             this.EnglishLanguage.ReshowDelay = 100;
             // 
+            // buttonVPNstart
+            // 
+            this.buttonVPNstart.BackColor = System.Drawing.Color.Transparent;
+            this.buttonVPNstart.BackgroundImage = global::Contra.Properties.Resources._button_readme;
+            this.buttonVPNstart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonVPNstart.FlatAppearance.BorderSize = 0;
+            this.buttonVPNstart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonVPNstart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonVPNstart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVPNstart.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonVPNstart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonVPNstart.Location = new System.Drawing.Point(100, 160);
+            this.buttonVPNstart.Name = "buttonVPNstart";
+            this.buttonVPNstart.Size = new System.Drawing.Size(107, 93);
+            this.buttonVPNstart.TabIndex = 36;
+            this.buttonVPNstart.UseVisualStyleBackColor = false;
+            this.buttonVPNstart.Click += new System.EventHandler(this.buttonVPNstart_Click);
+            // 
+            // buttonVPNinvkey
+            // 
+            this.buttonVPNinvkey.BackColor = System.Drawing.Color.Transparent;
+            this.buttonVPNinvkey.BackgroundImage = global::Contra.Properties.Resources._button_readme;
+            this.buttonVPNinvkey.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonVPNinvkey.FlatAppearance.BorderSize = 0;
+            this.buttonVPNinvkey.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonVPNinvkey.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonVPNinvkey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVPNinvkey.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonVPNinvkey.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonVPNinvkey.Location = new System.Drawing.Point(200, 130);
+            this.buttonVPNinvkey.Name = "buttonVPNinvkey";
+            this.buttonVPNinvkey.Size = new System.Drawing.Size(48, 48);
+            this.buttonVPNinvkey.TabIndex = 37;
+            this.buttonVPNinvkey.UseVisualStyleBackColor = false;
+            this.buttonVPNinvkey.Click += new System.EventHandler(this.buttonVPNinvkey_Click);
+            // 
+            // invkeytextBox
+            // 
+            this.invkeytextBox.Location = new System.Drawing.Point(14, 41);
+            this.invkeytextBox.Name = "invkeytextBox";
+            this.invkeytextBox.Size = new System.Drawing.Size(195, 20);
+            this.invkeytextBox.TabIndex = 38;
+            this.invkeytextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.buttonVPNinvclose);
+            this.panel1.Controls.Add(this.buttonVPNinvOK);
+            this.panel1.Controls.Add(this.invkeytextBox);
+            this.panel1.Location = new System.Drawing.Point(279, 42);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(225, 127);
+            this.panel1.TabIndex = 39;
+            // 
+            // buttonVPNinvclose
+            // 
+            this.buttonVPNinvclose.Location = new System.Drawing.Point(134, 88);
+            this.buttonVPNinvclose.Name = "buttonVPNinvclose";
+            this.buttonVPNinvclose.Size = new System.Drawing.Size(75, 23);
+            this.buttonVPNinvclose.TabIndex = 40;
+            this.buttonVPNinvclose.Text = "Close";
+            this.buttonVPNinvclose.UseVisualStyleBackColor = true;
+            // 
+            // buttonVPNinvOK
+            // 
+            this.buttonVPNinvOK.Location = new System.Drawing.Point(53, 88);
+            this.buttonVPNinvOK.Name = "buttonVPNinvOK";
+            this.buttonVPNinvOK.Size = new System.Drawing.Size(75, 23);
+            this.buttonVPNinvOK.TabIndex = 39;
+            this.buttonVPNinvOK.Text = "OK";
+            this.buttonVPNinvOK.UseVisualStyleBackColor = true;
+            this.buttonVPNinvOK.Click += new System.EventHandler(this.buttonVPNinvOK_Click);
+            // 
+            // buttonVPNconsole
+            // 
+            this.buttonVPNconsole.BackColor = System.Drawing.Color.Transparent;
+            this.buttonVPNconsole.BackgroundImage = global::Contra.Properties.Resources._button_readme;
+            this.buttonVPNconsole.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonVPNconsole.FlatAppearance.BorderSize = 0;
+            this.buttonVPNconsole.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonVPNconsole.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonVPNconsole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVPNconsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonVPNconsole.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonVPNconsole.Location = new System.Drawing.Point(200, 217);
+            this.buttonVPNconsole.Name = "buttonVPNconsole";
+            this.buttonVPNconsole.Size = new System.Drawing.Size(48, 48);
+            this.buttonVPNconsole.TabIndex = 40;
+            this.buttonVPNconsole.UseVisualStyleBackColor = false;
+            this.buttonVPNconsole.Click += new System.EventHandler(this.buttonVPNconsole_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -550,6 +649,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.buttonVPNconsole);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.buttonVPNinvkey);
+            this.Controls.Add(this.buttonVPNstart);
             this.Controls.Add(this.QSCheckBox);
             this.Controls.Add(this.WinCheckBox);
             this.Controls.Add(this.FogCheckBox);
@@ -586,6 +689,8 @@
             this.musicpanel.PerformLayout();
             this.portraitspanel.ResumeLayout(false);
             this.portraitspanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -629,6 +734,13 @@
         private System.Windows.Forms.ToolTip PortraitsGoofy;
         private System.Windows.Forms.ToolTip FogEffects;
         private System.Windows.Forms.ToolTip EnglishLanguage;
+        private System.Windows.Forms.Button buttonVPNstart;
+        private System.Windows.Forms.Button buttonVPNinvkey;
+        private System.Windows.Forms.TextBox invkeytextBox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonVPNinvclose;
+        private System.Windows.Forms.Button buttonVPNinvOK;
+        private System.Windows.Forms.Button buttonVPNconsole;
     }
 }
 
