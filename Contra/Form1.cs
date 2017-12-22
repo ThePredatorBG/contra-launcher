@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
+using Microsoft.Win32;
 
 namespace Contra
 {
@@ -681,6 +683,294 @@ namespace Contra
         }
 
         private void GoofyPics_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private string FindByDisplayName(RegistryKey parentKey, string name)
+        {
+            string[] nameList = parentKey.GetSubKeyNames();
+            for (int i = 0; i < nameList.Length; i++)
+            {
+                RegistryKey regKey =  parentKey.OpenSubKey(nameList[i]);
+                try
+                {
+                    if (regKey.GetValue("DisplayName").ToString() == name)
+                    {
+                        return regKey.GetValue("InstallLocation").ToString();
+                    }
+                }
+                catch { }
+            }
+            return "";
+        }
+
+        public static string GetTincInstalledPathConnect()//internal static string GetTincInstalledPath()
+        {
+            var TincInstalledPath = string.Empty;
+            var TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\tinc");
+            if (TincRegistryPath != null)
+            {
+                TincInstalledPath = TincRegistryPath.GetValue("UninstallString", string.Empty) as string;
+            }
+            Process tinc = new Process();
+            tinc.StartInfo.Arguments = "-n contravpn -D"; //tinc.StartInfo.Arguments = "-n contravpn start -d1 -D";
+            tinc.StartInfo.FileName = "tincd.exe";
+            TincInstalledPath = TincInstalledPath.Replace("\"", "");
+            tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath);
+        //    TincInstalledPath = TincInstalledPath.Remove(TincInstalledPath.Length - 15);
+        //    TincInstalledPath = (TincInstalledPath + "\"");
+       //     MessageBox.Show(TincInstalledPath);
+            tinc.Start();
+
+            if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
+            {
+                TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\tinc");
+                if (TincRegistryPath != null)
+                {
+                    TincInstalledPath = TincRegistryPath.GetValue("(Default)", string.Empty) as string;
+                }
+            }
+
+            if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
+            {
+                TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\tinc");
+                if (TincRegistryPath != null)
+                {
+                    TincInstalledPath = TincRegistryPath.GetValue("(Default)", string.Empty) as string;
+                }
+            }
+
+            //if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
+            //{
+            //    TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\VisualStudio\11.0");
+            //    if (TincRegistryPath != null)
+            //    {
+            //        TincInstalledPath = TincRegistryPath.GetValue("InstallDir", string.Empty) as string;
+//                }
+//            }
+            return TincInstalledPath;
+        }
+
+        public static string GetTincInstalledPathEnterInvKey()//internal static string GetTincInstalledPath()
+        {
+            var TincInstalledPath = string.Empty;
+            string asd = "contravpn";
+            var TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\tinc");
+            if (TincRegistryPath != null)
+            {
+                TincInstalledPath = TincRegistryPath.GetValue("UninstallString", string.Empty) as string;
+            }
+            if (Directory.Exists(TincInstalledPath + asd))
+            {
+                Process tinc = new Process();
+                tinc.StartInfo.Arguments = "join";   // tinc.StartInfo.Arguments = "-n contravpn start -d1 -D";
+                tinc.StartInfo.FileName = "tinc.exe";
+                TincInstalledPath = TincInstalledPath.Replace("\"", "");
+                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath);
+                //    TincInstalledPath = TincInstalledPath.Remove(TincInstalledPath.Length - 15);
+                //    TincInstalledPath = (TincInstalledPath + "\"");
+                //     MessageBox.Show(TincInstalledPath);
+                tinc.Start();
+            }
+            else MessageBox.Show("You already have an invite key.");
+
+            if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
+            {
+                TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\tinc");
+                if (TincRegistryPath != null)
+                {
+                    TincInstalledPath = TincRegistryPath.GetValue("(Default)", string.Empty) as string;
+                }
+            }
+
+            if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
+            {
+                TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\tinc");
+                if (TincRegistryPath != null)
+                {
+                    TincInstalledPath = TincRegistryPath.GetValue("(Default)", string.Empty) as string;
+                }
+            }
+
+            //if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
+            //{
+            //    TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\VisualStudio\11.0");
+            //    if (TincRegistryPath != null)
+            //    {
+            //        TincInstalledPath = TincRegistryPath.GetValue("InstallDir", string.Empty) as string;
+            //                }
+            //            }
+            return TincInstalledPath;
+        }
+
+        public static string GetTincInstalledPathOpenConsole()//internal static string GetTincInstalledPath()
+        {
+            var TincInstalledPath = string.Empty;
+            var TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\tinc");
+            if (TincRegistryPath != null)
+            {
+                TincInstalledPath = TincRegistryPath.GetValue("UninstallString", string.Empty) as string;
+            }
+            Process tinc = new Process();
+            tinc.StartInfo.Arguments = "-n contravpn";
+            tinc.StartInfo.FileName = "tinc.exe";
+            TincInstalledPath = TincInstalledPath.Replace("\"", "");
+            tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath);
+            //    TincInstalledPath = TincInstalledPath.Remove(TincInstalledPath.Length - 15);
+            //    TincInstalledPath = (TincInstalledPath + "\"");
+            //     MessageBox.Show(TincInstalledPath);
+            tinc.Start();
+
+            if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
+            {
+                TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\tinc");
+                if (TincRegistryPath != null)
+                {
+                    TincInstalledPath = TincRegistryPath.GetValue("(Default)", string.Empty) as string;
+                }
+            }
+
+            if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
+            {
+                TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\tinc");
+                if (TincRegistryPath != null)
+                {
+                    TincInstalledPath = TincRegistryPath.GetValue("(Default)", string.Empty) as string;
+                }
+            }
+
+            //if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
+            //{
+            //    TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\VisualStudio\11.0");
+            //    if (TincRegistryPath != null)
+            //    {
+            //        TincInstalledPath = TincRegistryPath.GetValue("InstallDir", string.Empty) as string;
+            //                }
+            //            }
+            return TincInstalledPath;
+        }
+
+        public static string GetTincInstalledPathInvKey()//internal static string GetTincInstalledPath()
+        {
+            var TincInstalledPath = string.Empty;
+            var TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\tinc");
+            if (TincRegistryPath != null)
+            {
+                TincInstalledPath = TincRegistryPath.GetValue("UninstallString", string.Empty) as string;
+            }
+            Process tinc = new Process();
+            string InvKey = "+uZIDXy3mIXdBqCqWmBmAC3lXdz5+N5va/M7XEKc3II";
+         //   tinc.StartInfo.Arguments = "join contra.nsupdate.info/" + (InvKey);
+         //   tinc.StartInfo.FileName = "tinc.exe";
+            TincInstalledPath = TincInstalledPath.Replace("\"", "");
+            tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath);
+            //    TincInstalledPath = TincInstalledPath.Remove(TincInstalledPath.Length - 15);
+            //    TincInstalledPath = (TincInstalledPath + "\"");
+            MessageBox.Show(TincInstalledPath);
+            tinc.Start();
+
+            if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
+            {
+                TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\VisualStudio\14.0");
+                if (TincRegistryPath != null)
+                {
+                    TincInstalledPath = TincRegistryPath.GetValue("InstallDir", string.Empty) as string;
+                }
+                //       MessageBox.Show(TincInstalledPath);
+            }
+
+            if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
+            {
+                TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\Microsoft\VisualStudio\11.0\Debugger");
+                if (TincRegistryPath != null)
+                {
+                    TincInstalledPath = TincRegistryPath.GetValue("FEQARuntimeImplDll", string.Empty) as string;
+                }
+                //       MessageBox.Show(TincInstalledPath);
+            }
+
+            if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
+            {
+                TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\VisualStudio\11.0");
+                if (TincRegistryPath != null)
+                {
+                    TincInstalledPath = TincRegistryPath.GetValue("InstallDir", string.Empty) as string;
+                }
+                //     MessageBox.Show(TincInstalledPath);
+            }
+            return TincInstalledPath;
+        }
+
+        private void DisplayMessageBoxText()
+        {
+            MessageBox.Show("Hello, world.");
+        }
+
+        private void buttonVPNstart_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetTincInstalledPathConnect();
+             //   tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(@"D:\Software\tinc\tinc.exe");
+        //        RegistryKey key = Registry.LocalMachine.OpenSubKey(@"HKEY_USERS\S-1-5-21-3607405612-1459809242-4212064258-1000_Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache").GetValue(@"D:\Software\tinc\tinc.exe");
+    //            RegistryKey regKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall");
+    //            string location = FindByDisplayName(regKey, "tinc");
+                //DisplayMessageBoxText();
+
+               // MessageBox.Show(TincInstalledPath);
+
+                //System.Diagnostics.Process.Start(@"D:\Software\tinc\tinc.exe");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
+        private void buttonVPNinvkey_Click(object sender, EventArgs e)
+        {
+            GetTincInstalledPathEnterInvKey();
+        }
+
+        private void buttonVPNconsole_Click(object sender, EventArgs e)
+        {
+            GetTincInstalledPathOpenConsole();
+        }
+
+        private void buttonVPNinvOK_Click(object sender, EventArgs e)
+        {
+            GetTincInstalledPathInvKey();
+
+      //       TextBox invkeytextBox = (TextBox)sender;
+  //          string invkey = invkeytextBox.Text;
+            //invkey = Console.ReadLine();
+            //getting notepad's process | at least one instance of notepad must be running
+//            Process notepadProccess = Process.GetProcessesByName("tinc")[0];
+
+            //getting notepad's textbox handle from the main window's handle
+            //the textbox is called 'Edit'
+//            IntPtr notepadTextbox = FindWindowEx(notepadProccess.MainWindowHandle, IntPtr.Zero, "Edit", null);
+            //sending the message to the textbox
+//            SendMessage(notepadTextbox, WM_SETTEXT, 0, invkeytextBox.Text);
+
+         //   int invkey;
+       //     invkey = Console.Read();
+           // SendKeys.Send(invkey)
+        }
+
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr FindWindowEx(IntPtr hwndParent, IntPtr hwndChildAfter, string lpszClass, string lpszWindow);
+
+        //include SendMessage
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int uMsg, int wParam, string lParam);
+
+        //this is a constant indicating the window that we want to send a text message
+        const int WM_SETTEXT = 0X000C;
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
