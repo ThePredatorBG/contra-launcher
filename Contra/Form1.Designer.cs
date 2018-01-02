@@ -580,7 +580,7 @@
             this.buttonVPNinvkey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVPNinvkey.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonVPNinvkey.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonVPNinvkey.Location = new System.Drawing.Point(200, 130);
+            this.buttonVPNinvkey.Location = new System.Drawing.Point(46, 160);
             this.buttonVPNinvkey.Name = "buttonVPNinvkey";
             this.buttonVPNinvkey.Size = new System.Drawing.Size(48, 48);
             this.buttonVPNinvkey.TabIndex = 37;
@@ -600,7 +600,7 @@
             this.panel1.Controls.Add(this.buttonVPNinvclose);
             this.panel1.Controls.Add(this.buttonVPNinvOK);
             this.panel1.Controls.Add(this.invkeytextBox);
-            this.panel1.Location = new System.Drawing.Point(279, 42);
+            this.panel1.Location = new System.Drawing.Point(773, 100);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(225, 127);
             this.panel1.TabIndex = 39;
@@ -635,7 +635,7 @@
             this.buttonVPNconsole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVPNconsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonVPNconsole.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonVPNconsole.Location = new System.Drawing.Point(200, 217);
+            this.buttonVPNconsole.Location = new System.Drawing.Point(45, 205);
             this.buttonVPNconsole.Name = "buttonVPNconsole";
             this.buttonVPNconsole.Size = new System.Drawing.Size(48, 48);
             this.buttonVPNconsole.TabIndex = 40;
@@ -681,6 +681,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contra Launcher";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.voicespanel.ResumeLayout(false);
             this.voicespanel.PerformLayout();
             this.languagepanel.ResumeLayout(false);
