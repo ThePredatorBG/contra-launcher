@@ -46,6 +46,8 @@
             this.MStandard = new System.Windows.Forms.RadioButton();
             this.WinCheckBox = new System.Windows.Forms.CheckBox();
             this.QSToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.UPnPCheckBox = new System.Windows.Forms.CheckBox();
+            this.AutoConnectCheckBox = new System.Windows.Forms.CheckBox();
             this.FogCheckBox = new System.Windows.Forms.CheckBox();
             this.WindowedToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.NewMusicToolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -73,6 +75,7 @@
             this.buttonVPNinvclose = new System.Windows.Forms.Button();
             this.buttonVPNinvOK = new System.Windows.Forms.Button();
             this.buttonVPNconsole = new System.Windows.Forms.Button();
+            this.buttonVPNdebuglog = new System.Windows.Forms.Button();
             this.voicespanel.SuspendLayout();
             this.languagepanel.SuspendLayout();
             this.musicpanel.SuspendLayout();
@@ -322,6 +325,36 @@
             this.QSToolTip.AutoPopDelay = 5000;
             this.QSToolTip.InitialDelay = 50;
             this.QSToolTip.ReshowDelay = 100;
+            // 
+            // UPnPCheckBox
+            // 
+            this.UPnPCheckBox.AutoSize = true;
+            this.UPnPCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.UPnPCheckBox.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UPnPCheckBox.ForeColor = System.Drawing.Color.White;
+            this.UPnPCheckBox.Location = new System.Drawing.Point(213, 160);
+            this.UPnPCheckBox.Name = "UPnPCheckBox";
+            this.UPnPCheckBox.Size = new System.Drawing.Size(55, 20);
+            this.UPnPCheckBox.TabIndex = 41;
+            this.UPnPCheckBox.Text = "UPnP";
+            this.QSToolTip.SetToolTip(this.UPnPCheckBox, "Disables intro and shellmap (game starts up faster).");
+            this.UPnPCheckBox.UseVisualStyleBackColor = false;
+            this.UPnPCheckBox.CheckedChanged += new System.EventHandler(this.UPnPCheckBox_CheckedChanged);
+            // 
+            // AutoConnectCheckBox
+            // 
+            this.AutoConnectCheckBox.AutoSize = true;
+            this.AutoConnectCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.AutoConnectCheckBox.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AutoConnectCheckBox.ForeColor = System.Drawing.Color.White;
+            this.AutoConnectCheckBox.Location = new System.Drawing.Point(213, 182);
+            this.AutoConnectCheckBox.Name = "AutoConnectCheckBox";
+            this.AutoConnectCheckBox.Size = new System.Drawing.Size(100, 20);
+            this.AutoConnectCheckBox.TabIndex = 42;
+            this.AutoConnectCheckBox.Text = "AutoConnect";
+            this.QSToolTip.SetToolTip(this.AutoConnectCheckBox, "Disables intro and shellmap (game starts up faster).");
+            this.AutoConnectCheckBox.UseVisualStyleBackColor = false;
+            this.AutoConnectCheckBox.CheckedChanged += new System.EventHandler(this.AutoConnectCheckBox_CheckedChanged);
             // 
             // FogCheckBox
             // 
@@ -642,6 +675,24 @@
             this.buttonVPNconsole.UseVisualStyleBackColor = false;
             this.buttonVPNconsole.Click += new System.EventHandler(this.buttonVPNconsole_Click);
             // 
+            // buttonVPNdebuglog
+            // 
+            this.buttonVPNdebuglog.BackColor = System.Drawing.Color.Transparent;
+            this.buttonVPNdebuglog.BackgroundImage = global::Contra.Properties.Resources._button_readme;
+            this.buttonVPNdebuglog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonVPNdebuglog.FlatAppearance.BorderSize = 0;
+            this.buttonVPNdebuglog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonVPNdebuglog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonVPNdebuglog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVPNdebuglog.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonVPNdebuglog.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonVPNdebuglog.Location = new System.Drawing.Point(46, 113);
+            this.buttonVPNdebuglog.Name = "buttonVPNdebuglog";
+            this.buttonVPNdebuglog.Size = new System.Drawing.Size(48, 48);
+            this.buttonVPNdebuglog.TabIndex = 43;
+            this.buttonVPNdebuglog.UseVisualStyleBackColor = false;
+            this.buttonVPNdebuglog.Click += new System.EventHandler(this.buttonVPNdebuglog_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -649,6 +700,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.buttonVPNdebuglog);
+            this.Controls.Add(this.AutoConnectCheckBox);
+            this.Controls.Add(this.UPnPCheckBox);
             this.Controls.Add(this.buttonVPNconsole);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonVPNinvkey);
@@ -742,6 +796,9 @@
         private System.Windows.Forms.Button buttonVPNinvclose;
         private System.Windows.Forms.Button buttonVPNinvOK;
         private System.Windows.Forms.Button buttonVPNconsole;
+        private System.Windows.Forms.CheckBox UPnPCheckBox;
+        private System.Windows.Forms.CheckBox AutoConnectCheckBox;
+        private System.Windows.Forms.Button buttonVPNdebuglog;
     }
 }
 
