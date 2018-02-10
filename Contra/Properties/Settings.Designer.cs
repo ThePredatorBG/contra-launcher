@@ -190,17 +190,5 @@ namespace Contra.Properties {
                 this["FirstRun"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string TincInstalledPath {
-            get {
-                return ((string)(this["TincInstalledPath"]));
-            }
-            set {
-                this["TincInstalledPath"] = value;
-            }
-        }
     }
 }

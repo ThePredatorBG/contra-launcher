@@ -37,6 +37,7 @@ namespace Contra
             QSCheckBox.TabStop = false;
             WinCheckBox.TabStop = false;
             FogCheckBox.TabStop = false;
+
             if (File.Exists(path + "_tmpChunk.dat"))
             {
                 File.Delete(path + "_tmpChunk.dat");
@@ -45,6 +46,41 @@ namespace Contra
             {
                 File.Delete(xppath + "_tmpChunk.dat");
             }
+
+            if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("UPnP = no"))))
+            {
+                UPnPCheckBox.Checked = false;
+            }
+            else if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && (File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("UPnP = yes")))
+            {
+                UPnPCheckBox.Checked = true;
+            }
+            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && ((File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("UPnP = no"))))
+            {
+                UPnPCheckBox.Checked = false;
+            }
+            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && (File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("UPnP = yes")))
+            {
+                UPnPCheckBox.Checked = true;
+            }
+
+            if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && (File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("AutoConnect = no")))
+            {
+                AutoConnectCheckBox.Checked = false;
+            }
+            else if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && (File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("AutoConnect = yes")))
+            {
+                AutoConnectCheckBox.Checked = true;
+            }
+            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && (File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("AutoConnect = no")))
+            {
+                AutoConnectCheckBox.Checked = false;
+            }
+            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && (File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("AutoConnect = yes")))
+            {
+                AutoConnectCheckBox.Checked = true;
+            }
+
         }
 
         public static string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
@@ -86,7 +122,14 @@ namespace Contra
                 Process generals = new Process();
                 generals.StartInfo.FileName = "generals.exe";
                 generals.StartInfo.Verb = "runas";
-                generals.StartInfo.WorkingDirectory = Path.GetDirectoryName("generals.exe");
+                if (File.Exists("generals.exe"))
+                {
+                    generals.StartInfo.WorkingDirectory = Path.GetDirectoryName("generals.exe");
+                }
+                else if (File.Exists(@"..\generals.exe"))
+                {
+                    generals.StartInfo.WorkingDirectory = Path.GetDirectoryName(@"..\generals.exe");
+                }
                 generals.Start();
             }
             catch (Exception ex)
@@ -103,7 +146,14 @@ namespace Contra
                 generals.StartInfo.FileName = "generals.exe";
                 generals.StartInfo.Arguments = "-quickstart";
                 generals.StartInfo.Verb = "runas";
-                generals.StartInfo.WorkingDirectory = Path.GetDirectoryName("generals.exe");
+                if (File.Exists("generals.exe"))
+                {
+                    generals.StartInfo.WorkingDirectory = Path.GetDirectoryName("generals.exe");
+                }
+                else if (File.Exists(@"..\generals.exe"))
+                {
+                    generals.StartInfo.WorkingDirectory = Path.GetDirectoryName(@"..\generals.exe");
+                }
                 generals.Start();
             }
             catch (Exception ex)
@@ -121,7 +171,14 @@ namespace Contra
                 generals.StartInfo.FileName = "generals.exe";
                 generals.StartInfo.Arguments = "-win";
                 generals.StartInfo.Verb = "runas";
-                generals.StartInfo.WorkingDirectory = Path.GetDirectoryName("generals.exe");
+                if (File.Exists("generals.exe"))
+                {
+                    generals.StartInfo.WorkingDirectory = Path.GetDirectoryName("generals.exe");
+                }
+                else if (File.Exists(@"..\generals.exe"))
+                {
+                    generals.StartInfo.WorkingDirectory = Path.GetDirectoryName(@"..\generals.exe");
+                }
                 generals.Start();
             }
             catch (Exception ex)
@@ -138,7 +195,14 @@ namespace Contra
                 generals.StartInfo.FileName = "generals.exe";
                 generals.StartInfo.Arguments = "-win -quickstart";
                 generals.StartInfo.Verb = "runas";
-                generals.StartInfo.WorkingDirectory = Path.GetDirectoryName("generals.exe");
+                if (File.Exists("generals.exe"))
+                {
+                    generals.StartInfo.WorkingDirectory = Path.GetDirectoryName("generals.exe");
+                }
+                else if (File.Exists(@"..\generals.exe"))
+                {
+                    generals.StartInfo.WorkingDirectory = Path.GetDirectoryName(@"..\generals.exe");
+                }
                 generals.Start();
             }
             catch (Exception ex)
@@ -180,41 +244,95 @@ namespace Contra
                 {
                     File.Move("!Contra009Beta2.big", "!Contra009Beta2.ctr");
                 }
-                if (File.Exists("!Contra009Beta2EN.big"))
+                else if (File.Exists(@"..\!Contra009Beta2.big"))
                 {
-                    File.Move("!Contra009Beta2EN.big", "!Contra009Beta2EN.ctr");
+                    File.Move(@"..\!Contra009Beta2.big", @"..\!Contra009Beta2.ctr");
                 }
-                if (File.Exists("!Contra009Beta2RU.big"))
-                {
-                    File.Move("!Contra009Beta2RU.big", "!Contra009Beta2RU.ctr");
-                }
-                if (File.Exists("!Contra009Beta2VOrig.big"))
+                if ((RadioOrigQuotes.Checked) && (File.Exists("!Contra009Beta2VOrig.big")))
                 {
                     File.Move("!Contra009Beta2VOrig.big", "!Contra009Beta2VOrig.ctr");
                 }
-                if (File.Exists("!Contra009Beta2VLoc.big"))
+                else if ((RadioOrigQuotes.Checked) && (File.Exists(@"..\!Contra009Beta2VOrig.big")))
+                {
+                    File.Move(@"..\!Contra009Beta2VOrig.big", @"..\!Contra009Beta2VOrig.ctr");
+                }
+                if ((RadioLocQuotes.Checked) && (File.Exists("!Contra009Beta2VLoc.big")))
                 {
                     File.Move("!Contra009Beta2VLoc.big", "!Contra009Beta2VLoc.ctr");
                 }
-                if (File.Exists("!Contra009Beta2MNew.big"))
+                else if ((RadioLocQuotes.Checked) && (File.Exists(@"..\!Contra009Beta2VLoc.big")))
+                {
+                    File.Move(@"..\!Contra009Beta2VLoc.big", @"..\!Contra009Beta2VLoc.ctr");
+                }
+                if ((RadioEN.Checked) && (File.Exists("!Contra009Beta2EN.big")))
+                {
+                    File.Move("!Contra009Beta2EN.big", "!Contra009Beta2EN.ctr");
+                }
+                else if ((RadioEN.Checked) && (File.Exists(@"..\!Contra009Beta2EN.big")))
+                {
+                    File.Move(@"..\!Contra009Beta2EN.big", @"..\!Contra009Beta2EN.ctr");
+                }
+                if ((RadioRU.Checked) && (File.Exists("!Contra009Beta2RU.big")))
+                {
+                    File.Move("!Contra009Beta2RU.big", "!Contra009Beta2RU.ctr");
+                }
+                else if ((RadioRU.Checked) && (File.Exists(@"..\!Contra009Beta2RU.big")))
+                {
+                    File.Move(@"..\!Contra009Beta2RU.big", @"..\!Contra009Beta2RU.ctr");
+                }
+                //                if (MStandard.Checked)
+                //                {
+                //                    File.Move("!Contra009Beta2MStandard.big", "!Contra009Beta2MStandard.big");
+                //                }
+                if ((MNew.Checked) && (File.Exists("!Contra009Beta2MNew.big")))
                 {
                     File.Move("!Contra009Beta2MNew.big", "!Contra009Beta2MNew.ctr");
                 }
-//                if (File.Exists("!Contra009Beta2MStandard.big"))
-//                {
-//                    File.Move("!Contra009Beta2MStandard.big", "!Contra009Beta2MStandard.ctr");
-//                }
-                if (File.Exists("!!Contra009FinalFogOFF.big"))
+                else if ((MNew.Checked) && (File.Exists(@"..\!Contra009Beta2MNew.big")))
                 {
-                    File.Move("!!Contra009FinalFogOFF.big", "!!Contra009FinalFogOFF.ctr");
+                    File.Move(@"..\!Contra009Beta2MNew.big", @"..\!Contra009Beta2MNew.ctr");
                 }
-                if (File.Exists("!!Contra009FinalOldGenPics.big"))
+                if ((!FogCheckBox.Checked) && (File.Exists("!!Contra009FinalFogOff.big")))
+                {
+                    File.Move("!!Contra009FinalFogOff.big", "!!Contra009FinalFogOff.ctr");
+                }
+                else if ((!FogCheckBox.Checked) && (File.Exists(@"..\!!Contra009FinalFogOff.big")))
+                {
+                    File.Move(@"..\!!Contra009FinalFogOff.big", @"..\!!Contra009FinalFogOff.ctr");
+                }
+                if ((GoofyPics.Checked) && (File.Exists("!!Contra009FinalOldGenPics.big")))
                 {
                     File.Move("!!Contra009FinalOldGenPics.big", "!!Contra009FinalOldGenPics.ctr");
+                }
+                else if ((GoofyPics.Checked) && (File.Exists(@"..\!!Contra009FinalOldGenPics.big")))
+                {
+                    File.Move(@"..\!!Contra009FinalOldGenPics.big", @"..\!!Contra009FinalOldGenPics.ctr");
                 }
                 if (Directory.Exists(@"Data\Scripts1"))
                 {
                     Directory.Move(@"Data\Scripts1", @"Data\Scripts");
+                }
+                else if (Directory.Exists(@"..\Data\Scripts1"))
+                {
+                    Directory.Move(@"..\Data\Scripts1", @"..\Data\Scripts");
+                }
+                if (File.Exists("Install_Final.bmp") && File.Exists("Install_Final_ZHC.bmp"))
+                {
+                    File.Move("Install_Final.bmp", "Install_Final_Contra.bmp");
+                    File.Move("Install_Final_ZHC.bmp", "Install_Final.bmp");
+                }
+                else if (File.Exists(@"..\Install_Final.bmp") && File.Exists(@"..\Install_Final_ZHC.bmp"))
+                {
+                    File.Move(@"..\Install_Final.bmp", @"..\Install_Final_Contra.bmp");
+                    File.Move(@"..\Install_Final_ZHC.bmp", @"..\Install_Final.bmp");
+                }
+                if (File.Exists("Install_Final_Contra.bmp") && File.Exists("Install_Final_ZHC.bmp"))
+                {
+                    File.Move("Install_Final_ZHC.bmp", "Install_Final.bmp");
+                }
+                else if (File.Exists(@"..\Install_Final_Contra.bmp") && File.Exists("Install_Final_ZHC.bmp"))
+                {
+                    File.Move(@"..\Install_Final_ZHC.bmp", @"..\Install_Final.bmp");
                 }
             }
             catch (Exception ex)
@@ -224,26 +342,6 @@ namespace Contra
                     MessageBox.Show(ex.Message, "Error");
                     //return;
                     //MessageBox.Show("If you have one or more .big files opened, close them and try again. You also can't launch Contra if generals.exe is already running.", "Error");
-                }
-            }
-            try
-            {
-                if (File.Exists("Install_Final.bmp") && File.Exists("Install_Final_ZHC.bmp"))
-                {
-                    File.Move("Install_Final.bmp", "Install_Final_Contra.bmp");
-                    File.Move("Install_Final_ZHC.bmp", "Install_Final.bmp");
-                }
-                if (File.Exists("Install_Final_Contra.bmp") && File.Exists("Install_Final_ZHC.bmp"))
-                {
-                    File.Move("Install_Final_ZHC.bmp", "Install_Final.bmp");
-                }
-            }
-            catch (Exception ex)
-            {
-                if (button1WasClicked == true)
-                {
-                    MessageBox.Show(ex.Message, "Error");
-                    //return;
                 }
             }
         }
@@ -277,41 +375,97 @@ namespace Contra
                 {
                     File.Move("!Contra009Beta2.ctr", "!Contra009Beta2.big");
                 }
-                if (RadioOrigQuotes.Checked)
+                else if (File.Exists(@"..\!Contra009Beta2.ctr"))
+                {
+                    File.Move(@"..\!Contra009Beta2.ctr", @"..\!Contra009Beta2.big");
+                }
+                if ((RadioOrigQuotes.Checked) && (File.Exists("!Contra009Beta2VOrig.ctr")))
                 {
                     File.Move("!Contra009Beta2VOrig.ctr", "!Contra009Beta2VOrig.big");
                 }
-                if (RadioLocQuotes.Checked)
+                else if ((RadioOrigQuotes.Checked) && (File.Exists(@"..\!Contra009Beta2VOrig.ctr")))
+                {
+                    File.Move(@"..\!Contra009Beta2VOrig.ctr", @"..\!Contra009Beta2VOrig.big");
+                }
+                if ((RadioLocQuotes.Checked) && (File.Exists("!Contra009Beta2VLoc.ctr")))
                 {
                     File.Move("!Contra009Beta2VLoc.ctr", "!Contra009Beta2VLoc.big");
                 }
-                if (RadioEN.Checked)
+                else if ((RadioLocQuotes.Checked) && (File.Exists(@"..\!Contra009Beta2VLoc.ctr")))
+                {
+                    File.Move(@"..\!Contra009Beta2VLoc.ctr", @"..\!Contra009Beta2VLoc.big");
+                }
+                if ((RadioEN.Checked) && (File.Exists("!Contra009Beta2EN.ctr")))
                 {
                     File.Move("!Contra009Beta2EN.ctr", "!Contra009Beta2EN.big");
                 }
-                if (RadioRU.Checked)
+                else if ((RadioEN.Checked) && (File.Exists(@"..\!Contra009Beta2EN.ctr")))
+                {
+                    File.Move(@"..\!Contra009Beta2EN.ctr", @"..\!Contra009Beta2EN.big");
+                }
+                if ((RadioRU.Checked) && (File.Exists("!Contra009Beta2RU.ctr")))
                 {
                     File.Move("!Contra009Beta2RU.ctr", "!Contra009Beta2RU.big");
+                }
+                else if ((RadioRU.Checked) && (File.Exists(@"..\!Contra009Beta2RU.ctr")))
+                {
+                    File.Move(@"..\!Contra009Beta2RU.ctr", @"..\!Contra009Beta2RU.big");
                 }
 //                if (MStandard.Checked)
 //                {
 //                    File.Move("!Contra009Beta2MStandard.ctr", "!Contra009Beta2MStandard.big");
 //                }
-                if (MNew.Checked)
+                if ((MNew.Checked) && (File.Exists("!Contra009Beta2MNew.ctr")))
                 {
                     File.Move("!Contra009Beta2MNew.ctr", "!Contra009Beta2MNew.big");
                 }
-                if (!FogCheckBox.Checked)
+                else if ((MNew.Checked) && (File.Exists(@"..\!Contra009Beta2MNew.ctr")))
+                {
+                    File.Move(@"..\!Contra009Beta2MNew.ctr", @"..\!Contra009Beta2MNew.big");
+                }
+                if ((!FogCheckBox.Checked) && (File.Exists("!!Contra009FinalFogOff.ctr")))
                 {
                     File.Move("!!Contra009FinalFogOff.ctr", "!!Contra009FinalFogOff.big");
                 }
-                if (GoofyPics.Checked)
+                else if ((!FogCheckBox.Checked) && (File.Exists(@"..\!!Contra009FinalFogOff.ctr")))
+                {
+                    File.Move(@"..\!!Contra009FinalFogOff.ctr", @"..\!!Contra009FinalFogOff.big");
+                }
+                if ((GoofyPics.Checked) && (File.Exists("!!Contra009FinalOldGenPics.ctr")))
                 {
                     File.Move("!!Contra009FinalOldGenPics.ctr", "!!Contra009FinalOldGenPics.big");
+                }
+                else if ((GoofyPics.Checked) && (File.Exists(@"..\!!Contra009FinalOldGenPics.ctr")))
+                {
+                    File.Move(@"..\!!Contra009FinalOldGenPics.ctr", @"..\!!Contra009FinalOldGenPics.big");
                 }
                 if (Directory.Exists(@"Data\Scripts"))
                 {
                     Directory.Move(@"Data\Scripts", @"Data\Scripts1");
+                }
+                else if (Directory.Exists(@"..\Data\Scripts"))
+                {
+                    Directory.Move(@"..\Data\Scripts", @"..\Data\Scripts1");
+                }
+                if (File.Exists("Install_Final_Contra.bmp") && File.Exists("Install_Final_ZHC.bmp"))
+                {
+                    File.Move("Install_Final.bmp", "Install_Final_ZHC.bmp");
+                    File.Move("Install_Final_Contra.bmp", "Install_Final.bmp");
+                }
+                else if (File.Exists(@"..\Install_Final_Contra.bmp") && File.Exists(@"..\Install_Final_ZHC.bmp"))
+                {
+                    File.Move(@"..\Install_Final.bmp", @"..\Install_Final_ZHC.bmp");
+                    File.Move(@"..\Install_Final_Contra.bmp", @"..\Install_Final.bmp");
+                }
+                if (File.Exists("Install_Final_Contra.bmp"))
+                {
+                    File.Move("Install_Final.bmp", "Install_Final_ZHC.bmp");
+                    File.Move("Install_Final_Contra.bmp", "Install_Final.bmp");
+                }
+                else if (File.Exists(@"..\Install_Final_Contra.bmp"))
+                {
+                    File.Move(@"..\Install_Final.bmp", @"..\Install_Final_ZHC.bmp");
+                    File.Move(@"..\Install_Final_Contra.bmp", @"..\Install_Final.bmp");
                 }
                 if (WinCheckBox.Checked && QSCheckBox.Checked)
                 {
@@ -335,24 +489,25 @@ namespace Contra
                 MessageBox.Show(ex.Message, "Error");
                 return;
             }
-            try
-            {
-                if (File.Exists("Install_Final_Contra.bmp") && File.Exists("Install_Final_ZHC.bmp"))
-                {
-                    File.Move("Install_Final.bmp", "Install_Final_ZHC.bmp");
-                    File.Move("Install_Final_Contra.bmp", "Install_Final.bmp");
-                }
-                if (File.Exists("Install_Final_Contra.bmp"))
-                {
-                    File.Move("Install_Final.bmp", "Install_Final_ZHC.bmp");
-                    File.Move("Install_Final_Contra.bmp", "Install_Final.bmp");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-                return;
-            }
+
+            //try
+            //{
+            //    if (File.Exists("Install_Final_Contra.bmp") && File.Exists("Install_Final_ZHC.bmp"))
+            //    {
+            //        File.Move("Install_Final.bmp", "Install_Final_ZHC.bmp");
+            //        File.Move("Install_Final_Contra.bmp", "Install_Final.bmp");
+            //    }
+            //    if (File.Exists("Install_Final_Contra.bmp"))
+            //    {
+            //        File.Move("Install_Final.bmp", "Install_Final_ZHC.bmp");
+            //        File.Move("Install_Final_Contra.bmp", "Install_Final.bmp");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //    return;
+            //}
             return;
         }
 
@@ -476,13 +631,25 @@ namespace Contra
             {
                 File.Move("!Contra009Beta2.ctr", "!Contra009Beta2.big");
             }
+            else if (File.Exists(@"..\!Contra009Beta2.ctr"))
+            {
+                File.Move(@"..\!Contra009Beta2.ctr", @"..\!Contra009Beta2.big");
+            }
             if (File.Exists("!Contra009Beta2EN.ctr"))
             {
                 File.Move("!Contra009Beta2EN.ctr", "!Contra009Beta2EN.big");
             }
+            else if (File.Exists(@"..\!Contra009Beta2EN.ctr"))
+            {
+                File.Move(@"..\!Contra009Beta2EN.ctr", @"..\!Contra009Beta2EN.big");
+            }
             if (File.Exists("!Contra009Beta2VOrig.ctr"))
             {
                 File.Move("!Contra009Beta2VOrig.ctr", "!Contra009Beta2VOrig.big");
+            }
+            else if (File.Exists(@"..\!Contra009Beta2VOrig.ctr"))
+            {
+                File.Move(@"..\!Contra009Beta2VOrig.ctr", @"..\!Contra009Beta2VOrig.big");
             }
             Process wb = new Process();
             wb.StartInfo.Verb = "runas";
@@ -494,11 +661,23 @@ namespace Contra
                   wb.StartInfo.WorkingDirectory = Path.GetDirectoryName("WorldBuilder_Ctr.exe");
                   wb.Start();
                 }
-                else
+                else if (File.Exists(@"..\WorldBuilder_Ctr.exe"))
+                {
+                    wb.StartInfo.FileName = "WorldBuilder_Ctr.exe";
+                    wb.StartInfo.WorkingDirectory = Path.GetDirectoryName(@"..\WorldBuilder_Ctr.exe");
+                    wb.Start();
+                }
+                else if (File.Exists("WorldBuilder.exe"))
                 {
                   wb.StartInfo.FileName = "WorldBuilder.exe";
                   wb.StartInfo.WorkingDirectory = Path.GetDirectoryName("WorldBuilder.exe");
                   wb.Start();
+                }
+                else if (File.Exists(@"..\WorldBuilder.exe"))
+                {
+                    wb.StartInfo.FileName = "WorldBuilder.exe";
+                    wb.StartInfo.WorkingDirectory = Path.GetDirectoryName(@"..\WorldBuilder.exe");
+                    wb.Start();
                 }
             }
             catch (Exception ex)
@@ -721,7 +900,7 @@ namespace Contra
             return "";
         }
 
-        public string GetTincInstalledPath_Registry_StartVPN()
+        public string GetTincInstalledPath()
         {
             var TincInstalledPath = string.Empty;
             var TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\tinc");
@@ -737,133 +916,87 @@ namespace Contra
                     TincInstalledPath = TincRegistryPath.GetValue("", string.Empty) as string;
                 }
             }
-            {
-                if (Directory.Exists(TincInstalledPath + @"\contravpn"))
-                {
-                    Process tinc = new Process();
-                    tinc.StartInfo.Arguments = "-n contravpn -D";
-                    tinc.StartInfo.FileName = "tincd.exe";
-                    TincInstalledPath = TincInstalledPath.Replace("\"", "");
-                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath + @"\");
-                    tinc.Start();
-                }
-                else if (!Directory.Exists(TincInstalledPath + @"\contravpn"))
-                {
-                    MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder was not found. Make sure you have entered your invitation link first.", "Error");
-                }
-            }
+            //if (Properties.Settings.Default.TincFound == true)
+            //{
+            //    tincpath = TincInstalledPath;
+            //}
             return TincInstalledPath;
         }
 
-        public string GetTincInstalledPath_Registry_EnterInvKey()
+        public void GetTincInstalledPath_Registry_StartVPN()
         {
-            var TincInstalledPath = string.Empty;
-            var TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\tinc");
-            if (TincRegistryPath != null)
+            GetTincInstalledPath();
+            Process tinc = new Process();
+            tinc.StartInfo.Arguments = "-n contravpn -D";
+            tinc.StartInfo.FileName = "tincd.exe";
+            GetTincInstalledPath().Replace("\"", "");
+            tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(GetTincInstalledPath() + @"\");
+            if (Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
-                TincInstalledPath = TincRegistryPath.GetValue(null, string.Empty) as string;
+                tinc.Start();
             }
-            if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
+            else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
-                TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\tinc");
-                if (TincRegistryPath != null)
-                {
-                    TincInstalledPath = TincRegistryPath.GetValue(null, string.Empty) as string;
-                }
+                MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder was not found. Make sure you have entered your invitation link first.", "Error");
+                tinc.Start();
             }
-            if (Directory.Exists(TincInstalledPath + @"\contravpn"))
+        }
+
+        public void GetTincInstalledPath_Registry_EnterInvKey()
+        {
+            GetTincInstalledPath();
+            if (Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
                 MessageBox.Show("Found existing \"contravpn\" folder, looks like you have already been invited.");
             }
-            else if (!Directory.Exists(TincInstalledPath + @"\contravpn"))
+            else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
                 MessageBox.Show("To receive an invite key, mention @tet on Discord and request one.");
                 Process tinc = new Process();
                 tinc.StartInfo.Arguments = "join";
                 tinc.StartInfo.FileName = "tinc.exe";
-                TincInstalledPath = TincInstalledPath.Replace("\"", "");
-                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath + @"\");
+                GetTincInstalledPath().Replace("\"", "");
+                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(GetTincInstalledPath() + @"\");
                 tinc.Start();
             }
-            //else
-            //{
-            //    MessageBox.Show("ContraVPN is not installed.", "Error");
-            //}
-            return TincInstalledPath;
         }
 
-        public static string GetTincInstalledPath_Registry_OpenConsole()
+        public void GetTincInstalledPath_Registry_OpenConsole()
         {
-            var TincInstalledPath = string.Empty;
-            var TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\tinc");
-            if (TincRegistryPath != null)
-            {
-                TincInstalledPath = TincRegistryPath.GetValue(null, string.Empty) as string;
-            }
-            if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
-            {
-                TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\tinc");
-                if (TincRegistryPath != null)
-                {
-                    TincInstalledPath = TincRegistryPath.GetValue(null, string.Empty) as string;
-                }
-            }
+            GetTincInstalledPath();
             Process tinc = new Process();
             tinc.StartInfo.Arguments = "-n contravpn";
             tinc.StartInfo.FileName = "tinc.exe";
-            TincInstalledPath = TincInstalledPath.Replace("\"", "");
-            tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath + @"\");
-            if (Directory.Exists(TincInstalledPath + @"\contravpn"))
+            GetTincInstalledPath().Replace("\"", "");
+            tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(GetTincInstalledPath() + @"\");
+            if (Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
                 tinc.Start();
             }
-            else if (!Directory.Exists(TincInstalledPath + @"\contravpn"))
+            else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
                 MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
                 tinc.Start();
             }
-            //else
-            //{
-            //    MessageBox.Show("ContraVPN is not installed.", "Error");
-            //}
-            return TincInstalledPath;
         }
 
-        public static string GetTincInstalledPath_Registry_OpenDebugLog()
+        public void GetTincInstalledPath_Registry_OpenDebugLog()
         {
-            var TincInstalledPath = string.Empty;
-            var TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\tinc");
-            if (TincRegistryPath != null)
-            {
-                TincInstalledPath = TincRegistryPath.GetValue(null, string.Empty) as string;
-            }
-            if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
-            {
-                TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\tinc");
-                if (TincRegistryPath != null)
-                {
-                    TincInstalledPath = TincRegistryPath.GetValue(null, string.Empty) as string;
-                }
-            }
+            GetTincInstalledPath();
             Process tinc = new Process();
             tinc.StartInfo.Arguments = "-n contravpn log 3";
             tinc.StartInfo.FileName = "tinc.exe";
-            TincInstalledPath = TincInstalledPath.Replace("\"", "");
-            tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath + @"\");
-            if (Directory.Exists(TincInstalledPath + @"\contravpn"))
+            GetTincInstalledPath().Replace("\"", "");
+            tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(GetTincInstalledPath() + @"\");
+            if (Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
                 tinc.Start();
             }
-            else if (!Directory.Exists(TincInstalledPath + @"\contravpn"))
+            else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
                 MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
                 tinc.Start();
             }
-            //else
-            //{
-            //    MessageBox.Show("ContraVPN is not installed.", "Error");
-            //}
-            return TincInstalledPath;
         }
 
         public void GetTincInstalledPath_User_StartVPN()
@@ -1158,44 +1291,28 @@ namespace Contra
             }
         }
 
-        public void GetTincInstalledPath()
-        {
-            var TincInstalledPath = string.Empty;
-                        FolderBrowserDialog fbd = new FolderBrowserDialog();
-                        if (TincFound == false)
-                        {
-                            MessageBox.Show("ContraVPN is not installed.", "Error");
-                            fbd.Description = "Select tinc installation directory.";
-                            if (fbd.ShowDialog() == DialogResult.OK)
-                            {
-                                var tincpath = fbd.SelectedPath;
-                                TincInstalledPath = tincpath;
-                                //Process tinc = new Process();
-                                //tinc.StartInfo.Arguments = "-n contravpn -D";
-                                //tinc.StartInfo.FileName = "tincd.exe";
-                                //tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath + @"\tincd.exe");
-                                //tinc.Start();
- //                               ChooseTincInstalledPath();
-                            }
-                            //return TincInstalledPath;
-                        }
-                        //return TincInstalledPath;
-        }
-
         private void buttonVPNstart_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    GetTincInstalledPath_Registry_StartVPN();
+                
+            //}
+            //catch (Exception)
+            //{
+            //    GetTincInstalledPath_User_StartVPN();
+            //}
+
             try
             {
-                GetTincInstalledPath_Registry_StartVPN();
+                if (File.Exists("tincd.exe")) GetTincInstalledPath_Registry_StartVPN();
+                else GetTincInstalledPath_User_StartVPN();
             }
             catch (Exception)
             {
-                GetTincInstalledPath_User_StartVPN();
+            //    GetTincInstalledPath_User_StartVPN();
             }
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-            //}
+
         }
 
         private void buttonVPNinvkey_Click(object sender, EventArgs e)
@@ -1280,78 +1397,70 @@ namespace Contra
 
         private void UPnPCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            var TincInstalledPath = string.Empty;
-            var TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\tinc");
-            if (TincRegistryPath != null)
+            if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")))
             {
-                TincInstalledPath = TincRegistryPath.GetValue(null, string.Empty) as string;
-            }
-            if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
-            {
-                TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\tinc");
-                if (TincRegistryPath != null)
-                {
-                    TincInstalledPath = TincRegistryPath.GetValue(null, string.Empty) as string;
-                }
-            }
-
-            try
-            {
+                GetTincInstalledPath();
+                string tincconf = File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf");
                 if (UPnPCheckBox.Checked)
                 {
-                    string text = File.ReadAllText(TincInstalledPath + "/contravpn/tinc.conf");
-                    text = text.Replace("UPnP = no", "UPnP = yes");
-                    File.WriteAllText(TincInstalledPath + "/contravpn/tinc.conf", text);
+                    tincconf = tincconf.Replace("UPnP = no", "UPnP = yes");
+                    File.WriteAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", tincconf);
                 }
                 else if (!UPnPCheckBox.Checked)
                 {
-                    string text = File.ReadAllText(TincInstalledPath + "/contravpn/tinc.conf");
-                    text = text.Replace("UPnP = yes", "UPnP = no");
-                    File.WriteAllText(TincInstalledPath + "/contravpn/tinc.conf", text);
+                    tincconf = tincconf.Replace("UPnP = yes", "UPnP = no");
+                    File.WriteAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", tincconf);
                 }
             }
-            catch (Exception ex)
+            else if (File.Exists(tincpath + "/contravpn/tinc.conf"))
             {
-                MessageBox.Show(ex.Message, "Error");
+                string tincconf = File.ReadAllText(tincpath + "/contravpn/tinc.conf");
+                if (UPnPCheckBox.Checked)
+                {
+                    tincconf = tincconf.Replace("UPnP = no", "UPnP = yes");
+                    File.WriteAllText(tincpath + "/contravpn/tinc.conf", tincconf);
+                }
+                else if (!UPnPCheckBox.Checked)
+                {
+                    tincconf = tincconf.Replace("UPnP = yes", "UPnP = no");
+                    File.WriteAllText(tincpath + "/contravpn/tinc.conf", tincconf);
+                }
             }
+           // else MessageBox.Show("\"tinc.conf\" not found! Toggling UPnP on/off has no effect.", "Error");
         }
 
         private void AutoConnectCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            var TincInstalledPath = string.Empty;
-            var TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\tinc");
-            if (TincRegistryPath != null)
+            if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")))
             {
-                TincInstalledPath = TincRegistryPath.GetValue(null, string.Empty) as string;
-            }
-            if (string.IsNullOrEmpty(TincInstalledPath) || !Directory.Exists(TincInstalledPath))
-            {
-                TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\tinc");
-                if (TincRegistryPath != null)
-                {
-                    TincInstalledPath = TincRegistryPath.GetValue(null, string.Empty) as string;
-                }
-            }
-
-            try
-            {
+                GetTincInstalledPath();
+                string tincconf = File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf");
                 if (AutoConnectCheckBox.Checked)
                 {
-                    string text = File.ReadAllText(TincInstalledPath + "/contravpn/tinc.conf");
-                    text = text.Replace("AutoConnect = no", "AutoConnect = yes");
-                    File.WriteAllText(TincInstalledPath + "/contravpn/tinc.conf", text);
+                    tincconf = tincconf.Replace("AutoConnect = no", "AutoConnect = yes");
+                    File.WriteAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", tincconf);
                 }
                 else if (!AutoConnectCheckBox.Checked)
                 {
-                    string text = File.ReadAllText(TincInstalledPath + "/contravpn/tinc.conf");
-                    text = text.Replace("AutoConnect = yes", "AutoConnect = no");
-                    File.WriteAllText(TincInstalledPath + "/contravpn/tinc.conf", text);
+                    tincconf = tincconf.Replace("AutoConnect = yes", "AutoConnect = no");
+                    File.WriteAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", tincconf);
                 }
             }
-            catch (Exception ex)
+            else if (File.Exists(tincpath + "/contravpn/tinc.conf"))
             {
-                MessageBox.Show(ex.Message, "Error");
+                string tincconf = File.ReadAllText(tincpath + "/contravpn/tinc.conf");
+                if (AutoConnectCheckBox.Checked)
+                {
+                    tincconf = tincconf.Replace("AutoConnect = no", "AutoConnect = yes");
+                    File.WriteAllText(tincpath + "/contravpn/tinc.conf", tincconf);
+                }
+                else if (!AutoConnectCheckBox.Checked)
+                {
+                    tincconf = tincconf.Replace("AutoConnect = yes", "AutoConnect = no");
+                    File.WriteAllText(tincpath + "/contravpn/tinc.conf", tincconf);
+                }
             }
+            //else MessageBox.Show("\"tinc.conf\" not found! Toggling AutoConnect on/off has no effect.", "Error");
         }
     }
 }

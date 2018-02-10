@@ -46,8 +46,8 @@
             this.MStandard = new System.Windows.Forms.RadioButton();
             this.WinCheckBox = new System.Windows.Forms.CheckBox();
             this.QSToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.UPnPCheckBox = new System.Windows.Forms.CheckBox();
             this.AutoConnectCheckBox = new System.Windows.Forms.CheckBox();
+            this.UPnPCheckBox = new System.Windows.Forms.CheckBox();
             this.FogCheckBox = new System.Windows.Forms.CheckBox();
             this.WindowedToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.NewMusicToolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -76,6 +76,8 @@
             this.buttonVPNinvOK = new System.Windows.Forms.Button();
             this.buttonVPNconsole = new System.Windows.Forms.Button();
             this.buttonVPNdebuglog = new System.Windows.Forms.Button();
+            this.UPnPToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.AutoConnectToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.voicespanel.SuspendLayout();
             this.languagepanel.SuspendLayout();
             this.musicpanel.SuspendLayout();
@@ -326,21 +328,6 @@
             this.QSToolTip.InitialDelay = 50;
             this.QSToolTip.ReshowDelay = 100;
             // 
-            // UPnPCheckBox
-            // 
-            this.UPnPCheckBox.AutoSize = true;
-            this.UPnPCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.UPnPCheckBox.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UPnPCheckBox.ForeColor = System.Drawing.Color.White;
-            this.UPnPCheckBox.Location = new System.Drawing.Point(213, 160);
-            this.UPnPCheckBox.Name = "UPnPCheckBox";
-            this.UPnPCheckBox.Size = new System.Drawing.Size(55, 20);
-            this.UPnPCheckBox.TabIndex = 41;
-            this.UPnPCheckBox.Text = "UPnP";
-            this.QSToolTip.SetToolTip(this.UPnPCheckBox, "Disables intro and shellmap (game starts up faster).");
-            this.UPnPCheckBox.UseVisualStyleBackColor = false;
-            this.UPnPCheckBox.CheckedChanged += new System.EventHandler(this.UPnPCheckBox_CheckedChanged);
-            // 
             // AutoConnectCheckBox
             // 
             this.AutoConnectCheckBox.AutoSize = true;
@@ -352,9 +339,28 @@
             this.AutoConnectCheckBox.Size = new System.Drawing.Size(100, 20);
             this.AutoConnectCheckBox.TabIndex = 42;
             this.AutoConnectCheckBox.Text = "AutoConnect";
-            this.QSToolTip.SetToolTip(this.AutoConnectCheckBox, "Disables intro and shellmap (game starts up faster).");
+            this.AutoConnectToolTip.SetToolTip(this.AutoConnectCheckBox, "Automatically set up meta connections to other nodes.\r\nThis allows you to retain " +
+        "connection with other players even if contravpn node goes down.\r\nOnly works with" +
+        " nodes that have open ports.");
             this.AutoConnectCheckBox.UseVisualStyleBackColor = false;
             this.AutoConnectCheckBox.CheckedChanged += new System.EventHandler(this.AutoConnectCheckBox_CheckedChanged);
+            // 
+            // UPnPCheckBox
+            // 
+            this.UPnPCheckBox.AutoSize = true;
+            this.UPnPCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.UPnPCheckBox.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UPnPCheckBox.ForeColor = System.Drawing.Color.White;
+            this.UPnPCheckBox.Location = new System.Drawing.Point(213, 160);
+            this.UPnPCheckBox.Name = "UPnPCheckBox";
+            this.UPnPCheckBox.Size = new System.Drawing.Size(55, 20);
+            this.UPnPCheckBox.TabIndex = 41;
+            this.UPnPCheckBox.Text = "UPnP";
+            this.UPnPToolTip.SetToolTip(this.UPnPCheckBox, "Search for local UPnP-IGD devices, this can improve connectivity if UPnP is enabl" +
+        "ed on your router.\r\nRequires miniuonpc support (tinc distributed by Contra has t" +
+        "his, official does not).");
+            this.UPnPCheckBox.UseVisualStyleBackColor = false;
+            this.UPnPCheckBox.CheckedChanged += new System.EventHandler(this.UPnPCheckBox_CheckedChanged);
             // 
             // FogCheckBox
             // 
@@ -693,6 +699,18 @@
             this.buttonVPNdebuglog.UseVisualStyleBackColor = false;
             this.buttonVPNdebuglog.Click += new System.EventHandler(this.buttonVPNdebuglog_Click);
             // 
+            // UPnPToolTip
+            // 
+            this.UPnPToolTip.AutoPopDelay = 7500;
+            this.UPnPToolTip.InitialDelay = 50;
+            this.UPnPToolTip.ReshowDelay = 100;
+            // 
+            // AutoConnectToolTip
+            // 
+            this.AutoConnectToolTip.AutoPopDelay = 10000;
+            this.AutoConnectToolTip.InitialDelay = 50;
+            this.AutoConnectToolTip.ReshowDelay = 100;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -799,6 +817,8 @@
         private System.Windows.Forms.CheckBox UPnPCheckBox;
         private System.Windows.Forms.CheckBox AutoConnectCheckBox;
         private System.Windows.Forms.Button buttonVPNdebuglog;
+        private System.Windows.Forms.ToolTip UPnPToolTip;
+        private System.Windows.Forms.ToolTip AutoConnectToolTip;
     }
 }
 
