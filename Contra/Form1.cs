@@ -47,6 +47,28 @@ namespace Contra
                 File.Delete(xppath + "_tmpChunk.dat");
             }
 
+            if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("UPnP")) == false))
+            {
+                string AppendUPnP = Environment.NewLine + "UPnP = no";
+                File.AppendAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", AppendUPnP);
+            }
+            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && ((File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("UPnP")) == false))
+            {
+                string AppendUPnP = Environment.NewLine + "UPnP = no";
+                File.AppendAllText(tincpath + "/contravpn/tinc.conf", AppendUPnP);
+            }
+
+            if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("AutoConnect")) == false))
+            {
+                string AppendUPnP = Environment.NewLine + "AutoConnect = no";
+                File.AppendAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", AppendUPnP);
+            }
+            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && ((File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("AutoConnect")) == false))
+            {
+                string AppendUPnP = Environment.NewLine + "AutoConnect = no";
+                File.AppendAllText(tincpath + "/contravpn/tinc.conf", AppendUPnP);
+            }
+
             if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("UPnP = no"))))
             {
                 UPnPCheckBox.Checked = false;
@@ -94,7 +116,6 @@ namespace Contra
         private bool TincFound;
 
         const int WM_NCLBUTTONDBLCLK = 0xA3;
-
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == WM_NCLBUTTONDBLCLK)
@@ -109,9 +130,7 @@ namespace Contra
                         m.Result = (IntPtr)0x2;
                     return;
             }
-
             base.WndProc(ref m);
-
         }
 
         public static string StartGenerals;
@@ -1461,6 +1480,26 @@ namespace Contra
                 }
             }
             //else MessageBox.Show("\"tinc.conf\" not found! Toggling AutoConnect on/off has no effect.", "Error");
+        }
+
+        private void VPNMoreButton_Click(object sender, EventArgs e)
+        {
+
+            foreach (Form VPNForm in Application.OpenForms)
+            {
+                if (VPNForm is VPNForm)
+                {
+                    VPNForm.Close();
+                    return;
+                }
+            }
+            new VPNForm().Show();
+
+        //    VPNForm VPNForm = new VPNForm();
+        //    if (VPNForm == null)
+        //    {
+         //       VPNForm.Show();
+         //   }
         }
     }
 }

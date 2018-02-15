@@ -78,6 +78,7 @@
             this.buttonVPNdebuglog = new System.Windows.Forms.Button();
             this.UPnPToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.AutoConnectToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.VPNMoreButton = new System.Windows.Forms.Button();
             this.voicespanel.SuspendLayout();
             this.languagepanel.SuspendLayout();
             this.musicpanel.SuspendLayout();
@@ -131,12 +132,12 @@
             // 
             this.RadioEN.AutoSize = true;
             this.RadioEN.Checked = true;
-            this.RadioEN.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RadioEN.Font = new System.Drawing.Font("Berlin Sans FB Demi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RadioEN.ForeColor = System.Drawing.Color.White;
             this.RadioEN.Location = new System.Drawing.Point(3, 7);
             this.RadioEN.Name = "RadioEN";
             this.RadioEN.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioEN.Size = new System.Drawing.Size(69, 20);
+            this.RadioEN.Size = new System.Drawing.Size(69, 17);
             this.RadioEN.TabIndex = 2;
             this.RadioEN.TabStop = true;
             this.RadioEN.Text = "ENGLISH";
@@ -147,10 +148,10 @@
             // RadioRU
             // 
             this.RadioRU.AutoSize = true;
-            this.RadioRU.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RadioRU.Font = new System.Drawing.Font("Berlin Sans FB Demi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RadioRU.Location = new System.Drawing.Point(3, 33);
             this.RadioRU.Name = "RadioRU";
-            this.RadioRU.Size = new System.Drawing.Size(71, 20);
+            this.RadioRU.Size = new System.Drawing.Size(68, 17);
             this.RadioRU.TabIndex = 3;
             this.RadioRU.Text = "RUSSIAN";
             this.Русский.SetToolTip(this.RadioRU, "Русский");
@@ -247,11 +248,11 @@
             // 
             this.QSCheckBox.AutoSize = true;
             this.QSCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.QSCheckBox.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QSCheckBox.Font = new System.Drawing.Font("Berlin Sans FB Demi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QSCheckBox.ForeColor = System.Drawing.Color.White;
-            this.QSCheckBox.Location = new System.Drawing.Point(275, 412);
+            this.QSCheckBox.Location = new System.Drawing.Point(272, 412);
             this.QSCheckBox.Name = "QSCheckBox";
-            this.QSCheckBox.Size = new System.Drawing.Size(89, 20);
+            this.QSCheckBox.Size = new System.Drawing.Size(92, 17);
             this.QSCheckBox.TabIndex = 16;
             this.QSCheckBox.Text = "QUICKSTART";
             this.QSToolTip.SetToolTip(this.QSCheckBox, "Disables intro and shellmap (game starts up faster).");
@@ -311,11 +312,11 @@
             // 
             this.WinCheckBox.AutoSize = true;
             this.WinCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.WinCheckBox.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WinCheckBox.Font = new System.Drawing.Font("Berlin Sans FB Demi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WinCheckBox.ForeColor = System.Drawing.Color.White;
-            this.WinCheckBox.Location = new System.Drawing.Point(275, 432);
+            this.WinCheckBox.Location = new System.Drawing.Point(272, 432);
             this.WinCheckBox.Name = "WinCheckBox";
-            this.WinCheckBox.Size = new System.Drawing.Size(84, 20);
+            this.WinCheckBox.Size = new System.Drawing.Size(89, 17);
             this.WinCheckBox.TabIndex = 17;
             this.WinCheckBox.Text = "WINDOWED";
             this.WindowedToolTip.SetToolTip(this.WinCheckBox, "Starts Contra in a window instead of full screen.");
@@ -332,11 +333,11 @@
             // 
             this.AutoConnectCheckBox.AutoSize = true;
             this.AutoConnectCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.AutoConnectCheckBox.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AutoConnectCheckBox.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AutoConnectCheckBox.ForeColor = System.Drawing.Color.White;
             this.AutoConnectCheckBox.Location = new System.Drawing.Point(213, 182);
             this.AutoConnectCheckBox.Name = "AutoConnectCheckBox";
-            this.AutoConnectCheckBox.Size = new System.Drawing.Size(100, 20);
+            this.AutoConnectCheckBox.Size = new System.Drawing.Size(101, 20);
             this.AutoConnectCheckBox.TabIndex = 42;
             this.AutoConnectCheckBox.Text = "AutoConnect";
             this.AutoConnectToolTip.SetToolTip(this.AutoConnectCheckBox, "Automatically set up meta connections to other nodes.\r\nThis allows you to retain " +
@@ -349,11 +350,11 @@
             // 
             this.UPnPCheckBox.AutoSize = true;
             this.UPnPCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.UPnPCheckBox.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UPnPCheckBox.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UPnPCheckBox.ForeColor = System.Drawing.Color.White;
             this.UPnPCheckBox.Location = new System.Drawing.Point(213, 160);
             this.UPnPCheckBox.Name = "UPnPCheckBox";
-            this.UPnPCheckBox.Size = new System.Drawing.Size(55, 20);
+            this.UPnPCheckBox.Size = new System.Drawing.Size(59, 20);
             this.UPnPCheckBox.TabIndex = 41;
             this.UPnPCheckBox.Text = "UPnP";
             this.UPnPToolTip.SetToolTip(this.UPnPCheckBox, "Search for local UPnP-IGD devices, this can improve connectivity if UPnP is enabl" +
@@ -368,11 +369,11 @@
             this.FogCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.FogCheckBox.Checked = true;
             this.FogCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.FogCheckBox.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FogCheckBox.Font = new System.Drawing.Font("Berlin Sans FB Demi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FogCheckBox.ForeColor = System.Drawing.Color.White;
             this.FogCheckBox.Location = new System.Drawing.Point(435, 422);
             this.FogCheckBox.Name = "FogCheckBox";
-            this.FogCheckBox.Size = new System.Drawing.Size(95, 20);
+            this.FogCheckBox.Size = new System.Drawing.Size(94, 17);
             this.FogCheckBox.TabIndex = 30;
             this.FogCheckBox.Text = "FOG EFFECTS";
             this.FogEffects.SetToolTip(this.FogCheckBox, "Toggle fog (depth of field) effects on/off.");
@@ -395,10 +396,10 @@
             // 
             this.DefaultPics.AutoSize = true;
             this.DefaultPics.Checked = true;
-            this.DefaultPics.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DefaultPics.Font = new System.Drawing.Font("Berlin Sans FB Demi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DefaultPics.Location = new System.Drawing.Point(3, 7);
             this.DefaultPics.Name = "DefaultPics";
-            this.DefaultPics.Size = new System.Drawing.Size(70, 20);
+            this.DefaultPics.Size = new System.Drawing.Size(73, 17);
             this.DefaultPics.TabIndex = 0;
             this.DefaultPics.TabStop = true;
             this.DefaultPics.Text = "DEFAULT";
@@ -414,13 +415,13 @@
             // GoofyPics
             // 
             this.GoofyPics.AutoSize = true;
-            this.GoofyPics.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoofyPics.Font = new System.Drawing.Font("Berlin Sans FB Demi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoofyPics.Location = new System.Drawing.Point(3, 33);
             this.GoofyPics.Name = "GoofyPics";
-            this.GoofyPics.Size = new System.Drawing.Size(60, 20);
+            this.GoofyPics.Size = new System.Drawing.Size(62, 17);
             this.GoofyPics.TabIndex = 1;
             this.GoofyPics.Text = "GOOFY";
-            this.PortraitsGoofy.SetToolTip(this.GoofyPics, "Use goofy general portraits.");
+            this.PortraitsGoofy.SetToolTip(this.GoofyPics, "Use funny general portraits.");
             this.GoofyPics.UseVisualStyleBackColor = true;
             this.GoofyPics.CheckedChanged += new System.EventHandler(this.GoofyPics_CheckedChanged);
             // 
@@ -711,6 +712,24 @@
             this.AutoConnectToolTip.InitialDelay = 50;
             this.AutoConnectToolTip.ReshowDelay = 100;
             // 
+            // VPNMoreButton
+            // 
+            this.VPNMoreButton.BackColor = System.Drawing.Color.Transparent;
+            this.VPNMoreButton.BackgroundImage = global::Contra.Properties.Resources._button_readme;
+            this.VPNMoreButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.VPNMoreButton.FlatAppearance.BorderSize = 0;
+            this.VPNMoreButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.VPNMoreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.VPNMoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VPNMoreButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.VPNMoreButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.VPNMoreButton.Location = new System.Drawing.Point(188, 259);
+            this.VPNMoreButton.Name = "VPNMoreButton";
+            this.VPNMoreButton.Size = new System.Drawing.Size(48, 48);
+            this.VPNMoreButton.TabIndex = 44;
+            this.VPNMoreButton.UseVisualStyleBackColor = false;
+            this.VPNMoreButton.Click += new System.EventHandler(this.VPNMoreButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -718,6 +737,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.VPNMoreButton);
             this.Controls.Add(this.buttonVPNdebuglog);
             this.Controls.Add(this.AutoConnectCheckBox);
             this.Controls.Add(this.UPnPCheckBox);
@@ -819,6 +839,7 @@
         private System.Windows.Forms.Button buttonVPNdebuglog;
         private System.Windows.Forms.ToolTip UPnPToolTip;
         private System.Windows.Forms.ToolTip AutoConnectToolTip;
+        private System.Windows.Forms.Button VPNMoreButton;
     }
 }
 

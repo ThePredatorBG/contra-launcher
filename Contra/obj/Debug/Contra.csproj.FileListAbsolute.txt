@@ -18,3 +18,4 @@ C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\Contra\obj\Debug
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\Contra\obj\Debug\Contra.Properties.Resources.resources
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\Contra\obj\Debug\Contra.csproj.GenerateResource.Cache
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\Contra\obj\Debug\Contra.Rename.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\Contra\obj\Debug\Contra.VPNForm.resources
