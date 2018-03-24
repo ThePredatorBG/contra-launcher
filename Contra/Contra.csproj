@@ -128,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ContraIco.ico" />
+    <None Include="Resources\vpnbg.jpg" />
     <None Include="Resources\background.jpg" />
     <None Include="Resources\_button_highlight.png" />
     <None Include="Resources\_button_exit_text.png" />

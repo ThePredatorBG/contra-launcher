@@ -132,15 +132,15 @@
             // 
             this.RadioEN.AutoSize = true;
             this.RadioEN.Checked = true;
-            this.RadioEN.Font = new System.Drawing.Font("Berlin Sans FB Demi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RadioEN.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RadioEN.ForeColor = System.Drawing.Color.White;
             this.RadioEN.Location = new System.Drawing.Point(3, 7);
             this.RadioEN.Name = "RadioEN";
             this.RadioEN.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioEN.Size = new System.Drawing.Size(69, 17);
+            this.RadioEN.Size = new System.Drawing.Size(66, 21);
             this.RadioEN.TabIndex = 2;
             this.RadioEN.TabStop = true;
-            this.RadioEN.Text = "ENGLISH";
+            this.RadioEN.Text = "English";
             this.EnglishLanguage.SetToolTip(this.RadioEN, "English language");
             this.RadioEN.UseVisualStyleBackColor = true;
             this.RadioEN.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
@@ -148,12 +148,12 @@
             // RadioRU
             // 
             this.RadioRU.AutoSize = true;
-            this.RadioRU.Font = new System.Drawing.Font("Berlin Sans FB Demi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RadioRU.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RadioRU.Location = new System.Drawing.Point(3, 33);
             this.RadioRU.Name = "RadioRU";
-            this.RadioRU.Size = new System.Drawing.Size(68, 17);
+            this.RadioRU.Size = new System.Drawing.Size(70, 21);
             this.RadioRU.TabIndex = 3;
-            this.RadioRU.Text = "RUSSIAN";
+            this.RadioRU.Text = "Russian";
             this.Русский.SetToolTip(this.RadioRU, "Русский");
             this.RadioRU.UseVisualStyleBackColor = true;
             this.RadioRU.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
@@ -162,13 +162,13 @@
             // 
             this.RadioOrigQuotes.AutoSize = true;
             this.RadioOrigQuotes.Cursor = System.Windows.Forms.Cursors.Default;
-            this.RadioOrigQuotes.Font = new System.Drawing.Font("SF Willamette Extended", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RadioOrigQuotes.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RadioOrigQuotes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.RadioOrigQuotes.Location = new System.Drawing.Point(4, 33);
             this.RadioOrigQuotes.Name = "RadioOrigQuotes";
-            this.RadioOrigQuotes.Size = new System.Drawing.Size(63, 22);
+            this.RadioOrigQuotes.Size = new System.Drawing.Size(60, 21);
             this.RadioOrigQuotes.TabIndex = 4;
-            this.RadioOrigQuotes.Text = "NATIVE";
+            this.RadioOrigQuotes.Text = "Native";
             this.VoicesOriginalToolTip.SetToolTip(this.RadioOrigQuotes, "Each faction\'s units will speak their native language.");
             this.RadioOrigQuotes.UseVisualStyleBackColor = true;
             this.RadioOrigQuotes.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
@@ -177,14 +177,14 @@
             // 
             this.RadioLocQuotes.AutoSize = true;
             this.RadioLocQuotes.Checked = true;
-            this.RadioLocQuotes.Font = new System.Drawing.Font("SF Willamette Extended", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RadioLocQuotes.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RadioLocQuotes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.RadioLocQuotes.Location = new System.Drawing.Point(4, 7);
             this.RadioLocQuotes.Name = "RadioLocQuotes";
-            this.RadioLocQuotes.Size = new System.Drawing.Size(70, 22);
+            this.RadioLocQuotes.Size = new System.Drawing.Size(66, 21);
             this.RadioLocQuotes.TabIndex = 5;
             this.RadioLocQuotes.TabStop = true;
-            this.RadioLocQuotes.Text = "ENGLISH";
+            this.RadioLocQuotes.Text = "English";
             this.VoicesLocalizedToolTip.SetToolTip(this.RadioLocQuotes, "Units of all three factions will speak English.");
             this.RadioLocQuotes.UseVisualStyleBackColor = true;
             this.RadioLocQuotes.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
@@ -248,13 +248,13 @@
             // 
             this.QSCheckBox.AutoSize = true;
             this.QSCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.QSCheckBox.Font = new System.Drawing.Font("Berlin Sans FB Demi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QSCheckBox.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.QSCheckBox.ForeColor = System.Drawing.Color.White;
             this.QSCheckBox.Location = new System.Drawing.Point(272, 412);
             this.QSCheckBox.Name = "QSCheckBox";
-            this.QSCheckBox.Size = new System.Drawing.Size(92, 17);
+            this.QSCheckBox.Size = new System.Drawing.Size(84, 21);
             this.QSCheckBox.TabIndex = 16;
-            this.QSCheckBox.Text = "QUICKSTART";
+            this.QSCheckBox.Text = "QuickStart";
             this.QSToolTip.SetToolTip(this.QSCheckBox, "Disables intro and shellmap (game starts up faster).");
             this.QSCheckBox.UseVisualStyleBackColor = false;
             // 
@@ -283,13 +283,14 @@
             // 
             this.MNew.AutoSize = true;
             this.MNew.Checked = true;
-            this.MNew.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MNew.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MNew.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.MNew.Location = new System.Drawing.Point(4, 7);
             this.MNew.Name = "MNew";
-            this.MNew.Size = new System.Drawing.Size(49, 20);
+            this.MNew.Size = new System.Drawing.Size(49, 21);
             this.MNew.TabIndex = 0;
             this.MNew.TabStop = true;
-            this.MNew.Text = "NEW";
+            this.MNew.Text = "New";
             this.NewMusicToolTip.SetToolTip(this.MNew, "Use new soundtracks.");
             this.MNew.UseVisualStyleBackColor = true;
             this.MNew.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
@@ -297,13 +298,13 @@
             // MStandard
             // 
             this.MStandard.AutoSize = true;
-            this.MStandard.Font = new System.Drawing.Font("SF Willamette Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MStandard.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MStandard.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.MStandard.Location = new System.Drawing.Point(4, 33);
             this.MStandard.Name = "MStandard";
-            this.MStandard.Size = new System.Drawing.Size(80, 20);
+            this.MStandard.Size = new System.Drawing.Size(77, 21);
             this.MStandard.TabIndex = 1;
-            this.MStandard.Text = "STANDARD";
+            this.MStandard.Text = "Standard";
             this.StandardMusicToolTip.SetToolTip(this.MStandard, "Use standard Zero Hour soundtracks.");
             this.MStandard.UseVisualStyleBackColor = true;
             this.MStandard.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged_1);
@@ -312,13 +313,13 @@
             // 
             this.WinCheckBox.AutoSize = true;
             this.WinCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.WinCheckBox.Font = new System.Drawing.Font("Berlin Sans FB Demi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WinCheckBox.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.WinCheckBox.ForeColor = System.Drawing.Color.White;
             this.WinCheckBox.Location = new System.Drawing.Point(272, 432);
             this.WinCheckBox.Name = "WinCheckBox";
-            this.WinCheckBox.Size = new System.Drawing.Size(89, 17);
+            this.WinCheckBox.Size = new System.Drawing.Size(86, 21);
             this.WinCheckBox.TabIndex = 17;
-            this.WinCheckBox.Text = "WINDOWED";
+            this.WinCheckBox.Text = "Windowed";
             this.WindowedToolTip.SetToolTip(this.WinCheckBox, "Starts Contra in a window instead of full screen.");
             this.WinCheckBox.UseVisualStyleBackColor = false;
             this.WinCheckBox.CheckedChanged += new System.EventHandler(this.WinCheckBox_CheckedChanged);
@@ -335,7 +336,7 @@
             this.AutoConnectCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.AutoConnectCheckBox.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AutoConnectCheckBox.ForeColor = System.Drawing.Color.White;
-            this.AutoConnectCheckBox.Location = new System.Drawing.Point(213, 182);
+            this.AutoConnectCheckBox.Location = new System.Drawing.Point(12, 28);
             this.AutoConnectCheckBox.Name = "AutoConnectCheckBox";
             this.AutoConnectCheckBox.Size = new System.Drawing.Size(101, 20);
             this.AutoConnectCheckBox.TabIndex = 42;
@@ -352,7 +353,7 @@
             this.UPnPCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.UPnPCheckBox.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UPnPCheckBox.ForeColor = System.Drawing.Color.White;
-            this.UPnPCheckBox.Location = new System.Drawing.Point(213, 160);
+            this.UPnPCheckBox.Location = new System.Drawing.Point(12, 6);
             this.UPnPCheckBox.Name = "UPnPCheckBox";
             this.UPnPCheckBox.Size = new System.Drawing.Size(59, 20);
             this.UPnPCheckBox.TabIndex = 41;
@@ -369,13 +370,13 @@
             this.FogCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.FogCheckBox.Checked = true;
             this.FogCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.FogCheckBox.Font = new System.Drawing.Font("Berlin Sans FB Demi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FogCheckBox.ForeColor = System.Drawing.Color.White;
+            this.FogCheckBox.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FogCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FogCheckBox.Location = new System.Drawing.Point(435, 422);
             this.FogCheckBox.Name = "FogCheckBox";
-            this.FogCheckBox.Size = new System.Drawing.Size(94, 17);
+            this.FogCheckBox.Size = new System.Drawing.Size(84, 21);
             this.FogCheckBox.TabIndex = 30;
-            this.FogCheckBox.Text = "FOG EFFECTS";
+            this.FogCheckBox.Text = "Fog Effects";
             this.FogEffects.SetToolTip(this.FogCheckBox, "Toggle fog (depth of field) effects on/off.");
             this.FogCheckBox.UseVisualStyleBackColor = false;
             this.FogCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -396,13 +397,13 @@
             // 
             this.DefaultPics.AutoSize = true;
             this.DefaultPics.Checked = true;
-            this.DefaultPics.Font = new System.Drawing.Font("Berlin Sans FB Demi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DefaultPics.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DefaultPics.Location = new System.Drawing.Point(3, 7);
             this.DefaultPics.Name = "DefaultPics";
-            this.DefaultPics.Size = new System.Drawing.Size(73, 17);
+            this.DefaultPics.Size = new System.Drawing.Size(66, 21);
             this.DefaultPics.TabIndex = 0;
             this.DefaultPics.TabStop = true;
-            this.DefaultPics.Text = "DEFAULT";
+            this.DefaultPics.Text = "Default";
             this.PortraitsDefault.SetToolTip(this.DefaultPics, "Use default general portraits.");
             this.DefaultPics.UseVisualStyleBackColor = true;
             // 
@@ -415,12 +416,12 @@
             // GoofyPics
             // 
             this.GoofyPics.AutoSize = true;
-            this.GoofyPics.Font = new System.Drawing.Font("Berlin Sans FB Demi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoofyPics.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.GoofyPics.Location = new System.Drawing.Point(3, 33);
             this.GoofyPics.Name = "GoofyPics";
-            this.GoofyPics.Size = new System.Drawing.Size(62, 17);
+            this.GoofyPics.Size = new System.Drawing.Size(57, 21);
             this.GoofyPics.TabIndex = 1;
-            this.GoofyPics.Text = "GOOFY";
+            this.GoofyPics.Text = "Goofy";
             this.PortraitsGoofy.SetToolTip(this.GoofyPics, "Use funny general portraits.");
             this.GoofyPics.UseVisualStyleBackColor = true;
             this.GoofyPics.CheckedChanged += new System.EventHandler(this.GoofyPics_CheckedChanged);
@@ -620,7 +621,7 @@
             this.buttonVPNinvkey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVPNinvkey.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonVPNinvkey.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonVPNinvkey.Location = new System.Drawing.Point(46, 160);
+            this.buttonVPNinvkey.Location = new System.Drawing.Point(-36, 155);
             this.buttonVPNinvkey.Name = "buttonVPNinvkey";
             this.buttonVPNinvkey.Size = new System.Drawing.Size(48, 48);
             this.buttonVPNinvkey.TabIndex = 37;
@@ -640,7 +641,7 @@
             this.panel1.Controls.Add(this.buttonVPNinvclose);
             this.panel1.Controls.Add(this.buttonVPNinvOK);
             this.panel1.Controls.Add(this.invkeytextBox);
-            this.panel1.Location = new System.Drawing.Point(773, 100);
+            this.panel1.Location = new System.Drawing.Point(778, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(225, 127);
             this.panel1.TabIndex = 39;
@@ -675,7 +676,7 @@
             this.buttonVPNconsole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVPNconsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonVPNconsole.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonVPNconsole.Location = new System.Drawing.Point(45, 205);
+            this.buttonVPNconsole.Location = new System.Drawing.Point(-37, 200);
             this.buttonVPNconsole.Name = "buttonVPNconsole";
             this.buttonVPNconsole.Size = new System.Drawing.Size(48, 48);
             this.buttonVPNconsole.TabIndex = 40;
@@ -693,7 +694,7 @@
             this.buttonVPNdebuglog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVPNdebuglog.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonVPNdebuglog.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonVPNdebuglog.Location = new System.Drawing.Point(46, 113);
+            this.buttonVPNdebuglog.Location = new System.Drawing.Point(-36, 108);
             this.buttonVPNdebuglog.Name = "buttonVPNdebuglog";
             this.buttonVPNdebuglog.Size = new System.Drawing.Size(48, 48);
             this.buttonVPNdebuglog.TabIndex = 43;
@@ -723,7 +724,7 @@
             this.VPNMoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.VPNMoreButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.VPNMoreButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.VPNMoreButton.Location = new System.Drawing.Point(188, 259);
+            this.VPNMoreButton.Location = new System.Drawing.Point(65, 134);
             this.VPNMoreButton.Name = "VPNMoreButton";
             this.VPNMoreButton.Size = new System.Drawing.Size(48, 48);
             this.VPNMoreButton.TabIndex = 44;
@@ -836,10 +837,10 @@
         private System.Windows.Forms.Button buttonVPNconsole;
         private System.Windows.Forms.CheckBox UPnPCheckBox;
         private System.Windows.Forms.CheckBox AutoConnectCheckBox;
-        private System.Windows.Forms.Button buttonVPNdebuglog;
         private System.Windows.Forms.ToolTip UPnPToolTip;
         private System.Windows.Forms.ToolTip AutoConnectToolTip;
         private System.Windows.Forms.Button VPNMoreButton;
+        public System.Windows.Forms.Button buttonVPNdebuglog;
     }
 }
 

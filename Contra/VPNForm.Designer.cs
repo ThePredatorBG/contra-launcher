@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VPNForm));
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.UPnPCheckBox = new System.Windows.Forms.CheckBox();
@@ -44,7 +45,7 @@
             this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button18.FlatAppearance.BorderSize = 0;
             this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.Location = new System.Drawing.Point(240, 12);
+            this.button18.Location = new System.Drawing.Point(199, 31);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(20, 20);
             this.button18.TabIndex = 25;
@@ -58,7 +59,7 @@
             this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button17.FlatAppearance.BorderSize = 0;
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Location = new System.Drawing.Point(214, 12);
+            this.button17.Location = new System.Drawing.Point(173, 31);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(20, 20);
             this.button17.TabIndex = 26;
@@ -69,11 +70,11 @@
             // 
             this.UPnPCheckBox.AutoSize = true;
             this.UPnPCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.UPnPCheckBox.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UPnPCheckBox.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UPnPCheckBox.ForeColor = System.Drawing.Color.White;
-            this.UPnPCheckBox.Location = new System.Drawing.Point(158, 105);
+            this.UPnPCheckBox.Location = new System.Drawing.Point(46, 206);
             this.UPnPCheckBox.Name = "UPnPCheckBox";
-            this.UPnPCheckBox.Size = new System.Drawing.Size(59, 20);
+            this.UPnPCheckBox.Size = new System.Drawing.Size(55, 21);
             this.UPnPCheckBox.TabIndex = 42;
             this.UPnPCheckBox.Text = "UPnP";
             this.UPnPCheckBox.UseVisualStyleBackColor = false;
@@ -83,11 +84,11 @@
             // 
             this.AutoConnectCheckBox.AutoSize = true;
             this.AutoConnectCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.AutoConnectCheckBox.Font = new System.Drawing.Font("Berlin Sans FB Demi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AutoConnectCheckBox.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AutoConnectCheckBox.ForeColor = System.Drawing.Color.White;
-            this.AutoConnectCheckBox.Location = new System.Drawing.Point(158, 131);
+            this.AutoConnectCheckBox.Location = new System.Drawing.Point(46, 232);
             this.AutoConnectCheckBox.Name = "AutoConnectCheckBox";
-            this.AutoConnectCheckBox.Size = new System.Drawing.Size(101, 20);
+            this.AutoConnectCheckBox.Size = new System.Drawing.Size(97, 21);
             this.AutoConnectCheckBox.TabIndex = 43;
             this.AutoConnectCheckBox.Text = "AutoConnect";
             this.AutoConnectCheckBox.UseVisualStyleBackColor = false;
@@ -104,11 +105,12 @@
             this.buttonVPNdebuglog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVPNdebuglog.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonVPNdebuglog.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonVPNdebuglog.Location = new System.Drawing.Point(36, 49);
+            this.buttonVPNdebuglog.Location = new System.Drawing.Point(46, 82);
             this.buttonVPNdebuglog.Name = "buttonVPNdebuglog";
             this.buttonVPNdebuglog.Size = new System.Drawing.Size(48, 48);
             this.buttonVPNdebuglog.TabIndex = 44;
             this.buttonVPNdebuglog.UseVisualStyleBackColor = false;
+            this.buttonVPNdebuglog.Click += new System.EventHandler(this.buttonVPNdebuglog_Click);
             // 
             // buttonVPNinvkey
             // 
@@ -121,11 +123,12 @@
             this.buttonVPNinvkey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVPNinvkey.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonVPNinvkey.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonVPNinvkey.Location = new System.Drawing.Point(45, 103);
+            this.buttonVPNinvkey.Location = new System.Drawing.Point(99, 140);
             this.buttonVPNinvkey.Name = "buttonVPNinvkey";
             this.buttonVPNinvkey.Size = new System.Drawing.Size(48, 48);
             this.buttonVPNinvkey.TabIndex = 45;
             this.buttonVPNinvkey.UseVisualStyleBackColor = false;
+            this.buttonVPNinvkey.Click += new System.EventHandler(this.buttonVPNinvkey_Click);
             // 
             // buttonVPNconsole
             // 
@@ -138,17 +141,20 @@
             this.buttonVPNconsole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVPNconsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonVPNconsole.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonVPNconsole.Location = new System.Drawing.Point(45, 167);
+            this.buttonVPNconsole.Location = new System.Drawing.Point(155, 82);
             this.buttonVPNconsole.Name = "buttonVPNconsole";
             this.buttonVPNconsole.Size = new System.Drawing.Size(48, 48);
             this.buttonVPNconsole.TabIndex = 46;
             this.buttonVPNconsole.UseVisualStyleBackColor = false;
+            this.buttonVPNconsole.Click += new System.EventHandler(this.buttonVPNconsole_Click);
             // 
             // VPNForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(271, 345);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(250, 325);
+            this.ControlBox = false;
             this.Controls.Add(this.buttonVPNconsole);
             this.Controls.Add(this.buttonVPNinvkey);
             this.Controls.Add(this.buttonVPNdebuglog);
@@ -157,10 +163,11 @@
             this.Controls.Add(this.button17);
             this.Controls.Add(this.button18);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "VPNForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VPNForm";
+            this.Text = "ContraVPN Settings";
             this.ResumeLayout(false);
             this.PerformLayout();
 

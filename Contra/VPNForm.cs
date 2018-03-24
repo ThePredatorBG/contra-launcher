@@ -75,6 +75,7 @@ namespace Contra
             }
         }
 
+        Form1 Form1_Instance = new Form1();
 
         const int WM_NCLBUTTONDBLCLK = 0xA3;
         protected override void WndProc(ref Message m)
@@ -230,6 +231,42 @@ namespace Contra
                 }
             }
             //else MessageBox.Show("\"tinc.conf\" not found! Toggling AutoConnect on/off has no effect.", "Error");
+        }
+
+        private void buttonVPNdebuglog_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Form1_Instance.GetTincInstalledPath_Registry_OpenDebugLog();
+            }
+            catch (Exception)
+            {
+                Form1_Instance.GetTincInstalledPath_User_OpenDebugLog();
+            }
+        }
+
+        private void buttonVPNinvkey_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Form1_Instance.GetTincInstalledPath_Registry_EnterInvKey();
+            }
+            catch (Exception)
+            {
+                Form1_Instance.GetTincInstalledPath_User_EnterInvKey();
+            }
+        }
+
+        private void buttonVPNconsole_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Form1_Instance.GetTincInstalledPath_Registry_OpenConsole();
+            }
+            catch (Exception)
+            {
+                Form1_Instance.GetTincInstalledPath_User_OpenConsole();
+            }
         }
     }
 }
