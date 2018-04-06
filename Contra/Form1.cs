@@ -37,6 +37,8 @@ namespace Contra
             QSCheckBox.TabStop = false;
             WinCheckBox.TabStop = false;
             FogCheckBox.TabStop = false;
+            buttonVPNstart.TabStop = false;
+            VPNMoreButton.TabStop = false;
 
             if (File.Exists(path + "_tmpChunk.dat"))
             {
@@ -45,62 +47,6 @@ namespace Contra
             if (File.Exists(xppath + "_tmpChunk.dat"))
             {
                 File.Delete(xppath + "_tmpChunk.dat");
-            }
-
-            if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("UPnP")) == false))
-            {
-                string AppendUPnP = Environment.NewLine + "UPnP = no";
-                File.AppendAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", AppendUPnP);
-            }
-            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && ((File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("UPnP")) == false))
-            {
-                string AppendUPnP = Environment.NewLine + "UPnP = no";
-                File.AppendAllText(tincpath + "/contravpn/tinc.conf", AppendUPnP);
-            }
-
-            if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("AutoConnect")) == false))
-            {
-                string AppendUPnP = Environment.NewLine + "AutoConnect = no";
-                File.AppendAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", AppendUPnP);
-            }
-            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && ((File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("AutoConnect")) == false))
-            {
-                string AppendUPnP = Environment.NewLine + "AutoConnect = no";
-                File.AppendAllText(tincpath + "/contravpn/tinc.conf", AppendUPnP);
-            }
-
-            if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("UPnP = no"))))
-            {
-                UPnPCheckBox.Checked = false;
-            }
-            else if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && (File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("UPnP = yes")))
-            {
-                UPnPCheckBox.Checked = true;
-            }
-            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && ((File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("UPnP = no"))))
-            {
-                UPnPCheckBox.Checked = false;
-            }
-            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && (File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("UPnP = yes")))
-            {
-                UPnPCheckBox.Checked = true;
-            }
-
-            if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && (File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("AutoConnect = no")))
-            {
-                AutoConnectCheckBox.Checked = false;
-            }
-            else if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && (File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("AutoConnect = yes")))
-            {
-                AutoConnectCheckBox.Checked = true;
-            }
-            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && (File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("AutoConnect = no")))
-            {
-                AutoConnectCheckBox.Checked = false;
-            }
-            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && (File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("AutoConnect = yes")))
-            {
-                AutoConnectCheckBox.Checked = true;
             }
 
         }
@@ -961,63 +907,6 @@ namespace Contra
             }
         }
 
-        public void GetTincInstalledPath_Registry_EnterInvKey()
-        {
-            GetTincInstalledPath();
-            if (Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
-            {
-                MessageBox.Show("Found existing \"contravpn\" folder, looks like you have already been invited.");
-            }
-            else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
-            {
-                MessageBox.Show("To receive an invite key, mention @tet on Discord and request one.");
-                Process tinc = new Process();
-                tinc.StartInfo.Arguments = "join";
-                tinc.StartInfo.FileName = "tinc.exe";
-                GetTincInstalledPath().Replace("\"", "");
-                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(GetTincInstalledPath() + @"\");
-                tinc.Start();
-            }
-        }
-
-        public void GetTincInstalledPath_Registry_OpenConsole()
-        {
-            GetTincInstalledPath();
-            Process tinc = new Process();
-            tinc.StartInfo.Arguments = "-n contravpn";
-            tinc.StartInfo.FileName = "tinc.exe";
-            GetTincInstalledPath().Replace("\"", "");
-            tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(GetTincInstalledPath() + @"\");
-            if (Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
-            {
-                tinc.Start();
-            }
-            else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
-            {
-                MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
-                tinc.Start();
-            }
-        }
-
-        public void GetTincInstalledPath_Registry_OpenDebugLog()
-        {
-            GetTincInstalledPath();
-            Process tinc = new Process();
-            tinc.StartInfo.Arguments = "-n contravpn log 3";
-            tinc.StartInfo.FileName = "tinc.exe";
-            GetTincInstalledPath().Replace("\"", "");
-            tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(GetTincInstalledPath() + @"\");
-            if (Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
-            {
-                tinc.Start();
-            }
-            else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
-            {
-                MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
-                tinc.Start();
-            }
-        }
-
         public void GetTincInstalledPath_User_StartVPN()
         {
             TincFound = Properties.Settings.Default.TincFound;
@@ -1048,7 +937,7 @@ namespace Contra
                         else if (!Directory.Exists(tincpath + @"\contravpn"))
                         {
                             MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder was not found. Make sure you have entered your invitation link first.", "Error");
-//                            tinc.Start();
+                            //                            tinc.Start();
                             Properties.Settings.Default.TincFound = true;
                             Properties.Settings.Default.Save();
                         }
@@ -1078,7 +967,7 @@ namespace Contra
                     else if (!Directory.Exists(tincpath + @"\contravpn"))
                     {
                         MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder was not found. Make sure you have entered your invitation link first.", "Error");
-//                        tinc.Start();
+                        //                        tinc.Start();
                         Properties.Settings.Default.TincFound = true;
                         Properties.Settings.Default.Save();
                     }
@@ -1086,224 +975,6 @@ namespace Contra
                 else
                 {
                     MessageBox.Show("\"tincd.exe\" not found there!", "Error");
-                    Properties.Settings.Default.TincFound = false;
-                    Properties.Settings.Default.Save();
-                }
-            }
-        }
-
-        public void GetTincInstalledPath_User_EnterInvKey()
-        {
-            TincFound = Properties.Settings.Default.TincFound;
-            var TincInstalledPath = string.Empty;
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            if (TincFound == false)
-            {
-                MessageBox.Show("\"tinc.exe\" not found! Select tinc installation directory.", "Error");
-                fbd.Description = "Select tinc installation directory.";
-                if (fbd.ShowDialog() == DialogResult.OK)
-                {
-                    var tincpath = fbd.SelectedPath;
-                    TincInstalledPath = tincpath;
-                    Properties.Settings.Default.tincpath = fbd.SelectedPath;
-                    Properties.Settings.Default.Save();
-                    Process tinc = new Process();
-                    tinc.StartInfo.Arguments = "join";
-                    tinc.StartInfo.FileName = "tinc.exe";
-                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath + @"\tinc.exe");
-                    if (File.Exists(tincpath + @"\tinc.exe"))
-                    {
-                        if (Directory.Exists(tincpath + @"\contravpn"))
-                        {
-                            MessageBox.Show("Found existing \"contravpn\" folder, looks like you have already been invited.");
-                        }
-                        else if (!Directory.Exists(tincpath + @"\contravpn"))
-                        {
-                            MessageBox.Show("To receive an invite key, mention @tet on Discord and request one.");
-                            tinc.Start();
-                            Properties.Settings.Default.TincFound = true;
-                            Properties.Settings.Default.Save();
-                        }
-                    }
-                    else if (!File.Exists(tincpath + @"\tinc.exe"))
-                    {
-                        MessageBox.Show("\"tinc.exe\" not found there!", "Error");
-                        Properties.Settings.Default.TincFound = false;
-                        Properties.Settings.Default.Save();
-                    }
-                }
-            }
-            else if ((TincFound == true))
-            {
-                Process tinc = new Process();
-                tinc.StartInfo.Arguments = "join";
-                tinc.StartInfo.FileName = "tinc.exe";
-                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tinc.exe");
-                if (File.Exists(tincpath + @"\tinc.exe"))
-                {
-                    if (Directory.Exists(tincpath + @"\contravpn"))
-                    {
-                        MessageBox.Show("Found existing \"contravpn\" folder, looks like you have already been invited.");
-                    }
-                    else if (!Directory.Exists(tincpath + @"\contravpn"))
-                    {
-                        MessageBox.Show("To receive an invite key, mention @tet on Discord and request one.");
-                        tinc.Start();
-                        Properties.Settings.Default.TincFound = true;
-                        Properties.Settings.Default.Save();
-                    }
-                }
-                else if (!File.Exists(tincpath + @"\tinc.exe"))
-                {
-                    MessageBox.Show("\"tinc.exe\" not found there!", "Error");
-                    Properties.Settings.Default.TincFound = false;
-                    Properties.Settings.Default.Save();
-                }
-             }
-        }
-
-        public void GetTincInstalledPath_User_OpenConsole()
-        {
-            TincFound = Properties.Settings.Default.TincFound;
-            var TincInstalledPath = string.Empty;
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            if (TincFound == false)
-            {
-                MessageBox.Show("\"tinc.exe\" not found! Select tinc installation directory.", "Error");
-                fbd.Description = "Select tinc installation directory.";
-                if (fbd.ShowDialog() == DialogResult.OK)
-                {
-                    var tincpath = fbd.SelectedPath;
-                    TincInstalledPath = tincpath;
-                    Properties.Settings.Default.tincpath = fbd.SelectedPath;
-                    Properties.Settings.Default.Save();
-                    Process tinc = new Process();
-                    tinc.StartInfo.Arguments = "-n contravpn";
-                    tinc.StartInfo.FileName = "tinc.exe";
-                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath + @"\tinc.exe");
-                    if (File.Exists(tincpath + @"\tinc.exe"))
-                    {
-                        if (Directory.Exists(tincpath + @"\contravpn"))
-                        {
-                            tinc.Start();
-                            Properties.Settings.Default.TincFound = true;
-                            Properties.Settings.Default.Save();
-                        }
-                        else if (!Directory.Exists(tincpath + @"\contravpn"))
-                        {
-                            MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
-                            tinc.Start();
-                            Properties.Settings.Default.TincFound = true;
-                            Properties.Settings.Default.Save();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("\"tinc.exe\" not found there!", "Error");
-                        Properties.Settings.Default.TincFound = false;
-                        Properties.Settings.Default.Save();
-                    }
-                }
-            }
-            else if ((TincFound == true))
-            {
-                Process tinc = new Process();
-                tinc.StartInfo.Arguments = "-n contravpn";
-                tinc.StartInfo.FileName = "tinc.exe";
-                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tinc.exe");
-                if (File.Exists(tincpath + @"\tinc.exe"))
-                {
-                    if (Directory.Exists(tincpath + @"\contravpn"))
-                    {
-                        tinc.Start();
-                        Properties.Settings.Default.TincFound = true;
-                        Properties.Settings.Default.Save();
-                    }
-                    else if (!Directory.Exists(tincpath + @"\contravpn"))
-                    {
-                        MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
-                        tinc.Start();
-                        Properties.Settings.Default.TincFound = true;
-                        Properties.Settings.Default.Save();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("\"tinc.exe\" not found there!", "Error");
-                    Properties.Settings.Default.TincFound = false;
-                    Properties.Settings.Default.Save();
-                }
-            }
-        }
-
-        public void GetTincInstalledPath_User_OpenDebugLog()
-        {
-            TincFound = Properties.Settings.Default.TincFound;
-            var TincInstalledPath = string.Empty;
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            if (TincFound == false)
-            {
-                MessageBox.Show("\"tinc.exe\" not found! Select tinc installation directory.", "Error");
-                fbd.Description = "Select tinc installation directory.";
-                if (fbd.ShowDialog() == DialogResult.OK)
-                {
-                    var tincpath = fbd.SelectedPath;
-                    TincInstalledPath = tincpath;
-                    Properties.Settings.Default.tincpath = fbd.SelectedPath;
-                    Properties.Settings.Default.Save();
-                    Process tinc = new Process();
-                    tinc.StartInfo.Arguments = "-n contravpn log 3";
-                    tinc.StartInfo.FileName = "tinc.exe";
-                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath + @"\tinc.exe");
-                    if (File.Exists(tincpath + @"\tinc.exe"))
-                    {
-                        if (Directory.Exists(tincpath + @"\contravpn"))
-                        {
-                            tinc.Start();
-                            Properties.Settings.Default.TincFound = true;
-                            Properties.Settings.Default.Save();
-                        }
-                        else if (!Directory.Exists(tincpath + @"\contravpn"))
-                        {
-                            MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
-                            tinc.Start();
-                            Properties.Settings.Default.TincFound = true;
-                            Properties.Settings.Default.Save();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("\"tinc.exe\" not found there!", "Error");
-                        Properties.Settings.Default.TincFound = false;
-                        Properties.Settings.Default.Save();
-                    }
-                }
-            }
-            else if ((TincFound == true))
-            {
-                Process tinc = new Process();
-                tinc.StartInfo.Arguments = "-n contravpn";
-                tinc.StartInfo.FileName = "tinc.exe";
-                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tinc.exe");
-                if (File.Exists(tincpath + @"\tinc.exe"))
-                {
-                    if (Directory.Exists(tincpath + @"\contravpn"))
-                    {
-                        tinc.Start();
-                        Properties.Settings.Default.TincFound = true;
-                        Properties.Settings.Default.Save();
-                    }
-                    else if (!Directory.Exists(tincpath + @"\contravpn"))
-                    {
-                        MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
-                        tinc.Start();
-                        Properties.Settings.Default.TincFound = true;
-                        Properties.Settings.Default.Save();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("\"tinc.exe\" not found there!", "Error");
                     Properties.Settings.Default.TincFound = false;
                     Properties.Settings.Default.Save();
                 }
@@ -1334,37 +1005,37 @@ namespace Contra
 
         }
 
-        private void buttonVPNinvkey_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                GetTincInstalledPath_Registry_EnterInvKey();
-            }
-            catch (Exception)
-            {
-                GetTincInstalledPath_User_EnterInvKey();
-            }
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-            //}
-        }
+        //private void buttonVPNinvkey_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        GetTincInstalledPath_Registry_EnterInvKey();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        GetTincInstalledPath_User_EnterInvKey();
+        //    }
+        //    //catch (Exception ex)
+        //    //{
+        //    //    MessageBox.Show(ex.Message, "Error");
+        //    //}
+        //}
 
-        private void buttonVPNconsole_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                GetTincInstalledPath_Registry_OpenConsole();
-            }
-            catch (Exception)
-            {
-                GetTincInstalledPath_User_OpenConsole();
-            }
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-            //}
-        }
+        //private void buttonVPNconsole_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        GetTincInstalledPath_Registry_OpenConsole();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        GetTincInstalledPath_User_OpenConsole();
+        //    }
+        //    //catch (Exception ex)
+        //    //{
+        //    //    MessageBox.Show(ex.Message, "Error");
+        //    //}
+        //}
 
         private void buttonVPNinvOK_Click(object sender, EventArgs e)
         {
@@ -1402,89 +1073,20 @@ namespace Contra
             }
         }
 
-        private void buttonVPNdebuglog_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                GetTincInstalledPath_Registry_OpenDebugLog();
-            }
-            catch (Exception)
-            {
-                GetTincInstalledPath_User_OpenDebugLog();
-            }
-        }
-
-        private void UPnPCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")))
-            {
-                GetTincInstalledPath();
-                string tincconf = File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf");
-                if (UPnPCheckBox.Checked)
-                {
-                    tincconf = tincconf.Replace("UPnP = no", "UPnP = yes");
-                    File.WriteAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", tincconf);
-                }
-                else if (!UPnPCheckBox.Checked)
-                {
-                    tincconf = tincconf.Replace("UPnP = yes", "UPnP = no");
-                    File.WriteAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", tincconf);
-                }
-            }
-            else if (File.Exists(tincpath + "/contravpn/tinc.conf"))
-            {
-                string tincconf = File.ReadAllText(tincpath + "/contravpn/tinc.conf");
-                if (UPnPCheckBox.Checked)
-                {
-                    tincconf = tincconf.Replace("UPnP = no", "UPnP = yes");
-                    File.WriteAllText(tincpath + "/contravpn/tinc.conf", tincconf);
-                }
-                else if (!UPnPCheckBox.Checked)
-                {
-                    tincconf = tincconf.Replace("UPnP = yes", "UPnP = no");
-                    File.WriteAllText(tincpath + "/contravpn/tinc.conf", tincconf);
-                }
-            }
-           // else MessageBox.Show("\"tinc.conf\" not found! Toggling UPnP on/off has no effect.", "Error");
-        }
-
-        private void AutoConnectCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")))
-            {
-                GetTincInstalledPath();
-                string tincconf = File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf");
-                if (AutoConnectCheckBox.Checked)
-                {
-                    tincconf = tincconf.Replace("AutoConnect = no", "AutoConnect = yes");
-                    File.WriteAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", tincconf);
-                }
-                else if (!AutoConnectCheckBox.Checked)
-                {
-                    tincconf = tincconf.Replace("AutoConnect = yes", "AutoConnect = no");
-                    File.WriteAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", tincconf);
-                }
-            }
-            else if (File.Exists(tincpath + "/contravpn/tinc.conf"))
-            {
-                string tincconf = File.ReadAllText(tincpath + "/contravpn/tinc.conf");
-                if (AutoConnectCheckBox.Checked)
-                {
-                    tincconf = tincconf.Replace("AutoConnect = no", "AutoConnect = yes");
-                    File.WriteAllText(tincpath + "/contravpn/tinc.conf", tincconf);
-                }
-                else if (!AutoConnectCheckBox.Checked)
-                {
-                    tincconf = tincconf.Replace("AutoConnect = yes", "AutoConnect = no");
-                    File.WriteAllText(tincpath + "/contravpn/tinc.conf", tincconf);
-                }
-            }
-            //else MessageBox.Show("\"tinc.conf\" not found! Toggling AutoConnect on/off has no effect.", "Error");
-        }
+        //private void buttonVPNdebuglog_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        GetTincInstalledPath_Registry_OpenDebugLog();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        GetTincInstalledPath_User_OpenDebugLog();
+        //    }
+        //}
 
         private void VPNMoreButton_Click(object sender, EventArgs e)
         {
-
             foreach (Form VPNForm in Application.OpenForms)
             {
                 if (VPNForm is VPNForm)
@@ -1495,11 +1097,49 @@ namespace Contra
             }
             new VPNForm().Show();
 
-        //    VPNForm VPNForm = new VPNForm();
-        //    if (VPNForm == null)
-        //    {
-         //       VPNForm.Show();
-         //   }
+            //    VPNForm VPNForm = new VPNForm();
+            //    if (VPNForm == null)
+            //    {
+            //       VPNForm.Show();
+            //   }
+        }
+
+        private void buttonVPNstart_MouseEnter(object sender, EventArgs e)
+        {
+            buttonVPNstart.BackgroundImage = (System.Drawing.Image)(Properties.Resources._button_vpn_text);
+            buttonVPNstart.ForeColor = SystemColors.ButtonHighlight;
+            buttonVPNstart.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+        }
+        private void buttonVPNstart_MouseLeave(object sender, EventArgs e)
+        {
+            buttonVPNstart.BackgroundImage = (System.Drawing.Image)(Properties.Resources._button_vpn);
+            buttonVPNstart.ForeColor = SystemColors.ButtonHighlight;
+            buttonVPNstart.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+        }
+        private void buttonVPNstart_MouseDown(object sender, MouseEventArgs e)
+        {
+            buttonVPNstart.BackgroundImage = (System.Drawing.Image)(Properties.Resources._button_highlight);
+            buttonVPNstart.ForeColor = SystemColors.ButtonHighlight;
+            buttonVPNstart.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+        }
+
+        private void VPNMoreButton_MouseEnter(object sender, EventArgs e)
+        {
+            VPNMoreButton.BackgroundImage = (System.Drawing.Image)(Properties.Resources._button_config_tr);
+            VPNMoreButton.ForeColor = SystemColors.ButtonHighlight;
+            VPNMoreButton.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+        }
+        private void VPNMoreButton_MouseLeave(object sender, EventArgs e)
+        {
+            VPNMoreButton.BackgroundImage = (System.Drawing.Image)(Properties.Resources._button_config);
+            VPNMoreButton.ForeColor = SystemColors.ButtonHighlight;
+            VPNMoreButton.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+        }
+        private void VPNMoreButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            VPNMoreButton.BackgroundImage = (System.Drawing.Image)(Properties.Resources._button_sm_highlight);
+            VPNMoreButton.ForeColor = SystemColors.ButtonHighlight;
+            VPNMoreButton.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
         }
     }
 }
