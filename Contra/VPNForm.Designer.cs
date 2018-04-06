@@ -42,6 +42,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.InvitePanel = new System.Windows.Forms.Panel();
+            this.buttonVPNinvclose = new System.Windows.Forms.Button();
+            this.buttonVPNinvOK = new System.Windows.Forms.Button();
+            this.invkeytextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.InvitePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // button18
@@ -211,11 +217,66 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(160, 135);
+            this.label3.Location = new System.Drawing.Point(167, 135);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 18);
+            this.label3.Size = new System.Drawing.Size(59, 18);
             this.label3.TabIndex = 49;
-            this.label3.Text = "Debug Log";
+            this.label3.Text = "Monitor";
+            // 
+            // InvitePanel
+            // 
+            this.InvitePanel.Controls.Add(this.label4);
+            this.InvitePanel.Controls.Add(this.buttonVPNinvclose);
+            this.InvitePanel.Controls.Add(this.buttonVPNinvOK);
+            this.InvitePanel.Controls.Add(this.invkeytextBox);
+            this.InvitePanel.Location = new System.Drawing.Point(27, 156);
+            this.InvitePanel.Name = "InvitePanel";
+            this.InvitePanel.Size = new System.Drawing.Size(200, 107);
+            this.InvitePanel.TabIndex = 50;
+            this.InvitePanel.Visible = false;
+            // 
+            // buttonVPNinvclose
+            // 
+            this.buttonVPNinvclose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonVPNinvclose.Location = new System.Drawing.Point(114, 64);
+            this.buttonVPNinvclose.Name = "buttonVPNinvclose";
+            this.buttonVPNinvclose.Size = new System.Drawing.Size(75, 23);
+            this.buttonVPNinvclose.TabIndex = 40;
+            this.buttonVPNinvclose.Text = "Close";
+            this.buttonVPNinvclose.UseVisualStyleBackColor = true;
+            this.buttonVPNinvclose.Click += new System.EventHandler(this.buttonVPNinvclose_Click);
+            // 
+            // buttonVPNinvOK
+            // 
+            this.buttonVPNinvOK.Enabled = false;
+            this.buttonVPNinvOK.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonVPNinvOK.Location = new System.Drawing.Point(33, 64);
+            this.buttonVPNinvOK.Name = "buttonVPNinvOK";
+            this.buttonVPNinvOK.Size = new System.Drawing.Size(75, 23);
+            this.buttonVPNinvOK.TabIndex = 39;
+            this.buttonVPNinvOK.Text = "OK";
+            this.buttonVPNinvOK.UseVisualStyleBackColor = true;
+            this.buttonVPNinvOK.Click += new System.EventHandler(this.buttonVPNinvOK_Click);
+            // 
+            // invkeytextBox
+            // 
+            this.invkeytextBox.Location = new System.Drawing.Point(11, 27);
+            this.invkeytextBox.Name = "invkeytextBox";
+            this.invkeytextBox.Size = new System.Drawing.Size(178, 20);
+            this.invkeytextBox.TabIndex = 38;
+            this.invkeytextBox.TextChanged += new System.EventHandler(this.invkeytextBox_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(9, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(162, 15);
+            this.label4.TabIndex = 41;
+            this.label4.Text = "Paste your invite key below:";
             // 
             // VPNForm
             // 
@@ -224,6 +285,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(250, 325);
             this.ControlBox = false;
+            this.Controls.Add(this.InvitePanel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -240,6 +302,8 @@
             this.Name = "VPNForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ContraVPN Settings";
+            this.InvitePanel.ResumeLayout(false);
+            this.InvitePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,5 +323,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel InvitePanel;
+        private System.Windows.Forms.Button buttonVPNinvclose;
+        private System.Windows.Forms.Button buttonVPNinvOK;
+        private System.Windows.Forms.TextBox invkeytextBox;
+        private System.Windows.Forms.Label label4;
     }
 }

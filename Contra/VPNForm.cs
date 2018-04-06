@@ -267,13 +267,14 @@ namespace Contra
             }
             else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
-                MessageBox.Show("To receive an invite key, mention @tet on Discord and request one.");
-                Process tinc = new Process();
-                tinc.StartInfo.Arguments = "join";
-                tinc.StartInfo.FileName = "tinc.exe";
-                GetTincInstalledPath().Replace("\"", "");
-                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(GetTincInstalledPath() + @"\");
-                tinc.Start();
+                MessageBox.Show("You can request an invite key on our Discord's #contravpn channel.");
+//                Process tinc = new Process();
+//                tinc.StartInfo.Arguments = "join";
+//                tinc.StartInfo.FileName = "tinc.exe";
+                InvitePanel.Show();
+//                GetTincInstalledPath().Replace("\"", "");
+//                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(GetTincInstalledPath() + @"\");
+//                tinc.Start();
             }
         }
 
@@ -354,8 +355,8 @@ namespace Contra
                         }
                         else if (!Directory.Exists(tincpath + @"\contravpn"))
                         {
-                            MessageBox.Show("To receive an invite key, mention @tet on Discord and request one.");
-                            tinc.Start();
+                            MessageBox.Show("You can request an invite key on our Discord's #contravpn channel.");
+                            InvitePanel.Show(); //tinc.Start();
                             Properties.Settings.Default.TincFound = true;
                             Properties.Settings.Default.Save();
                         }
@@ -612,6 +613,33 @@ namespace Contra
             buttonVPNdebuglog.BackgroundImage = (System.Drawing.Image)(Properties.Resources._button_sm_highlight);
             buttonVPNdebuglog.ForeColor = SystemColors.ButtonHighlight;
             buttonVPNdebuglog.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+        }
+
+        private void buttonVPNinvclose_Click(object sender, EventArgs e)
+        {
+            InvitePanel.Visible = false;
+        }
+
+       // string InviteInput;
+
+        private void buttonVPNinvOK_Click(object sender, EventArgs e)
+        {
+            Process tinc = new Process();
+            tinc.StartInfo.Arguments = "join" + invkeytextBox.Text;
+            if (invkeytextBox.Text.StartsWith("contra.nsupdate.info"))
+            {
+                tinc.StartInfo.FileName = "tinc.exe";
+                GetTincInstalledPath().Replace("\"", "");
+                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(GetTincInstalledPath() + @"\");
+                tinc.Start();
+            }
+            else MessageBox.Show("Invalid input.");
+        }
+
+        private void invkeytextBox_TextChanged(object sender, EventArgs e)
+        {
+            buttonVPNinvOK.Enabled = true;
+         //   string InviteInput = invkeytextBox.Text;
         }
     }
 }

@@ -117,214 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="EnglishLanguage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>19, 47</value>
-  </metadata>
-  <metadata name="Русский.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>947, 17</value>
-  </metadata>
-  <metadata name="VoicesOriginalToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="VoicesLocalizedToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>188, 17</value>
-  </metadata>
-  <metadata name="QSToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>366, 17</value>
-  </metadata>
-  <metadata name="NewMusicToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>625, 17</value>
-  </metadata>
-  <metadata name="StandardMusicToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>774, 17</value>
-  </metadata>
-  <metadata name="WindowedToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>474, 17</value>
-  </metadata>
-  <metadata name="FogEffects.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1310, 17</value>
-  </metadata>
-  <metadata name="PortraitsDefault.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1043, 17</value>
-  </metadata>
-  <metadata name="PortraitsGoofy.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1180, 17</value>
-  </metadata>
-  <metadata name="UPnPToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>158, 48</value>
-  </metadata>
-  <metadata name="AutoConnectToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>255, 48</value>
-  </metadata>
+  <data name="buttonVPNstart.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonChat.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;MStandard.Parent" xml:space="preserve">
+    <value>musicpanel</value>
+  </data>
+  <data name="GoofyPics.ToolTip" xml:space="preserve">
+    <value>Use funny general portraits.</value>
+  </data>
+  <data name="&gt;&gt;buttonChat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="musicpanel.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvOK.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GoofyPics.ToolTip1" xml:space="preserve">
+    <value>Use funny general portraits.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="VPNMoreButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        YwYUAAAAAElFTkSuQmCC
-</value>
+  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 93</value>
+  </data>
+  <data name="MStandard.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;DefaultPics.Name" xml:space="preserve">
+    <value>DefaultPics</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNinvclose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VoicesLocalizedToolTip.Name" xml:space="preserve">
+    <value>VoicesLocalizedToolTip</value>
   </data>
   <data name="buttonVPNstart.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -810,9 +642,823 @@
         X8Rj7PB8ttdzH1y0F3yM7Zn76QGX8zH+L0Q89/8B5j5IfCYLncwAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>78</value>
-  </metadata>
+  <data name="&gt;&gt;PortraitsGoofy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="voicespanel.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;websitebutton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;invkeytextBox.Name" xml:space="preserve">
+    <value>invkeytextBox</value>
+  </data>
+  <data name="MStandard.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button6.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="panel1.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioRU.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="MStandard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 22</value>
+  </data>
+  <data name="websitebutton.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="portraitspanel.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;FogCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="helpbutton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 93</value>
+  </data>
+  <data name="&gt;&gt;AutoConnectToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="languagepanel.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonChat.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNstart.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 20pt</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="RadioOrigQuotes.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="MNew.Text" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="FogCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MNew.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="voicespanel.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="voicespanel.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="voicespanel.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label1.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioRU.ToolTip3" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="musicpanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button3.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FogCheckBox.ToolTip1" xml:space="preserve">
+    <value>Toggle fog (depth of field) effects on/off.</value>
+  </data>
+  <data name="panel1.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="QSCheckBox.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvclose.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button2.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;RadioRU.Name" xml:space="preserve">
+    <value>RadioRU</value>
+  </data>
+  <data name="button17.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="QSCheckBox.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button3.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GoofyPics.ToolTip12" xml:space="preserve">
+    <value>Use funny general portraits.</value>
+  </data>
+  <data name="&gt;&gt;GoofyPics.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;MNew.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MStandard.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button2.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;VPNMoreButton.Name" xml:space="preserve">
+    <value>VPNMoreButton</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 18</value>
+  </data>
+  <data name="helpbutton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>645, 260</value>
+  </data>
+  <data name="&gt;&gt;EnglishLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button3.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioRU.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 22</value>
+  </data>
+  <data name="button3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="$this.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="QSCheckBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="VPNMoreButton.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;RadioEN.Parent" xml:space="preserve">
+    <value>languagepanel</value>
+  </data>
+  <data name="label1.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button18.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioOrigQuotes.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button6.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvOK.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonChat.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="helpbutton.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GoofyPics.Text" xml:space="preserve">
+    <value>Goofy</value>
+  </data>
+  <data name="$this.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VPNMoreButton.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioOrigQuotes.ToolTip1" xml:space="preserve">
+    <value>Each faction's units will speak their native language.</value>
+  </data>
+  <data name="button6.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="musicpanel.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 93</value>
+  </data>
+  <data name="helpbutton.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button5.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;FogCheckBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="button5.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button5.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button5.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button6.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="helpbutton.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultPics.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvclose.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button5.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="invkeytextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 41</value>
+  </data>
+  <data name="&gt;&gt;Русский.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label1.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="voicespanel.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Version 009 Final</value>
+  </data>
+  <data name="buttonVPNstart.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="voicespanel.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="QSCheckBox.ToolTip" xml:space="preserve">
+    <value>Disables intro and shellmap (game starts up faster).</value>
+  </data>
+  <data name="buttonVPNinvOK.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="$this.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonChat.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VPNMoreButton.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioLocQuotes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="button1.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNstart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 160</value>
+  </data>
+  <data name="button6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 93</value>
+  </data>
+  <data name="&gt;&gt;DefaultPics.Parent" xml:space="preserve">
+    <value>portraitspanel</value>
+  </data>
+  <data name="VPNMoreButton.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RadioEN.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="button17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>701, 48</value>
+  </data>
+  <data name="label1.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioLocQuotes.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WinCheckBox.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="portraitspanel.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioRU.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="FogCheckBox.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FogCheckBox.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FogCheckBox.ToolTip12" xml:space="preserve">
+    <value>Toggle fog (depth of field) effects on/off.</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="WinCheckBox.ToolTip1" xml:space="preserve">
+    <value>Starts Contra in a window instead of full screen.</value>
+  </data>
+  <data name="MNew.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultPics.ToolTip" xml:space="preserve">
+    <value>Use default general portraits.</value>
+  </data>
+  <data name="MNew.ToolTip1" xml:space="preserve">
+    <value>Use new soundtracks.</value>
+  </data>
+  <data name="RadioRU.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 33</value>
+  </data>
+  <data name="MNew.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvclose.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MNew.ToolTip5" xml:space="preserve">
+    <value>Use new soundtracks.</value>
+  </data>
+  <data name="MNew.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioRU.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MNew.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MNew.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MNew.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;WinCheckBox.Name" xml:space="preserve">
+    <value>WinCheckBox</value>
+  </data>
+  <data name="panel1.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioLocQuotes.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GoofyPics.ToolTip2" xml:space="preserve">
+    <value>Use funny general portraits.</value>
+  </data>
+  <data name="RadioRU.Text" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="&gt;&gt;RadioLocQuotes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonChat.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button6.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonChat.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="portraitspanel.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SF Willamette, 24.75pt</value>
+  </data>
+  <data name="&gt;&gt;helpbutton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VPNMoreButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 20pt</value>
+  </data>
+  <data name="label1.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonVPNinvOK.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="RadioRU.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button6.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;RadioRU.Parent" xml:space="preserve">
+    <value>languagepanel</value>
+  </data>
+  <data name="FogCheckBox.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonChat.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonVPNstart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="websitebutton.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;PortraitsDefault.Name" xml:space="preserve">
+    <value>PortraitsDefault</value>
+  </data>
+  <data name="buttonVPNstart.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button6.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioEN.ToolTip1" xml:space="preserve">
+    <value>English language</value>
+  </data>
+  <data name="invkeytextBox.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNstart.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="QSCheckBox.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="helpbutton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VPNMoreButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 47</value>
+  </data>
+  <data name="&gt;&gt;MNew.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="musicpanel.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;languagepanel.Name" xml:space="preserve">
+    <value>languagepanel</value>
+  </data>
+  <data name="helpbutton.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioEN.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="DefaultPics.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;WinCheckBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button5.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="portraitspanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>441, 306</value>
+  </data>
+  <data name="MNew.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioLocQuotes.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="helpbutton.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GoofyPics.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;RadioEN.Name" xml:space="preserve">
+    <value>RadioEN</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNinvclose.Name" xml:space="preserve">
+    <value>buttonVPNinvclose</value>
+  </data>
+  <data name="MStandard.ToolTip1" xml:space="preserve">
+    <value>Use standard Zero Hour soundtracks.</value>
+  </data>
+  <data name="button5.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="voicespanel.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="portraitspanel.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;portraitspanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DefaultPics.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonVPNinvclose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="DefaultPics.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="buttonVPNinvOK.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button3.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNstart.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNstart.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="websitebutton.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;portraitspanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;VPNMoreButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="voicespanel.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="invkeytextBox.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;musicpanel.Name" xml:space="preserve">
+    <value>musicpanel</value>
+  </data>
+  <data name="QSCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 430</value>
+  </data>
+  <data name="&gt;&gt;QSCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonChat.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="musicpanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>275, 306</value>
+  </data>
+  <data name="portraitspanel.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button1.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvclose.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNstart.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;MStandard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button1.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button1.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GoofyPics.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="portraitspanel.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="button2.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;GoofyPics.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button18.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioEN.Text" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="RadioLocQuotes.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button3.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button5.Name" xml:space="preserve">
+    <value>button5</value>
+  </data>
+  <data name="panel1.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioLocQuotes.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;websitebutton.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="button5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 93</value>
+  </data>
+  <data name="buttonVPNinvclose.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="websitebutton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 16pt</value>
+  </data>
+  <data name="buttonVPNinvOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="button3.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="GoofyPics.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioOrigQuotes.Text" xml:space="preserve">
+    <value>Native</value>
+  </data>
+  <data name="button17.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;AutoConnectToolTip.Name" xml:space="preserve">
+    <value>AutoConnectToolTip</value>
+  </data>
+  <data name="buttonVPNinvOK.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioOrigQuotes.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button6.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioEN.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="languagepanel.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="helpbutton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="musicpanel.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="RadioOrigQuotes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="invkeytextBox.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="invkeytextBox.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WinCheckBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="button6.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioEN.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;RadioOrigQuotes.Name" xml:space="preserve">
+    <value>RadioOrigQuotes</value>
+  </data>
+  <data name="buttonVPNstart.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MStandard.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonVPNstart.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button5.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvclose.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="musicpanel.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;languagepanel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="MNew.ToolTip12" xml:space="preserve">
+    <value>Use new soundtracks.</value>
+  </data>
+  <data name="buttonVPNstart.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultPics.ToolTip2" xml:space="preserve">
+    <value>Use default general portraits.</value>
+  </data>
+  <data name="GoofyPics.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button17.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MStandard.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 16pt</value>
+  </data>
+  <data name="voicespanel.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;voicespanel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;VPNMoreButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;RadioLocQuotes.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonChat.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MStandard.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button18.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAgEAyADIAAD/7gAOQWRvYmUAZAAAAAAB/+EWlEV4aWYAAE1NACoAAAAIAAcBEgAD
@@ -6341,6 +6987,888 @@
         sMn0A93jj06ZonAHUFixJApQTITX2D8eP//Z
 </value>
   </data>
+  <data name="button1.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 20pt</value>
+  </data>
+  <data name="DefaultPics.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="FogCheckBox.ToolTip" xml:space="preserve">
+    <value>Toggle fog (depth of field) effects on/off.</value>
+  </data>
+  <data name="button3.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="portraitspanel.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="invkeytextBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="buttonVPNinvclose.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvOK.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 127</value>
+  </data>
+  <data name="languagepanel.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvOK.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;FogEffects.Name" xml:space="preserve">
+    <value>FogEffects</value>
+  </data>
+  <data name="button2.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button2.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button18.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="websitebutton.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;MNew.Name" xml:space="preserve">
+    <value>MNew</value>
+  </data>
+  <data name="websitebutton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 460</value>
+  </data>
+  <data name="RadioOrigQuotes.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button3.Name" xml:space="preserve">
+    <value>button3</value>
+  </data>
+  <data name="buttonChat.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="voicespanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 61</value>
+  </data>
+  <data name="WinCheckBox.ToolTip2" xml:space="preserve">
+    <value>Starts Contra in a window instead of full screen.</value>
+  </data>
+  <data name="VPNMoreButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 136</value>
+  </data>
+  <data name="&gt;&gt;RadioLocQuotes.Parent" xml:space="preserve">
+    <value>voicespanel</value>
+  </data>
+  <data name="&gt;&gt;EnglishLanguage.Name" xml:space="preserve">
+    <value>EnglishLanguage</value>
+  </data>
+  <data name="button2.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WinCheckBox.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WinCheckBox.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="languagepanel.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WinCheckBox.ToolTip12" xml:space="preserve">
+    <value>Starts Contra in a window instead of full screen.</value>
+  </data>
+  <data name="RadioOrigQuotes.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button18.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="RadioOrigQuotes.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioOrigQuotes.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GoofyPics.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button17.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button18.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;Русский.Name" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="button17.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button17.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button17.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button17.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WinCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="button17.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button17.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button17.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button17.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button17.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="MStandard.Text" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="button3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonVPNinvclose.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="invkeytextBox.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioLocQuotes.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;FogCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button1.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonVPNinvOK.Name" xml:space="preserve">
+    <value>buttonVPNinvOK</value>
+  </data>
+  <data name="panel1.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="websitebutton.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;RadioRU.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RadioEN.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;RadioLocQuotes.Name" xml:space="preserve">
+    <value>RadioLocQuotes</value>
+  </data>
+  <data name="button17.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="button18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>732, 48</value>
+  </data>
+  <data name="&gt;&gt;languagepanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;websitebutton.Name" xml:space="preserve">
+    <value>websitebutton</value>
+  </data>
+  <data name="QSCheckBox.ToolTip12" xml:space="preserve">
+    <value>Disables intro and shellmap (game starts up faster).</value>
+  </data>
+  <data name="buttonVPNstart.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="GoofyPics.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 33</value>
+  </data>
+  <data name="GoofyPics.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="languagepanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 61</value>
+  </data>
+  <data name="helpbutton.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WinCheckBox.ToolTip" xml:space="preserve">
+    <value>Starts Contra in a window instead of full screen.</value>
+  </data>
+  <data name="RadioEN.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioEN.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="portraitspanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 61</value>
+  </data>
+  <data name="invkeytextBox.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonVPNinvOK.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="buttonVPNinvclose.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;QSCheckBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="RadioRU.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioRU.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioRU.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultPics.ToolTip4" xml:space="preserve">
+    <value>Use default general portraits.</value>
+  </data>
+  <data name="buttonVPNstart.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MNew.ToolTip" xml:space="preserve">
+    <value>Use new soundtracks.</value>
+  </data>
+  <data name="button5.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 360</value>
+  </data>
+  <data name="button18.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="invkeytextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 20</value>
+  </data>
+  <data name="button18.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button18.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button18.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button18.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button18.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button18.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button18.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VPNMoreButton.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button18.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MNew.ToolTip2" xml:space="preserve">
+    <value>Use new soundtracks.</value>
+  </data>
+  <data name="voicespanel.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="helpbutton.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioOrigQuotes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="GoofyPics.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioEN.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioEN.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioEN.ToolTip11" xml:space="preserve">
+    <value>English language</value>
+  </data>
+  <data name="websitebutton.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioEN.ToolTip" xml:space="preserve">
+    <value>English language</value>
+  </data>
+  <data name="DefaultPics.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;QSCheckBox.Name" xml:space="preserve">
+    <value>QSCheckBox</value>
+  </data>
+  <data name="websitebutton.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VPNMoreButton.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="invkeytextBox.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonChat.Name" xml:space="preserve">
+    <value>buttonChat</value>
+  </data>
+  <data name="portraitspanel.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WinCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 22</value>
+  </data>
+  <data name="&gt;&gt;button5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button2.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvclose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>134, 88</value>
+  </data>
+  <data name="RadioOrigQuotes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;StandardMusicToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonChat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 20pt</value>
+  </data>
+  <data name="WinCheckBox.ToolTip8" xml:space="preserve">
+    <value>Starts Contra in a window instead of full screen.</value>
+  </data>
+  <data name="MNew.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="button2.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FogCheckBox.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="QSCheckBox.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonChat.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;UPnPToolTip.Name" xml:space="preserve">
+    <value>UPnPToolTip</value>
+  </data>
+  <data name="QSCheckBox.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;WinCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button18.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button18.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="$this.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GoofyPics.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button3.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioOrigQuotes.ToolTip9" xml:space="preserve">
+    <value>Each faction's units will speak their native language.</value>
+  </data>
+  <data name="languagepanel.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="musicpanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 61</value>
+  </data>
+  <data name="button1.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioEN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 22</value>
+  </data>
+  <data name="QSCheckBox.Text" xml:space="preserve">
+    <value>QuickStart</value>
+  </data>
+  <data name="GoofyPics.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;musicpanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label1.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="QSCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="websitebutton.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button5.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="buttonVPNinvOK.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="invkeytextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="invkeytextBox.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioOrigQuotes.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="RadioEN.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MStandard.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;StandardMusicToolTip.Name" xml:space="preserve">
+    <value>StandardMusicToolTip</value>
+  </data>
+  <data name="musicpanel.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;WinCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MNew.Parent" xml:space="preserve">
+    <value>musicpanel</value>
+  </data>
+  <data name="button6.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioEN.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="languagepanel.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="helpbutton.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button5.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;RadioOrigQuotes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 600</value>
+  </data>
+  <data name="&gt;&gt;WindowedToolTip.Name" xml:space="preserve">
+    <value>WindowedToolTip</value>
+  </data>
+  <data name="DefaultPics.ToolTip1" xml:space="preserve">
+    <value>Use default general portraits.</value>
+  </data>
+  <data name="&gt;&gt;voicespanel.Name" xml:space="preserve">
+    <value>voicespanel</value>
+  </data>
+  <data name="languagepanel.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RadioEN.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;languagepanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button5.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="musicpanel.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button1.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button1.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultPics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 22</value>
+  </data>
+  <data name="&gt;&gt;QSCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonChat.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="buttonVPNstart.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 148</value>
+  </data>
+  <data name="VPNMoreButton.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonVPNinvOK.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FogCheckBox.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;invkeytextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="websitebutton.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;GoofyPics.Parent" xml:space="preserve">
+    <value>portraitspanel</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNinvOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;invkeytextBox.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="WinCheckBox.Text" xml:space="preserve">
+    <value>Windowed</value>
+  </data>
+  <data name="button5.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="voicespanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="invkeytextBox.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;QSToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindowedToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="VPNMoreButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;PortraitsGoofy.Name" xml:space="preserve">
+    <value>PortraitsGoofy</value>
+  </data>
+  <data name="DefaultPics.ToolTip12" xml:space="preserve">
+    <value>Use default general portraits.</value>
+  </data>
+  <data name="WinCheckBox.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultPics.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;PortraitsDefault.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="portraitspanel.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="musicpanel.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button5.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="RadioRU.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button3.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button3.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button3.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="languagepanel.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvclose.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="WinCheckBox.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;NewMusicToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="languagepanel.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;VPNMoreButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;musicpanel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="RadioRU.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonChat.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button17.Name" xml:space="preserve">
+    <value>button17</value>
+  </data>
+  <data name="websitebutton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioLocQuotes.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="portraitspanel.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;RadioOrigQuotes.Parent" xml:space="preserve">
+    <value>voicespanel</value>
+  </data>
+  <data name="RadioLocQuotes.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioLocQuotes.ToolTip" xml:space="preserve">
+    <value>Units of all three factions will speak English.</value>
+  </data>
+  <data name="QSCheckBox.ToolTip7" xml:space="preserve">
+    <value>Disables intro and shellmap (game starts up faster).</value>
+  </data>
+  <data name="RadioLocQuotes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;button6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="FogCheckBox.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="QSCheckBox.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;voicespanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button17.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;UPnPToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label1.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonVPNinvOK.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button6.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button6.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button1.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultPics.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 7</value>
+  </data>
+  <data name="&gt;&gt;button17.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>645, 460</value>
+  </data>
+  <data name="$this.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GoofyPics.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MStandard.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MNew.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioEN.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button18.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNinvclose.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="panel1.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioOrigQuotes.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 600</value>
+  </data>
+  <data name="&gt;&gt;button17.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="RadioEN.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;MStandard.Name" xml:space="preserve">
+    <value>MStandard</value>
+  </data>
+  <data name="buttonVPNinvOK.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MStandard.ToolTip2" xml:space="preserve">
+    <value>Use standard Zero Hour soundtracks.</value>
+  </data>
+  <data name="musicpanel.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultPics.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="languagepanel.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="musicpanel.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="buttonVPNstart.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="MStandard.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultPics.Text" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="RadioLocQuotes.Text" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="helpbutton.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="voicespanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>275, 212</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GoofyPics.Name" xml:space="preserve">
+    <value>GoofyPics</value>
+  </data>
+  <data name="helpbutton.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="FogCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 22</value>
+  </data>
+  <data name="buttonVPNinvclose.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="voicespanel.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MStandard.ToolTip" xml:space="preserve">
+    <value>Use standard Zero Hour soundtracks.</value>
+  </data>
+  <data name="QSCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 22</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAAAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA
@@ -6417,4 +7945,734 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
   </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>664, 556</value>
+  </data>
+  <data name="&gt;&gt;FogCheckBox.Name" xml:space="preserve">
+    <value>FogCheckBox</value>
+  </data>
+  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SF Willamette, 24.75pt</value>
+  </data>
+  <data name="voicespanel.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;FogEffects.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RadioRU.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="websitebutton.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="button6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>590, 360</value>
+  </data>
+  <data name="RadioEN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 7</value>
+  </data>
+  <data name="$this.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioRU.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="VPNMoreButton.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="invkeytextBox.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvOK.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="QSCheckBox.ToolTip1" xml:space="preserve">
+    <value>Disables intro and shellmap (game starts up faster).</value>
+  </data>
+  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="GoofyPics.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="RadioEN.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonChat.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button6.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNinvclose.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="languagepanel.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="&gt;&gt;portraitspanel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label1.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 432</value>
+  </data>
+  <data name="RadioRU.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button3.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WinCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 411</value>
+  </data>
+  <data name="MStandard.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WinCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNstart.Name" xml:space="preserve">
+    <value>buttonVPNstart</value>
+  </data>
+  <data name="WinCheckBox.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="$this.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 93</value>
+  </data>
+  <data name="button2.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 20pt</value>
+  </data>
+  <data name="&gt;&gt;button6.Name" xml:space="preserve">
+    <value>button6</value>
+  </data>
+  <data name="languagepanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>444, 212</value>
+  </data>
+  <data name="button3.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;musicpanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;helpbutton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="RadioLocQuotes.ToolTip1" xml:space="preserve">
+    <value>Units of all three factions will speak English.</value>
+  </data>
+  <data name="button1.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button2.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioLocQuotes.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;helpbutton.Name" xml:space="preserve">
+    <value>helpbutton</value>
+  </data>
+  <data name="MNew.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 7</value>
+  </data>
+  <data name="&gt;&gt;MStandard.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;RadioEN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FogCheckBox.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;RadioOrigQuotes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="websitebutton.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="portraitspanel.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;QSToolTip.Name" xml:space="preserve">
+    <value>QSToolTip</value>
+  </data>
+  <data name="buttonVPNinvclose.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="languagepanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button17.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="VPNMoreButton.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="buttonVPNinvOK.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 600</value>
+  </data>
+  <data name="buttonVPNstart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 93</value>
+  </data>
+  <data name="RadioRU.ToolTip" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="RadioOrigQuotes.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MStandard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="buttonChat.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="websitebutton.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GoofyPics.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;portraitspanel.Name" xml:space="preserve">
+    <value>portraitspanel</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="button6.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MNew.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="$this.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button18.Name" xml:space="preserve">
+    <value>button18</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="FogCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="FogCheckBox.Text" xml:space="preserve">
+    <value>Fog Effects</value>
+  </data>
+  <data name="&gt;&gt;VoicesLocalizedToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="musicpanel.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button1.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VPNMoreButton.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FogCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>435, 421</value>
+  </data>
+  <data name="helpbutton.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="websitebutton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="helpbutton.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="VPNMoreButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        YwYUAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="RadioLocQuotes.ToolTip12" xml:space="preserve">
+    <value>Units of all three factions will speak English.</value>
+  </data>
+  <data name="FogCheckBox.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="languagepanel.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;NewMusicToolTip.Name" xml:space="preserve">
+    <value>NewMusicToolTip</value>
+  </data>
+  <data name="WinCheckBox.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VPNMoreButton.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;voicespanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="MStandard.ToolTip12" xml:space="preserve">
+    <value>Use standard Zero Hour soundtracks.</value>
+  </data>
+  <data name="portraitspanel.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="helpbutton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SF Willamette, 26.25pt</value>
+  </data>
+  <data name="$this.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;websitebutton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="websitebutton.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;VoicesOriginalToolTip.Name" xml:space="preserve">
+    <value>VoicesOriginalToolTip</value>
+  </data>
+  <data name="portraitspanel.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNstart.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MStandard.ToolTip6" xml:space="preserve">
+    <value>Use standard Zero Hour soundtracks.</value>
+  </data>
+  <data name="RadioOrigQuotes.ToolTip" xml:space="preserve">
+    <value>Each faction's units will speak their native language.</value>
+  </data>
+  <data name="musicpanel.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GoofyPics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 22</value>
+  </data>
+  <data name="invkeytextBox.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="musicpanel.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvOK.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonVPNinvclose.ToolTip8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="languagepanel.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="voicespanel.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;helpbutton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="RadioRU.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="QSCheckBox.ToolTip2" xml:space="preserve">
+    <value>Disables intro and shellmap (game starts up faster).</value>
+  </data>
+  <data name="buttonChat.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button2.ToolTip3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioRU.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultPics.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNstart.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;VoicesOriginalToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultPics.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioRU.ToolTip1" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="&gt;&gt;DefaultPics.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="portraitspanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button2.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FogCheckBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="buttonChat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 93</value>
+  </data>
+  <data name="WinCheckBox.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioLocQuotes.ToolTip5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioLocQuotes.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="QSCheckBox.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MStandard.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonChat.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="RadioLocQuotes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 22</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Contra Launcher</value>
+  </data>
+  <data name="$this.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioOrigQuotes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 22</value>
+  </data>
+  <data name="FogCheckBox.ToolTip4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MNew.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 22</value>
+  </data>
+  <data name="VPNMoreButton.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvclose.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioLocQuotes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 7</value>
+  </data>
+  <data name="buttonChat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 260</value>
+  </data>
+  <data name="DefaultPics.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>778, 12</value>
+  </data>
+  <data name="panel1.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNstart.ToolTip2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;invkeytextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="VPNMoreButton.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvclose.ToolTip9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="websitebutton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 93</value>
+  </data>
+  <data name="QSCheckBox.ToolTip10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioOrigQuotes.ToolTip7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="QSCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="invkeytextBox.ToolTip11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>53, 88</value>
+  </data>
+  <data name="helpbutton.ToolTip12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VPNMoreButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="DefaultPics.ToolTip6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FogCheckBox.ToolTip2" xml:space="preserve">
+    <value>Toggle fog (depth of field) effects on/off.</value>
+  </data>
+  <metadata name="VoicesLocalizedToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>188, 17</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ru</value>
+  </metadata>
+  <metadata name="Русский.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>947, 17</value>
+  </metadata>
+  <metadata name="QSToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>366, 17</value>
+  </metadata>
+  <metadata name="PortraitsGoofy.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1180, 17</value>
+  </metadata>
+  <metadata name="WindowedToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>474, 17</value>
+  </metadata>
+  <metadata name="UPnPToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>158, 48</value>
+  </metadata>
+  <metadata name="VoicesOriginalToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="StandardMusicToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>774, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>78</value>
+  </metadata>
+  <metadata name="AutoConnectToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>255, 48</value>
+  </metadata>
+  <metadata name="EnglishLanguage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>19, 47</value>
+  </metadata>
+  <metadata name="FogEffects.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1310, 17</value>
+  </metadata>
+  <metadata name="PortraitsDefault.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1043, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="NewMusicToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>625, 17</value>
+  </metadata>
 </root>

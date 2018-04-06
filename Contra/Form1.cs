@@ -654,7 +654,19 @@ namespace Contra
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
+            resources.ApplyResources(this, "$this");
+            applyResourcesEN(resources, this.Controls);
+        }
 
+        private void applyResourcesEN(ComponentResourceManager resources, Control.ControlCollection ctls)
+        {
+            foreach (Control ctl in ctls)
+            {
+                resources.ApplyResources(ctl, ctl.Name);
+                applyResourcesEN(resources, ctl.Controls);
+            }
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
@@ -664,7 +676,19 @@ namespace Contra
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
+            resources.ApplyResources(this, "$this");
+            applyResourcesRU(resources, this.Controls);
+        }
 
+        private void applyResourcesRU(ComponentResourceManager resources, Control.ControlCollection ctls)
+        {
+            foreach (Control ctl in ctls)
+            {
+                resources.ApplyResources(ctl, ctl.Name);
+                applyResourcesRU(resources, ctl.Controls);
+            }
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
@@ -1067,7 +1091,7 @@ namespace Contra
         {
             if (Properties.Settings.Default.FirstRun)
             {
-                MessageBox.Show("Welcome to Contra 009 Final! Since this is your first time running this launcher, we would like to let you know that you have a new opportunity to play Contra online! Check the buttons on the top left for more info. We also recommend you to join our Discord community.");
+                MessageBox.Show("Welcome to Contra 009 Final! Since this is your first time running this launcher, we would like to let you know that you have a new opportunity to play Contra online via ContraVPN! We highly recommend you to join our Discord community.");
                 Properties.Settings.Default.FirstRun = false;
                 Properties.Settings.Default.Save();
             }
