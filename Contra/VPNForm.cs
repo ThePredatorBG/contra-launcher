@@ -625,13 +625,22 @@ namespace Contra
         private void buttonVPNinvOK_Click(object sender, EventArgs e)
         {
             Process tinc = new Process();
-            tinc.StartInfo.Arguments = "join " + invkeytextBox.Text;
+            tinc.StartInfo.Arguments = "-n contravpn join " + invkeytextBox.Text;
             if (invkeytextBox.Text.StartsWith("contra.nsupdate.info"))
             {
                 tinc.StartInfo.FileName = "tinc.exe";
                 GetTincInstalledPath().Replace("\"", "");
                 tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(GetTincInstalledPath() + @"\");
-                tinc.Start();
+                if (File.Exists(GetTincInstalledPath() + @"\tinc.exe"))
+                {
+                    tinc.Start();
+                    InvitePanel.Visible = false;
+                }
+                else MessageBox.Show("Tinc directory not found.", "Error");
+
+                //if ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("%ERRORLEVEL%") == false))
+                //{
+                //}
             }
             else MessageBox.Show("Invalid input.");
         }

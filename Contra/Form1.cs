@@ -1019,12 +1019,13 @@ namespace Contra
 
             try
             {
-                if (File.Exists("tincd.exe")) GetTincInstalledPath_Registry_StartVPN();
-                else GetTincInstalledPath_User_StartVPN();
+                GetTincInstalledPath_Registry_StartVPN();
+                //if (File.Exists("tincd.exe")) GetTincInstalledPath_Registry_StartVPN();
+                //else GetTincInstalledPath_User_StartVPN();
             }
             catch (Exception)
             {
-            //    GetTincInstalledPath_User_StartVPN();
+                GetTincInstalledPath_User_StartVPN();
             }
 
         }
