@@ -265,7 +265,7 @@ namespace Contra
             {
                 MessageBox.Show("Found existing \"contravpn\" folder, looks like you have already been invited.");
             }
-            else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
+            else// if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
                 MessageBox.Show("You can request an invite key on our Discord's #contravpn channel.");
 //                Process tinc = new Process();
@@ -290,7 +290,7 @@ namespace Contra
             {
                 tinc.Start();
             }
-            else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
+            else// if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
                 MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
                 tinc.Start();
@@ -309,7 +309,7 @@ namespace Contra
             {
                 tinc.Start();
             }
-            else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
+            else// if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
                 MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
                 tinc.Start();
@@ -331,7 +331,7 @@ namespace Contra
         public void GetTincInstalledPath_User_EnterInvKey()
         {
             TincFound = Properties.Settings.Default.TincFound;
-            var TincInstalledPath = string.Empty;
+            //var TincInstalledPath = string.Empty;
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             if (TincFound == false)
             {
@@ -340,13 +340,13 @@ namespace Contra
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
                     var tincpath = fbd.SelectedPath;
-                    TincInstalledPath = tincpath;
+                    //TincInstalledPath = tincpath;
                     Properties.Settings.Default.tincpath = fbd.SelectedPath;
                     Properties.Settings.Default.Save();
                     Process tinc = new Process();
                     tinc.StartInfo.Arguments = "join";
                     tinc.StartInfo.FileName = "tinc.exe";
-                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath + @"\tinc.exe");
+                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tinc.exe");
                     if (File.Exists(tincpath + @"\tinc.exe"))
                     {
                         if (Directory.Exists(tincpath + @"\contravpn"))
@@ -401,7 +401,7 @@ namespace Contra
         public void GetTincInstalledPath_User_OpenConsole()
         {
             TincFound = Properties.Settings.Default.TincFound;
-            var TincInstalledPath = string.Empty;
+            //var TincInstalledPath = string.Empty;
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             if (TincFound == false)
             {
@@ -410,13 +410,13 @@ namespace Contra
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
                     var tincpath = fbd.SelectedPath;
-                    TincInstalledPath = tincpath;
+                    //TincInstalledPath = tincpath;
                     Properties.Settings.Default.tincpath = fbd.SelectedPath;
                     Properties.Settings.Default.Save();
                     Process tinc = new Process();
                     tinc.StartInfo.Arguments = "-n contravpn";
                     tinc.StartInfo.FileName = "tinc.exe";
-                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath + @"\tinc.exe");
+                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tinc.exe");
                     if (File.Exists(tincpath + @"\tinc.exe"))
                     {
                         if (Directory.Exists(tincpath + @"\contravpn"))
@@ -475,7 +475,7 @@ namespace Contra
         public void GetTincInstalledPath_User_OpenDebugLog()
         {
             TincFound = Properties.Settings.Default.TincFound;
-            var TincInstalledPath = string.Empty;
+            //var TincInstalledPath = string.Empty;
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             if (TincFound == false)
             {
@@ -484,13 +484,13 @@ namespace Contra
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
                     var tincpath = fbd.SelectedPath;
-                    TincInstalledPath = tincpath;
+                    //TincInstalledPath = tincpath;
                     Properties.Settings.Default.tincpath = fbd.SelectedPath;
                     Properties.Settings.Default.Save();
                     Process tinc = new Process();
                     tinc.StartInfo.Arguments = "-n contravpn log 3";
                     tinc.StartInfo.FileName = "tinc.exe";
-                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath + @"\tinc.exe");
+                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tinc.exe");
                     if (File.Exists(tincpath + @"\tinc.exe"))
                     {
                         if (Directory.Exists(tincpath + @"\contravpn"))
@@ -628,22 +628,57 @@ namespace Contra
             tinc.StartInfo.Arguments = "-n contravpn join " + invkeytextBox.Text;
             if (invkeytextBox.Text.StartsWith("contra.nsupdate.info"))
             {
-                tinc.StartInfo.FileName = "tinc.exe";
+                tinc.StartInfo.FileName = GetTincInstalledPath() + @"\" + "tinc.exe";
+                tinc.StartInfo.UseShellExecute = false;
+                tinc.StartInfo.RedirectStandardOutput = true;
+                tinc.StartInfo.RedirectStandardError = true;
+                tinc.StartInfo.CreateNoWindow = true;
                 GetTincInstalledPath().Replace("\"", "");
-                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(GetTincInstalledPath() + @"\");
+                //tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(GetTincInstalledPath() + @"\");
+
                 if (File.Exists(GetTincInstalledPath() + @"\tinc.exe"))
                 {
                     tinc.Start();
+                    string s = tinc.StandardError.ReadToEnd();
+                    if (s.Contains("accepted") == true)
+                    {
+                        MessageBox.Show("Invitation successfully accepted!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invitation cancelled.\nMake sure this invite key is valid, not already used, or has not expired.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (!File.Exists(GetTincInstalledPath() + @"\tinc.conf"))
+                        {
+                            try
+                            {
+                                Directory.Delete(GetTincInstalledPath() + @"\" + "contravpn");
+                            }
+                            catch
+                            {
+                                
+                            }
+                        }
+                    }
                     InvitePanel.Visible = false;
                 }
                 else MessageBox.Show("Tinc directory not found.", "Error");
 
                 //if ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("%ERRORLEVEL%") == false))
                 //{
+                //yourStr.Contains("accepted") == true
                 //}
             }
             else MessageBox.Show("Invalid input.");
         }
+
+        //void OnOutputDataReceived(object sender, DataReceivedEventArgs e)
+        //{
+        //    Process tinc = new Process();
+        //    if (output.Contains("accepted") == true)
+        //    {
+        //        MessageBox.Show("works");
+        //    }
+        //}
 
         private void invkeytextBox_TextChanged(object sender, EventArgs e)
         {

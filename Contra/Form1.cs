@@ -924,17 +924,22 @@ namespace Contra
             {
                 tinc.Start();
             }
+            else if (!Directory.Exists(GetTincInstalledPath()))
+            {
+                GetTincInstalledPath_User_StartVPN();
+            }
             else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
                 MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder was not found. Make sure you have entered your invitation link first.", "Error");
-                tinc.Start();
+                //tinc.Start();
+                //GetTincInstalledPath_User_StartVPN();
             }
         }
 
         public void GetTincInstalledPath_User_StartVPN()
         {
             TincFound = Properties.Settings.Default.TincFound;
-            var TincInstalledPath = string.Empty;
+            //var TincInstalledPath = string.Empty;
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             if (TincFound == false)
             {
@@ -943,13 +948,13 @@ namespace Contra
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
                     var tincpath = fbd.SelectedPath;
-                    TincInstalledPath = tincpath;
+                    //TincInstalledPath = tincpath;
                     Properties.Settings.Default.tincpath = fbd.SelectedPath;
                     Properties.Settings.Default.Save();
                     Process tinc = new Process();
                     tinc.StartInfo.Arguments = "-n contravpn -D";
                     tinc.StartInfo.FileName = "tincd.exe";
-                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(TincInstalledPath + @"\tincd.exe");
+                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tincd.exe");
                     if (File.Exists(tincpath + @"\tincd.exe"))
                     {
                         if (Directory.Exists(tincpath + @"\contravpn"))
@@ -1023,9 +1028,9 @@ namespace Contra
                 //if (File.Exists("tincd.exe")) GetTincInstalledPath_Registry_StartVPN();
                 //else GetTincInstalledPath_User_StartVPN();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                GetTincInstalledPath_User_StartVPN();
+                MessageBox.Show(ex.Message, "Error");
             }
 
         }
