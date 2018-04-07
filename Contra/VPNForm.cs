@@ -625,7 +625,7 @@ namespace Contra
         private void buttonVPNinvOK_Click(object sender, EventArgs e)
         {
             Process tinc = new Process();
-            tinc.StartInfo.Arguments = "join" + invkeytextBox.Text;
+            tinc.StartInfo.Arguments = "join " + invkeytextBox.Text;
             if (invkeytextBox.Text.StartsWith("contra.nsupdate.info"))
             {
                 tinc.StartInfo.FileName = "tinc.exe";
