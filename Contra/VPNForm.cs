@@ -620,8 +620,6 @@ namespace Contra
             InvitePanel.Visible = false;
         }
 
-       // string InviteInput;
-
         private void buttonVPNinvOK_Click(object sender, EventArgs e)
         {
             Process tinc = new Process();
@@ -640,7 +638,8 @@ namespace Contra
                 {
                     tinc.Start();
                     string s = tinc.StandardError.ReadToEnd();
-                    if (s.Contains("accepted") == true)
+                    string s2 = tinc.StandardOutput.ReadToEnd();
+                    if (s.Contains("accepted") || s2.Contains("accepted") == true)
                     {
                         MessageBox.Show("Invitation successfully accepted!");
                     }
@@ -662,28 +661,13 @@ namespace Contra
                     InvitePanel.Visible = false;
                 }
                 else MessageBox.Show("Tinc directory not found.", "Error");
-
-                //if ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("%ERRORLEVEL%") == false))
-                //{
-                //yourStr.Contains("accepted") == true
-                //}
             }
             else MessageBox.Show("Invalid input.");
         }
 
-        //void OnOutputDataReceived(object sender, DataReceivedEventArgs e)
-        //{
-        //    Process tinc = new Process();
-        //    if (output.Contains("accepted") == true)
-        //    {
-        //        MessageBox.Show("works");
-        //    }
-        //}
-
         private void invkeytextBox_TextChanged(object sender, EventArgs e)
         {
             buttonVPNinvOK.Enabled = true;
-         //   string InviteInput = invkeytextBox.Text;
         }
     }
 }

@@ -159,6 +159,9 @@
   <data name="&gt;&gt;RadioEN.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="Русский.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>159, 46</value>
+  </metadata>
   <data name="RadioRU.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -177,9 +180,6 @@
   <data name="RadioRU.Text" xml:space="preserve">
     <value>Russian</value>
   </data>
-  <metadata name="Русский.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>159, 46</value>
-  </metadata>
   <data name="RadioRU.ToolTip" xml:space="preserve">
     <value>Русский</value>
   </data>
@@ -195,6 +195,9 @@
   <data name="&gt;&gt;RadioRU.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="VoicesOriginalToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="RadioOrigQuotes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -213,9 +216,6 @@
   <data name="RadioOrigQuotes.Text" xml:space="preserve">
     <value>Native</value>
   </data>
-  <metadata name="VoicesOriginalToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="RadioOrigQuotes.ToolTip" xml:space="preserve">
     <value>Each faction's units will speak their native language.</value>
   </data>
@@ -231,6 +231,9 @@
   <data name="&gt;&gt;RadioOrigQuotes.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="VoicesLocalizedToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>188, 17</value>
+  </metadata>
   <data name="RadioLocQuotes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -249,9 +252,6 @@
   <data name="RadioLocQuotes.Text" xml:space="preserve">
     <value>English</value>
   </data>
-  <metadata name="VoicesLocalizedToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>188, 17</value>
-  </metadata>
   <data name="RadioLocQuotes.ToolTip" xml:space="preserve">
     <value>Units of all three factions will speak English.</value>
   </data>
@@ -267,6 +267,12 @@
   <data name="&gt;&gt;RadioLocQuotes.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="VoicesOriginalToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="QSToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>366, 17</value>
+  </metadata>
   <data name="QSCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -285,10 +291,10 @@
   <data name="QSCheckBox.Text" xml:space="preserve">
     <value>QuickStart</value>
   </data>
-  <metadata name="QSToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>366, 17</value>
-  </metadata>
   <data name="QSCheckBox.ToolTip" xml:space="preserve">
+    <value>Disables intro and shellmap (game starts up faster).</value>
+  </data>
+  <data name="QSCheckBox.ToolTip1" xml:space="preserve">
     <value>Disables intro and shellmap (game starts up faster).</value>
   </data>
   <data name="&gt;&gt;QSCheckBox.Name" xml:space="preserve">
@@ -303,6 +309,9 @@
   <data name="&gt;&gt;QSCheckBox.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="NewMusicToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>625, 17</value>
+  </metadata>
   <data name="MNew.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -321,10 +330,10 @@
   <data name="MNew.Text" xml:space="preserve">
     <value>New</value>
   </data>
-  <metadata name="NewMusicToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>625, 17</value>
-  </metadata>
   <data name="MNew.ToolTip" xml:space="preserve">
+    <value>Use new soundtracks.</value>
+  </data>
+  <data name="MNew.ToolTip1" xml:space="preserve">
     <value>Use new soundtracks.</value>
   </data>
   <data name="&gt;&gt;MNew.Name" xml:space="preserve">
@@ -339,6 +348,9 @@
   <data name="&gt;&gt;MNew.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="StandardMusicToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>774, 17</value>
+  </metadata>
   <data name="MStandard.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -357,10 +369,10 @@
   <data name="MStandard.Text" xml:space="preserve">
     <value>Standard</value>
   </data>
-  <metadata name="StandardMusicToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>774, 17</value>
-  </metadata>
   <data name="MStandard.ToolTip" xml:space="preserve">
+    <value>Use standard Zero Hour soundtracks.</value>
+  </data>
+  <data name="MStandard.ToolTip1" xml:space="preserve">
     <value>Use standard Zero Hour soundtracks.</value>
   </data>
   <data name="&gt;&gt;MStandard.Name" xml:space="preserve">
@@ -375,6 +387,9 @@
   <data name="&gt;&gt;MStandard.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="WindowedToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>474, 17</value>
+  </metadata>
   <data name="WinCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -393,10 +408,10 @@
   <data name="WinCheckBox.Text" xml:space="preserve">
     <value>Windowed</value>
   </data>
-  <metadata name="WindowedToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>474, 17</value>
-  </metadata>
   <data name="WinCheckBox.ToolTip" xml:space="preserve">
+    <value>Starts Contra in a window instead of full screen.</value>
+  </data>
+  <data name="WinCheckBox.ToolTip1" xml:space="preserve">
     <value>Starts Contra in a window instead of full screen.</value>
   </data>
   <data name="&gt;&gt;WinCheckBox.Name" xml:space="preserve">
@@ -411,6 +426,9 @@
   <data name="&gt;&gt;WinCheckBox.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <metadata name="FogEffects.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1206, 16</value>
+  </metadata>
   <data name="FogCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -429,10 +447,10 @@
   <data name="FogCheckBox.Text" xml:space="preserve">
     <value>Fog Effects</value>
   </data>
-  <metadata name="FogEffects.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1206, 16</value>
-  </metadata>
   <data name="FogCheckBox.ToolTip" xml:space="preserve">
+    <value>Toggle fog (depth of field) effects on/off.</value>
+  </data>
+  <data name="FogCheckBox.ToolTip1" xml:space="preserve">
     <value>Toggle fog (depth of field) effects on/off.</value>
   </data>
   <data name="&gt;&gt;FogCheckBox.Name" xml:space="preserve">
@@ -447,6 +465,9 @@
   <data name="&gt;&gt;FogCheckBox.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <metadata name="PortraitsDefault.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>939, 16</value>
+  </metadata>
   <data name="DefaultPics.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -465,10 +486,10 @@
   <data name="DefaultPics.Text" xml:space="preserve">
     <value>Default</value>
   </data>
-  <metadata name="PortraitsDefault.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>939, 16</value>
-  </metadata>
   <data name="DefaultPics.ToolTip" xml:space="preserve">
+    <value>Use default general portraits.</value>
+  </data>
+  <data name="DefaultPics.ToolTip1" xml:space="preserve">
     <value>Use default general portraits.</value>
   </data>
   <data name="&gt;&gt;DefaultPics.Name" xml:space="preserve">
@@ -483,6 +504,9 @@
   <data name="&gt;&gt;DefaultPics.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="PortraitsGoofy.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1076, 16</value>
+  </metadata>
   <data name="GoofyPics.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -501,10 +525,10 @@
   <data name="GoofyPics.Text" xml:space="preserve">
     <value>Goofy</value>
   </data>
-  <metadata name="PortraitsGoofy.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1076, 16</value>
-  </metadata>
   <data name="GoofyPics.ToolTip" xml:space="preserve">
+    <value>Use funny general portraits.</value>
+  </data>
+  <data name="GoofyPics.ToolTip1" xml:space="preserve">
     <value>Use funny general portraits.</value>
   </data>
   <data name="&gt;&gt;GoofyPics.Name" xml:space="preserve">
@@ -610,7 +634,7 @@
     <value>Calibri, 11.25pt, style=Bold</value>
   </data>
   <data name="versionLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 555</value>
+    <value>259, 555</value>
   </data>
   <data name="versionLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>278, 18</value>
@@ -1610,6 +1634,33 @@
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
+  <metadata name="VoicesLocalizedToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>188, 17</value>
+  </metadata>
+  <metadata name="QSToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>366, 17</value>
+  </metadata>
+  <metadata name="WindowedToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>474, 17</value>
+  </metadata>
+  <metadata name="NewMusicToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>625, 17</value>
+  </metadata>
+  <metadata name="StandardMusicToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>774, 17</value>
+  </metadata>
+  <metadata name="Русский.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>159, 46</value>
+  </metadata>
+  <metadata name="PortraitsDefault.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>939, 16</value>
+  </metadata>
+  <metadata name="PortraitsGoofy.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1076, 16</value>
+  </metadata>
+  <metadata name="FogEffects.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1206, 16</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

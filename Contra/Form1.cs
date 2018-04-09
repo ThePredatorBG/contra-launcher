@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
+using System.Text.RegularExpressions;
 
 namespace Contra
 {
@@ -1021,10 +1022,100 @@ namespace Contra
             //{
             //    GetTincInstalledPath_User_StartVPN();
             //}
-
             try
             {
                 GetTincInstalledPath_Registry_StartVPN();
+
+                //Process[] pname = Process.GetProcessesByName("tincd");
+                //if (pname.Length != 0)
+                //{
+                //    MessageBox.Show("runs");
+                //}
+
+                Process ipconfig = new Process();
+                ipconfig.StartInfo.FileName = "cmd.exe";
+                ipconfig.StartInfo.UseShellExecute = false;
+                ipconfig.StartInfo.RedirectStandardInput = true;
+                ipconfig.StartInfo.RedirectStandardOutput = true;
+//                ipconfig.StartInfo.CreateNoWindow = true;
+                ipconfig.Start();
+                ipconfig.StandardInput.WriteLine("ipconfig");
+                ipconfig.StandardInput.Flush();
+                ipconfig.StandardInput.Close();
+                string s = ipconfig.StandardOutput.ReadToEnd();
+                if (s.Contains("10.10.10.") == true)
+                {
+//shows everything ipconfig                    MessageBox.Show(s);
+                    ipconfig.WaitForExit();
+                    ipconfig.Close();
+                    if (File.Exists(path + "Options.ini"))
+                    {
+
+                        List<string> found = new List<string>();
+                        string line;
+                        using (StringReader file = new StringReader(s))
+                        {
+                            while ((line = file.ReadLine()) != null)
+                            {
+                                if (line.Contains("10.10.10."))
+                                {
+                                    found.Add(line);
+                                    s = line;
+                                    s = s.Substring(s.IndexOf(':') + 1);
+//                                    MessageBox.Show(s); //shows tincIP
+                                }
+                            }
+                        }
+
+                    }
+                    if (Directory.Exists(path))
+                    {
+                        string text = File.ReadAllText(path + "Options.ini");
+                        if (!text.Contains("10.10.10."))
+                        {
+                            //Regex rgx = new Regex(text);
+                            //string result = rgx.Replace("^IPAddress.*$", "IPaddress = " + s);
+                            //File.WriteAllText(path + "Options.ini", text);
+
+                            File.WriteAllText(path + "Options.ini", Regex.Replace(File.ReadAllText(path + "Options.ini"), "\r?\nIPAddress =.*", "\r\nIPAddress =" + s + "\r\n"));
+
+                            //Regex.Replace(text, "\r?\nIPAddress =.*", "\nIPAddress = " + s);
+                            //File.WriteAllText(path + "Options.ini", text);
+
+                            //text = text.Replace("IPAddress =", "IPAddress =" + s + " ;"); //adds ip next to = .... 192
+                            //File.WriteAllText(path + "Options.ini", text);
+
+                       //     string AppendTincIP = Environment.NewLine + "IPAddressWithtincIP";
+                       //     File.AppendAllText(xppath + "Options.ini", AppendTincIP);
+                        }
+                    }
+  //deletes all text after this                  //text = text.Remove(text.IndexOf(s));
+
+                  //  Regex.Replace(text, @"(^|\n).IPAddress.\n?", "", RegexOptions.Multiline);
+
+                  //  string result = Regex.Replace(text, ".*IPAddress =.*", "replacement string");
+
+                    //string[] lines = System.IO.File.ReadAllLines(path + "Options.ini");
+                    //lines[0] = "IPAddress =" + s;
+                    //System.IO.File.WriteAllLines(path + "Options.ini", lines);
+
+                    else if (Directory.Exists(xppath))
+                    {
+                        string text = File.ReadAllText(xppath + "Options.ini");
+                        if (!text.Contains("10.10.10."))
+                        {
+                            //Regex.Replace(text, ".*IPAddress*.", "IPAddressWithtincIP");
+                            //text = text.Replace("IPAddress =", "IPAddress =" + s + " ;"); //adds ip next to = .... 192
+                            string AppendTincIP = Environment.NewLine + "UPnP = no";
+                            File.AppendAllText(xppath + "Options.ini", AppendTincIP);
+                        }
+                    }
+                }
+
+
+
+                //else MessageBox.Show("not found tinc ip");
+
                 //if (File.Exists("tincd.exe")) GetTincInstalledPath_Registry_StartVPN();
                 //else GetTincInstalledPath_User_StartVPN();
             }

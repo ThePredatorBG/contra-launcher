@@ -128,6 +128,7 @@
             this.QSCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.QSCheckBox.Name = "QSCheckBox";
             this.QSToolTip.SetToolTip(this.QSCheckBox, resources.GetString("QSCheckBox.ToolTip"));
+            this.VoicesOriginalToolTip.SetToolTip(this.QSCheckBox, resources.GetString("QSCheckBox.ToolTip1"));
             this.QSCheckBox.UseVisualStyleBackColor = false;
             // 
             // MNew
@@ -138,6 +139,7 @@
             this.MNew.Name = "MNew";
             this.MNew.TabStop = true;
             this.NewMusicToolTip.SetToolTip(this.MNew, resources.GetString("MNew.ToolTip"));
+            this.VoicesOriginalToolTip.SetToolTip(this.MNew, resources.GetString("MNew.ToolTip1"));
             this.MNew.UseVisualStyleBackColor = true;
             this.MNew.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
             // 
@@ -147,6 +149,7 @@
             this.MStandard.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.MStandard.Name = "MStandard";
             this.StandardMusicToolTip.SetToolTip(this.MStandard, resources.GetString("MStandard.ToolTip"));
+            this.VoicesOriginalToolTip.SetToolTip(this.MStandard, resources.GetString("MStandard.ToolTip1"));
             this.MStandard.UseVisualStyleBackColor = true;
             this.MStandard.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged_1);
             // 
@@ -157,6 +160,7 @@
             this.WinCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.WinCheckBox.Name = "WinCheckBox";
             this.WindowedToolTip.SetToolTip(this.WinCheckBox, resources.GetString("WinCheckBox.ToolTip"));
+            this.VoicesOriginalToolTip.SetToolTip(this.WinCheckBox, resources.GetString("WinCheckBox.ToolTip1"));
             this.WinCheckBox.UseVisualStyleBackColor = false;
             this.WinCheckBox.CheckedChanged += new System.EventHandler(this.WinCheckBox_CheckedChanged);
             // 
@@ -168,7 +172,8 @@
             this.FogCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.FogCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FogCheckBox.Name = "FogCheckBox";
-            this.FogEffects.SetToolTip(this.FogCheckBox, resources.GetString("FogCheckBox.ToolTip"));
+            this.VoicesOriginalToolTip.SetToolTip(this.FogCheckBox, resources.GetString("FogCheckBox.ToolTip"));
+            this.FogEffects.SetToolTip(this.FogCheckBox, resources.GetString("FogCheckBox.ToolTip1"));
             this.FogCheckBox.UseVisualStyleBackColor = false;
             this.FogCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -179,14 +184,16 @@
             this.DefaultPics.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.DefaultPics.Name = "DefaultPics";
             this.DefaultPics.TabStop = true;
-            this.PortraitsDefault.SetToolTip(this.DefaultPics, resources.GetString("DefaultPics.ToolTip"));
+            this.VoicesOriginalToolTip.SetToolTip(this.DefaultPics, resources.GetString("DefaultPics.ToolTip"));
+            this.PortraitsDefault.SetToolTip(this.DefaultPics, resources.GetString("DefaultPics.ToolTip1"));
             this.DefaultPics.UseVisualStyleBackColor = true;
             // 
             // GoofyPics
             // 
             resources.ApplyResources(this.GoofyPics, "GoofyPics");
             this.GoofyPics.Name = "GoofyPics";
-            this.PortraitsGoofy.SetToolTip(this.GoofyPics, resources.GetString("GoofyPics.ToolTip"));
+            this.VoicesOriginalToolTip.SetToolTip(this.GoofyPics, resources.GetString("GoofyPics.ToolTip"));
+            this.PortraitsGoofy.SetToolTip(this.GoofyPics, resources.GetString("GoofyPics.ToolTip1"));
             this.GoofyPics.UseVisualStyleBackColor = true;
             this.GoofyPics.CheckedChanged += new System.EventHandler(this.GoofyPics_CheckedChanged);
             // 

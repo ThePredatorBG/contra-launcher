@@ -132,7 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ContraIco.ico" />
-    <None Include="Resources\Contra Launcher.resources.dll" />
     <None Include="Resources\_button_config_tr.png" />
     <None Include="Resources\_button_config.png" />
     <None Include="Resources\_button_log_tr.png" />
