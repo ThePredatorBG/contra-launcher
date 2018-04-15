@@ -57,10 +57,14 @@ namespace Contra
         public static string xpsubFolder = @"My Documents\Command and Conquer Generals Zero Hour Data\";
         public static string path = Path.Combine(userProfile, subFolder);
         public static string xppath = Path.Combine(userProfile, xpsubFolder);
-        public static string tincpath;
 
         private bool button1WasClicked = false;
-        private bool TincFound;
+
+        public bool CheckBoxChecked
+        {
+            get { return radioFlag_GB.Checked; }
+            set { radioFlag_GB.Checked = value; }
+        }
 
         const int WM_NCLBUTTONDBLCLK = 0xA3;
         protected override void WndProc(ref Message m)
@@ -655,10 +659,10 @@ namespace Contra
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
-            resources.ApplyResources(this, "$this");
-            applyResourcesEN(resources, this.Controls);
+            //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            //ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
+            //resources.ApplyResources(this, "$this");
+            //applyResourcesEN(resources, this.Controls);
         }
 
         private void applyResourcesEN(ComponentResourceManager resources, Control.ControlCollection ctls)
@@ -677,10 +681,10 @@ namespace Contra
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
-            resources.ApplyResources(this, "$this");
-            applyResourcesRU(resources, this.Controls);
+            //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
+            //ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
+            //resources.ApplyResources(this, "$this");
+            //applyResourcesRU(resources, this.Controls);
         }
 
         private void applyResourcesRU(ComponentResourceManager resources, Control.ControlCollection ctls)
@@ -692,6 +696,15 @@ namespace Contra
             }
         }
 
+        private void applyResourcesBG(ComponentResourceManager resources, Control.ControlCollection ctls)
+        {
+            foreach (Control ctl in ctls)
+            {
+                resources.ApplyResources(ctl, ctl.Name);
+                applyResourcesBG(resources, ctl.Controls);
+            }
+        }
+
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -699,8 +712,8 @@ namespace Contra
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            tincpath = Properties.Settings.Default.tincpath;
-            TincFound = Properties.Settings.Default.TincFound;
+            Globals.tincpath = Properties.Settings.Default.tincpath;
+            Globals.TincFound = Properties.Settings.Default.TincFound;
             RadioEN.Checked = Properties.Settings.Default.LangEN;
             RadioRU.Checked = Properties.Settings.Default.LangRU;
             MNew.Checked = Properties.Settings.Default.MusicNew;
@@ -712,6 +725,10 @@ namespace Contra
             DefaultPics.Checked = Properties.Settings.Default.GenPicDef;
             GoofyPics.Checked = Properties.Settings.Default.GenPicGoo;
             FogCheckBox.Checked = Properties.Settings.Default.Fog;
+            radioFlag_GB.Checked = Properties.Settings.Default.Flag_GB;
+            radioFlag_RU.Checked = Properties.Settings.Default.Flag_RU;
+            radioFlag_UA.Checked = Properties.Settings.Default.Flag_UA;
+            radioFlag_BG.Checked = Properties.Settings.Default.Flag_BG;
             AutoScaleMode = AutoScaleMode.Dpi;
         }
 
@@ -744,6 +761,10 @@ namespace Contra
             Properties.Settings.Default.GenPicDef = DefaultPics.Checked;
             Properties.Settings.Default.GenPicGoo = GoofyPics.Checked;
             Properties.Settings.Default.Fog = FogCheckBox.Checked;
+            Properties.Settings.Default.Flag_GB = radioFlag_GB.Checked;
+            Properties.Settings.Default.Flag_RU = radioFlag_RU.Checked;
+            Properties.Settings.Default.Flag_UA = radioFlag_UA.Checked;
+            Properties.Settings.Default.Flag_BG = radioFlag_BG.Checked;
             Properties.Settings.Default.Save();
             if (File.Exists(path + "_tmpChunk.dat"))
             {
@@ -931,7 +952,18 @@ namespace Contra
             }
             else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
-                MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder was not found. Make sure you have entered your invitation link first.", "Error");
+                if (getCurrentCulture() == "en-US")
+                {
+                    MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder was not found. Make sure you have entered your invitation link first.", "Error");
+                }
+                else if (getCurrentCulture() == "ru-RU")
+                {
+                    MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder was not found. Make sure you have entered your invitation link first.", "Error");
+                }
+                else if (getCurrentCulture() == "bg-BG")
+                {
+                    MessageBox.Show("ContraVPN не можа да се стартира, защото \"contravpn\" папката не беше намерена. Убедете се, че сте въвели ключа си за покана.", "Грешка");
+                }
                 //tinc.Start();
                 //GetTincInstalledPath_User_StartVPN();
             }
@@ -939,10 +971,10 @@ namespace Contra
 
         public void GetTincInstalledPath_User_StartVPN()
         {
-            TincFound = Properties.Settings.Default.TincFound;
+            Globals.TincFound = Properties.Settings.Default.TincFound;
             //var TincInstalledPath = string.Empty;
             FolderBrowserDialog fbd = new FolderBrowserDialog();
-            if (TincFound == false)
+            if (Globals.TincFound == false)
             {
                 MessageBox.Show("\"tincd.exe\" not found! Select tinc installation directory.", "Error");
                 fbd.Description = "Select tinc installation directory.";
@@ -980,21 +1012,21 @@ namespace Contra
                     }
                 }
             }
-            else if ((TincFound == true))
+            else if ((Globals.TincFound == true))
             {
                 Process tinc = new Process();
                 tinc.StartInfo.Arguments = "-n contravpn -D";
                 tinc.StartInfo.FileName = "tincd.exe";
-                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tincd.exe");
-                if (File.Exists(tincpath + @"\tincd.exe"))
+                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(Globals.tincpath + @"\tincd.exe");
+                if (File.Exists(Globals.tincpath + @"\tincd.exe"))
                 {
-                    if (Directory.Exists(tincpath + @"\contravpn"))
+                    if (Directory.Exists(Globals.tincpath + @"\contravpn"))
                     {
                         tinc.Start();
                         Properties.Settings.Default.TincFound = true;
                         Properties.Settings.Default.Save();
                     }
-                    else if (!Directory.Exists(tincpath + @"\contravpn"))
+                    else if (!Directory.Exists(Globals.tincpath + @"\contravpn"))
                     {
                         MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder was not found. Make sure you have entered your invitation link first.", "Error");
                         //                        tinc.Start();
@@ -1184,11 +1216,29 @@ namespace Contra
 
         }
 
+        public string getCurrentCulture()
+        {
+            var culture = System.Globalization.CultureInfo.CurrentCulture;
+            string cultureStr = culture.ToString();
+            return cultureStr;
+        }
+
         private void Form1_Shown(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.FirstRun)
             {
-                MessageBox.Show("Welcome to Contra 009 Final! Since this is your first time running this launcher, we would like to let you know that you have a new opportunity to play Contra online via ContraVPN! We highly recommend you to join our Discord community.");
+                if (getCurrentCulture() == "en-US") //radioFlag_GB.Checked == true)
+                {
+                    MessageBox.Show("Welcome to Contra 009 Final! Since this is your first time running this launcher, we would like to let you know that you have a new opportunity to play Contra online via ContraVPN! We highly recommend you to join our Discord community!");
+                }
+                else if (getCurrentCulture() == "ru-RU")
+                {
+                    MessageBox.Show("Welcome to Contra 009 Final! Since this is your first time running this launcher, we would like to let you know that you have a new opportunity to play Contra online via ContraVPN! We highly recommend you to join our Discord community!");
+                }
+                else if (getCurrentCulture() == "bg-BG")
+                {
+                    MessageBox.Show("Добре дошли в Contra 009 Final! Тъй като това е първото Ви стартиране на Contra, бихме искали да знаете, че имате нова възможност да играете Contra онлайн чрез ContraVPN! Силно препоръчваме да се присъедините към нашата Discord общност! Еее... то и български имало бе! ;)");
+                }
                 Properties.Settings.Default.FirstRun = false;
                 Properties.Settings.Default.Save();
             }
@@ -1261,6 +1311,77 @@ namespace Contra
             VPNMoreButton.BackgroundImage = (System.Drawing.Image)(Properties.Resources._button_sm_highlight);
             VPNMoreButton.ForeColor = SystemColors.ButtonHighlight;
             VPNMoreButton.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+        }
+
+        private void ReceiveCheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox chk = sender as CheckBox;
+            if (radioFlag_GB.Checked)
+                Globals.GB_Checked = true; //MessageBox.Show("");//this.label1.Text = "Checked";
+           // else
+                //this.label1.Text = "UnChecked";
+        }
+
+        private void radioFlag_GB_CheckedChanged(object sender, EventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
+            resources.ApplyResources(this, "$this");
+            applyResourcesEN(resources, this.Controls);
+            Globals.BG_Checked = false;
+            Globals.RU_Checked = false;
+            Globals.GB_Checked = true;  //this.radioFlag_GB.CheckedChanged += new EventHandler(this.ReceiveCheckedChanged);
+          //  toolTip_BG.Dispose();
+            toolTip1.SetToolTip(RadioLocQuotes, "Units of all three factions will speak English.");
+            toolTip1.SetToolTip(RadioOrigQuotes, "Each faction's units will speak their native language.");
+            toolTip1.SetToolTip(RadioEN, "English in-game language.");
+            toolTip1.SetToolTip(RadioRU, "Russian in-game language.");
+            toolTip1.SetToolTip(MNew, "Use new soundtracks.");
+            toolTip1.SetToolTip(MStandard, "Use standard Zero Hour soundtracks.");
+            toolTip1.SetToolTip(DefaultPics, "Use default general portraits.");
+            toolTip1.SetToolTip(GoofyPics, "Use funny general portraits.");
+            toolTip1.SetToolTip(WinCheckBox, "Starts Contra in a window instead of full screen.");
+            toolTip1.SetToolTip(QSCheckBox, "Disables intro and shellmap (game starts up faster).");
+            toolTip1.SetToolTip(FogCheckBox, "Toggle fog (depth of field) effects on/off.");
+        }
+
+        private void radioFlag_RU_CheckedChanged(object sender, EventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
+            resources.ApplyResources(this, "$this");
+            applyResourcesRU(resources, this.Controls);
+            Globals.GB_Checked = false;
+            Globals.BG_Checked = false;
+            Globals.RU_Checked = true;
+        }
+
+        private void radioFlag_UA_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioFlag_BG_CheckedChanged(object sender, EventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("bg-BG");
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
+            resources.ApplyResources(this, "$this");
+            applyResourcesBG(resources, this.Controls);
+            Globals.GB_Checked = false;
+            Globals.RU_Checked = false;
+            Globals.BG_Checked = true;
+           // toolTip1.Dispose();
+            toolTip1.SetToolTip(RadioLocQuotes, "Единиците на трите фракции ще говорят на английски.");
+            toolTip1.SetToolTip(RadioOrigQuotes, "Единиците на трите фракции ще говорят на техния роден език.");
+            toolTip1.SetToolTip(RadioEN, "Английски език в играта.");
+            toolTip1.SetToolTip(RadioRU, "Руски език в играта.");
+            toolTip1.SetToolTip(MNew, "Използвайте новата музика.");
+            toolTip1.SetToolTip(MStandard, "Използвайте стандартната музика в Zero Hour.");
+            toolTip1.SetToolTip(DefaultPics, "Използвайте оригиналните генералски портрети.");
+            toolTip1.SetToolTip(GoofyPics, "Използвайте забавните генералски портрети.");
+            toolTip1.SetToolTip(WinCheckBox, "Стартира Contra в нов прозорец вместо на цял екран..");
+            toolTip1.SetToolTip(QSCheckBox, "Изключва интрото и анимираната карта (шел-мапа). Играта стартира по-бързо.");
+            toolTip1.SetToolTip(FogCheckBox, "Превключете ефекта \"дълбочина на рязкост\".");
         }
     }
 }

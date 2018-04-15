@@ -117,13 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="RadioEN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 22</value>
-  </data>
-  <data name="RadioEN.Text" xml:space="preserve">
-    <value>Англ.</value>
-  </data>
   <data name="RadioEN.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -156,12 +149,6 @@
   </data>
   <data name="RadioEN.ToolTip10" xml:space="preserve">
     <value />
-  </data>
-  <data name="RadioRU.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 22</value>
-  </data>
-  <data name="RadioRU.Text" xml:space="preserve">
-    <value>Русский</value>
   </data>
   <data name="RadioRU.ToolTip" xml:space="preserve">
     <value />
@@ -196,12 +183,6 @@
   <data name="RadioRU.ToolTip10" xml:space="preserve">
     <value />
   </data>
-  <data name="RadioOrigQuotes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
-  </data>
-  <data name="RadioOrigQuotes.Text" xml:space="preserve">
-    <value>Родной</value>
-  </data>
   <data name="RadioOrigQuotes.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -234,12 +215,6 @@
   </data>
   <data name="RadioOrigQuotes.ToolTip10" xml:space="preserve">
     <value />
-  </data>
-  <data name="RadioLocQuotes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 22</value>
-  </data>
-  <data name="RadioLocQuotes.Text" xml:space="preserve">
-    <value>Англ.</value>
   </data>
   <data name="RadioLocQuotes.ToolTip" xml:space="preserve">
     <value />
@@ -307,12 +282,6 @@
   <data name="QSCheckBox.ToolTip10" xml:space="preserve">
     <value />
   </data>
-  <data name="MNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
-  </data>
-  <data name="MNew.Text" xml:space="preserve">
-    <value>Новая</value>
-  </data>
   <data name="MNew.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -329,7 +298,7 @@
     <value />
   </data>
   <data name="MNew.ToolTip5" xml:space="preserve">
-    <value />
+    <value>Use new soundtracks.</value>
   </data>
   <data name="MNew.ToolTip6" xml:space="preserve">
     <value />
@@ -345,12 +314,6 @@
   </data>
   <data name="MNew.ToolTip10" xml:space="preserve">
     <value />
-  </data>
-  <data name="MStandard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 22</value>
-  </data>
-  <data name="MStandard.Text" xml:space="preserve">
-    <value>ZH</value>
   </data>
   <data name="MStandard.ToolTip" xml:space="preserve">
     <value />
@@ -550,9 +513,6 @@
   <data name="voicespanel.ToolTip10" xml:space="preserve">
     <value />
   </data>
-  <data name="languagepanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 61</value>
-  </data>
   <data name="languagepanel.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -685,6 +645,7 @@
   <data name="versionLabel.ToolTip10" xml:space="preserve">
     <value />
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="VPNMoreButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADYAAAAvCAYAAAConDmOAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -1732,138 +1693,6 @@
     <value />
   </data>
   <data name="button1.ToolTip10" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_gb.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_gb.ToolTip1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_gb.ToolTip2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_gb.ToolTip3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_gb.ToolTip4" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_gb.ToolTip5" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_gb.ToolTip6" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_gb.ToolTip7" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_gb.ToolTip8" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_gb.ToolTip9" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_gb.ToolTip10" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ru.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ru.ToolTip1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ru.ToolTip2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ru.ToolTip3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ru.ToolTip4" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ru.ToolTip5" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ru.ToolTip6" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ru.ToolTip7" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ru.ToolTip8" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ru.ToolTip9" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ru.ToolTip10" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ua.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ua.ToolTip1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ua.ToolTip2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ua.ToolTip3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ua.ToolTip4" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ua.ToolTip5" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ua.ToolTip6" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ua.ToolTip7" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ua.ToolTip8" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ua.ToolTip9" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_ua.ToolTip10" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_bg.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_bg.ToolTip1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_bg.ToolTip2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_bg.ToolTip3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_bg.ToolTip4" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_bg.ToolTip5" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_bg.ToolTip6" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_bg.ToolTip7" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_bg.ToolTip8" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_bg.ToolTip9" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flag_bg.ToolTip10" xml:space="preserve">
     <value />
   </data>
   <data name="radioFlag_GB.ToolTip" xml:space="preserve">

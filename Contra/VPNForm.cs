@@ -22,15 +22,26 @@ namespace Contra
             buttonVPNinvkey.TabStop = false;
             buttonVPNconsole.TabStop = false;
 
+            if (Globals.GB_Checked == true)
+            {
+                toolTip2.SetToolTip(UPnPCheckBox, "Search for local UPnP-IGD devices, this can improve connectivity if UPnP is enabled on your router.\nRequires miniuonpc support (tinc distributed by Contra has this, official does not).");
+                toolTip2.SetToolTip(AutoConnectCheckBox, "Automatically set up meta connections to other nodes.\nThis allows you to retain connection with other players even if contravpn node goes down.\nOnly works with nodes that have open ports.");
+            }
+            else if (Globals.BG_Checked == true)
+            {
+                toolTip2.SetToolTip(UPnPCheckBox, "Търсете за локални UPnP-IGD устройства. Това може да подобри свързаността, ако UPnP е включен на вашия рутер.\nИзисква поддръжка на miniuonpc (tinc разпространен от Contra има това, официалният - не).");
+                toolTip2.SetToolTip(AutoConnectCheckBox, "Автоматично настройване на мета-връзки към други възли.\nТова Ви позволява да запазите връзката си с другите играчи, дори когато contravpn възелът е офлайн.\nРаботи само с възли, които имат отворени портове.");
+            }
+
             if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("UPnP")) == false))
             {
                 string AppendUPnP = Environment.NewLine + "UPnP = no";
                 File.AppendAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", AppendUPnP);
             }
-            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && ((File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("UPnP")) == false))
+            else if ((File.Exists(Globals.tincpath + "/contravpn/tinc.conf")) && ((File.ReadAllText(Globals.tincpath + "/contravpn/tinc.conf").Contains("UPnP")) == false))
             {
                 string AppendUPnP = Environment.NewLine + "UPnP = no";
-                File.AppendAllText(tincpath + "/contravpn/tinc.conf", AppendUPnP);
+                File.AppendAllText(Globals.tincpath + "/contravpn/tinc.conf", AppendUPnP);
             }
 
             if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("AutoConnect")) == false))
@@ -38,10 +49,10 @@ namespace Contra
                 string AppendUPnP = Environment.NewLine + "AutoConnect = no";
                 File.AppendAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", AppendUPnP);
             }
-            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && ((File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("AutoConnect")) == false))
+            else if ((File.Exists(Globals.tincpath + "/contravpn/tinc.conf")) && ((File.ReadAllText(Globals.tincpath + "/contravpn/tinc.conf").Contains("AutoConnect")) == false))
             {
                 string AppendUPnP = Environment.NewLine + "AutoConnect = no";
-                File.AppendAllText(tincpath + "/contravpn/tinc.conf", AppendUPnP);
+                File.AppendAllText(Globals.tincpath + "/contravpn/tinc.conf", AppendUPnP);
             }
 
             if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("UPnP = no"))))
@@ -52,11 +63,11 @@ namespace Contra
             {
                 UPnPCheckBox.Checked = true;
             }
-            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && ((File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("UPnP = no"))))
+            else if ((File.Exists(Globals.tincpath + "/contravpn/tinc.conf")) && ((File.ReadAllText(Globals.tincpath + "/contravpn/tinc.conf").Contains("UPnP = no"))))
             {
                 UPnPCheckBox.Checked = false;
             }
-            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && (File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("UPnP = yes")))
+            else if ((File.Exists(Globals.tincpath + "/contravpn/tinc.conf")) && (File.ReadAllText(Globals.tincpath + "/contravpn/tinc.conf").Contains("UPnP = yes")))
             {
                 UPnPCheckBox.Checked = true;
             }
@@ -69,17 +80,22 @@ namespace Contra
             {
                 AutoConnectCheckBox.Checked = true;
             }
-            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && (File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("AutoConnect = no")))
+            else if ((File.Exists(Globals.tincpath + "/contravpn/tinc.conf")) && (File.ReadAllText(Globals.tincpath + "/contravpn/tinc.conf").Contains("AutoConnect = no")))
             {
                 AutoConnectCheckBox.Checked = false;
             }
-            else if ((File.Exists(tincpath + "/contravpn/tinc.conf")) && (File.ReadAllText(tincpath + "/contravpn/tinc.conf").Contains("AutoConnect = yes")))
+            else if ((File.Exists(Globals.tincpath + "/contravpn/tinc.conf")) && (File.ReadAllText(Globals.tincpath + "/contravpn/tinc.conf").Contains("AutoConnect = yes")))
             {
                 AutoConnectCheckBox.Checked = true;
             }
         }
 
-        private bool TincFound;
+        public string getCurrentCulture()
+        {
+            var culture = System.Globalization.CultureInfo.CurrentCulture;
+            string cultureStr = culture.ToString();
+            return cultureStr;
+        }
 
         const int WM_NCLBUTTONDBLCLK = 0xA3;
         protected override void WndProc(ref Message m)
@@ -128,8 +144,6 @@ namespace Contra
             }
             return "";
         }
-
-        public static string tincpath;
 
         public string GetTincInstalledPath()
         {
@@ -186,18 +200,18 @@ namespace Contra
                     File.WriteAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", tincconf);
                 }
             }
-            else if (File.Exists(tincpath + "/contravpn/tinc.conf"))
+            else if (File.Exists(Globals.tincpath + "/contravpn/tinc.conf"))
             {
-                string tincconf = File.ReadAllText(tincpath + "/contravpn/tinc.conf");
+                string tincconf = File.ReadAllText(Globals.tincpath + "/contravpn/tinc.conf");
                 if (UPnPCheckBox.Checked)
                 {
                     tincconf = tincconf.Replace("UPnP = no", "UPnP = yes");
-                    File.WriteAllText(tincpath + "/contravpn/tinc.conf", tincconf);
+                    File.WriteAllText(Globals.tincpath + "/contravpn/tinc.conf", tincconf);
                 }
                 else if (!UPnPCheckBox.Checked)
                 {
                     tincconf = tincconf.Replace("UPnP = yes", "UPnP = no");
-                    File.WriteAllText(tincpath + "/contravpn/tinc.conf", tincconf);
+                    File.WriteAllText(Globals.tincpath + "/contravpn/tinc.conf", tincconf);
                 }
             }
             // else MessageBox.Show("\"tinc.conf\" not found! Toggling UPnP on/off has no effect.", "Error");
@@ -220,18 +234,18 @@ namespace Contra
                     File.WriteAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", tincconf);
                 }
             }
-            else if (File.Exists(tincpath + "/contravpn/tinc.conf"))
+            else if (File.Exists(Globals.tincpath + "/contravpn/tinc.conf"))
             {
-                string tincconf = File.ReadAllText(tincpath + "/contravpn/tinc.conf");
+                string tincconf = File.ReadAllText(Globals.tincpath + "/contravpn/tinc.conf");
                 if (AutoConnectCheckBox.Checked)
                 {
                     tincconf = tincconf.Replace("AutoConnect = no", "AutoConnect = yes");
-                    File.WriteAllText(tincpath + "/contravpn/tinc.conf", tincconf);
+                    File.WriteAllText(Globals.tincpath + "/contravpn/tinc.conf", tincconf);
                 }
                 else if (!AutoConnectCheckBox.Checked)
                 {
                     tincconf = tincconf.Replace("AutoConnect = yes", "AutoConnect = no");
-                    File.WriteAllText(tincpath + "/contravpn/tinc.conf", tincconf);
+                    File.WriteAllText(Globals.tincpath + "/contravpn/tinc.conf", tincconf);
                 }
             }
             //else MessageBox.Show("\"tinc.conf\" not found! Toggling AutoConnect on/off has no effect.", "Error");
@@ -239,9 +253,9 @@ namespace Contra
 
         //Form1 Form1_Instance = new Form1();
         Form1 form1;
-        public VPNForm(Form1 frm)
+        public VPNForm(Form1 form1)
         {
-            form1 = frm;
+            //form1 = frm;
             InitializeComponent();
 
         }
@@ -263,11 +277,33 @@ namespace Contra
             GetTincInstalledPath();
             if (Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
-                MessageBox.Show("Found existing \"contravpn\" folder, looks like you have already been invited.");
+                if (getCurrentCulture() == "en-US")
+                {
+                    MessageBox.Show("Found existing \"contravpn\" folder, looks like you have already been invited.");
+                }
+                else if (getCurrentCulture() == "ru-RU")
+                {
+                    MessageBox.Show("Found existing \"contravpn\" folder, looks like you have already been invited.");
+                }
+                else if (getCurrentCulture() == "bg-BG")
+                {
+                    MessageBox.Show("Намерена е съществуваща папка с име \"contravpn\". Изглежда, че вече сте били поканени.");
+                }
             }
             else// if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
-                MessageBox.Show("You can request an invite key on our Discord's #contravpn channel.");
+                if (getCurrentCulture() == "en-US")
+                {
+                    MessageBox.Show("You can request an invite key on our Discord's #contravpn channel.");
+                }
+                else if (getCurrentCulture() == "ru-RU")
+                {
+                    MessageBox.Show("You can request an invite key on our Discord's #contravpn channel.");
+                }
+                else if (getCurrentCulture() == "bg-BG")
+                {
+                    MessageBox.Show("Можете да поискате покана в #contravpn канала ни в Discord.");
+                }
 //                Process tinc = new Process();
 //                tinc.StartInfo.Arguments = "join";
 //                tinc.StartInfo.FileName = "tinc.exe";
@@ -290,9 +326,20 @@ namespace Contra
             {
                 tinc.Start();
             }
-            else// if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
+            else
             {
-                MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
+                if (getCurrentCulture() == "en-US")
+                {
+                    MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
+                }
+                else if (getCurrentCulture() == "ru-RU")
+                {
+                    MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
+                }
+                else if (getCurrentCulture() == "bg-BG")
+                {
+                    MessageBox.Show("\"contravpn\" папката още не съществува. Повечето команди няма да се изпълнят.");
+                }
                 tinc.Start();
             }
         }
@@ -309,9 +356,20 @@ namespace Contra
             {
                 tinc.Start();
             }
-            else// if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
+            else
             {
-                MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
+                if (getCurrentCulture() == "en-US")
+                {
+                    MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
+                }
+                else if (getCurrentCulture() == "ru-RU")
+                {
+                    MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
+                }
+                else if (getCurrentCulture() == "bg-BG")
+                {
+                    MessageBox.Show("\"contravpn\" папката още не съществува. Повечето команди няма да се изпълнят.");
+                }
                 tinc.Start();
             }
         }
@@ -330,10 +388,10 @@ namespace Contra
 
         public void GetTincInstalledPath_User_EnterInvKey()
         {
-            TincFound = Properties.Settings.Default.TincFound;
+            Globals.TincFound = Properties.Settings.Default.TincFound;
             //var TincInstalledPath = string.Empty;
             FolderBrowserDialog fbd = new FolderBrowserDialog();
-            if (TincFound == false)
+            if (Globals.TincFound == false)
             {
                 MessageBox.Show("\"tinc.exe\" not found! Select tinc installation directory.", "Error");
                 fbd.Description = "Select tinc installation directory.";
@@ -346,14 +404,14 @@ namespace Contra
                     Process tinc = new Process();
                     tinc.StartInfo.Arguments = "join";
                     tinc.StartInfo.FileName = "tinc.exe";
-                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tinc.exe");
-                    if (File.Exists(tincpath + @"\tinc.exe"))
+                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(Globals.tincpath + @"\tinc.exe");
+                    if (File.Exists(Globals.tincpath + @"\tinc.exe"))
                     {
-                        if (Directory.Exists(tincpath + @"\contravpn"))
+                        if (Directory.Exists(Globals.tincpath + @"\contravpn"))
                         {
                             MessageBox.Show("Found existing \"contravpn\" folder, looks like you have already been invited.");
                         }
-                        else if (!Directory.Exists(tincpath + @"\contravpn"))
+                        else if (!Directory.Exists(Globals.tincpath + @"\contravpn"))
                         {
                             MessageBox.Show("You can request an invite key on our Discord's #contravpn channel.");
                             InvitePanel.Show(); //tinc.Start();
@@ -361,7 +419,7 @@ namespace Contra
                             Properties.Settings.Default.Save();
                         }
                     }
-                    else if (!File.Exists(tincpath + @"\tinc.exe"))
+                    else if (!File.Exists(Globals.tincpath + @"\tinc.exe"))
                     {
                         MessageBox.Show("\"tinc.exe\" not found there!", "Error");
                         Properties.Settings.Default.TincFound = false;
@@ -369,19 +427,19 @@ namespace Contra
                     }
                 }
             }
-            else if ((TincFound == true))
+            else if ((Globals.TincFound == true))
             {
                 Process tinc = new Process();
                 tinc.StartInfo.Arguments = "join";
                 tinc.StartInfo.FileName = "tinc.exe";
-                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tinc.exe");
-                if (File.Exists(tincpath + @"\tinc.exe"))
+                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(Globals.tincpath + @"\tinc.exe");
+                if (File.Exists(Globals.tincpath + @"\tinc.exe"))
                 {
-                    if (Directory.Exists(tincpath + @"\contravpn"))
+                    if (Directory.Exists(Globals.tincpath + @"\contravpn"))
                     {
                         MessageBox.Show("Found existing \"contravpn\" folder, looks like you have already been invited.");
                     }
-                    else if (!Directory.Exists(tincpath + @"\contravpn"))
+                    else if (!Directory.Exists(Globals.tincpath + @"\contravpn"))
                     {
                         MessageBox.Show("To receive an invite key, mention @tet on Discord and request one.");
                         tinc.Start();
@@ -389,7 +447,7 @@ namespace Contra
                         Properties.Settings.Default.Save();
                     }
                 }
-                else if (!File.Exists(tincpath + @"\tinc.exe"))
+                else if (!File.Exists(Globals.tincpath + @"\tinc.exe"))
                 {
                     MessageBox.Show("\"tinc.exe\" not found there!", "Error");
                     Properties.Settings.Default.TincFound = false;
@@ -400,10 +458,10 @@ namespace Contra
 
         public void GetTincInstalledPath_User_OpenConsole()
         {
-            TincFound = Properties.Settings.Default.TincFound;
+            Globals.TincFound = Properties.Settings.Default.TincFound;
             //var TincInstalledPath = string.Empty;
             FolderBrowserDialog fbd = new FolderBrowserDialog();
-            if (TincFound == false)
+            if (Globals.TincFound == false)
             {
                 MessageBox.Show("\"tinc.exe\" not found! Select tinc installation directory.", "Error");
                 fbd.Description = "Select tinc installation directory.";
@@ -416,16 +474,16 @@ namespace Contra
                     Process tinc = new Process();
                     tinc.StartInfo.Arguments = "-n contravpn";
                     tinc.StartInfo.FileName = "tinc.exe";
-                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tinc.exe");
-                    if (File.Exists(tincpath + @"\tinc.exe"))
+                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(Globals.tincpath + @"\tinc.exe");
+                    if (File.Exists(Globals.tincpath + @"\tinc.exe"))
                     {
-                        if (Directory.Exists(tincpath + @"\contravpn"))
+                        if (Directory.Exists(Globals.tincpath + @"\contravpn"))
                         {
                             tinc.Start();
                             Properties.Settings.Default.TincFound = true;
                             Properties.Settings.Default.Save();
                         }
-                        else if (!Directory.Exists(tincpath + @"\contravpn"))
+                        else if (!Directory.Exists(Globals.tincpath + @"\contravpn"))
                         {
                             MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
                             tinc.Start();
@@ -441,21 +499,21 @@ namespace Contra
                     }
                 }
             }
-            else if ((TincFound == true))
+            else if ((Globals.TincFound == true))
             {
                 Process tinc = new Process();
                 tinc.StartInfo.Arguments = "-n contravpn";
                 tinc.StartInfo.FileName = "tinc.exe";
-                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tinc.exe");
-                if (File.Exists(tincpath + @"\tinc.exe"))
+                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(Globals.tincpath + @"\tinc.exe");
+                if (File.Exists(Globals.tincpath + @"\tinc.exe"))
                 {
-                    if (Directory.Exists(tincpath + @"\contravpn"))
+                    if (Directory.Exists(Globals.tincpath + @"\contravpn"))
                     {
                         tinc.Start();
                         Properties.Settings.Default.TincFound = true;
                         Properties.Settings.Default.Save();
                     }
-                    else if (!Directory.Exists(tincpath + @"\contravpn"))
+                    else if (!Directory.Exists(Globals.tincpath + @"\contravpn"))
                     {
                         MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
                         tinc.Start();
@@ -474,10 +532,10 @@ namespace Contra
 
         public void GetTincInstalledPath_User_OpenDebugLog()
         {
-            TincFound = Properties.Settings.Default.TincFound;
+            Globals.TincFound = Properties.Settings.Default.TincFound;
             //var TincInstalledPath = string.Empty;
             FolderBrowserDialog fbd = new FolderBrowserDialog();
-            if (TincFound == false)
+            if (Globals.TincFound == false)
             {
                 MessageBox.Show("\"tinc.exe\" not found! Select tinc installation directory.", "Error");
                 fbd.Description = "Select tinc installation directory.";
@@ -490,16 +548,16 @@ namespace Contra
                     Process tinc = new Process();
                     tinc.StartInfo.Arguments = "-n contravpn log 3";
                     tinc.StartInfo.FileName = "tinc.exe";
-                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tinc.exe");
-                    if (File.Exists(tincpath + @"\tinc.exe"))
+                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(Globals.tincpath + @"\tinc.exe");
+                    if (File.Exists(Globals.tincpath + @"\tinc.exe"))
                     {
-                        if (Directory.Exists(tincpath + @"\contravpn"))
+                        if (Directory.Exists(Globals.tincpath + @"\contravpn"))
                         {
                             tinc.Start();
                             Properties.Settings.Default.TincFound = true;
                             Properties.Settings.Default.Save();
                         }
-                        else if (!Directory.Exists(tincpath + @"\contravpn"))
+                        else if (!Directory.Exists(Globals.tincpath + @"\contravpn"))
                         {
                             MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
                             tinc.Start();
@@ -515,21 +573,21 @@ namespace Contra
                     }
                 }
             }
-            else if ((TincFound == true))
+            else if ((Globals.TincFound == true))
             {
                 Process tinc = new Process();
                 tinc.StartInfo.Arguments = "-n contravpn";
                 tinc.StartInfo.FileName = "tinc.exe";
-                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tinc.exe");
-                if (File.Exists(tincpath + @"\tinc.exe"))
+                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(Globals.tincpath + @"\tinc.exe");
+                if (File.Exists(Globals.tincpath + @"\tinc.exe"))
                 {
-                    if (Directory.Exists(tincpath + @"\contravpn"))
+                    if (Directory.Exists(Globals.tincpath + @"\contravpn"))
                     {
                         tinc.Start();
                         Properties.Settings.Default.TincFound = true;
                         Properties.Settings.Default.Save();
                     }
-                    else if (!Directory.Exists(tincpath + @"\contravpn"))
+                    else if (!Directory.Exists(Globals.tincpath + @"\contravpn"))
                     {
                         MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
                         tinc.Start();
@@ -641,11 +699,33 @@ namespace Contra
                     string s2 = tinc.StandardOutput.ReadToEnd();
                     if (s.Contains("accepted") || s2.Contains("accepted") == true)
                     {
-                        MessageBox.Show("Invitation successfully accepted!");
+                        if (getCurrentCulture() == "en-US")
+                        {
+                            MessageBox.Show("Invitation successfully accepted!");
+                        }
+                        else if (getCurrentCulture() == "ru-RU")
+                        {
+                            MessageBox.Show("Invitation successfully accepted!");
+                        }
+                        else if (getCurrentCulture() == "bg-BG")
+                        {
+                            MessageBox.Show("Поканата е приета успешно!");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Invitation cancelled.\nMake sure this invite key is valid, not already used, or has not expired.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (getCurrentCulture() == "en-US")
+                        {
+                            MessageBox.Show("Invitation cancelled.\nMake sure this invite key is valid, not already used, or has not expired.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (getCurrentCulture() == "ru-RU")
+                        {
+                            MessageBox.Show("Invitation cancelled.\nMake sure this invite key is valid, not already used, or has not expired.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (getCurrentCulture() == "bg-BG")
+                        {
+                            MessageBox.Show("Поканата беше отказана.\nУбедете се, че вашият ключ е валиден, не е вече използван, или не е изтекъл.", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                         if (!File.Exists(GetTincInstalledPath() + @"\tinc.conf"))
                         {
                             try
@@ -654,15 +734,43 @@ namespace Contra
                             }
                             catch
                             {
-                                
+
                             }
                         }
                     }
                     InvitePanel.Visible = false;
                 }
-                else MessageBox.Show("Tinc directory not found.", "Error");
+                else
+                {
+                    if (getCurrentCulture() == "en-US")
+                    {
+                        MessageBox.Show("Tinc directory not found.", "Error");
+                    }
+                    if (getCurrentCulture() == "ru-RU")
+                    {
+                        MessageBox.Show("Tinc directory not found.", "Error");
+                    }
+                    if (getCurrentCulture() == "bg-BG")
+                    {
+                        MessageBox.Show("Tinc директорията не беше намерена.", "Грешка");
+                    }
+                }
             }
-            else MessageBox.Show("Invalid input.");
+            else
+            {
+                if (Globals.GB_Checked == true) //(getCurrentCulture() == "en-US")
+                {
+                    MessageBox.Show("Invalid input.", "Error");
+                }
+                else if (Globals.RU_Checked == true) //(getCurrentCulture() == "ru-RU")
+                {
+                    MessageBox.Show("Invalid input.", "Error");
+                }
+                else if (Globals.BG_Checked == true) //(getCurrentCulture() == "bg-BG")
+                {
+                    MessageBox.Show("Невалиден вход.", "Грешка");
+                }
+            }
         }
 
         private void invkeytextBox_TextChanged(object sender, EventArgs e)
