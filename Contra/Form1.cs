@@ -38,6 +38,7 @@ namespace Contra
             QSCheckBox.TabStop = false;
             WinCheckBox.TabStop = false;
             FogCheckBox.TabStop = false;
+            LangFilterCheckBox.TabStop = false;
             buttonVPNstart.TabStop = false;
             VPNMoreButton.TabStop = false;
 
@@ -218,63 +219,67 @@ namespace Contra
                 {
                     File.Move(@"..\!Contra009Beta2.big", @"..\!Contra009Beta2.ctr");
                 }
-                if ((RadioOrigQuotes.Checked) && (File.Exists("!Contra009Beta2VOrig.big")))
+                if (File.Exists("!Contra009Beta2VOrig.big"))
                 {
                     File.Move("!Contra009Beta2VOrig.big", "!Contra009Beta2VOrig.ctr");
                 }
-                else if ((RadioOrigQuotes.Checked) && (File.Exists(@"..\!Contra009Beta2VOrig.big")))
+                else if (File.Exists(@"..\!Contra009Beta2VOrig.big"))
                 {
                     File.Move(@"..\!Contra009Beta2VOrig.big", @"..\!Contra009Beta2VOrig.ctr");
                 }
-                if ((RadioLocQuotes.Checked) && (File.Exists("!Contra009Beta2VLoc.big")))
+                if (File.Exists("!Contra009Beta2VLoc.big"))
                 {
                     File.Move("!Contra009Beta2VLoc.big", "!Contra009Beta2VLoc.ctr");
                 }
-                else if ((RadioLocQuotes.Checked) && (File.Exists(@"..\!Contra009Beta2VLoc.big")))
+                else if (File.Exists(@"..\!Contra009Beta2VLoc.big"))
                 {
                     File.Move(@"..\!Contra009Beta2VLoc.big", @"..\!Contra009Beta2VLoc.ctr");
                 }
-                if ((RadioEN.Checked) && (File.Exists("!Contra009Beta2EN.big")))
+                if (File.Exists("!Contra009Beta2EN.big"))
                 {
                     File.Move("!Contra009Beta2EN.big", "!Contra009Beta2EN.ctr");
                 }
-                else if ((RadioEN.Checked) && (File.Exists(@"..\!Contra009Beta2EN.big")))
+                else if (File.Exists(@"..\!Contra009Beta2EN.big"))
                 {
                     File.Move(@"..\!Contra009Beta2EN.big", @"..\!Contra009Beta2EN.ctr");
                 }
-                if ((RadioRU.Checked) && (File.Exists("!Contra009Beta2RU.big")))
+                if (File.Exists("!Contra009Beta2RU.big"))
                 {
                     File.Move("!Contra009Beta2RU.big", "!Contra009Beta2RU.ctr");
                 }
-                else if ((RadioRU.Checked) && (File.Exists(@"..\!Contra009Beta2RU.big")))
+                else if (File.Exists(@"..\!Contra009Beta2RU.big"))
                 {
                     File.Move(@"..\!Contra009Beta2RU.big", @"..\!Contra009Beta2RU.ctr");
                 }
-                //                if (MStandard.Checked)
-                //                {
-                //                    File.Move("!Contra009Beta2MStandard.big", "!Contra009Beta2MStandard.big");
-                //                }
-                if ((MNew.Checked) && (File.Exists("!Contra009Beta2MNew.big")))
+                if (File.Exists("!Contra009Beta2MNew.big"))
                 {
                     File.Move("!Contra009Beta2MNew.big", "!Contra009Beta2MNew.ctr");
                 }
-                else if ((MNew.Checked) && (File.Exists(@"..\!Contra009Beta2MNew.big")))
+                else if (File.Exists(@"..\!Contra009Beta2MNew.big"))
                 {
                     File.Move(@"..\!Contra009Beta2MNew.big", @"..\!Contra009Beta2MNew.ctr");
                 }
-                if ((!FogCheckBox.Checked) && (File.Exists("!!Contra009FinalFogOff.big")))
+                if (File.Exists("!!Contra009FinalFogOff.big"))
                 {
                     File.Move("!!Contra009FinalFogOff.big", "!!Contra009FinalFogOff.ctr");
                 }
-                else if ((!FogCheckBox.Checked) && (File.Exists(@"..\!!Contra009FinalFogOff.big")))
+                else if (File.Exists(@"..\!!Contra009FinalFogOff.big"))
                 {
                     File.Move(@"..\!!Contra009FinalFogOff.big", @"..\!!Contra009FinalFogOff.ctr");
                 }
-                if ((GoofyPics.Checked) && (File.Exists("!!Contra009FinalOldGenPics.big")))
+                if ((File.Exists("langdata1.dat")))
+                {
+                    File.Move("langdata1.dat", "langdata.dat");
+                }
+                else if ((File.Exists(@"..\langdata1.dat")))
+                {
+                    File.Move(@"..\langdata1.dat", @"..\langdata.dat");
+                }
+                if (File.Exists("!!Contra009FinalOldGenPics.big"))
                 {
                     File.Move("!!Contra009FinalOldGenPics.big", "!!Contra009FinalOldGenPics.ctr");
                 }
-                else if ((GoofyPics.Checked) && (File.Exists(@"..\!!Contra009FinalOldGenPics.big")))
+                else if (File.Exists(@"..\!!Contra009FinalOldGenPics.big"))
                 {
                     File.Move(@"..\!!Contra009FinalOldGenPics.big", @"..\!!Contra009FinalOldGenPics.ctr");
                 }
@@ -381,10 +386,6 @@ namespace Contra
                 {
                     File.Move(@"..\!Contra009Beta2RU.ctr", @"..\!Contra009Beta2RU.big");
                 }
-//                if (MStandard.Checked)
-//                {
-//                    File.Move("!Contra009Beta2MStandard.ctr", "!Contra009Beta2MStandard.big");
-//                }
                 if ((MNew.Checked) && (File.Exists("!Contra009Beta2MNew.ctr")))
                 {
                     File.Move("!Contra009Beta2MNew.ctr", "!Contra009Beta2MNew.big");
@@ -400,6 +401,14 @@ namespace Contra
                 else if ((!FogCheckBox.Checked) && (File.Exists(@"..\!!Contra009FinalFogOff.ctr")))
                 {
                     File.Move(@"..\!!Contra009FinalFogOff.ctr", @"..\!!Contra009FinalFogOff.big");
+                }
+                if ((!LangFilterCheckBox.Checked) && (File.Exists("langdata.dat")))
+                {
+                    File.Move("langdata.dat", "langdata1.dat");
+                }
+                else if ((!LangFilterCheckBox.Checked) && (File.Exists(@"..\langdata1.dat")))
+                {
+                    File.Move(@"..\langdata1.dat", @"..\langdata.dat");
                 }
                 if ((GoofyPics.Checked) && (File.Exists("!!Contra009FinalOldGenPics.ctr")))
                 {
@@ -729,6 +738,7 @@ namespace Contra
             radioFlag_RU.Checked = Properties.Settings.Default.Flag_RU;
             radioFlag_UA.Checked = Properties.Settings.Default.Flag_UA;
             radioFlag_BG.Checked = Properties.Settings.Default.Flag_BG;
+            LangFilterCheckBox.Checked = Properties.Settings.Default.LangF;
             AutoScaleMode = AutoScaleMode.Dpi;
         }
 
@@ -765,6 +775,7 @@ namespace Contra
             Properties.Settings.Default.Flag_RU = radioFlag_RU.Checked;
             Properties.Settings.Default.Flag_UA = radioFlag_UA.Checked;
             Properties.Settings.Default.Flag_BG = radioFlag_BG.Checked;
+            Properties.Settings.Default.LangF = LangFilterCheckBox.Checked;
             Properties.Settings.Default.Save();
             if (File.Exists(path + "_tmpChunk.dat"))
             {
@@ -1069,7 +1080,7 @@ namespace Contra
                 ipconfig.StartInfo.UseShellExecute = false;
                 ipconfig.StartInfo.RedirectStandardInput = true;
                 ipconfig.StartInfo.RedirectStandardOutput = true;
-//                ipconfig.StartInfo.CreateNoWindow = true;
+                ipconfig.StartInfo.CreateNoWindow = true;
                 ipconfig.Start();
                 ipconfig.StandardInput.WriteLine("ipconfig");
                 ipconfig.StandardInput.Flush();
@@ -1342,7 +1353,8 @@ namespace Contra
             toolTip1.SetToolTip(GoofyPics, "Use funny general portraits.");
             toolTip1.SetToolTip(WinCheckBox, "Starts Contra in a window instead of full screen.");
             toolTip1.SetToolTip(QSCheckBox, "Disables intro and shellmap (game starts up faster).");
-            toolTip1.SetToolTip(FogCheckBox, "Toggle fog (depth of field) effects on/off.");
+            toolTip1.SetToolTip(FogCheckBox, "Toggle fog (depth of field) effects on/off.\nThis effect adds a color layer at the top of the screen, depending on the map.");
+            toolTip1.SetToolTip(LangFilterCheckBox, "Disabling the language filter will show bad words written by players in chat.");
         }
 
         private void radioFlag_RU_CheckedChanged(object sender, EventArgs e)
@@ -1379,9 +1391,15 @@ namespace Contra
             toolTip1.SetToolTip(MStandard, "Използвайте стандартната музика в Zero Hour.");
             toolTip1.SetToolTip(DefaultPics, "Използвайте оригиналните генералски портрети.");
             toolTip1.SetToolTip(GoofyPics, "Използвайте забавните генералски портрети.");
-            toolTip1.SetToolTip(WinCheckBox, "Стартира Contra в нов прозорец вместо на цял екран..");
+            toolTip1.SetToolTip(WinCheckBox, "Стартира Contra в нов прозорец вместо на цял екран.");
             toolTip1.SetToolTip(QSCheckBox, "Изключва интрото и анимираната карта (шел-мапа). Играта стартира по-бързо.");
-            toolTip1.SetToolTip(FogCheckBox, "Превключете ефекта \"дълбочина на рязкост\".");
+            toolTip1.SetToolTip(FogCheckBox, "Превключете ефекта \"дълбочина на рязкост\".\nТози ефект добавя цветен слой на върха на екрана, зависещ от атмосферата на картата. Например, мъгла.");
+            toolTip1.SetToolTip(LangFilterCheckBox, "Изключването на езиковия филтър ще спре да скрива лошите думи, написани от играчите.");
+        }
+
+        private void LangFilterCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

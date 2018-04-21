@@ -64,6 +64,7 @@
             this.radioFlag_UA = new System.Windows.Forms.RadioButton();
             this.radioFlag_RU = new System.Windows.Forms.RadioButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.LangFilterCheckBox = new System.Windows.Forms.CheckBox();
             this.voicespanel.SuspendLayout();
             this.languagepanel.SuspendLayout();
             this.musicpanel.SuspendLayout();
@@ -513,11 +514,24 @@
             this.toolTip1.InitialDelay = 50;
             this.toolTip1.ReshowDelay = 100;
             // 
+            // LangFilterCheckBox
+            // 
+            resources.ApplyResources(this.LangFilterCheckBox, "LangFilterCheckBox");
+            this.LangFilterCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.LangFilterCheckBox.Checked = true;
+            this.LangFilterCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.LangFilterCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LangFilterCheckBox.Name = "LangFilterCheckBox";
+            this.toolTip1.SetToolTip(this.LangFilterCheckBox, resources.GetString("LangFilterCheckBox.ToolTip"));
+            this.LangFilterCheckBox.UseVisualStyleBackColor = false;
+            this.LangFilterCheckBox.CheckedChanged += new System.EventHandler(this.LangFilterCheckBox_CheckedChanged);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ControlBox = false;
+            this.Controls.Add(this.LangFilterCheckBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.VPNMoreButton);
@@ -597,6 +611,7 @@
         private System.Windows.Forms.RadioButton radioFlag_UA;
         private System.Windows.Forms.RadioButton radioFlag_RU;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.CheckBox LangFilterCheckBox;
     }
 }
 

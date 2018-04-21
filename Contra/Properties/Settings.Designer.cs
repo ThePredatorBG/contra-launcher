@@ -238,5 +238,17 @@ namespace Contra.Properties {
                 this["Flag_BG"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool LangF {
+            get {
+                return ((bool)(this["LangF"]));
+            }
+            set {
+                this["LangF"] = value;
+            }
+        }
     }
 }

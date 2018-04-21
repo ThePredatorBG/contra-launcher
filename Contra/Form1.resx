@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="radioFlag_GB.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
-  </data>
   <data name="&gt;&gt;WinCheckBox.Name" xml:space="preserve">
     <value>WinCheckBox</value>
   </data>
@@ -128,6 +124,7 @@
   <data name="WinCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 22</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
@@ -149,15 +146,21 @@
   <data name="panel1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="languagepanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;portraitspanel.Name" xml:space="preserve">
     <value>portraitspanel</value>
   </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;buttonVPNstart.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="radioFlag_UA.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="RadioEN.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 7</value>
@@ -168,11 +171,17 @@
   <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="LangFilterCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 22</value>
+  </data>
   <data name="radioFlag_UA.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="RadioEN.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;RadioRU.Name" xml:space="preserve">
+    <value>RadioRU</value>
   </data>
   <data name="button6.ToolTip" xml:space="preserve">
     <value />
@@ -182,6 +191,9 @@
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
     <value>344, 432</value>
+  </data>
+  <data name="&gt;&gt;LangFilterCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="panel1.ToolTip" xml:space="preserve">
     <value />
@@ -213,8 +225,8 @@
   <data name="button17.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="musicpanel.ToolTip" xml:space="preserve">
-    <value />
+  <data name="radioFlag_GB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 17</value>
   </data>
   <data name="helpbutton.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -225,23 +237,20 @@
   <data name="button18.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
   </data>
+  <data name="LangFilterCheckBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="DefaultPics.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 7</value>
   </data>
-  <data name="languagepanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 61</value>
+  <data name="&gt;&gt;GoofyPics.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;versionLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button18.Name" xml:space="preserve">
     <value>button18</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="RadioOrigQuotes.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
   </data>
   <data name="RadioRU.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 11.25pt, style=Bold</value>
@@ -252,11 +261,11 @@
   <data name="QSCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="languagepanel.ToolTip" xml:space="preserve">
-    <value />
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="portraitspanel.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
+  <data name="QSCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 22</value>
   </data>
   <data name="RadioEN.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 11.25pt, style=Bold</value>
@@ -273,11 +282,11 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Contra Launcher</value>
   </data>
-  <data name="RadioLocQuotes.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;radioFlag_UA.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GoofyPics.Name" xml:space="preserve">
-    <value>GoofyPics</value>
+  <data name="button17.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;MStandard.Parent" xml:space="preserve">
     <value>musicpanel</value>
@@ -288,23 +297,23 @@
   <data name="button6.Location" type="System.Drawing.Point, System.Drawing">
     <value>590, 360</value>
   </data>
-  <data name="&gt;&gt;buttonVPNstart.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="versionLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;button17.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="button18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>732, 48</value>
+  </data>
   <data name="voicespanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>275, 212</value>
   </data>
-  <data name="&gt;&gt;DefaultPics.Type" xml:space="preserve">
+  <data name="&gt;&gt;MNew.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="RadioLocQuotes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 7</value>
   </data>
   <data name="&gt;&gt;GoofyPics.Parent" xml:space="preserve">
     <value>portraitspanel</value>
@@ -312,32 +321,23 @@
   <data name="button5.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="radioFlag_RU.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
   <data name="&gt;&gt;RadioEN.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GoofyPics.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="RadioEN.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;WinCheckBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="MStandard.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 33</value>
   </data>
-  <data name="button18.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="&gt;&gt;MNew.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;QSCheckBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>5</value>
   </data>
   <data name="MStandard.ToolTip" xml:space="preserve">
     <value>Toggle fog (depth of field) effects on/off.</value>
@@ -517,17 +517,14 @@
   <data name="MNew.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
   <data name="VPNMoreButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>59, 136</value>
   </data>
   <data name="buttonVPNstart.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
-  <data name="&gt;&gt;websitebutton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;musicpanel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="radioFlag_RU.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -539,7 +536,7 @@
     <value>33</value>
   </data>
   <data name="&gt;&gt;musicpanel.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="WinCheckBox.Text" xml:space="preserve">
     <value>Windowed</value>
@@ -547,17 +544,14 @@
   <data name="RadioEN.Text" xml:space="preserve">
     <value>English</value>
   </data>
-  <data name="radioFlag_UA.ToolTip" xml:space="preserve">
-    <value />
+  <data name="radioFlag_UA.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;RadioOrigQuotes.Parent" xml:space="preserve">
-    <value>voicespanel</value>
+  <data name="radioFlag_RU.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="RadioOrigQuotes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;radioFlag_UA.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="radioFlag_UA.Location" type="System.Drawing.Point, System.Drawing">
     <value>61, 3</value>
@@ -580,14 +574,14 @@
   <data name="button5.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 93</value>
   </data>
+  <data name="voicespanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 61</value>
+  </data>
   <data name="RadioOrigQuotes.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 33</value>
   </data>
   <data name="&gt;&gt;websitebutton.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 93</value>
@@ -601,14 +595,11 @@
   <data name="websitebutton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 16pt</value>
   </data>
-  <data name="radioFlag_RU.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
+  <data name="radioFlag_GB.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="GoofyPics.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="button17.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="RadioEN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -637,8 +628,11 @@
   <data name="&gt;&gt;voicespanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="languagepanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 61</value>
+  </data>
   <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="&gt;&gt;versionLabel.Name" xml:space="preserve">
     <value>versionLabel</value>
@@ -670,20 +664,20 @@
   <data name="portraitspanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>441, 306</value>
   </data>
+  <data name="&gt;&gt;QSCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="FogCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>435, 421</value>
+    <value>435, 411</value>
   </data>
   <data name="&gt;&gt;VPNMoreButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
-  <data name="radioFlag_UA.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
+    <value>19</value>
   </data>
   <data name="websitebutton.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 93</value>
-  </data>
-  <data name="GoofyPics.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
   </data>
   <data name="websitebutton.Location" type="System.Drawing.Point, System.Drawing">
     <value>45, 460</value>
@@ -691,8 +685,8 @@
   <data name="QSCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>269, 430</value>
   </data>
-  <data name="radioFlag_RU.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="VPNMoreButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 600</value>
@@ -704,7 +698,7 @@
     <value>None</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;musicpanel.Name" xml:space="preserve">
     <value>musicpanel</value>
@@ -728,10 +722,10 @@
     <value>44</value>
   </data>
   <data name="&gt;&gt;portraitspanel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;buttonVPNstart.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="MStandard.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -742,6 +736,9 @@
   <data name="&gt;&gt;DefaultPics.Name" xml:space="preserve">
     <value>DefaultPics</value>
   </data>
+  <data name="&gt;&gt;LangFilterCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="versionLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>259, 555</value>
   </data>
@@ -751,11 +748,17 @@
   <data name="button5.Location" type="System.Drawing.Point, System.Drawing">
     <value>645, 460</value>
   </data>
+  <data name="QSCheckBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;button5.Name" xml:space="preserve">
     <value>button5</value>
   </data>
-  <data name="button18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>732, 48</value>
+  <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;GoofyPics.Name" xml:space="preserve">
+    <value>GoofyPics</value>
   </data>
   <data name="&gt;&gt;buttonChat.Name" xml:space="preserve">
     <value>buttonChat</value>
@@ -769,17 +772,26 @@
   <data name="VPNMoreButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 47</value>
   </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;button1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="buttonVPNstart.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 20pt</value>
   </data>
+  <data name="radioFlag_RU.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="radioFlag_GB.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
   <data name="websitebutton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="radioFlag_GB.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;button2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -800,22 +812,16 @@
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;GoofyPics.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>21</value>
   </data>
   <data name="&gt;&gt;buttonVPNstart.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button6.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;websitebutton.Name" xml:space="preserve">
     <value>websitebutton</value>
-  </data>
-  <data name="RadioRU.ToolTip" xml:space="preserve">
-    <value>Toggle fog (depth of field) effects on/off.</value>
   </data>
   <data name="&gt;&gt;radioFlag_GB.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -826,8 +832,8 @@
   <data name="RadioRU.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioFlag_RU.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 3</value>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;helpbutton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -848,7 +854,7 @@
     <value>QuickStart</value>
   </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="&gt;&gt;button6.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -858,9 +864,6 @@
   </data>
   <data name="&gt;&gt;RadioRU.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="radioFlag_GB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 17</value>
   </data>
   <data name="&gt;&gt;FogCheckBox.Name" xml:space="preserve">
     <value>FogCheckBox</value>
@@ -962,32 +965,29 @@
   <data name="&gt;&gt;radioFlag_RU.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="MStandard.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;button17.Name" xml:space="preserve">
     <value>button17</value>
   </data>
+  <data name="button17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>344, 148</value>
   </data>
+  <data name="&gt;&gt;button5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="helpbutton.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="&gt;&gt;musicpanel.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="radioFlag_GB.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="radioFlag_GB.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
-  </data>
-  <data name="&gt;&gt;RadioEN.Name" xml:space="preserve">
-    <value>RadioEN</value>
   </data>
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
@@ -1008,7 +1008,7 @@
     <value>1</value>
   </data>
   <data name="&gt;&gt;voicespanel.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="MStandard.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 11.25pt, style=Bold</value>
@@ -1499,6 +1499,300 @@
   </data>
   <data name="&gt;&gt;radioFlag_BG.Name" xml:space="preserve">
     <value>radioFlag_BG</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="RadioLocQuotes.Text" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="QSCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LangFilterCheckBox.Text" xml:space="preserve">
+    <value>Lang. Filter</value>
+  </data>
+  <data name="helpbutton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;versionLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 22</value>
+  </data>
+  <data name="QSCheckBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24.75pt</value>
+  </data>
+  <data name="RadioOrigQuotes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="DefaultPics.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;RadioEN.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button3.Name" xml:space="preserve">
+    <value>button3</value>
+  </data>
+  <data name="&gt;&gt;LangFilterCheckBox.Name" xml:space="preserve">
+    <value>LangFilterCheckBox</value>
+  </data>
+  <data name="RadioLocQuotes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="versionLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 18</value>
+  </data>
+  <data name="radioFlag_GB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="portraitspanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 61</value>
+  </data>
+  <data name="&gt;&gt;musicpanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="radioFlag_BG.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="WinCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LangFilterCheckBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;LangFilterCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="MNew.Text" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="FogCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;portraitspanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 16pt</value>
+  </data>
+  <data name="radioFlag_BG.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="&gt;&gt;portraitspanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RadioLocQuotes.Parent" xml:space="preserve">
+    <value>voicespanel</value>
+  </data>
+  <data name="FogCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 22</value>
+  </data>
+  <data name="&gt;&gt;MNew.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="QSCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;FogCheckBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;RadioRU.Parent" xml:space="preserve">
+    <value>languagepanel</value>
+  </data>
+  <data name="RadioLocQuotes.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="VPNMoreButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadioEN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 22</value>
+  </data>
+  <data name="&gt;&gt;RadioOrigQuotes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button18.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="WinCheckBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="RadioOrigQuotes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="buttonChat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 20pt</value>
+  </data>
+  <data name="LangFilterCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 360</value>
+  </data>
+  <data name="&gt;&gt;voicespanel.Name" xml:space="preserve">
+    <value>voicespanel</value>
+  </data>
+  <data name="&gt;&gt;websitebutton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="musicpanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>275, 306</value>
+  </data>
+  <data name="MStandard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 22</value>
+  </data>
+  <data name="WinCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 411</value>
+  </data>
+  <data name="&gt;&gt;DefaultPics.Parent" xml:space="preserve">
+    <value>portraitspanel</value>
+  </data>
+  <data name="DefaultPics.ToolTip" xml:space="preserve">
+    <value>Toggle fog (depth of field) effects on/off.</value>
+  </data>
+  <data name="radioFlag_BG.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="&gt;&gt;VPNMoreButton.Name" xml:space="preserve">
+    <value>VPNMoreButton</value>
+  </data>
+  <data name="portraitspanel.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="websitebutton.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="buttonVPNstart.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;radioFlag_BG.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonChat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 93</value>
+  </data>
+  <data name="radioFlag_GB.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="&gt;&gt;helpbutton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="musicpanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 61</value>
+  </data>
+  <data name="RadioRU.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 22</value>
+  </data>
+  <data name="&gt;&gt;radioFlag_RU.Name" xml:space="preserve">
+    <value>radioFlag_RU</value>
+  </data>
+  <data name="WinCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="RadioLocQuotes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;languagepanel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;RadioOrigQuotes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RadioEN.ToolTip" xml:space="preserve">
+    <value>Toggle fog (depth of field) effects on/off.</value>
+  </data>
+  <data name="RadioRU.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WinCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;RadioEN.Parent" xml:space="preserve">
+    <value>languagepanel</value>
+  </data>
+  <data name="button17.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="buttonChat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 260</value>
+  </data>
+  <data name="FogCheckBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="radioFlag_UA.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonVPNstart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 160</value>
+  </data>
+  <data name="radioFlag_RU.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;RadioOrigQuotes.Parent" xml:space="preserve">
+    <value>voicespanel</value>
+  </data>
+  <data name="&gt;&gt;button17.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="voicespanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button17.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="RadioRU.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="radioFlag_BG.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 3</value>
+  </data>
+  <data name="MNew.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 7</value>
+  </data>
+  <data name="GoofyPics.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="websitebutton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="languagepanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>444, 212</value>
+  </data>
+  <data name="&gt;&gt;QSCheckBox.Name" xml:space="preserve">
+    <value>QSCheckBox</value>
+  </data>
+  <data name="musicpanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 20pt</value>
+  </data>
+  <data name="radioFlag_UA.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
   </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -7028,267 +7322,6 @@
         sMn0A93jj06ZonAHUFixJApQTITX2D8eP//Z
 </value>
   </data>
-  <data name="RadioLocQuotes.Text" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
-  </data>
-  <data name="QSCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="helpbutton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 26.25pt</value>
-  </data>
-  <data name="helpbutton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="VPNMoreButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
-  </data>
-  <data name="QSCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24.75pt</value>
-  </data>
-  <data name="RadioOrigQuotes.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="DefaultPics.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="RadioRU.Text" xml:space="preserve">
-    <value>Russian</value>
-  </data>
-  <data name="&gt;&gt;RadioEN.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;button3.Name" xml:space="preserve">
-    <value>button3</value>
-  </data>
-  <data name="RadioLocQuotes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="radioFlag_GB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="portraitspanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 61</value>
-  </data>
-  <data name="&gt;&gt;musicpanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="radioFlag_BG.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="WinCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;buttonChat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form1</value>
-  </data>
-  <data name="MNew.Text" xml:space="preserve">
-    <value>New</value>
-  </data>
-  <data name="FogCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;portraitspanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="button5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 16pt</value>
-  </data>
-  <data name="&gt;&gt;portraitspanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RadioLocQuotes.Parent" xml:space="preserve">
-    <value>voicespanel</value>
-  </data>
-  <data name="QSCheckBox.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;MNew.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
-  <data name="&gt;&gt;FogCheckBox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;RadioRU.Parent" xml:space="preserve">
-    <value>languagepanel</value>
-  </data>
-  <data name="VPNMoreButton.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="RadioEN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 22</value>
-  </data>
-  <data name="&gt;&gt;RadioOrigQuotes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="radioFlag_BG.TabIndex" type="System.Int32, mscorlib">
-    <value>53</value>
-  </data>
-  <data name="WinCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;QSCheckBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="buttonChat.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20pt</value>
-  </data>
-  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 360</value>
-  </data>
-  <data name="&gt;&gt;voicespanel.Name" xml:space="preserve">
-    <value>voicespanel</value>
-  </data>
-  <data name="musicpanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 306</value>
-  </data>
-  <data name="MStandard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 22</value>
-  </data>
-  <data name="WinCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 411</value>
-  </data>
-  <data name="&gt;&gt;DefaultPics.Parent" xml:space="preserve">
-    <value>portraitspanel</value>
-  </data>
-  <data name="DefaultPics.ToolTip" xml:space="preserve">
-    <value>Toggle fog (depth of field) effects on/off.</value>
-  </data>
-  <data name="radioFlag_BG.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="websitebutton.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;radioFlag_BG.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonChat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 93</value>
-  </data>
-  <data name="radioFlag_GB.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="&gt;&gt;helpbutton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="musicpanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 61</value>
-  </data>
-  <data name="RadioRU.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 22</value>
-  </data>
-  <data name="&gt;&gt;radioFlag_RU.Name" xml:space="preserve">
-    <value>radioFlag_RU</value>
-  </data>
-  <data name="WinCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="button17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;RadioOrigQuotes.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="RadioEN.ToolTip" xml:space="preserve">
-    <value>Toggle fog (depth of field) effects on/off.</value>
-  </data>
-  <data name="&gt;&gt;button6.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="RadioRU.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="WinCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;RadioEN.Parent" xml:space="preserve">
-    <value>languagepanel</value>
-  </data>
-  <data name="button17.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="buttonChat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 260</value>
-  </data>
-  <data name="FogCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
-  </data>
-  <data name="radioFlag_UA.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonVPNstart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 160</value>
-  </data>
-  <data name="radioFlag_RU.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;button17.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="voicespanel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="buttonVPNstart.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="RadioRU.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="radioFlag_BG.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 3</value>
-  </data>
-  <data name="MNew.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 7</value>
-  </data>
-  <data name="GoofyPics.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="websitebutton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="languagepanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>444, 212</value>
-  </data>
-  <data name="&gt;&gt;QSCheckBox.Name" xml:space="preserve">
-    <value>QSCheckBox</value>
-  </data>
-  <data name="button6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20pt</value>
-  </data>
-  <data name="radioFlag_UA.TabIndex" type="System.Int32, mscorlib">
-    <value>52</value>
-  </data>
   <data name="button3.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -7304,23 +7337,26 @@
   <data name="button18.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;versionLabel.ZOrder" xml:space="preserve">
+  <data name="MStandard.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="radioFlag_RU.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 3</value>
   </data>
   <data name="FogCheckBox.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;button17.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="MNew.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="LangFilterCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
   </data>
   <data name="&gt;&gt;helpbutton.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
-  <data name="voicespanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 61</value>
+  <data name="GoofyPics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 22</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 48</value>
   </data>
   <data name="&gt;&gt;VPNMoreButton.Parent" xml:space="preserve">
     <value>$this</value>
@@ -7337,11 +7373,8 @@
   <data name="versionLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="RadioLocQuotes.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="QSCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 22</value>
+  <data name="RadioEN.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 600</value>
@@ -7355,14 +7388,14 @@
   <data name="button2.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;languagepanel.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="RadioLocQuotes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 7</value>
   </data>
   <data name="MStandard.Text" xml:space="preserve">
     <value>Standard</value>
   </data>
-  <data name="versionLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 18</value>
+  <data name="RadioLocQuotes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 22</value>
   </data>
   <data name="button3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -7376,8 +7409,14 @@
   <data name="&gt;&gt;RadioLocQuotes.Name" xml:space="preserve">
     <value>RadioLocQuotes</value>
   </data>
+  <data name="LangFilterCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>435, 430</value>
+  </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 600</value>
+  </data>
+  <data name="MNew.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="FogCheckBox.Text" xml:space="preserve">
     <value>Fog Effects</value>
@@ -7391,17 +7430,11 @@
   <data name="RadioLocQuotes.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 11.25pt, style=Bold</value>
   </data>
-  <data name="RadioLocQuotes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 22</value>
-  </data>
   <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
     <value>toolTip1</value>
   </data>
   <data name="&gt;&gt;websitebutton.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="GoofyPics.Text" xml:space="preserve">
-    <value>Goofy</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;MStandard.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -7409,17 +7442,17 @@
   <data name="button6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="radioFlag_RU.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
+  <data name="&gt;&gt;DefaultPics.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="button5.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 48</value>
+  <data name="&gt;&gt;RadioEN.Name" xml:space="preserve">
+    <value>RadioEN</value>
   </data>
-  <data name="FogCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 22</value>
+  <data name="helpbutton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 26.25pt</value>
   </data>
   <data name="radioFlag_RU.ToolTip" xml:space="preserve">
     <value />
@@ -7433,11 +7466,11 @@
   <data name="DefaultPics.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioFlag_GB.ToolTip" xml:space="preserve">
-    <value />
+  <data name="RadioRU.ToolTip" xml:space="preserve">
+    <value>Toggle fog (depth of field) effects on/off.</value>
   </data>
   <data name="&gt;&gt;buttonChat.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="button3.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -7452,10 +7485,10 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;button18.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
-  <data name="&gt;&gt;RadioRU.Name" xml:space="preserve">
-    <value>RadioRU</value>
+  <data name="&gt;&gt;buttonChat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;button18.Parent" xml:space="preserve">
     <value>$this</value>
@@ -7466,8 +7499,8 @@
   <data name="button18.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Center</value>
+  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="&gt;&gt;languagepanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -7484,11 +7517,11 @@
   <data name="GoofyPics.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 33</value>
   </data>
-  <data name="MNew.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="MNew.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="QSCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="GoofyPics.Text" xml:space="preserve">
+    <value>Goofy</value>
   </data>
   <data name="GoofyPics.ToolTip" xml:space="preserve">
     <value>Toggle fog (depth of field) effects on/off.</value>
@@ -7502,20 +7535,20 @@
   <data name="&gt;&gt;radioFlag_UA.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;VPNMoreButton.Name" xml:space="preserve">
-    <value>VPNMoreButton</value>
+  <data name="RadioRU.Text" xml:space="preserve">
+    <value>Russian</value>
   </data>
   <data name="radioFlag_UA.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 17</value>
   </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>bg</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>21, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>bg</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>78</value>
