@@ -117,498 +117,81 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button18.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="button18.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 31</value>
-  </data>
-  <data name="button18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button18.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;button18.Name" xml:space="preserve">
-    <value>button18</value>
-  </data>
-  <data name="&gt;&gt;button18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button18.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;button18.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="button17.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="button17.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="button17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 31</value>
-  </data>
-  <data name="button17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="button17.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="&gt;&gt;button17.Name" xml:space="preserve">
-    <value>button17</value>
-  </data>
-  <data name="&gt;&gt;button17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button17.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;button17.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="UPnPCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UPnPCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
-  </data>
-  <data name="UPnPCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 181</value>
-  </data>
-  <data name="UPnPCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 22</value>
-  </data>
-  <data name="UPnPCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="UPnPCheckBox.Text" xml:space="preserve">
-    <value>UPnP</value>
-  </data>
-  <data name="&gt;&gt;UPnPCheckBox.Name" xml:space="preserve">
-    <value>UPnPCheckBox</value>
-  </data>
-  <data name="&gt;&gt;UPnPCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UPnPCheckBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;UPnPCheckBox.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="AutoConnectCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="AutoConnectCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
-  </data>
-  <data name="AutoConnectCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 207</value>
-  </data>
-  <data name="AutoConnectCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
-  </data>
-  <data name="AutoConnectCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
-  </data>
-  <data name="AutoConnectCheckBox.Text" xml:space="preserve">
-    <value>AutoConnect</value>
-  </data>
-  <data name="&gt;&gt;AutoConnectCheckBox.Name" xml:space="preserve">
-    <value>AutoConnectCheckBox</value>
-  </data>
-  <data name="&gt;&gt;AutoConnectCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AutoConnectCheckBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;AutoConnectCheckBox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="buttonVPNdebuglog.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="buttonVPNdebuglog.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20pt</value>
-  </data>
-  <data name="buttonVPNdebuglog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 85</value>
-  </data>
-  <data name="buttonVPNdebuglog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 47</value>
-  </data>
-  <data name="buttonVPNdebuglog.TabIndex" type="System.Int32, mscorlib">
-    <value>44</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNdebuglog.Name" xml:space="preserve">
-    <value>buttonVPNdebuglog</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNdebuglog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNdebuglog.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNdebuglog.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="buttonVPNinvkey.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="buttonVPNinvkey.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20pt</value>
-  </data>
-  <data name="buttonVPNinvkey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 85</value>
-  </data>
-  <data name="buttonVPNinvkey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 47</value>
-  </data>
-  <data name="buttonVPNinvkey.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvkey.Name" xml:space="preserve">
-    <value>buttonVPNinvkey</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvkey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvkey.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvkey.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="buttonVPNconsole.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="buttonVPNconsole.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 20pt</value>
-  </data>
-  <data name="buttonVPNconsole.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 85</value>
-  </data>
-  <data name="buttonVPNconsole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 47</value>
-  </data>
-  <data name="buttonVPNconsole.TabIndex" type="System.Int32, mscorlib">
-    <value>46</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNconsole.Name" xml:space="preserve">
-    <value>buttonVPNconsole</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNconsole.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;buttonVPNconsole.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;buttonVPNconsole.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labelInvite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 18</value>
   </data>
-  <data name="&gt;&gt;labelEnterInvite.Name" xml:space="preserve">
-    <value>labelEnterInvite</value>
-  </data>
-  <data name="&gt;&gt;labelEnterInvite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelEnterInvite.Parent" xml:space="preserve">
-    <value>InvitePanel</value>
-  </data>
-  <data name="&gt;&gt;labelEnterInvite.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvclose.Name" xml:space="preserve">
-    <value>buttonVPNinvclose</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvclose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvclose.Parent" xml:space="preserve">
-    <value>InvitePanel</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvclose.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvOK.Name" xml:space="preserve">
-    <value>buttonVPNinvOK</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvOK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvOK.Parent" xml:space="preserve">
-    <value>InvitePanel</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button18.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="&gt;&gt;buttonVPNinvOK.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;invkeytextBox.Name" xml:space="preserve">
-    <value>invkeytextBox</value>
-  </data>
-  <data name="&gt;&gt;invkeytextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;invkeytextBox.Parent" xml:space="preserve">
-    <value>InvitePanel</value>
-  </data>
-  <data name="&gt;&gt;invkeytextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="InvitePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 156</value>
-  </data>
-  <data name="InvitePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 107</value>
-  </data>
-  <data name="InvitePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="InvitePanel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;InvitePanel.Name" xml:space="preserve">
-    <value>InvitePanel</value>
-  </data>
-  <data name="&gt;&gt;InvitePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InvitePanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;InvitePanel.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="labelEnterInvite.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelEnterInvite.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 9.75pt, style=Bold</value>
-  </data>
-  <data name="labelEnterInvite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 6</value>
-  </data>
-  <data name="labelEnterInvite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 15</value>
-  </data>
-  <data name="labelEnterInvite.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
-  </data>
-  <data name="labelEnterInvite.Text" xml:space="preserve">
-    <value>Enter your invite key below:</value>
-  </data>
-  <data name="&gt;&gt;labelEnterInvite.Name" xml:space="preserve">
-    <value>labelEnterInvite</value>
-  </data>
-  <data name="&gt;&gt;labelEnterInvite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelEnterInvite.Parent" xml:space="preserve">
-    <value>InvitePanel</value>
-  </data>
-  <data name="&gt;&gt;labelEnterInvite.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="buttonVPNinvclose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonVPNinvclose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 64</value>
-  </data>
-  <data name="buttonVPNinvclose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="buttonVPNinvclose.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="buttonVPNinvclose.Text" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvclose.Name" xml:space="preserve">
-    <value>buttonVPNinvclose</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvclose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvclose.Parent" xml:space="preserve">
-    <value>InvitePanel</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvclose.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="buttonVPNinvOK.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="buttonVPNinvOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonVPNinvOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 64</value>
-  </data>
-  <data name="buttonVPNinvOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="buttonVPNinvOK.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
-  </data>
-  <data name="buttonVPNinvOK.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="&gt;&gt;buttonVPNinvOK.Name" xml:space="preserve">
     <value>buttonVPNinvOK</value>
   </data>
-  <data name="&gt;&gt;buttonVPNinvOK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;labelConsole.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;buttonVPNinvOK.Parent" xml:space="preserve">
-    <value>InvitePanel</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvOK.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="invkeytextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 27</value>
-  </data>
-  <data name="invkeytextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 20</value>
-  </data>
-  <data name="invkeytextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="&gt;&gt;invkeytextBox.Name" xml:space="preserve">
-    <value>invkeytextBox</value>
-  </data>
-  <data name="&gt;&gt;invkeytextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="labelInvite.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;invkeytextBox.Parent" xml:space="preserve">
     <value>InvitePanel</value>
   </data>
-  <data name="&gt;&gt;invkeytextBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labelMonitor.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="labelInvite.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="labelInvite.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 11.25pt, style=Bold</value>
   </data>
-  <data name="labelInvite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelInvite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 135</value>
-  </data>
-  <data name="labelInvite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 18</value>
-  </data>
-  <data name="labelInvite.TabIndex" type="System.Int32, mscorlib">
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="UPnPCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
   </data>
-  <data name="labelInvite.Text" xml:space="preserve">
-    <value>Invite</value>
+  <data name="&gt;&gt;button17.Name" xml:space="preserve">
+    <value>button17</value>
   </data>
-  <data name="labelInvite.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
+  <data name="buttonVPNdebuglog.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;labelInvite.Name" xml:space="preserve">
-    <value>labelInvite</value>
+  <data name="AutoConnectCheckBox.Text" xml:space="preserve">
+    <value>AutoConnect</value>
   </data>
-  <data name="&gt;&gt;labelInvite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelInvite.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelInvite.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="labelConsole.AutoSize" type="System.Boolean, mscorlib">
+  <data name="labelInvite.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labelConsole.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="labelConsole.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelConsole.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 135</value>
-  </data>
-  <data name="labelConsole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 18</value>
-  </data>
-  <data name="labelConsole.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
-  <data name="labelConsole.Text" xml:space="preserve">
-    <value>Console</value>
-  </data>
-  <data name="labelConsole.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="&gt;&gt;labelConsole.Name" xml:space="preserve">
-    <value>labelConsole</value>
+  <data name="AutoConnectCheckBox.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;labelConsole.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelConsole.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="AutoConnectCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
   </data>
-  <data name="&gt;&gt;labelConsole.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="labelEnterInvite.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
   </data>
-  <data name="labelMonitor.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="portOkButton.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="labelMonitor.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
+  <data name="labelMonitor.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="labelMonitor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="buttonVPNconsole.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 20pt</value>
   </data>
-  <data name="labelMonitor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 135</value>
+  <data name="&gt;&gt;invkeytextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="labelMonitor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 18</value>
-  </data>
-  <data name="labelMonitor.TabIndex" type="System.Int32, mscorlib">
-    <value>52</value>
-  </data>
-  <data name="labelMonitor.Text" xml:space="preserve">
-    <value>Monitor</value>
-  </data>
-  <data name="labelMonitor.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="&gt;&gt;labelMonitor.Name" xml:space="preserve">
-    <value>labelMonitor</value>
-  </data>
-  <data name="&gt;&gt;labelMonitor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelMonitor.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelMonitor.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="toolTip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>23, 11</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAgEAyADIAAD/7gAOQWRvYmUAZAAAAAAB/+EN0EV4aWYAAE1NACoAAAAIAAcBEgAD
@@ -1827,8 +1410,128 @@
         0fZUfKury9WKxw+uaT/2GM5P+e1fCf8Amv8AdfF/R/8AE+P9TH//2Q==
 </value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>250, 325</value>
+  <data name="portOkButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 23</value>
+  </data>
+  <data name="labelMonitor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 18</value>
+  </data>
+  <data name="buttonVPNinvOK.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="buttonVPNinvclose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 64</value>
+  </data>
+  <data name="labelEnterInvite.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 9.75pt, style=Bold</value>
+  </data>
+  <data name="buttonVPNinvkey.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ContraVPN Settings</value>
+  </data>
+  <data name="buttonVPNinvkey.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonVPNinvOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;AutoConnectCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonVPNdebuglog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 69</value>
+  </data>
+  <data name="&gt;&gt;toolTip2.Name" xml:space="preserve">
+    <value>toolTip2</value>
+  </data>
+  <data name="button18.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;portTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="UPnPCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonVPNconsole.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonVPNdebuglog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="portTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="labelEnterInvite.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvkey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 69</value>
+  </data>
+  <data name="buttonVPNdebuglog.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;button17.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="portOkButton.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="labelConsole.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="invkeytextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;labelEnterInvite.Name" xml:space="preserve">
+    <value>labelEnterInvite</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNinvclose.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonVPNinvOK.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;UPnPCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonVPNinvkey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 47</value>
+  </data>
+  <data name="buttonVPNinvOK.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonVPNinvclose.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="labelMonitor.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="buttonVPNdebuglog.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 20pt</value>
+  </data>
+  <data name="AutoConnectCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 22</value>
+  </data>
+  <data name="&gt;&gt;InvitePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelInvite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;button18.Name" xml:space="preserve">
+    <value>button18</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1906,22 +1609,406 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="&gt;&gt;buttonVPNinvclose.Name" xml:space="preserve">
+    <value>buttonVPNinvclose</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ContraVPN Settings</value>
+  <data name="labelConsole.Text" xml:space="preserve">
+    <value>Console</value>
   </data>
-  <data name="&gt;&gt;toolTip2.Name" xml:space="preserve">
-    <value>toolTip2</value>
+  <data name="&gt;&gt;portOkButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;portTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNinvclose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;portOkButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelMonitor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 119</value>
+  </data>
+  <data name="&gt;&gt;labelMonitor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="UPnPCheckBox.Text" xml:space="preserve">
+    <value>UPnP</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNinvkey.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 247</value>
+  </data>
+  <data name="labelMonitor.Text" xml:space="preserve">
+    <value>Monitor</value>
+  </data>
+  <data name="&gt;&gt;labelConsole.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonVPNdebuglog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 47</value>
+  </data>
+  <data name="UPnPCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 165</value>
+  </data>
+  <data name="&gt;&gt;InvitePanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button17.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="&gt;&gt;toolTip2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>VPNForm</value>
+  <data name="&gt;&gt;button17.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;AutoConnectCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="UPnPCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 22</value>
+  </data>
+  <data name="&gt;&gt;AutoConnectCheckBox.Name" xml:space="preserve">
+    <value>AutoConnectCheckBox</value>
+  </data>
+  <data name="invkeytextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 27</value>
+  </data>
+  <data name="&gt;&gt;labelEnterInvite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelMonitor.Name" xml:space="preserve">
+    <value>labelMonitor</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="labelInvite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 119</value>
+  </data>
+  <data name="labelEnterInvite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 6</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNinvkey.Name" xml:space="preserve">
+    <value>buttonVPNinvkey</value>
+  </data>
+  <data name="invkeytextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 20</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNconsole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelInvite.Name" xml:space="preserve">
+    <value>labelInvite</value>
+  </data>
+  <data name="&gt;&gt;button18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelEnterInvite.Parent" xml:space="preserve">
+    <value>InvitePanel</value>
+  </data>
+  <data name="button17.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;InvitePanel.Name" xml:space="preserve">
+    <value>InvitePanel</value>
+  </data>
+  <data name="&gt;&gt;labelInvite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNinvkey.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="AutoConnectCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="portOkButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 246</value>
+  </data>
+  <data name="UPnPCheckBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonVPNinvkey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelInvite.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="portTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 247</value>
+  </data>
+  <data name="buttonVPNinvOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 64</value>
+  </data>
+  <data name="buttonVPNinvclose.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="AutoConnectCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 191</value>
+  </data>
+  <data name="labelConsole.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelMonitor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonVPNdebuglog.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="&gt;&gt;button17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNconsole.Name" xml:space="preserve">
+    <value>buttonVPNconsole</value>
+  </data>
+  <data name="AutoConnectCheckBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="button17.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;InvitePanel.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNdebuglog.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonVPNinvkey.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelEnterInvite.Text" xml:space="preserve">
+    <value>Enter your invite key below:</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="buttonVPNconsole.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="button18.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelEnterInvite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 15</value>
+  </data>
+  <data name="InvitePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 140</value>
+  </data>
+  <data name="button18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="&gt;&gt;UPnPCheckBox.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;AutoConnectCheckBox.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;portTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelConsole.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;labelMonitor.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelInvite.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelMonitor.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;button18.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="button17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 31</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNinvOK.Parent" xml:space="preserve">
+    <value>InvitePanel</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;invkeytextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="portTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 20</value>
+  </data>
+  <data name="&gt;&gt;labelInvite.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;UPnPCheckBox.Name" xml:space="preserve">
+    <value>UPnPCheckBox</value>
+  </data>
+  <data name="InvitePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 101</value>
+  </data>
+  <data name="buttonVPNconsole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 47</value>
+  </data>
+  <data name="labelEnterInvite.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="portOkButton.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="InvitePanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="labelInvite.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="buttonVPNconsole.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 18</value>
+  </data>
+  <data name="labelConsole.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="InvitePanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Listening Port:</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="invkeytextBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelConsole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 18</value>
+  </data>
+  <data name="labelConsole.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="portOkButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UPnPCheckBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;labelEnterInvite.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonVPNinvkey.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 20pt</value>
+  </data>
+  <data name="buttonVPNinvclose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="labelInvite.Text" xml:space="preserve">
+    <value>Invite</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNdebuglog.Name" xml:space="preserve">
+    <value>buttonVPNdebuglog</value>
+  </data>
+  <data name="button18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>199, 31</value>
+  </data>
+  <data name="button17.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="labelMonitor.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>250, 325</value>
+  </data>
+  <data name="&gt;&gt;portOkButton.Name" xml:space="preserve">
+    <value>portOkButton</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonVPNdebuglog.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="buttonVPNinvclose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button18.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNinvclose.Parent" xml:space="preserve">
+    <value>InvitePanel</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNconsole.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;button18.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;invkeytextBox.Name" xml:space="preserve">
+    <value>invkeytextBox</value>
+  </data>
+  <data name="&gt;&gt;buttonVPNinvOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelConsole.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt, style=Bold</value>
+  </data>
+  <data name="labelConsole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 119</value>
+  </data>
+  <data name="buttonVPNconsole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 69</value>
+  </data>
+  <data name="&gt;&gt;portOkButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>VPNForm</value>
+  </data>
+  <data name="&gt;&gt;labelConsole.Name" xml:space="preserve">
+    <value>labelConsole</value>
+  </data>
+  <data name="InvitePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="labelMonitor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonVPNinvOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;portTextBox.Name" xml:space="preserve">
+    <value>portTextBox</value>
+  </data>
+  <data name="portTextBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;UPnPCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonVPNinvclose.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="toolTip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>23, 11</value>
+  </metadata>
 </root>

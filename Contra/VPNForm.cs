@@ -18,6 +18,7 @@ namespace Contra
         public VPNForm()
         {
             InitializeComponent();
+            portTextBox.Text = Properties.Settings.Default.PortNumber;
             buttonVPNdebuglog.TabStop = false;
             buttonVPNinvkey.TabStop = false;
             buttonVPNconsole.TabStop = false;
@@ -55,6 +56,7 @@ namespace Contra
                 File.AppendAllText(Globals.tincpath + "/contravpn/tinc.conf", AppendUPnP);
             }
 
+            //Read from tinc.conf and check/uncheck our checkboxes depending on content:
             if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("UPnP = no"))))
             {
                 UPnPCheckBox.Checked = false;
@@ -262,6 +264,22 @@ namespace Contra
 
         private void buttonVPNdebuglog_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    if (Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
+            //    {
+            //    GetTincInstalledPath_Registry_OpenDebugLog();
+            //    }
+            //    else if (!Directory.Exists(GetTincInstalledPath()))
+            //    {
+            //        GetTincInstalledPath_User_OpenDebugLog();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //}
+
             try
             {
                 GetTincInstalledPath_Registry_OpenDebugLog();
@@ -277,30 +295,30 @@ namespace Contra
             GetTincInstalledPath();
             if (Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
-                if (getCurrentCulture() == "en-US")
+                if (Globals.GB_Checked == true)
                 {
                     MessageBox.Show("Found existing \"contravpn\" folder, looks like you have already been invited.");
                 }
-                else if (getCurrentCulture() == "ru-RU")
+                else if (Globals.RU_Checked == true)
                 {
                     MessageBox.Show("Found existing \"contravpn\" folder, looks like you have already been invited.");
                 }
-                else if (getCurrentCulture() == "bg-BG")
+                else if (Globals.BG_Checked == true)
                 {
                     MessageBox.Show("Намерена е съществуваща папка с име \"contravpn\". Изглежда, че вече сте били поканени.");
                 }
             }
             else// if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
-                if (getCurrentCulture() == "en-US")
+                if (Globals.GB_Checked == true)
                 {
                     MessageBox.Show("You can request an invite key on our Discord's #contravpn channel.");
                 }
-                else if (getCurrentCulture() == "ru-RU")
+                else if (Globals.RU_Checked == true)
                 {
                     MessageBox.Show("You can request an invite key on our Discord's #contravpn channel.");
                 }
-                else if (getCurrentCulture() == "bg-BG")
+                else if (Globals.BG_Checked == true)
                 {
                     MessageBox.Show("Можете да поискате покана в #contravpn канала ни в Discord.");
                 }
@@ -328,15 +346,15 @@ namespace Contra
             }
             else
             {
-                if (getCurrentCulture() == "en-US")
+                if (Globals.GB_Checked == true)
                 {
                     MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
                 }
-                else if (getCurrentCulture() == "ru-RU")
+                else if (Globals.RU_Checked == true)
                 {
                     MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
                 }
-                else if (getCurrentCulture() == "bg-BG")
+                else if (Globals.BG_Checked == true)
                 {
                     MessageBox.Show("\"contravpn\" папката още не съществува. Повечето команди няма да се изпълнят.");
                 }
@@ -358,24 +376,52 @@ namespace Contra
             }
             else
             {
-                if (getCurrentCulture() == "en-US")
+                //if (Globals.GB_Checked == true)
+                //{
+                //    MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
+                //}
+                //else if (Globals.RU_Checked == true)
+                //{
+                //    MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
+                //}
+                //else if (Globals.BG_Checked == true)
+                //{
+                //    MessageBox.Show("\"contravpn\" папката още не съществува. Повечето команди няма да се изпълнят.");
+                //}
+                //tinc.Start();
+                if (Globals.GB_Checked == true)
                 {
-                    MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
+                    MessageBox.Show("The \"contravpn\" folder does not exist yet!", "Error");
                 }
-                else if (getCurrentCulture() == "ru-RU")
+                else if (Globals.RU_Checked == true)
                 {
-                    MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
+                    MessageBox.Show("The \"contravpn\" folder does not exist yet!", "Error");
                 }
-                else if (getCurrentCulture() == "bg-BG")
+                else if (Globals.BG_Checked == true)
                 {
-                    MessageBox.Show("\"contravpn\" папката още не съществува. Повечето команди няма да се изпълнят.");
+                    MessageBox.Show("\"contravpn\" папката още не съществува!", "Грешка");
                 }
-                tinc.Start();
             }
         }
 
         private void buttonVPNinvkey_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    if (Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
+            //    {
+            //        GetTincInstalledPath_Registry_EnterInvKey();
+            //    }
+            //    else if (!Directory.Exists(GetTincInstalledPath()))
+            //    {
+            //        GetTincInstalledPath_User_EnterInvKey();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //}
+
             try
             {
                 GetTincInstalledPath_Registry_EnterInvKey();
@@ -559,7 +605,7 @@ namespace Contra
                         }
                         else if (!Directory.Exists(Globals.tincpath + @"\contravpn"))
                         {
-                            MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
+                            MessageBox.Show("The \"contravpn\" folder does not exist yet!", "Error");
                             tinc.Start();
                             Properties.Settings.Default.TincFound = true;
                             Properties.Settings.Default.Save();
@@ -612,8 +658,24 @@ namespace Contra
             }
             catch (Exception)
             {
-                GetTincInstalledPath_User_OpenConsole(); //Form1_Instance.GetTincInstalledPath_User_OpenConsole();
+                GetTincInstalledPath_User_OpenConsole();
             }
+
+            //try
+            //{
+            //    if (Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
+            //    {
+            //    GetTincInstalledPath_Registry_OpenConsole();
+            //    }
+            //    else if (!Directory.Exists(GetTincInstalledPath()))
+            //    {
+            //        GetTincInstalledPath_User_OpenConsole();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //}
         }
 
         private void buttonVPNinvkey_MouseEnter(object sender, EventArgs e)
@@ -699,30 +761,30 @@ namespace Contra
                     string s2 = tinc.StandardOutput.ReadToEnd();
                     if (s.Contains("accepted") || s2.Contains("accepted") == true)
                     {
-                        if (getCurrentCulture() == "en-US")
+                        if (Globals.GB_Checked == true)
                         {
                             MessageBox.Show("Invitation successfully accepted!");
                         }
-                        else if (getCurrentCulture() == "ru-RU")
+                        else if (Globals.RU_Checked == true)
                         {
                             MessageBox.Show("Invitation successfully accepted!");
                         }
-                        else if (getCurrentCulture() == "bg-BG")
+                        else if (Globals.BG_Checked == true)
                         {
                             MessageBox.Show("Поканата е приета успешно!");
                         }
                     }
                     else
                     {
-                        if (getCurrentCulture() == "en-US")
+                        if (Globals.GB_Checked == true)
                         {
                             MessageBox.Show("Invitation cancelled.\nMake sure this invite key is valid, not already used, or has not expired.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        else if (getCurrentCulture() == "ru-RU")
+                        else if (Globals.RU_Checked == true)
                         {
                             MessageBox.Show("Invitation cancelled.\nMake sure this invite key is valid, not already used, or has not expired.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        else if (getCurrentCulture() == "bg-BG")
+                        else if (Globals.BG_Checked == true)
                         {
                             MessageBox.Show("Поканата беше отказана.\nУбедете се, че вашият ключ е валиден, не е вече използван, или не е изтекъл.", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
@@ -742,15 +804,15 @@ namespace Contra
                 }
                 else
                 {
-                    if (getCurrentCulture() == "en-US")
+                    if (Globals.GB_Checked == true)
                     {
                         MessageBox.Show("Tinc directory not found.", "Error");
                     }
-                    if (getCurrentCulture() == "ru-RU")
+                    if (Globals.RU_Checked == true)
                     {
                         MessageBox.Show("Tinc directory not found.", "Error");
                     }
-                    if (getCurrentCulture() == "bg-BG")
+                    if (Globals.BG_Checked == true)
                     {
                         MessageBox.Show("Tinc директорията не беше намерена.", "Грешка");
                     }
@@ -776,6 +838,63 @@ namespace Contra
         private void invkeytextBox_TextChanged(object sender, EventArgs e)
         {
             buttonVPNinvOK.Enabled = true;
+        }
+
+        private void portOkButton_Click(object sender, EventArgs e)
+        {
+            int parsedValue;
+            if (!int.TryParse(portTextBox.Text, out parsedValue))
+            {
+                if (Globals.GB_Checked == true)
+                {
+                    MessageBox.Show("The field takes only number input.", "Error");
+                }
+                else if (Globals.RU_Checked == true)
+                {
+                    MessageBox.Show("The field takes only number input.", "Error");
+                }
+                else if (Globals.BG_Checked == true)
+                {
+                    MessageBox.Show("Полето приема само цифри.", "Грешка");
+                }
+                return;
+            }
+
+            Process tinc = new Process();
+            tinc.StartInfo.Arguments = "set ListenAddress * " + portTextBox.Text;
+            //if (invkeytextBox.Text.StartsWith("contra.nsupdate.info"))
+            //{
+                tinc.StartInfo.FileName = GetTincInstalledPath() + @"\" + "tinc.exe";
+                tinc.StartInfo.UseShellExecute = false;
+ //               tinc.StartInfo.RedirectStandardOutput = true;
+//                tinc.StartInfo.RedirectStandardError = true;
+                tinc.StartInfo.CreateNoWindow = true;
+                GetTincInstalledPath().Replace("\"", "");
+                tinc.Start();
+
+  //              tinc.StandardInput.WriteLine("set ListenAddress * " + portTextBox.Text);
+ //               tinc.StandardInput.Flush();
+ //               tinc.StandardInput.Close();
+  //              string s = tinc.StandardOutput.ReadToEnd();
+  //              tinc.WaitForExit();
+  //              tinc.Close();
+  //              MessageBox.Show(s);
+                if (Globals.GB_Checked == true)
+                {
+                    MessageBox.Show("Listening port changed!");
+                }
+                else if (Globals.RU_Checked == true)
+                {
+                    MessageBox.Show("Listening port changed!");
+                }
+                else if (Globals.BG_Checked == true)
+                {
+                    MessageBox.Show("Портът е успешно променен!");
+                }
+
+                Properties.Settings.Default.PortNumber = portTextBox.Text;
+                Properties.Settings.Default.Save();
+            //}
         }
     }
 }

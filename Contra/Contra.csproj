@@ -70,11 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="eventargs.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Globals.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +81,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="VPNForm.cs">
       <SubType>Form</SubType>
@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ContraIco.ico" />
+    <None Include="Resources\background1.jpg" />
     <None Include="Resources\flag_gb.png" />
     <None Include="Resources\flag_bg.png" />
     <None Include="Resources\flag_ru.png" />
@@ -211,12 +212,12 @@
   <ItemGroup>
     <PublishFile Include="bn\Contra Launcher.resources">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
   </ItemGroup>

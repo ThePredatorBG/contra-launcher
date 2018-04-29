@@ -742,21 +742,6 @@ namespace Contra
             AutoScaleMode = AutoScaleMode.Dpi;
         }
 
-        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button17_Click(object sender, EventArgs e) //MinimizeIcon
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void OnApplicationExit(object sender, EventArgs e) //AppExit
         {
             this.Rename(BigToCtr);
@@ -786,6 +771,21 @@ namespace Contra
                 File.Delete(xppath + "_tmpChunk.dat");
             }
             this.Close();
+        }
+
+        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button17_Click(object sender, EventArgs e) //MinimizeIcon
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void button18_Click(object sender, EventArgs e) //ExitIcon
@@ -963,17 +963,17 @@ namespace Contra
             }
             else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
             {
-                if (getCurrentCulture() == "en-US")
+                if (Globals.GB_Checked == true)
                 {
                     MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder was not found. Make sure you have entered your invitation link first.", "Error");
                 }
-                else if (getCurrentCulture() == "ru-RU")
+                else if (Globals.RU_Checked == true)
                 {
                     MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder was not found. Make sure you have entered your invitation link first.", "Error");
                 }
-                else if (getCurrentCulture() == "bg-BG")
+                else if (Globals.BG_Checked == true)
                 {
-                    MessageBox.Show("ContraVPN не можа да се стартира, защото \"contravpn\" папката не беше намерена. Убедете се, че сте въвели ключа си за покана.", "Грешка");
+                    MessageBox.Show("ContraVPN не можа да се стартира, защото \"contravpn\" папката не беше намерена. Уверете се, че сте въвели ключа си за покана.", "Грешка");
                 }
                 //tinc.Start();
                 //GetTincInstalledPath_User_StartVPN();
@@ -998,16 +998,16 @@ namespace Contra
                     Process tinc = new Process();
                     tinc.StartInfo.Arguments = "-n contravpn -D";
                     tinc.StartInfo.FileName = "tincd.exe";
-                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(tincpath + @"\tincd.exe");
-                    if (File.Exists(tincpath + @"\tincd.exe"))
+                    tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(Globals.tincpath + @"\tincd.exe");
+                    if (File.Exists(Globals.tincpath + @"\tincd.exe"))
                     {
-                        if (Directory.Exists(tincpath + @"\contravpn"))
+                        if (Directory.Exists(Globals.tincpath + @"\contravpn"))
                         {
                             tinc.Start();
                             Properties.Settings.Default.TincFound = true;
                             Properties.Settings.Default.Save();
                         }
-                        else if (!Directory.Exists(tincpath + @"\contravpn"))
+                        else if (!Directory.Exists(Globals.tincpath + @"\contravpn"))
                         {
                             MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder was not found. Make sure you have entered your invitation link first.", "Error");
                             //                            tinc.Start();
@@ -1033,6 +1033,7 @@ namespace Contra
                 {
                     if (Directory.Exists(Globals.tincpath + @"\contravpn"))
                     {
+//                        MessageBox.Show(Globals.tincpath + @"\contravpn");
                         tinc.Start();
                         Properties.Settings.Default.TincFound = true;
                         Properties.Settings.Default.Save();
@@ -1067,13 +1068,23 @@ namespace Contra
             //}
             try
             {
-                GetTincInstalledPath_Registry_StartVPN();
-
-                //Process[] pname = Process.GetProcessesByName("tincd");
-                //if (pname.Length != 0)
-                //{
-                //    MessageBox.Show("runs");
-                //}
+                string tincd = "tincd.exe";
+                Process[] tincdByName = Process.GetProcessesByName(tincd.Substring(0, tincd.LastIndexOf('.')));
+                if (tincdByName.Length > 0)
+                {
+                    if (Globals.GB_Checked == true)
+                    {
+                        MessageBox.Show("\"Tincd.exe\" is already running!");
+                    }
+                    else if (Globals.BG_Checked == true)
+                    {
+                        MessageBox.Show("\"Tincd.exe\" вече е отворен!");
+                    }
+                }
+                else //if (tincdByName.Length == 0)
+                {
+                    GetTincInstalledPath_Registry_StartVPN();
+                }
 
                 Process ipconfig = new Process();
                 ipconfig.StartInfo.FileName = "cmd.exe";
@@ -1116,51 +1127,19 @@ namespace Contra
                         string text = File.ReadAllText(path + "Options.ini");
                         if (!text.Contains("10.10.10."))
                         {
-                            //Regex rgx = new Regex(text);
-                            //string result = rgx.Replace("^IPAddress.*$", "IPaddress = " + s);
-                            //File.WriteAllText(path + "Options.ini", text);
-
                             File.WriteAllText(path + "Options.ini", Regex.Replace(File.ReadAllText(path + "Options.ini"), "\r?\nIPAddress =.*", "\r\nIPAddress =" + s + "\r\n"));
-
-                            //Regex.Replace(text, "\r?\nIPAddress =.*", "\nIPAddress = " + s);
-                            //File.WriteAllText(path + "Options.ini", text);
-
-                            //text = text.Replace("IPAddress =", "IPAddress =" + s + " ;"); //adds ip next to = .... 192
-                            //File.WriteAllText(path + "Options.ini", text);
-
-                       //     string AppendTincIP = Environment.NewLine + "IPAddressWithtincIP";
-                       //     File.AppendAllText(xppath + "Options.ini", AppendTincIP);
                         }
                     }
-  //deletes all text after this                  //text = text.Remove(text.IndexOf(s));
-
-                  //  Regex.Replace(text, @"(^|\n).IPAddress.\n?", "", RegexOptions.Multiline);
-
-                  //  string result = Regex.Replace(text, ".*IPAddress =.*", "replacement string");
-
-                    //string[] lines = System.IO.File.ReadAllLines(path + "Options.ini");
-                    //lines[0] = "IPAddress =" + s;
-                    //System.IO.File.WriteAllLines(path + "Options.ini", lines);
-
                     else if (Directory.Exists(xppath))
                     {
                         string text = File.ReadAllText(xppath + "Options.ini");
                         if (!text.Contains("10.10.10."))
                         {
-                            //Regex.Replace(text, ".*IPAddress*.", "IPAddressWithtincIP");
-                            //text = text.Replace("IPAddress =", "IPAddress =" + s + " ;"); //adds ip next to = .... 192
                             string AppendTincIP = Environment.NewLine + "UPnP = no";
                             File.AppendAllText(xppath + "Options.ini", AppendTincIP);
                         }
                     }
                 }
-
-
-
-                //else MessageBox.Show("not found tinc ip");
-
-                //if (File.Exists("tincd.exe")) GetTincInstalledPath_Registry_StartVPN();
-                //else GetTincInstalledPath_User_StartVPN();
             }
             catch (Exception ex)
             {
@@ -1203,23 +1182,7 @@ namespace Contra
 
         private void buttonVPNinvOK_Click(object sender, EventArgs e)
         {
-            //GetTincInstalledPathInvKey();
 
-      //       TextBox invkeytextBox = (TextBox)sender;
-  //          string invkey = invkeytextBox.Text;
-            //invkey = Console.ReadLine();
-            //getting notepad's process | at least one instance of notepad must be running
-//            Process notepadProccess = Process.GetProcessesByName("tinc")[0];
-
-            //getting notepad's textbox handle from the main window's handle
-            //the textbox is called 'Edit'
-//            IntPtr notepadTextbox = FindWindowEx(notepadProccess.MainWindowHandle, IntPtr.Zero, "Edit", null);
-            //sending the message to the textbox
-//            SendMessage(notepadTextbox, WM_SETTEXT, 0, invkeytextBox.Text);
-
-         //   int invkey;
-       //     invkey = Console.Read();
-           // SendKeys.Send(invkey)
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -1238,7 +1201,33 @@ namespace Contra
         {
             if (Properties.Settings.Default.FirstRun)
             {
-                if (getCurrentCulture() == "en-US") //radioFlag_GB.Checked == true)
+
+                //Check UPnP to yes by default on first run.
+                if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("UPnP")) == false))
+                {
+                    string AppendUPnP = Environment.NewLine + "UPnP = yes";
+                    File.AppendAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", AppendUPnP);
+                }
+                else if ((File.Exists(GetTincInstalledPath() + "/contravpn/tinc.conf")) && ((File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf").Contains("UPnP = no")) == true))
+                {
+                    string text = File.ReadAllText(GetTincInstalledPath() + "/contravpn/tinc.conf");
+                    text = text.Replace("UPnP = no", "UPnP = yes");
+                    File.WriteAllText(GetTincInstalledPath() + "/contravpn/tinc.conf", text);
+                }
+                else if ((File.Exists(Globals.tincpath + "/contravpn/tinc.conf")) && ((File.ReadAllText(Globals.tincpath + "/contravpn/tinc.conf").Contains("UPnP")) == false))
+                {
+                    string AppendUPnP = Environment.NewLine + "UPnP = yes";
+                    File.AppendAllText(Globals.tincpath + "/contravpn/tinc.conf", AppendUPnP);
+                }
+                else if ((File.Exists(Globals.tincpath + "/contravpn/tinc.conf")) && ((File.ReadAllText(Globals.tincpath + "/contravpn/tinc.conf").Contains("UPnP = no")) == true))
+                {
+                    string text = File.ReadAllText(Globals.tincpath + "/contravpn/tinc.conf");
+                    text = text.Replace("UPnP = no", "UPnP = yes");
+                    File.WriteAllText(Globals.tincpath + "/contravpn/tinc.conf", text);
+                }
+
+                //Show message on first run.
+                if (getCurrentCulture() == "en-US")
                 {
                     MessageBox.Show("Welcome to Contra 009 Final! Since this is your first time running this launcher, we would like to let you know that you have a new opportunity to play Contra online via ContraVPN! We highly recommend you to join our Discord community!");
                 }
@@ -1250,6 +1239,7 @@ namespace Contra
                 {
                     MessageBox.Show("Добре дошли в Contra 009 Final! Тъй като това е първото Ви стартиране на Contra, бихме искали да знаете, че имате нова възможност да играете Contra онлайн чрез ContraVPN! Силно препоръчваме да се присъедините към нашата Discord общност! Еее... то и български имало бе! ;)");
                 }
+//                Globals.PortNumber = "665";
                 Properties.Settings.Default.FirstRun = false;
                 Properties.Settings.Default.Save();
             }

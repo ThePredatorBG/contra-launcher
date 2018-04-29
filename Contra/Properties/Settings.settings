@@ -59,5 +59,11 @@
     <Setting Name="LangF" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="UPnP" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="PortNumber" Type="System.String" Scope="User">
+      <Value Profile="(Default)">665</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -166,9 +166,6 @@
   <data name="QSCheckBox.Text" xml:space="preserve">
     <value>Бърз старт</value>
   </data>
-  <data name="QSCheckBox.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="MStandard.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 22</value>
   </data>
@@ -184,17 +181,11 @@
   <data name="WinCheckBox.Text" xml:space="preserve">
     <value>В прозорец</value>
   </data>
-  <data name="WinCheckBox.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="FogCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 22</value>
   </data>
   <data name="FogCheckBox.Text" xml:space="preserve">
     <value>Доп. еф.</value>
-  </data>
-  <data name="FogCheckBox.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="DefaultPics.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 22</value>
@@ -214,20 +205,8 @@
   <data name="GoofyPics.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="voicespanel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="languagepanel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="musicpanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 61</value>
-  </data>
-  <data name="musicpanel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="portraitspanel.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="versionLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>284, 555</value>
@@ -240,9 +219,6 @@
   </data>
   <data name="versionLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
-  </data>
-  <data name="versionLabel.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="VPNMoreButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -412,9 +388,6 @@
         22eVXeBtlf1wn3V/32wPcuzeL3iS4/bPzS72mZP9wXd2ARG+LKfmZZ4S7X0JqCO/3No/ogD8D4vpKEHx
         YwYUAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="VPNMoreButton.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="buttonVPNstart.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -900,59 +873,8 @@
         X8Rj7PB8ttdzH1y0F3yM7Zn76QGX8zH+L0Q89/8B5j5IfCYLncwAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="buttonVPNstart.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="helpbutton.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="buttonChat.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="button18.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="button17.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="websitebutton.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="button2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="button3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="button6.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="button5.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="button1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="radioFlag_GB.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="radioFlag_BG.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="radioFlag_UA.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="radioFlag_RU.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="LangFilterCheckBox.Text" xml:space="preserve">
     <value>Ез. филтър</value>
-  </data>
-  <data name="LangFilterCheckBox.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6557,8 +6479,5 @@
         AAAAD/4HAA//DwAP//8AD///AA///wAP//8AD///AA///wAP//8AD///AAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
   </data>
 </root>

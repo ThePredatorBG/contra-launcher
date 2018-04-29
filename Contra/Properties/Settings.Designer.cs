@@ -250,5 +250,29 @@ namespace Contra.Properties {
                 this["LangF"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UPnP {
+            get {
+                return ((bool)(this["UPnP"]));
+            }
+            set {
+                this["UPnP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("665")]
+        public string PortNumber {
+            get {
+                return ((string)(this["PortNumber"]));
+            }
+            set {
+                this["PortNumber"] = value;
+            }
+        }
     }
 }

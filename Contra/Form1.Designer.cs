@@ -129,7 +129,6 @@
             this.QSCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.QSCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.QSCheckBox.Name = "QSCheckBox";
-            this.toolTip1.SetToolTip(this.QSCheckBox, resources.GetString("QSCheckBox.ToolTip"));
             this.QSCheckBox.UseVisualStyleBackColor = false;
             // 
             // MStandard
@@ -147,7 +146,6 @@
             this.WinCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.WinCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.WinCheckBox.Name = "WinCheckBox";
-            this.toolTip1.SetToolTip(this.WinCheckBox, resources.GetString("WinCheckBox.ToolTip"));
             this.WinCheckBox.UseVisualStyleBackColor = false;
             this.WinCheckBox.CheckedChanged += new System.EventHandler(this.WinCheckBox_CheckedChanged);
             // 
@@ -159,7 +157,6 @@
             this.FogCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.FogCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FogCheckBox.Name = "FogCheckBox";
-            this.toolTip1.SetToolTip(this.FogCheckBox, resources.GetString("FogCheckBox.ToolTip"));
             this.FogCheckBox.UseVisualStyleBackColor = false;
             this.FogCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -183,44 +180,40 @@
             // 
             // voicespanel
             // 
-            resources.ApplyResources(this.voicespanel, "voicespanel");
             this.voicespanel.BackColor = System.Drawing.Color.Transparent;
             this.voicespanel.Controls.Add(this.RadioOrigQuotes);
             this.voicespanel.Controls.Add(this.RadioLocQuotes);
+            resources.ApplyResources(this.voicespanel, "voicespanel");
             this.voicespanel.Name = "voicespanel";
-            this.toolTip1.SetToolTip(this.voicespanel, resources.GetString("voicespanel.ToolTip"));
             this.voicespanel.Paint += new System.Windows.Forms.PaintEventHandler(this.voicespanel_Paint);
             // 
             // languagepanel
             // 
-            resources.ApplyResources(this.languagepanel, "languagepanel");
             this.languagepanel.BackColor = System.Drawing.Color.Transparent;
             this.languagepanel.Controls.Add(this.RadioRU);
             this.languagepanel.Controls.Add(this.RadioEN);
             this.languagepanel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            resources.ApplyResources(this.languagepanel, "languagepanel");
             this.languagepanel.Name = "languagepanel";
-            this.toolTip1.SetToolTip(this.languagepanel, resources.GetString("languagepanel.ToolTip"));
             this.languagepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.languagepanel_Paint);
             // 
             // musicpanel
             // 
-            resources.ApplyResources(this.musicpanel, "musicpanel");
             this.musicpanel.BackColor = System.Drawing.Color.Transparent;
             this.musicpanel.Controls.Add(this.MStandard);
             this.musicpanel.Controls.Add(this.MNew);
             this.musicpanel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            resources.ApplyResources(this.musicpanel, "musicpanel");
             this.musicpanel.Name = "musicpanel";
-            this.toolTip1.SetToolTip(this.musicpanel, resources.GetString("musicpanel.ToolTip"));
             // 
             // portraitspanel
             // 
-            resources.ApplyResources(this.portraitspanel, "portraitspanel");
             this.portraitspanel.BackColor = System.Drawing.Color.Transparent;
             this.portraitspanel.Controls.Add(this.GoofyPics);
             this.portraitspanel.Controls.Add(this.DefaultPics);
             this.portraitspanel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            resources.ApplyResources(this.portraitspanel, "portraitspanel");
             this.portraitspanel.Name = "portraitspanel";
-            this.toolTip1.SetToolTip(this.portraitspanel, resources.GetString("portraitspanel.ToolTip"));
             // 
             // versionLabel
             // 
@@ -228,19 +221,17 @@
             this.versionLabel.BackColor = System.Drawing.Color.Transparent;
             this.versionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(100)))));
             this.versionLabel.Name = "versionLabel";
-            this.toolTip1.SetToolTip(this.versionLabel, resources.GetString("versionLabel.ToolTip"));
             // 
             // VPNMoreButton
             // 
-            resources.ApplyResources(this.VPNMoreButton, "VPNMoreButton");
             this.VPNMoreButton.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.VPNMoreButton, "VPNMoreButton");
             this.VPNMoreButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.VPNMoreButton.FlatAppearance.BorderSize = 0;
             this.VPNMoreButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.VPNMoreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.VPNMoreButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.VPNMoreButton.Name = "VPNMoreButton";
-            this.toolTip1.SetToolTip(this.VPNMoreButton, resources.GetString("VPNMoreButton.ToolTip"));
             this.VPNMoreButton.UseVisualStyleBackColor = false;
             this.VPNMoreButton.Click += new System.EventHandler(this.VPNMoreButton_Click);
             this.VPNMoreButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.VPNMoreButton_MouseDown);
@@ -249,15 +240,14 @@
             // 
             // buttonVPNstart
             // 
-            resources.ApplyResources(this.buttonVPNstart, "buttonVPNstart");
             this.buttonVPNstart.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.buttonVPNstart, "buttonVPNstart");
             this.buttonVPNstart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVPNstart.FlatAppearance.BorderSize = 0;
             this.buttonVPNstart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonVPNstart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonVPNstart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonVPNstart.Name = "buttonVPNstart";
-            this.toolTip1.SetToolTip(this.buttonVPNstart, resources.GetString("buttonVPNstart.ToolTip"));
             this.buttonVPNstart.UseVisualStyleBackColor = false;
             this.buttonVPNstart.Click += new System.EventHandler(this.buttonVPNstart_Click);
             this.buttonVPNstart.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonVPNstart_MouseDown);
@@ -266,16 +256,15 @@
             // 
             // helpbutton
             // 
-            resources.ApplyResources(this.helpbutton, "helpbutton");
             this.helpbutton.BackColor = System.Drawing.Color.Transparent;
             this.helpbutton.BackgroundImage = global::Contra.Properties.Resources._button_help;
             this.helpbutton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.helpbutton.FlatAppearance.BorderSize = 0;
             this.helpbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.helpbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.helpbutton, "helpbutton");
             this.helpbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.helpbutton.Name = "helpbutton";
-            this.toolTip1.SetToolTip(this.helpbutton, resources.GetString("helpbutton.ToolTip"));
             this.helpbutton.UseVisualStyleBackColor = false;
             this.helpbutton.Click += new System.EventHandler(this.helpbutton_Click);
             this.helpbutton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.helpbutton_MouseDown_1);
@@ -284,16 +273,15 @@
             // 
             // buttonChat
             // 
-            resources.ApplyResources(this.buttonChat, "buttonChat");
             this.buttonChat.BackColor = System.Drawing.Color.Transparent;
             this.buttonChat.BackgroundImage = global::Contra.Properties.Resources._button_discord;
             this.buttonChat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonChat.FlatAppearance.BorderSize = 0;
             this.buttonChat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonChat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.buttonChat, "buttonChat");
             this.buttonChat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonChat.Name = "buttonChat";
-            this.toolTip1.SetToolTip(this.buttonChat, resources.GetString("buttonChat.ToolTip"));
             this.buttonChat.UseVisualStyleBackColor = false;
             this.buttonChat.Click += new System.EventHandler(this.buttonChat_Click);
             this.buttonChat.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonChat_MouseDown);
@@ -302,40 +290,37 @@
             // 
             // button18
             // 
-            resources.ApplyResources(this.button18, "button18");
             this.button18.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button18.BackgroundImage = global::Contra.Properties.Resources.exit1;
+            resources.ApplyResources(this.button18, "button18");
             this.button18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button18.FlatAppearance.BorderSize = 0;
             this.button18.Name = "button18";
-            this.toolTip1.SetToolTip(this.button18, resources.GetString("button18.ToolTip"));
             this.button18.UseVisualStyleBackColor = false;
             this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // button17
             // 
-            resources.ApplyResources(this.button17, "button17");
             this.button17.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button17.BackgroundImage = global::Contra.Properties.Resources.min;
+            resources.ApplyResources(this.button17, "button17");
             this.button17.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button17.FlatAppearance.BorderSize = 0;
             this.button17.Name = "button17";
-            this.toolTip1.SetToolTip(this.button17, resources.GetString("button17.ToolTip"));
             this.button17.UseVisualStyleBackColor = false;
             this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // websitebutton
             // 
-            resources.ApplyResources(this.websitebutton, "websitebutton");
             this.websitebutton.BackColor = System.Drawing.Color.Transparent;
             this.websitebutton.BackgroundImage = global::Contra.Properties.Resources._button_website;
             this.websitebutton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.websitebutton.FlatAppearance.BorderSize = 0;
             this.websitebutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.websitebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.websitebutton, "websitebutton");
             this.websitebutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.websitebutton.Name = "websitebutton";
-            this.toolTip1.SetToolTip(this.websitebutton, resources.GetString("websitebutton.ToolTip"));
             this.websitebutton.UseVisualStyleBackColor = false;
             this.websitebutton.Click += new System.EventHandler(this.websitebutton_Click);
             this.websitebutton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.websitebutton_MouseDown);
@@ -344,16 +329,15 @@
             // 
             // button2
             // 
-            resources.ApplyResources(this.button2, "button2");
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.BackgroundImage = global::Contra.Properties.Resources._button_exit;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button2, "button2");
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button2.Name = "button2";
-            this.toolTip1.SetToolTip(this.button2, resources.GetString("button2.ToolTip"));
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button2_MouseDown);
@@ -362,16 +346,15 @@
             // 
             // button3
             // 
-            resources.ApplyResources(this.button3, "button3");
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImage = global::Contra.Properties.Resources._button_readme;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button3, "button3");
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button3.Name = "button3";
-            this.toolTip1.SetToolTip(this.button3, resources.GetString("button3.ToolTip"));
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             this.button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button3_MouseDown);
@@ -380,16 +363,15 @@
             // 
             // button6
             // 
-            resources.ApplyResources(this.button6, "button6");
             this.button6.BackColor = System.Drawing.Color.Transparent;
             this.button6.BackgroundImage = global::Contra.Properties.Resources._button_wb;
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button6, "button6");
             this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button6.Name = "button6";
-            this.toolTip1.SetToolTip(this.button6, resources.GetString("button6.ToolTip"));
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             this.button6.Enter += new System.EventHandler(this.button6_Enter);
@@ -399,16 +381,15 @@
             // 
             // button5
             // 
-            resources.ApplyResources(this.button5, "button5");
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.BackgroundImage = global::Contra.Properties.Resources._button_moddb;
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button5, "button5");
             this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button5.Name = "button5";
-            this.toolTip1.SetToolTip(this.button5, resources.GetString("button5.ToolTip"));
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             this.button5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button5_MouseDown);
@@ -417,16 +398,15 @@
             // 
             // button1
             // 
-            resources.ApplyResources(this.button1, "button1");
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = global::Contra.Properties.Resources._button_launch;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button1, "button1");
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Name = "button1";
-            this.toolTip1.SetToolTip(this.button1, resources.GetString("button1.ToolTip"));
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
@@ -445,20 +425,18 @@
             this.radioFlag_GB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.radioFlag_GB.Name = "radioFlag_GB";
             this.radioFlag_GB.TabStop = true;
-            this.toolTip1.SetToolTip(this.radioFlag_GB, resources.GetString("radioFlag_GB.ToolTip"));
             this.radioFlag_GB.UseVisualStyleBackColor = false;
             this.radioFlag_GB.CheckedChanged += new System.EventHandler(this.radioFlag_GB_CheckedChanged);
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.radioFlag_BG);
             this.panel1.Controls.Add(this.radioFlag_UA);
             this.panel1.Controls.Add(this.radioFlag_RU);
             this.panel1.Controls.Add(this.radioFlag_GB);
             this.panel1.Name = "panel1";
-            this.toolTip1.SetToolTip(this.panel1, resources.GetString("panel1.ToolTip"));
             // 
             // radioFlag_BG
             // 
@@ -472,7 +450,6 @@
             this.radioFlag_BG.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.radioFlag_BG.Name = "radioFlag_BG";
             this.radioFlag_BG.TabStop = true;
-            this.toolTip1.SetToolTip(this.radioFlag_BG, resources.GetString("radioFlag_BG.ToolTip"));
             this.radioFlag_BG.UseVisualStyleBackColor = false;
             this.radioFlag_BG.CheckedChanged += new System.EventHandler(this.radioFlag_BG_CheckedChanged);
             // 
@@ -488,7 +465,6 @@
             this.radioFlag_UA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.radioFlag_UA.Name = "radioFlag_UA";
             this.radioFlag_UA.TabStop = true;
-            this.toolTip1.SetToolTip(this.radioFlag_UA, resources.GetString("radioFlag_UA.ToolTip"));
             this.radioFlag_UA.UseVisualStyleBackColor = false;
             this.radioFlag_UA.CheckedChanged += new System.EventHandler(this.radioFlag_UA_CheckedChanged);
             // 
@@ -504,7 +480,6 @@
             this.radioFlag_RU.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.radioFlag_RU.Name = "radioFlag_RU";
             this.radioFlag_RU.TabStop = true;
-            this.toolTip1.SetToolTip(this.radioFlag_RU, resources.GetString("radioFlag_RU.ToolTip"));
             this.radioFlag_RU.UseVisualStyleBackColor = false;
             this.radioFlag_RU.CheckedChanged += new System.EventHandler(this.radioFlag_RU_CheckedChanged);
             // 
@@ -522,14 +497,14 @@
             this.LangFilterCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.LangFilterCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LangFilterCheckBox.Name = "LangFilterCheckBox";
-            this.toolTip1.SetToolTip(this.LangFilterCheckBox, resources.GetString("LangFilterCheckBox.ToolTip"));
             this.LangFilterCheckBox.UseVisualStyleBackColor = false;
             this.LangFilterCheckBox.CheckedChanged += new System.EventHandler(this.LangFilterCheckBox_CheckedChanged);
             // 
             // Form1
             // 
-            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::Contra.Properties.Resources.background1;
+            resources.ApplyResources(this, "$this");
             this.ControlBox = false;
             this.Controls.Add(this.LangFilterCheckBox);
             this.Controls.Add(this.panel1);
@@ -558,7 +533,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.voicespanel.ResumeLayout(false);

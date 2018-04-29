@@ -117,9 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="button18.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button17.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="UPnPCheckBox.ToolTip" xml:space="preserve">
-    <value>Търсете за локални UPnP-IGD устройства. Това може да подобри свързаността, ако UPnP е включен на вашия рутер.
-Изисква поддръжка на miniuonpc (tinc разпространен от Contra има това, официалният - не).</value>
+    <value />
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="AutoConnectCheckBox.Size" type="System.Drawing.Size, System.Drawing">
@@ -131,10 +136,14 @@
   <data name="AutoConnectCheckBox.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="AutoConnectCheckBox.ToolTip1" xml:space="preserve">
-    <value>Автоматично настройване на мета-връзки към други възли.
-Това Ви позволява да запазите връзката си с другите играчи, дори когато contravpn възелът е офлайн.
-Работи само с възли, които имат отворени портове.</value>
+  <data name="buttonVPNdebuglog.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvkey.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNconsole.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="labelEnterInvite.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 7</value>
@@ -145,11 +154,26 @@
   <data name="labelEnterInvite.Text" xml:space="preserve">
     <value>Въведете ключа от поканата:</value>
   </data>
+  <data name="labelEnterInvite.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="buttonVPNinvclose.Text" xml:space="preserve">
     <value>Отказ</value>
   </data>
+  <data name="buttonVPNinvclose.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonVPNinvOK.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="invkeytextBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InvitePanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="labelInvite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 135</value>
+    <value>30, 119</value>
   </data>
   <data name="labelInvite.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 18</value>
@@ -157,8 +181,8 @@
   <data name="labelInvite.Text" xml:space="preserve">
     <value>Покана</value>
   </data>
-  <data name="labelConsole.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 135</value>
+  <data name="labelInvite.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="labelConsole.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 18</value>
@@ -166,14 +190,29 @@
   <data name="labelConsole.Text" xml:space="preserve">
     <value>Конзола</value>
   </data>
+  <data name="labelConsole.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="labelMonitor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 135</value>
+    <value>164, 119</value>
   </data>
   <data name="labelMonitor.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 18</value>
   </data>
   <data name="labelMonitor.Text" xml:space="preserve">
     <value>Доп. инф.</value>
+  </data>
+  <data name="labelMonitor.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="portTextBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="portOkButton.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1468,5 +1507,8 @@
         AAAAD/4HAA//DwAP//8AD///AA///wAP//8AD///AA///wAP//8AD///AAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>
