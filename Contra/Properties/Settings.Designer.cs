@@ -265,7 +265,7 @@ namespace Contra.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("665")]
+        [global::System.Configuration.DefaultSettingValueAttribute("655")]
         public string PortNumber {
             get {
                 return ((string)(this["PortNumber"]));

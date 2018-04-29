@@ -1239,7 +1239,6 @@ namespace Contra
                 {
                     MessageBox.Show("Добре дошли в Contra 009 Final! Тъй като това е първото Ви стартиране на Contra, бихме искали да знаете, че имате нова възможност да играете Contra онлайн чрез ContraVPN! Силно препоръчваме да се присъедините към нашата Discord общност! Еее... то и български имало бе! ;)");
                 }
-//                Globals.PortNumber = "665";
                 Properties.Settings.Default.FirstRun = false;
                 Properties.Settings.Default.Save();
             }

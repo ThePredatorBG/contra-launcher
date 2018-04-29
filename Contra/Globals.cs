@@ -21,6 +21,5 @@ namespace Contra
         public static bool BG_Checked = false;
         public static string tincpath;
         public static bool TincFound;
-//        public static string PortNumber;
     }
 }

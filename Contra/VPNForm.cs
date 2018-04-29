@@ -843,19 +843,20 @@ namespace Contra
         private void portOkButton_Click(object sender, EventArgs e)
         {
             int parsedValue;
-            if (!int.TryParse(portTextBox.Text, out parsedValue))
+            if ((!int.TryParse(portTextBox.Text, out parsedValue)) || parsedValue > 65535 || parsedValue < 1)
+                //reverse logic (!int.TryParse), so "<" is ">" and vice versa, or in other words - this condition determines when the input is incorrect
             {
                 if (Globals.GB_Checked == true)
                 {
-                    MessageBox.Show("The field takes only number input.", "Error");
+                    MessageBox.Show("The field takes only number input, between 1 and 65535.", "Error");
                 }
                 else if (Globals.RU_Checked == true)
                 {
-                    MessageBox.Show("The field takes only number input.", "Error");
+                    MessageBox.Show("The field takes only number input, between 1 and 65535.", "Error");
                 }
                 else if (Globals.BG_Checked == true)
                 {
-                    MessageBox.Show("Полето приема само цифри.", "Грешка");
+                    MessageBox.Show("Полето приема само цифри, между 1 и 65535.", "Грешка");
                 }
                 return;
             }
