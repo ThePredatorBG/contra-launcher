@@ -22,15 +22,31 @@ namespace Contra
             buttonVPNdebuglog.TabStop = false;
             buttonVPNinvkey.TabStop = false;
             buttonVPNconsole.TabStop = false;
+            button17.TabStop = false;
+            button18.TabStop = false;
+            UPnPCheckBox.TabStop = false;
+            AutoConnectCheckBox.TabStop = false;
+            portTextBox.TabStop = false;
+            portOkButton.TabStop = false;
 
             if (Globals.GB_Checked == true)
             {
                 toolTip2.SetToolTip(UPnPCheckBox, "Search for local UPnP-IGD devices, this can improve connectivity if UPnP is enabled on your router.\nRequires miniupnpc support (tinc distributed by Contra has this, official does not).");
                 toolTip2.SetToolTip(AutoConnectCheckBox, "Automatically set up meta connections to other nodes.\nThis allows you to retain connection with other players even if contravpn node goes down.\nOnly works with nodes that have open ports.");
             }
+            else if (Globals.RU_Checked == true)
+            {
+                toolTip2.SetToolTip(UPnPCheckBox, "Поиск локальных устройств UPnP-IGD, это может улучшить связь, если в вашем маршрутизаторе будет включено UPnP.\nНужна поддержка miniupnpc (tinc, что распространяется Contra, это не официально).");
+                toolTip2.SetToolTip(AutoConnectCheckBox, "Автоматическая установка мета-соеденения с другими узлами.\nПозволяет сохранять связь с другими игроками, даже если узел ContraVPN выключен.\nРаботает только с узлами, которые имеют открытые порты.");
+            }
+            else if (Globals.UA_Checked == true)
+            {
+                toolTip2.SetToolTip(UPnPCheckBox, "Пошук локальних пристроїв UPnP-IGD, це може покращити зв*язок, якщо у вашому маршрутизаторі буде ввімкнено UPnP.\nПотрібна підтримка miniupnpc (tinc, що розповсюджується Contra, це не офіційно).");
+                toolTip2.SetToolTip(AutoConnectCheckBox, "Автоматично встановлювати мета-з*єднання з іншими вузлами.\nЦе дозволяє зберігати зв*язок з іншими гравцями, навіть якщо ContraVPN вузол знижується.\nПрацює тільки з вузлами, котрі мають відкриті порти.");
+            }
             else if (Globals.BG_Checked == true)
             {
-                toolTip2.SetToolTip(UPnPCheckBox, "Търсете за локални UPnP-IGD устройства. Това може да подобри свързаността, ако UPnP е включен на вашия рутер.\nИзисква поддръжка на miniupnpc (tinc разпространен от Contra има това, официалният - не).");
+                toolTip2.SetToolTip(UPnPCheckBox, "Търсете за локални UPnP-IGD устройства. Това може да подобри свързаността, ако UPnP е включен на вашия маршрутизатор.\nИзисква поддръжка на miniupnpc (tinc разпространен от Contra има това, официалният - не).");
                 toolTip2.SetToolTip(AutoConnectCheckBox, "Автоматично настройване на мета-връзки към други възли.\nТова Ви позволява да запазите връзката си с другите играчи, дори когато contravpn възелът е офлайн.\nРаботи само с възли, които имат отворени портове.");
             }
 
@@ -301,7 +317,11 @@ namespace Contra
                 }
                 else if (Globals.RU_Checked == true)
                 {
-                    MessageBox.Show("Found existing \"contravpn\" folder, looks like you have already been invited.");
+                    MessageBox.Show("Найдено существующую папку \"contravpn\", похоже, что Вас уже пригласили.");
+                }
+                else if (Globals.UA_Checked == true)
+                {
+                    MessageBox.Show("Знайдено існуючу папку \"contravpn\", схоже, що Вас вже запросили.");
                 }
                 else if (Globals.BG_Checked == true)
                 {
@@ -316,7 +336,11 @@ namespace Contra
                 }
                 else if (Globals.RU_Checked == true)
                 {
-                    MessageBox.Show("You can request an invite key on our Discord's #contravpn channel.");
+                    MessageBox.Show("Вы можете получить ключ приглашения на нашем канале #contravpn Discord.");
+                }
+                else if (Globals.UA_Checked == true)
+                {
+                    MessageBox.Show("Ви можете отримати ключ запрошення на нашому каналі #contravpn Discord.");
                 }
                 else if (Globals.BG_Checked == true)
                 {
@@ -352,7 +376,11 @@ namespace Contra
                 }
                 else if (Globals.RU_Checked == true)
                 {
-                    MessageBox.Show("The \"contravpn\" folder does not exist yet. Most commands will not execute.");
+                    MessageBox.Show("Папка \"contravpn\" еще не существует. Большинство команд выполняться не будут.");
+                }
+                else if (Globals.UA_Checked == true)
+                {
+                    MessageBox.Show("Папка \"contravpn\" ще не існує. Більшість команд не виконуватимуться.");
                 }
                 else if (Globals.BG_Checked == true)
                 {
@@ -395,7 +423,11 @@ namespace Contra
                 }
                 else if (Globals.RU_Checked == true)
                 {
-                    MessageBox.Show("The \"contravpn\" folder does not exist yet!", "Error");
+                    MessageBox.Show("Папка \"contravpn\" еще не существует!", "Ошибка");
+                }
+                else if (Globals.UA_Checked == true)
+                {
+                    MessageBox.Show("Папка \"contravpn\" ще не існує!", "Помилка");
                 }
                 else if (Globals.BG_Checked == true)
                 {
@@ -767,7 +799,11 @@ namespace Contra
                         }
                         else if (Globals.RU_Checked == true)
                         {
-                            MessageBox.Show("Invitation successfully accepted!");
+                            MessageBox.Show("Приглашение успешно принято!");
+                        }
+                        else if (Globals.UA_Checked == true)
+                        {
+                            MessageBox.Show("Запрошення успішно прийнято!");
                         }
                         else if (Globals.BG_Checked == true)
                         {
@@ -782,7 +818,11 @@ namespace Contra
                         }
                         else if (Globals.RU_Checked == true)
                         {
-                            MessageBox.Show("Invitation cancelled.\nMake sure this invite key is valid, not already used, or has not expired.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Приглашение отменено.\nУбедитесь, что ключ приглашения действителен, не используется или его срок действия не истек.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (Globals.UA_Checked == true)
+                        {
+                            MessageBox.Show("Запрошення скасовано.\nПереконайтеся, що цей ключ запрошення дійсний, чи ще не використовується або його термін дії не минув.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else if (Globals.BG_Checked == true)
                         {
@@ -808,11 +848,15 @@ namespace Contra
                     {
                         MessageBox.Show("Tinc directory not found.", "Error");
                     }
-                    if (Globals.RU_Checked == true)
+                    else if (Globals.RU_Checked == true)
                     {
-                        MessageBox.Show("Tinc directory not found.", "Error");
+                        MessageBox.Show("Каталог tinc не найден.", "Ошибка");
                     }
-                    if (Globals.BG_Checked == true)
+                    else if (Globals.UA_Checked == true)
+                    {
+                        MessageBox.Show("Каталог tinc не знайдено.", "Помилка");
+                    }
+                    else if (Globals.BG_Checked == true)
                     {
                         MessageBox.Show("Tinc директорията не беше намерена.", "Грешка");
                     }
@@ -826,7 +870,11 @@ namespace Contra
                 }
                 else if (Globals.RU_Checked == true) //(getCurrentCulture() == "ru-RU")
                 {
-                    MessageBox.Show("Invalid input.", "Error");
+                    MessageBox.Show("Неправильные данные.", "Ошибка");
+                }
+                else if (Globals.UA_Checked == true)
+                {
+                    MessageBox.Show("Неправильні дані.", "Помилка");
                 }
                 else if (Globals.BG_Checked == true) //(getCurrentCulture() == "bg-BG")
                 {
@@ -852,7 +900,11 @@ namespace Contra
                 }
                 else if (Globals.RU_Checked == true)
                 {
-                    MessageBox.Show("The field takes only number input, between 1 and 65535.", "Error");
+                    MessageBox.Show("Порт занимает только количество входов, от 1 до 65535.", "Ошибка");
+                }
+                else if (Globals.UA_Checked == true)
+                {
+                    MessageBox.Show("Порт займає лише кількість входів, від 1 до 65535.", "Помилка");
                 }
                 else if (Globals.BG_Checked == true)
                 {
@@ -886,7 +938,11 @@ namespace Contra
                 }
                 else if (Globals.RU_Checked == true)
                 {
-                    MessageBox.Show("Listening port changed!");
+                    MessageBox.Show("Порт изменен!");
+                }
+                else if (Globals.UA_Checked == true)
+                {
+                    MessageBox.Show("Порт змінений!");
                 }
                 else if (Globals.BG_Checked == true)
                 {
@@ -896,6 +952,31 @@ namespace Contra
                 Properties.Settings.Default.PortNumber = portTextBox.Text;
                 Properties.Settings.Default.Save();
             //}
+        }
+
+        private void VPNForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button18_MouseEnter(object sender, EventArgs e)
+        {
+            button18.BackgroundImage = (System.Drawing.Image)(Properties.Resources.exit11);
+        }
+
+        private void button18_MouseLeave(object sender, EventArgs e)
+        {
+            button18.BackgroundImage = (System.Drawing.Image)(Properties.Resources.exit1);
+        }
+
+        private void button17_MouseEnter(object sender, EventArgs e)
+        {
+            button17.BackgroundImage = (System.Drawing.Image)(Properties.Resources.min11);
+        }
+
+        private void button17_MouseLeave(object sender, EventArgs e)
+        {
+            button17.BackgroundImage = (System.Drawing.Image)(Properties.Resources.min);
         }
     }
 }

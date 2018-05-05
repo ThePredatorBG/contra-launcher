@@ -71,3 +71,15 @@ C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\en\Con
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\ru\Contra Launcher.resources.dll
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra Launcher.pdb
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.VPNForm.en.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.moreOptionsForm.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\bin\Debug\uk\Contra Launcher.resources.dll
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Form1.uk.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\uk\Contra Launcher.resources.dll
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.VPNForm.uk.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\bin\Debug\af\Contra Launcher.resources.dll
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.moreOptionsForm.af.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.moreOptionsForm.bg.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.moreOptionsForm.uk.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\af\Contra Launcher.resources.dll
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.moreOptionsForm.ru.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.VPNForm.ru.resources

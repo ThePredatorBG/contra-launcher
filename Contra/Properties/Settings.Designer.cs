@@ -274,5 +274,17 @@ namespace Contra.Properties {
                 this["PortNumber"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Res {
+            get {
+                return ((string)(this["Res"]));
+            }
+            set {
+                this["Res"] = value;
+            }
+        }
     }
 }

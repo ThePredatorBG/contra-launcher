@@ -38,7 +38,6 @@
             this.QSCheckBox = new System.Windows.Forms.CheckBox();
             this.MStandard = new System.Windows.Forms.RadioButton();
             this.WinCheckBox = new System.Windows.Forms.CheckBox();
-            this.FogCheckBox = new System.Windows.Forms.CheckBox();
             this.DefaultPics = new System.Windows.Forms.RadioButton();
             this.GoofyPics = new System.Windows.Forms.RadioButton();
             this.voicespanel = new System.Windows.Forms.Panel();
@@ -64,7 +63,7 @@
             this.radioFlag_UA = new System.Windows.Forms.RadioButton();
             this.radioFlag_RU = new System.Windows.Forms.RadioButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.LangFilterCheckBox = new System.Windows.Forms.CheckBox();
+            this.Resolution = new System.Windows.Forms.Label();
             this.voicespanel.SuspendLayout();
             this.languagepanel.SuspendLayout();
             this.musicpanel.SuspendLayout();
@@ -149,17 +148,6 @@
             this.WinCheckBox.UseVisualStyleBackColor = false;
             this.WinCheckBox.CheckedChanged += new System.EventHandler(this.WinCheckBox_CheckedChanged);
             // 
-            // FogCheckBox
-            // 
-            resources.ApplyResources(this.FogCheckBox, "FogCheckBox");
-            this.FogCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.FogCheckBox.Checked = true;
-            this.FogCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.FogCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.FogCheckBox.Name = "FogCheckBox";
-            this.FogCheckBox.UseVisualStyleBackColor = false;
-            this.FogCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // DefaultPics
             // 
             resources.ApplyResources(this.DefaultPics, "DefaultPics");
@@ -195,7 +183,6 @@
             this.languagepanel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             resources.ApplyResources(this.languagepanel, "languagepanel");
             this.languagepanel.Name = "languagepanel";
-            this.languagepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.languagepanel_Paint);
             // 
             // musicpanel
             // 
@@ -298,6 +285,8 @@
             this.button18.Name = "button18";
             this.button18.UseVisualStyleBackColor = false;
             this.button18.Click += new System.EventHandler(this.button18_Click);
+            this.button18.MouseEnter += new System.EventHandler(this.button18_MouseEnter);
+            this.button18.MouseLeave += new System.EventHandler(this.button18_MouseLeave);
             // 
             // button17
             // 
@@ -309,6 +298,8 @@
             this.button17.Name = "button17";
             this.button17.UseVisualStyleBackColor = false;
             this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.button17.MouseEnter += new System.EventHandler(this.button17_MouseEnter);
+            this.button17.MouseLeave += new System.EventHandler(this.button17_MouseLeave);
             // 
             // websitebutton
             // 
@@ -489,31 +480,31 @@
             this.toolTip1.InitialDelay = 50;
             this.toolTip1.ReshowDelay = 100;
             // 
-            // LangFilterCheckBox
+            // Resolution
             // 
-            resources.ApplyResources(this.LangFilterCheckBox, "LangFilterCheckBox");
-            this.LangFilterCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.LangFilterCheckBox.Checked = true;
-            this.LangFilterCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.LangFilterCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LangFilterCheckBox.Name = "LangFilterCheckBox";
-            this.LangFilterCheckBox.UseVisualStyleBackColor = false;
-            this.LangFilterCheckBox.CheckedChanged += new System.EventHandler(this.LangFilterCheckBox_CheckedChanged);
+            resources.ApplyResources(this.Resolution, "Resolution");
+            this.Resolution.BackColor = System.Drawing.Color.Transparent;
+            this.Resolution.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Resolution.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Resolution.Name = "Resolution";
+            this.Resolution.Click += new System.EventHandler(this.Resolution_Click);
+            this.Resolution.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Resolution_MouseDown);
+            this.Resolution.MouseEnter += new System.EventHandler(this.Resolution_MouseEnter);
+            this.Resolution.MouseLeave += new System.EventHandler(this.Resolution_MouseLeave);
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = global::Contra.Properties.Resources.background1;
+            this.BackgroundImage = global::Contra.Properties.Resources.background;
             resources.ApplyResources(this, "$this");
             this.ControlBox = false;
-            this.Controls.Add(this.LangFilterCheckBox);
+            this.Controls.Add(this.Resolution);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.VPNMoreButton);
             this.Controls.Add(this.buttonVPNstart);
             this.Controls.Add(this.QSCheckBox);
             this.Controls.Add(this.WinCheckBox);
-            this.Controls.Add(this.FogCheckBox);
             this.Controls.Add(this.voicespanel);
             this.Controls.Add(this.languagepanel);
             this.Controls.Add(this.portraitspanel);
@@ -571,7 +562,6 @@
         private System.Windows.Forms.Button helpbutton;
         private System.Windows.Forms.RadioButton DefaultPics;
         private System.Windows.Forms.RadioButton GoofyPics;
-        private System.Windows.Forms.CheckBox FogCheckBox;
         private System.Windows.Forms.Panel voicespanel;
         private System.Windows.Forms.Panel languagepanel;
         private System.Windows.Forms.Panel musicpanel;
@@ -585,7 +575,7 @@
         private System.Windows.Forms.RadioButton radioFlag_UA;
         private System.Windows.Forms.RadioButton radioFlag_RU;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.CheckBox LangFilterCheckBox;
+        private System.Windows.Forms.Label Resolution;
     }
 }
 

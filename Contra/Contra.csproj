@@ -79,6 +79,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="moreOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moreOptionsForm.Designer.cs">
+      <DependentUpon>moreOptionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -108,12 +114,30 @@
     <EmbeddedResource Include="Form1.ru.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.uk.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Globals.resx">
       <DependentUpon>Globals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moreOptionsForm.af.resx">
+      <DependentUpon>moreOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moreOptionsForm.bg.resx">
+      <DependentUpon>moreOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moreOptionsForm.resx">
+      <DependentUpon>moreOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moreOptionsForm.ru.resx">
+      <DependentUpon>moreOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moreOptionsForm.uk.resx">
+      <DependentUpon>moreOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -127,6 +151,12 @@
       <DependentUpon>VPNForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VPNForm.resx">
+      <DependentUpon>VPNForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPNForm.ru.resx">
+      <DependentUpon>VPNForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPNForm.uk.resx">
       <DependentUpon>VPNForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest">
@@ -150,7 +180,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ContraIco.ico" />
-    <None Include="Resources\background1.jpg" />
+    <None Include="Resources\min11.png" />
+    <None Include="Resources\min.png" />
+    <None Include="Resources\exit11.png" />
+    <None Include="Resources\exit1.png" />
+    <None Include="Resources\ok1.png" />
+    <None Include="Resources\y1.png" />
+    <None Include="Resources\invinp.png" />
+    <None Include="Resources\vpnbg.jpg" />
+    <None Include="Resources\background.jpg" />
     <None Include="Resources\flag_gb.png" />
     <None Include="Resources\flag_bg.png" />
     <None Include="Resources\flag_ru.png" />
@@ -166,7 +204,6 @@
     <None Include="Resources\_button_invite.png" />
     <None Include="Resources\_button_vpn_text.png" />
     <None Include="Resources\_button_vpn.png" />
-    <None Include="Resources\vpnbg.jpg" />
     <None Include="Resources\_button_highlight.png" />
     <None Include="Resources\_button_exit_text.png" />
     <None Include="Resources\_button_exit.png" />
@@ -179,13 +216,11 @@
     <None Include="Resources\_button_discord_text.png" />
     <None Include="Resources\_button_discord.png" />
     <None Include="Resources\button_help_text.png" />
-    <None Include="Resources\button_help.png" />
+    <None Include="Resources\_button_help.png" />
     <None Include="Resources\button_moddb_text.png" />
     <None Include="Resources\button_moddb.png" />
     <None Include="Resources\button_wb_text.png" />
     <None Include="Resources\button_wb.png" />
-    <None Include="Resources\exit1.png" />
-    <None Include="Resources\min.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

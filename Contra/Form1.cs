@@ -37,8 +37,6 @@ namespace Contra
             DefaultPics.TabStop = false;
             QSCheckBox.TabStop = false;
             WinCheckBox.TabStop = false;
-            FogCheckBox.TabStop = false;
-            LangFilterCheckBox.TabStop = false;
             buttonVPNstart.TabStop = false;
             VPNMoreButton.TabStop = false;
 
@@ -394,21 +392,37 @@ namespace Contra
                 {
                     File.Move(@"..\!Contra009Beta2MNew.ctr", @"..\!Contra009Beta2MNew.big");
                 }
-                if ((!FogCheckBox.Checked) && (File.Exists("!!Contra009FinalFogOff.ctr")))
+                //if ((!FogCheckBox.Checked) && (File.Exists("!!Contra009FinalFogOff.ctr")))
+                //{
+                //    File.Move("!!Contra009FinalFogOff.ctr", "!!Contra009FinalFogOff.big");
+                //}
+                if ((Globals.FogFX_Checked == false) && (File.Exists("!!Contra009FinalFogOff.ctr")))
                 {
                     File.Move("!!Contra009FinalFogOff.ctr", "!!Contra009FinalFogOff.big");
                 }
-                else if ((!FogCheckBox.Checked) && (File.Exists(@"..\!!Contra009FinalFogOff.ctr")))
+                //else if ((!FogCheckBox.Checked) && (File.Exists(@"..\!!Contra009FinalFogOff.ctr")))
+                //{
+                //    File.Move(@"..\!!Contra009FinalFogOff.ctr", @"..\!!Contra009FinalFogOff.big");
+                //}
+                else if ((Globals.FogFX_Checked == false) && (File.Exists(@"..\!!Contra009FinalFogOff.ctr")))
                 {
                     File.Move(@"..\!!Contra009FinalFogOff.ctr", @"..\!!Contra009FinalFogOff.big");
                 }
-                if ((!LangFilterCheckBox.Checked) && (File.Exists("langdata.dat")))
+                //if ((!LangFilterCheckBox.Checked) && (File.Exists("langdata.dat")))
+                //{
+                //    File.Move("langdata.dat", "langdata1.dat");
+                //}
+                if ((Globals.LangF_Checked == false) && (File.Exists("langdata.dat")))
                 {
                     File.Move("langdata.dat", "langdata1.dat");
                 }
-                else if ((!LangFilterCheckBox.Checked) && (File.Exists(@"..\langdata1.dat")))
+                //else if ((!LangFilterCheckBox.Checked) && (File.Exists(@"..\langdata1.dat")))
+                //{
+                //    File.Move(@"..\langdata1.dat", @"..\langdata.dat");
+                //}
+                else if ((Globals.LangF_Checked == false) && (File.Exists(@"..\langdata.dat")))
                 {
-                    File.Move(@"..\langdata1.dat", @"..\langdata.dat");
+                    File.Move(@"..\langdata.dat", @"..\langdata1.dat");
                 }
                 if ((GoofyPics.Checked) && (File.Exists("!!Contra009FinalOldGenPics.ctr")))
                 {
@@ -733,12 +747,12 @@ namespace Contra
             WinCheckBox.Checked = Properties.Settings.Default.Windowed;
             DefaultPics.Checked = Properties.Settings.Default.GenPicDef;
             GoofyPics.Checked = Properties.Settings.Default.GenPicGoo;
-            FogCheckBox.Checked = Properties.Settings.Default.Fog;
+//            FogCheckBox.Checked = Properties.Settings.Default.Fog;
             radioFlag_GB.Checked = Properties.Settings.Default.Flag_GB;
             radioFlag_RU.Checked = Properties.Settings.Default.Flag_RU;
             radioFlag_UA.Checked = Properties.Settings.Default.Flag_UA;
             radioFlag_BG.Checked = Properties.Settings.Default.Flag_BG;
-            LangFilterCheckBox.Checked = Properties.Settings.Default.LangF;
+//            LangFilterCheckBox.Checked = Properties.Settings.Default.LangF;
             AutoScaleMode = AutoScaleMode.Dpi;
         }
 
@@ -755,12 +769,12 @@ namespace Contra
             Properties.Settings.Default.Windowed = WinCheckBox.Checked;
             Properties.Settings.Default.GenPicDef = DefaultPics.Checked;
             Properties.Settings.Default.GenPicGoo = GoofyPics.Checked;
-            Properties.Settings.Default.Fog = FogCheckBox.Checked;
+//            Properties.Settings.Default.Fog = FogCheckBox.Checked;
             Properties.Settings.Default.Flag_GB = radioFlag_GB.Checked;
             Properties.Settings.Default.Flag_RU = radioFlag_RU.Checked;
             Properties.Settings.Default.Flag_UA = radioFlag_UA.Checked;
             Properties.Settings.Default.Flag_BG = radioFlag_BG.Checked;
-            Properties.Settings.Default.LangF = LangFilterCheckBox.Checked;
+//            Properties.Settings.Default.LangF = LangFilterCheckBox.Checked;
             Properties.Settings.Default.Save();
             if (File.Exists(path + "_tmpChunk.dat"))
             {
@@ -882,11 +896,6 @@ namespace Contra
 
         }
 
-        private void languagepanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void GoofyPics_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -957,6 +966,29 @@ namespace Contra
             {
                 tinc.Start();
             }
+
+
+            //GetTincInstalledPath();
+            //Process tinc = new Process();
+            //tinc.StartInfo.Arguments = "-n contravpn -D";
+            ////            tinc.StartInfo.FileName = "tincd.exe";
+            //GetTincInstalledPath().Replace("\"", "");
+            ////            tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(GetTincInstalledPath() + @"\");
+
+            //tinc.StartInfo.FileName = GetTincInstalledPath() + @"\" + "tincd.exe";
+
+            //if (Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
+            //{
+
+            //    tinc.StartInfo.UseShellExecute = false;
+            //    tinc.StartInfo.RedirectStandardOutput = true;
+            //    tinc.StartInfo.RedirectStandardError = true;
+            //    //                tinc.StartInfo.CreateNoWindow = true;
+
+            //    tinc.Start();
+            //}
+
+
             else if (!Directory.Exists(GetTincInstalledPath()))
             {
                 GetTincInstalledPath_User_StartVPN();
@@ -1104,7 +1136,6 @@ namespace Contra
                     ipconfig.Close();
                     if (File.Exists(path + "Options.ini"))
                     {
-
                         List<string> found = new List<string>();
                         string line;
                         using (StringReader file = new StringReader(s))
@@ -1233,8 +1264,12 @@ namespace Contra
                 }
                 else if (getCurrentCulture() == "ru-RU")
                 {
-                    MessageBox.Show("Welcome to Contra 009 Final! Since this is your first time running this launcher, we would like to let you know that you have a new opportunity to play Contra online via ContraVPN! We highly recommend you to join our Discord community!");
+                    MessageBox.Show("Добро пожаловать в Contra 009 Final! Поскольку это Ваш первый запуск этого лаунчера, мы хотим сообщить Вам о том, что у Вас есть новая возможность играть в Contra онлайн через ContraVPN! Мы настоятельно рекомендуем Вам присоедениться к нашей группе Discord.");
                 }
+                else if (getCurrentCulture() == "uk-UA")
+                {
+                    MessageBox.Show("Ласкаво просимо до Contra 009 Final! Оскільки це Ваш перший запуск цього лаунчера, ми хочемо повідомити Вас про те, що у Вас є нова можливість відтворити Contra онлайн через ContraVPN! Ми максимально рекомендуємо Вам приєднатися до нашої спільноти Discord.");
+                } 
                 else if (getCurrentCulture() == "bg-BG")
                 {
                     MessageBox.Show("Добре дошли в Contra 009 Final! Тъй като това е първото Ви стартиране на Contra, бихме искали да знаете, че имате нова възможност да играете Contra онлайн чрез ContraVPN! Силно препоръчваме да се присъедините към нашата Discord общност! Еее... то и български имало бе! ;)");
@@ -1330,6 +1365,7 @@ namespace Contra
             applyResourcesEN(resources, this.Controls);
             Globals.BG_Checked = false;
             Globals.RU_Checked = false;
+            Globals.UA_Checked = false;
             Globals.GB_Checked = true;  //this.radioFlag_GB.CheckedChanged += new EventHandler(this.ReceiveCheckedChanged);
           //  toolTip_BG.Dispose();
             toolTip1.SetToolTip(RadioLocQuotes, "Units of all three factions will speak English.");
@@ -1342,8 +1378,8 @@ namespace Contra
             toolTip1.SetToolTip(GoofyPics, "Use funny general portraits.");
             toolTip1.SetToolTip(WinCheckBox, "Starts Contra in a window instead of full screen.");
             toolTip1.SetToolTip(QSCheckBox, "Disables intro and shellmap (game starts up faster).");
-            toolTip1.SetToolTip(FogCheckBox, "Toggle fog (depth of field) effects on/off.\nThis effect adds a color layer at the top of the screen, depending on the map.");
-            toolTip1.SetToolTip(LangFilterCheckBox, "Disabling the language filter will show bad words written by players in chat.");
+//            toolTip1.SetToolTip(FogCheckBox, "Toggle fog (depth of field) effects on/off.\nThis effect adds a color layer at the top of the screen, depending on the map.");
+//            toolTip1.SetToolTip(LangFilterCheckBox, "Disabling the language filter will show bad words written by players in chat.");
         }
 
         private void radioFlag_RU_CheckedChanged(object sender, EventArgs e)
@@ -1354,12 +1390,40 @@ namespace Contra
             applyResourcesRU(resources, this.Controls);
             Globals.GB_Checked = false;
             Globals.BG_Checked = false;
+            Globals.UA_Checked = false;
             Globals.RU_Checked = true;
+            toolTip1.SetToolTip(RadioLocQuotes, "Юниты всех трех фракций будут разговаривать на английском.");
+            toolTip1.SetToolTip(RadioOrigQuotes, "Юниты каждой фракции будут разговаривать на их родном языке.");
+            toolTip1.SetToolTip(RadioEN, "Английский язык.");
+            toolTip1.SetToolTip(RadioRU, "Русский язык.");
+            toolTip1.SetToolTip(MNew, "Включить новые саундтреки.");
+            toolTip1.SetToolTip(MStandard, "Включить стандартные саундтреки Zero Hour.");
+            toolTip1.SetToolTip(DefaultPics, "Включить портреты Генералов по умолчанию.");
+            toolTip1.SetToolTip(GoofyPics, "Включить смешные портреты Генералов.");
+            toolTip1.SetToolTip(WinCheckBox, "Запуск Contra в режиме окна вместо полноэкранного.");
+            toolTip1.SetToolTip(QSCheckBox, "Отключает интро и шелмапу (игра запускается быстрее).");
         }
 
         private void radioFlag_UA_CheckedChanged(object sender, EventArgs e)
         {
-
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("uk-UA");
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
+            resources.ApplyResources(this, "$this");
+            applyResourcesBG(resources, this.Controls);
+            Globals.GB_Checked = false;
+            Globals.RU_Checked = false;
+            Globals.BG_Checked = false;
+            Globals.UA_Checked = true;
+            toolTip1.SetToolTip(RadioLocQuotes, "Юніти всіх трьох фракцій розмовлятимуть англійською.");
+            toolTip1.SetToolTip(RadioOrigQuotes, "Юніти кожної фракції розмовлятимуть їхньою рідною мовою.");
+            toolTip1.SetToolTip(RadioEN, "Англійська мова.");
+            toolTip1.SetToolTip(RadioRU, "Російська мова.");
+            toolTip1.SetToolTip(MNew, "Використовуйте нові саундтреки.");
+            toolTip1.SetToolTip(MStandard, "Використовуйте стандартні саундтреки Zero Hour.");
+            toolTip1.SetToolTip(DefaultPics, "Використовуйте портрети Генералів за замовчуванням.");
+            toolTip1.SetToolTip(GoofyPics, "Використовуйте смішні портрети Генералів.");
+            toolTip1.SetToolTip(WinCheckBox, "Запускає Contra у віконному режимі замість повноекранного.");
+            toolTip1.SetToolTip(QSCheckBox, "Вимикає інтро і шелмапу (гра запускається швидше).");
         }
 
         private void radioFlag_BG_CheckedChanged(object sender, EventArgs e)
@@ -1370,6 +1434,7 @@ namespace Contra
             applyResourcesBG(resources, this.Controls);
             Globals.GB_Checked = false;
             Globals.RU_Checked = false;
+            Globals.UA_Checked = false;
             Globals.BG_Checked = true;
            // toolTip1.Dispose();
             toolTip1.SetToolTip(RadioLocQuotes, "Единиците на трите фракции ще говорят на английски.");
@@ -1382,13 +1447,61 @@ namespace Contra
             toolTip1.SetToolTip(GoofyPics, "Използвайте забавните генералски портрети.");
             toolTip1.SetToolTip(WinCheckBox, "Стартира Contra в нов прозорец вместо на цял екран.");
             toolTip1.SetToolTip(QSCheckBox, "Изключва интрото и анимираната карта (шел-мапа). Играта стартира по-бързо.");
-            toolTip1.SetToolTip(FogCheckBox, "Превключете ефекта \"дълбочина на рязкост\".\nТози ефект добавя цветен слой на върха на екрана, зависещ от атмосферата на картата. Например, мъгла.");
-            toolTip1.SetToolTip(LangFilterCheckBox, "Изключването на езиковия филтър ще спре да скрива лошите думи, написани от играчите.");
+            //toolTip1.SetToolTip(FogCheckBox, "Превключете ефекта \"дълбочина на рязкост\".\nТози ефект добавя цветен слой на върха на екрана, зависещ от атмосферата на картата. Например, мъгла.");
+            //toolTip1.SetToolTip(LangFilterCheckBox, "Изключването на езиковия филтър ще спре да скрива лошите думи, написани от играчите.");
         }
 
         private void LangFilterCheckBox_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Resolution_Click(object sender, EventArgs e)
+        {
+            foreach (Form moreOptionsForm in Application.OpenForms)
+            {
+                if (moreOptionsForm is moreOptionsForm)
+                {
+                    moreOptionsForm.Close();
+                    return;
+                }
+            }
+            new moreOptionsForm().Show();
+        }
+
+        private void Resolution_MouseEnter(object sender, EventArgs e)
+        {
+            Resolution.ForeColor = Color.FromArgb(255, 210, 100);
+        }
+
+        private void Resolution_MouseDown(object sender, MouseEventArgs e)
+        {
+            Resolution.ForeColor = Color.FromArgb(255, 230, 160);
+        }
+
+        private void Resolution_MouseLeave(object sender, EventArgs e)
+        {
+            Resolution.ForeColor = Color.FromArgb(255, 255, 255);
+        }
+
+        private void button18_MouseEnter(object sender, EventArgs e)
+        {
+            button18.BackgroundImage = (System.Drawing.Image)(Properties.Resources.exit11);
+        }
+
+        private void button18_MouseLeave(object sender, EventArgs e)
+        {
+            button18.BackgroundImage = (System.Drawing.Image)(Properties.Resources.exit1);
+        }
+
+        private void button17_MouseEnter(object sender, EventArgs e)
+        {
+            button17.BackgroundImage = (System.Drawing.Image)(Properties.Resources.min11);
+        }
+
+        private void button17_MouseLeave(object sender, EventArgs e)
+        {
+            button17.BackgroundImage = (System.Drawing.Image)(Properties.Resources.min);
         }
     }
 }

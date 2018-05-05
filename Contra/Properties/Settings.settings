@@ -65,5 +65,8 @@
     <Setting Name="PortNumber" Type="System.String" Scope="User">
       <Value Profile="(Default)">655</Value>
     </Setting>
+    <Setting Name="Res" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

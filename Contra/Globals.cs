@@ -18,8 +18,11 @@ namespace Contra
     {
         public static bool GB_Checked = false;
         public static bool RU_Checked = false;
+        public static bool UA_Checked = false;
         public static bool BG_Checked = false;
         public static string tincpath;
         public static bool TincFound;
+        public static bool FogFX_Checked = true;
+        public static bool LangF_Checked = true;
     }
 }

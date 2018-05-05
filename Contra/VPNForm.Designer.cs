@@ -63,6 +63,8 @@
             this.toolTip2.SetToolTip(this.button18, resources.GetString("button18.ToolTip"));
             this.button18.UseVisualStyleBackColor = false;
             this.button18.Click += new System.EventHandler(this.button18_Click);
+            this.button18.MouseEnter += new System.EventHandler(this.button18_MouseEnter);
+            this.button18.MouseLeave += new System.EventHandler(this.button18_MouseLeave);
             // 
             // button17
             // 
@@ -75,6 +77,8 @@
             this.toolTip2.SetToolTip(this.button17, resources.GetString("button17.ToolTip"));
             this.button17.UseVisualStyleBackColor = false;
             this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.button17.MouseEnter += new System.EventHandler(this.button17_MouseEnter);
+            this.button17.MouseLeave += new System.EventHandler(this.button17_MouseLeave);
             // 
             // UPnPCheckBox
             // 
@@ -153,6 +157,7 @@
             // InvitePanel
             // 
             resources.ApplyResources(this.InvitePanel, "InvitePanel");
+            this.InvitePanel.BackgroundImage = global::Contra.Properties.Resources.invinp;
             this.InvitePanel.Controls.Add(this.labelEnterInvite);
             this.InvitePanel.Controls.Add(this.buttonVPNinvclose);
             this.InvitePanel.Controls.Add(this.buttonVPNinvOK);
@@ -238,9 +243,13 @@
             // portOkButton
             // 
             resources.ApplyResources(this.portOkButton, "portOkButton");
+            this.portOkButton.BackColor = System.Drawing.Color.Transparent;
+            this.portOkButton.BackgroundImage = global::Contra.Properties.Resources.ok1;
+            this.portOkButton.FlatAppearance.BorderSize = 0;
+            this.portOkButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.portOkButton.Name = "portOkButton";
             this.toolTip2.SetToolTip(this.portOkButton, resources.GetString("portOkButton.ToolTip"));
-            this.portOkButton.UseVisualStyleBackColor = true;
+            this.portOkButton.UseVisualStyleBackColor = false;
             this.portOkButton.Click += new System.EventHandler(this.portOkButton_Click);
             // 
             // VPNForm
@@ -249,6 +258,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ControlBox = false;
+            this.Controls.Add(this.InvitePanel);
             this.Controls.Add(this.portOkButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.portTextBox);
@@ -262,11 +272,11 @@
             this.Controls.Add(this.UPnPCheckBox);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.button18);
-            this.Controls.Add(this.InvitePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "VPNForm";
             this.toolTip2.SetToolTip(this, resources.GetString("$this.ToolTip"));
+            this.Load += new System.EventHandler(this.VPNForm_Load);
             this.InvitePanel.ResumeLayout(false);
             this.InvitePanel.PerformLayout();
             this.ResumeLayout(false);
