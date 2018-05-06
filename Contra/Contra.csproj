@@ -180,6 +180,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ContraIco.ico" />
+    <None Include="Resources\refresh_tr.png" />
+    <None Include="Resources\refresh.png" />
     <None Include="Resources\min11.png" />
     <None Include="Resources\min.png" />
     <None Include="Resources\exit11.png" />

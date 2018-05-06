@@ -12,6 +12,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
 using System.Text.RegularExpressions;
+using System.Timers;
 
 namespace Contra
 {
@@ -39,6 +40,11 @@ namespace Contra
             WinCheckBox.TabStop = false;
             buttonVPNstart.TabStop = false;
             VPNMoreButton.TabStop = false;
+            radioFlag_GB.TabStop = false;
+            radioFlag_RU.TabStop = false;
+            radioFlag_UA.TabStop = false;
+            radioFlag_BG.TabStop = false;
+            onlinePlayersBtn.TabStop = false;
 
             if (File.Exists(path + "_tmpChunk.dat"))
             {
@@ -1502,6 +1508,143 @@ namespace Contra
         private void button17_MouseLeave(object sender, EventArgs e)
         {
             button17.BackgroundImage = (System.Drawing.Image)(Properties.Resources.min);
+        }
+
+        public void GetTincInstalledPath_Registry_StartVPN_NoWindow() //Start VPN without showing console window and close it soon after. Used for displaying online players.
+        {
+            GetTincInstalledPath();
+            Process tinc = new Process();
+            tinc.StartInfo.Arguments = "-n contravpn -D";
+            tinc.StartInfo.FileName = GetTincInstalledPath() + @"\" + "tincd.exe";
+            GetTincInstalledPath().Replace("\"", "");
+            tinc.StartInfo.UseShellExecute = false;
+            tinc.StartInfo.CreateNoWindow = true;
+            if (Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
+            {
+                tinc.Start();
+            }
+
+            else if (!Directory.Exists(GetTincInstalledPath()))
+            {
+                GetTincInstalledPath_User_StartVPN();
+            }
+            else if (!Directory.Exists(GetTincInstalledPath() + @"\contravpn"))
+            {
+                if (Globals.GB_Checked == true)
+                {
+                    MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder was not found. Make sure you have entered your invitation link first.", "Error");
+                }
+                else if (Globals.RU_Checked == true)
+                {
+                    MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder was not found. Make sure you have entered your invitation link first.", "Error");
+                }
+                else if (Globals.BG_Checked == true)
+                {
+                    MessageBox.Show("ContraVPN не можа да се стартира, защото \"contravpn\" папката не беше намерена. Уверете се, че сте въвели ключа си за покана.", "Грешка");
+                }
+                //tinc.Start();
+                //GetTincInstalledPath_User_StartVPN();
+            }
+        }
+
+        //Timer, waiting for reachable nodes to appear. Activates when online players button is clicked and tincd is not started yet.
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+
+            Process onlinePlayers = new Process();
+            onlinePlayers.StartInfo.Arguments = "-n contravpn";
+            onlinePlayers.StartInfo.FileName = GetTincInstalledPath() + @"\" + "tinc.exe";
+            onlinePlayers.StartInfo.UseShellExecute = false;
+            onlinePlayers.StartInfo.RedirectStandardInput = true;
+            onlinePlayers.StartInfo.RedirectStandardOutput = true;
+            onlinePlayers.StartInfo.CreateNoWindow = true;
+            onlinePlayers.Start();
+            onlinePlayers.StandardInput.WriteLine("dump reachable nodes");
+            onlinePlayers.StandardInput.Flush();
+            onlinePlayers.StandardInput.Close();
+            string s = onlinePlayers.StandardOutput.ReadToEnd();
+            if (s.Contains("id") == true)
+            {
+                int s2 = Regex.Matches(s, "id").Count;
+                if (s.Contains("ctrvpntest") == true)
+                {
+                    s2 -= 1;
+                }
+                if (s.Contains("contravpn") == true)
+                {
+                    s2 -= 1;
+                }
+                s2 -= 1; //excluding local user
+                playersOnlineLabel.Text = s2.ToString();
+                onlinePlayers.WaitForExit();
+                onlinePlayers.Close();
+            }
+            foreach (var process in Process.GetProcessesByName("tincd"))
+            {
+                process.Kill();
+            }
+        }
+
+        private void onlinePlayersBtn_Click(object sender, EventArgs e)
+        {
+            string tincd = "tincd.exe";
+            Process[] tincdByName = Process.GetProcessesByName(tincd.Substring(0, tincd.LastIndexOf('.')));
+            if (tincdByName.Length > 0) //if tincd is already running
+            {
+                Process onlinePlayers = new Process();
+                onlinePlayers.StartInfo.Arguments = "-n contravpn";
+                onlinePlayers.StartInfo.FileName = GetTincInstalledPath() + @"\" + "tinc.exe";
+                onlinePlayers.StartInfo.UseShellExecute = false;
+                onlinePlayers.StartInfo.RedirectStandardInput = true;
+                onlinePlayers.StartInfo.RedirectStandardOutput = true;
+                onlinePlayers.StartInfo.CreateNoWindow = true;
+                onlinePlayers.Start();
+                onlinePlayers.StandardInput.WriteLine("dump reachable nodes");
+                onlinePlayers.StandardInput.Flush();
+                onlinePlayers.StandardInput.Close();
+                string s = onlinePlayers.StandardOutput.ReadToEnd();
+                if (s.Contains("id") == true)
+                {
+                    int s2 = Regex.Matches(s, "id").Count;
+                    if (s.Contains("ctrvpntest") == true)
+                    {
+                        s2 -= 1;
+                    }
+                    if (s.Contains("contravpn") == true)
+                    {
+                        s2 -= 1;
+                    }
+                    playersOnlineLabel.Text = s2.ToString();
+                    onlinePlayers.WaitForExit();
+                    onlinePlayers.Close();
+                }
+            }
+            else
+            {
+                GetTincInstalledPath_Registry_StartVPN_NoWindow();
+                timer1.Enabled = true; //Enable timer. Implementation is inside timer1_Tick()
+            }
+        }
+
+        private void onlinePlayersBtn_MouseDown(object sender, MouseEventArgs e)
+        {
+            onlinePlayersBtn.BackgroundImage = (System.Drawing.Image)(Properties.Resources.refresh);
+            onlinePlayersBtn.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+        }
+
+        private void onlinePlayersBtn_MouseEnter(object sender, EventArgs e)
+        {
+            onlinePlayersBtn.BackgroundImage = (System.Drawing.Image)(Properties.Resources.refresh_tr);
+            onlinePlayersBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            onlinePlayersBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            onlinePlayersBtn.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+        }
+
+        private void onlinePlayersBtn_MouseLeave(object sender, EventArgs e)
+        {
+            onlinePlayersBtn.BackgroundImage = (System.Drawing.Image)(Properties.Resources.refresh);
+            onlinePlayersBtn.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
         }
     }
 }

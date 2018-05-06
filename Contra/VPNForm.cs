@@ -914,44 +914,37 @@ namespace Contra
             }
 
             Process tinc = new Process();
-            tinc.StartInfo.Arguments = "set ListenAddress * " + portTextBox.Text;
-            //if (invkeytextBox.Text.StartsWith("contra.nsupdate.info"))
-            //{
-                tinc.StartInfo.FileName = GetTincInstalledPath() + @"\" + "tinc.exe";
-                tinc.StartInfo.UseShellExecute = false;
- //               tinc.StartInfo.RedirectStandardOutput = true;
-//                tinc.StartInfo.RedirectStandardError = true;
-                tinc.StartInfo.CreateNoWindow = true;
-                GetTincInstalledPath().Replace("\"", "");
-                tinc.Start();
+            tinc.StartInfo.Arguments = "-n contravpn";
+            tinc.StartInfo.FileName = GetTincInstalledPath() + @"\" + "tinc.exe";
+            tinc.StartInfo.UseShellExecute = false;
+            tinc.StartInfo.RedirectStandardInput = true;
+            tinc.StartInfo.RedirectStandardOutput = true;
+            tinc.StartInfo.CreateNoWindow = true;
+            tinc.Start();
+            tinc.StandardInput.WriteLine("set ListenAddress * " + portTextBox.Text);
+            tinc.StandardInput.Flush();
+            tinc.StandardInput.Close();
+            tinc.WaitForExit();
+            tinc.Close();
 
-  //              tinc.StandardInput.WriteLine("set ListenAddress * " + portTextBox.Text);
- //               tinc.StandardInput.Flush();
- //               tinc.StandardInput.Close();
-  //              string s = tinc.StandardOutput.ReadToEnd();
-  //              tinc.WaitForExit();
-  //              tinc.Close();
-  //              MessageBox.Show(s);
-                if (Globals.GB_Checked == true)
-                {
-                    MessageBox.Show("Listening port changed!");
-                }
-                else if (Globals.RU_Checked == true)
-                {
-                    MessageBox.Show("Порт изменен!");
-                }
-                else if (Globals.UA_Checked == true)
-                {
-                    MessageBox.Show("Порт змінений!");
-                }
-                else if (Globals.BG_Checked == true)
-                {
-                    MessageBox.Show("Портът е успешно променен!");
-                }
-
-                Properties.Settings.Default.PortNumber = portTextBox.Text;
-                Properties.Settings.Default.Save();
-            //}
+            if (Globals.GB_Checked == true)
+            {
+                MessageBox.Show("Listening port changed!");
+            }
+            else if (Globals.RU_Checked == true)
+            {
+                MessageBox.Show("Порт изменен!");
+            }
+            else if (Globals.UA_Checked == true)
+            {
+                MessageBox.Show("Порт змінений!");
+            }
+            else if (Globals.BG_Checked == true)
+            {
+                MessageBox.Show("Портът е успешно променен!");
+            }
+            Properties.Settings.Default.PortNumber = portTextBox.Text;
+            Properties.Settings.Default.Save();
         }
 
         private void VPNForm_Load(object sender, EventArgs e)

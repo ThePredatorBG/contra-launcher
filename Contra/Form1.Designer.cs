@@ -64,6 +64,10 @@
             this.radioFlag_RU = new System.Windows.Forms.RadioButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Resolution = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.onlinePlayersBtn = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.playersOnlineLabel = new System.Windows.Forms.Label();
             this.voicespanel.SuspendLayout();
             this.languagepanel.SuspendLayout();
             this.musicpanel.SuspendLayout();
@@ -492,12 +496,47 @@
             this.Resolution.MouseEnter += new System.EventHandler(this.Resolution_MouseEnter);
             this.Resolution.MouseLeave += new System.EventHandler(this.Resolution_MouseLeave);
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Name = "label1";
+            // 
+            // onlinePlayersBtn
+            // 
+            this.onlinePlayersBtn.BackColor = System.Drawing.Color.Transparent;
+            this.onlinePlayersBtn.BackgroundImage = global::Contra.Properties.Resources.refresh;
+            resources.ApplyResources(this.onlinePlayersBtn, "onlinePlayersBtn");
+            this.onlinePlayersBtn.FlatAppearance.BorderSize = 0;
+            this.onlinePlayersBtn.Name = "onlinePlayersBtn";
+            this.onlinePlayersBtn.UseVisualStyleBackColor = false;
+            this.onlinePlayersBtn.Click += new System.EventHandler(this.onlinePlayersBtn_Click);
+            this.onlinePlayersBtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.onlinePlayersBtn_MouseDown);
+            this.onlinePlayersBtn.MouseEnter += new System.EventHandler(this.onlinePlayersBtn_MouseEnter);
+            this.onlinePlayersBtn.MouseLeave += new System.EventHandler(this.onlinePlayersBtn_MouseLeave);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // playersOnlineLabel
+            // 
+            resources.ApplyResources(this.playersOnlineLabel, "playersOnlineLabel");
+            this.playersOnlineLabel.BackColor = System.Drawing.Color.Transparent;
+            this.playersOnlineLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.playersOnlineLabel.Name = "playersOnlineLabel";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::Contra.Properties.Resources.background;
             resources.ApplyResources(this, "$this");
             this.ControlBox = false;
+            this.Controls.Add(this.playersOnlineLabel);
+            this.Controls.Add(this.onlinePlayersBtn);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Resolution);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.versionLabel);
@@ -576,6 +615,10 @@
         private System.Windows.Forms.RadioButton radioFlag_RU;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label Resolution;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button onlinePlayersBtn;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label playersOnlineLabel;
     }
 }
 
