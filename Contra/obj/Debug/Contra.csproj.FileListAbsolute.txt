@@ -46,40 +46,30 @@ C:\Users\ACER\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.VPNF
 C:\Users\ACER\Documents\Visual Studio 2012\Projects\Contra\bin\Debug\en\Contra Launcher.resources.dll
 C:\Users\ACER\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Form1.en.resources
 C:\Users\ACER\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\en\Contra Launcher.resources.dll
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\bin\Debug\Contra Launcher.exe.config
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra Launcher.exe
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.csprojResolveAssemblyReference.cache
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Rename.resources
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Form1.resources
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Properties.Resources.resources
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.VPNForm.resources
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Form1.bg.resources
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Form1.bn.resources
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Form1.en.resources
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Form1.ru.resources
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.VPNForm.bg.resources
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.csproj.GenerateResource.Cache
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.moreOptionsForm.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Form1.uk.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.VPNForm.uk.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.moreOptionsForm.bg.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.moreOptionsForm.uk.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.moreOptionsForm.ru.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.VPNForm.ru.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\bin\Debug\Contra Launcher.exe.config
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\bin\Debug\Contra Launcher.exe
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\bin\Debug\Contra Launcher.pdb
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\bin\Debug\bg\Contra Launcher.resources.dll
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\bin\Debug\bn\Contra Launcher.resources.dll
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\bin\Debug\en\Contra Launcher.resources.dll
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\bin\Debug\ru\Contra Launcher.resources.dll
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\bg\Contra Launcher.resources.dll
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\bn\Contra Launcher.resources.dll
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\en\Contra Launcher.resources.dll
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\ru\Contra Launcher.resources.dll
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra Launcher.pdb
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.VPNForm.en.resources
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.moreOptionsForm.resources
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\bin\Debug\uk\Contra Launcher.resources.dll
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Form1.uk.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\bg\Contra Launcher.resources.dll
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\ru\Contra Launcher.resources.dll
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\uk\Contra Launcher.resources.dll
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.VPNForm.uk.resources
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\bin\Debug\af\Contra Launcher.resources.dll
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.moreOptionsForm.af.resources
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.moreOptionsForm.bg.resources
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.moreOptionsForm.uk.resources
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\af\Contra Launcher.resources.dll
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.moreOptionsForm.ru.resources
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.VPNForm.ru.resources
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra Launcher.exe
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra Launcher.pdb
