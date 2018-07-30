@@ -129,7 +129,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 31</value>
+    <value>333, 23</value>
   </data>
   <data name="button17.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -160,7 +160,7 @@
     <value>NoControl</value>
   </data>
   <data name="button18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 31</value>
+    <value>359, 23</value>
   </data>
   <data name="button18.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -190,7 +190,7 @@
     <value>NoControl</value>
   </data>
   <data name="LangFilterCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 162</value>
+    <value>42, 173</value>
   </data>
   <data name="LangFilterCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
@@ -223,7 +223,7 @@
     <value>NoControl</value>
   </data>
   <data name="FogCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 134</value>
+    <value>42, 145</value>
   </data>
   <data name="FogCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 22</value>
@@ -286,10 +286,10 @@
     <value>1920x1200</value>
   </data>
   <data name="comboBox1.Items12" xml:space="preserve">
-    <value>2560x1800</value>
+    <value>2560x1440</value>
   </data>
   <data name="comboBox1.Items13" xml:space="preserve">
-    <value>2560x1440</value>
+    <value>2560x1800</value>
   </data>
   <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 95</value>
@@ -376,7 +376,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>250, 325</value>
+    <value>400, 300</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
