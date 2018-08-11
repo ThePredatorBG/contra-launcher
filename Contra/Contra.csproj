@@ -53,7 +53,6 @@
     <ApplicationIcon>ContraIco.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
-  <PropertyGroup />
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
@@ -71,7 +70,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="eventargs.cs" />
-    <Compile Include="Globals.cs" />
+    <Compile Include="Globals.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +103,14 @@
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.bn.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.en.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.ru.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +123,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moreOptionsForm.af.resx">
+      <DependentUpon>moreOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="moreOptionsForm.bg.resx">
       <DependentUpon>moreOptionsForm.cs</DependentUpon>
@@ -133,6 +145,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="VPNForm.bg.resx">
+      <DependentUpon>VPNForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPNForm.en.resx">
       <DependentUpon>VPNForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VPNForm.resx">
@@ -165,18 +180,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ContraIco.ico" />
-    <None Include="Resources\background.jpg" />
-    <None Include="Resources\vpnbg.jpg" />
-    <None Include="Resources\flag_gb_sel.png" />
-    <None Include="Resources\flag_gb_tr.png" />
-    <None Include="Resources\flag_bg_tr.png" />
-    <None Include="Resources\flag_ua_tr.png" />
-    <None Include="Resources\flag_ru_tr.png" />
-    <None Include="Resources\vpn_ld.png" />
-    <None Include="Resources\ppl_tr.png" />
-    <None Include="Resources\ppl.png" />
-    <None Include="Resources\vpn_on.png" />
-    <None Include="Resources\vpn_off.png" />
     <None Include="Resources\refresh_tr.png" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\min11.png" />
@@ -186,6 +189,8 @@
     <None Include="Resources\ok1.png" />
     <None Include="Resources\y1.png" />
     <None Include="Resources\invinp.png" />
+    <None Include="Resources\vpnbg.jpg" />
+    <None Include="Resources\background.jpg" />
     <None Include="Resources\flag_gb.png" />
     <None Include="Resources\flag_bg.png" />
     <None Include="Resources\flag_ru.png" />

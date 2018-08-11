@@ -24,14 +24,14 @@ namespace Contra
             comboBox1.TabStop = false;
             resOkButton.TabStop = false;
 
-            //if (!FogCheckBox.Checked)
-            //{
-            //    Globals.FogFX_Checked = false;
-            //}
-            //if (!LangFilterCheckBox.Checked)
-            //{
-            //    Globals.LangF_Checked = false;
-            //}
+            if (!FogCheckBox.Checked)
+            {
+                Globals.FogFX_Checked = false;
+            }
+            if (!LangFilterCheckBox.Checked)
+            {
+                Globals.LangF_Checked = false;
+            }
 
             if (Globals.GB_Checked == true)
             {
@@ -110,10 +110,8 @@ namespace Contra
 
         private void OnApplicationExit(object sender, EventArgs e) //MoreOptionsWindowExit
         {
-            //Properties.Settings.Default.Fog = FogCheckBox.Checked;
-            //Properties.Settings.Default.LangF = LangFilterCheckBox.Checked;
-            //Globals.FogFX_Checked = Properties.Settings.Default.Fog;
-            //Globals.LangF_Checked = Properties.Settings.Default.LangF;
+            Properties.Settings.Default.Fog = FogCheckBox.Checked;
+            Properties.Settings.Default.LangF = LangFilterCheckBox.Checked;
             Properties.Settings.Default.Save();
             this.Close();
         }
@@ -203,22 +201,18 @@ namespace Contra
         {
             if (!FogCheckBox.Checked)
             {
-                Properties.Settings.Default.Fog = false;
-                Properties.Settings.Default.Save();
+                Globals.FogFX_Checked = false;
             }
-            else Properties.Settings.Default.Fog = true;
-            Properties.Settings.Default.Save();
+            else Globals.FogFX_Checked = true;
         }
 
         private void LangFilterCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (!LangFilterCheckBox.Checked)
             {
-                Properties.Settings.Default.LangF = false;
-                Properties.Settings.Default.Save();
+                Globals.LangF_Checked = false;
             }
-            else Properties.Settings.Default.LangF = true;
-            Properties.Settings.Default.Save();
+            else Globals.LangF_Checked = true;
         }
     }
 }
