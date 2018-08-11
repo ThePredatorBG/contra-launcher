@@ -157,6 +157,30 @@ namespace Contra.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string tincpath {
+            get {
+                return ((string)(this["tincpath"]));
+            }
+            set {
+                this["tincpath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TincFound {
+            get {
+                return ((bool)(this["TincFound"]));
+            }
+            set {
+                this["TincFound"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool FirstRun {
             get {
@@ -272,30 +296,6 @@ namespace Contra.Properties {
             }
             set {
                 this["ShowConsole"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool adapterExists {
-            get {
-                return ((bool)(this["adapterExists"]));
-            }
-            set {
-                this["adapterExists"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string IP_Label {
-            get {
-                return ((string)(this["IP_Label"]));
-            }
-            set {
-                this["IP_Label"] = value;
             }
         }
     }

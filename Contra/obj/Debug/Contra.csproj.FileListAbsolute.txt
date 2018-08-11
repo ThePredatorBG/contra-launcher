@@ -47,6 +47,7 @@ C:\Users\ACER\Documents\Visual Studio 2012\Projects\Contra\bin\Debug\en\Contra L
 C:\Users\ACER\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Form1.en.resources
 C:\Users\ACER\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\en\Contra Launcher.resources.dll
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.csprojResolveAssemblyReference.cache
+C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Rename.resources
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Form1.resources
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Properties.Resources.resources
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.VPNForm.resources
@@ -72,4 +73,3 @@ C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\ru\Con
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\uk\Contra Launcher.resources.dll
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra Launcher.exe
 C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra Launcher.pdb
-C:\Users\Bat Vlado\Documents\Visual Studio 2012\Projects\Contra\obj\Debug\Contra.Globals.resources
