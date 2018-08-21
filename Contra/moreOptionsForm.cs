@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using Microsoft.Win32;
 
 namespace Contra
 {
@@ -24,15 +25,6 @@ namespace Contra
             comboBox1.TabStop = false;
             resOkButton.TabStop = false;
 
-            if (!FogCheckBox.Checked)
-            {
-                Globals.FogFX_Checked = false;
-            }
-            if (!LangFilterCheckBox.Checked)
-            {
-                Globals.LangF_Checked = false;
-            }
-
             if (Globals.GB_Checked == true)
             {
                 toolTip3.SetToolTip(FogCheckBox, "Toggle fog (depth of field) effects on/off.\nThis effect adds a color layer at the top of the screen, depending on the map.");
@@ -42,22 +34,62 @@ namespace Contra
             {
                 toolTip3.SetToolTip(FogCheckBox, "Эффекты переключения тумана (глубина поля) вкл\\выкл.");
                 toolTip3.SetToolTip(LangFilterCheckBox, "Отключение языкового фильтра покажет плохие слова, написанные игроками в чате.");
+                labelResolution.Text = "Разрешение экрана:";
+                FogCheckBox.Text = "Эффект тумана";
+                LangFilterCheckBox.Text = "Языковый фильтр";
             }
             else if (Globals.UA_Checked == true)
             {
                 toolTip3.SetToolTip(FogCheckBox, "Ефекти перемикання туману (глибина поля) вкл\\викл.");
                 toolTip3.SetToolTip(LangFilterCheckBox, "Вимкнення мовного фільтра покаже погані слова, написані гравцями в чаті.");
+                labelResolution.Text = "Роздільна здатність:";
+                FogCheckBox.Text = "Ефект туману";
+                LangFilterCheckBox.Text = "Мовний фільтр";
             }
             else if (Globals.BG_Checked == true)
             {
                 toolTip3.SetToolTip(FogCheckBox, "Превключете ефекта \"дълбочина на рязкост\".\nТози ефект добавя цветен слой на върха на екрана, зависещ от атмосферата на картата. Например, мъгла.");
                 toolTip3.SetToolTip(LangFilterCheckBox, "Изключването на езиковия филтър ще спре да скрива лошите думи, написани от играчите.");
+                labelResolution.Text = "Резолюция:";
+                FogCheckBox.Text = "Ефект мъглявина";
+                LangFilterCheckBox.Text = "Езиков филтър";
+            }
+            else if (Globals.DE_Checked == true)
+            {
+                toolTip3.SetToolTip(FogCheckBox, "Schalte Nebel (Tiefenschдrfe) Effekte An/Aus.");
+                toolTip3.SetToolTip(LangFilterCheckBox, "Das ausschalten vom Sprache Filter zeigt bцse Wцrter von anderen Spielern im Chat an.");
+                labelResolution.Text = "Auflцsung:";
+                FogCheckBox.Text = "Nebel Effekte";
+                LangFilterCheckBox.Text = "Sprache Filter";
             }
 
             //Get current resolution
-            if (Directory.Exists(path))
+            if (Directory.Exists(userDataLeafName()))
             {
-                string s = File.ReadAllText(path + "Options.ini");
+                string s = File.ReadAllText(userDataLeafName() + "Options.ini");
+                List<string> found = new List<string>();
+                string line;
+                using (StringReader file = new StringReader(s))
+                {
+                    while ((line = file.ReadLine()) != null)
+                    {
+                        if (line.Contains("Resolution ="))
+                        {
+                            found.Add(line);
+                            s = line;
+                            s = s.Substring(s.IndexOf('=') + 2);
+                            s = s.TrimEnd();
+                            string s2 = s.Replace(" ", "x");
+                            //                        MessageBox.Show(s2); //shows current res
+                            Properties.Settings.Default.Res = s2;
+                            Properties.Settings.Default.Save();
+                        }
+                    }
+                }
+            }
+            else if (Directory.Exists(myDocPath))
+            {
+                string s = File.ReadAllText(myDocPath + "Options.ini");
                 List<string> found = new List<string>();
                 string line;
                 using (StringReader file = new StringReader(s))
@@ -84,12 +116,21 @@ namespace Contra
             LangFilterCheckBox.Checked = Properties.Settings.Default.LangF;
         }
 
-        public static string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        public static string subFolder = @"Documents\Command and Conquer Generals Zero Hour Data\";
-        public static string xpsubFolder = @"My Documents\Command and Conquer Generals Zero Hour Data\";
-        public static string path = Path.Combine(userProfile, subFolder);
-        public static string xppath = Path.Combine(userProfile, xpsubFolder);
+        public string userDataLeafName()
+        {
+            var o = string.Empty;
+            var TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Command and Conquer Generals Zero Hour");
+            if (TincRegistryPath != null)
+            {
+                o = TincRegistryPath.GetValue("UserDataLeafName") as string;
+            }
+            return System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + o + @"\";
+        }
 
+        public static string myDocPath = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Command and Conquer Generals Zero Hour Data\";
+
+
+        //**********DRAG FORM CODE START**********
         const int WM_NCLBUTTONDBLCLK = 0xA3;
         protected override void WndProc(ref Message m)
         {
@@ -107,11 +148,11 @@ namespace Contra
             }
             base.WndProc(ref m);
         }
+        //**********DRAG FORM CODE END**********
+
 
         private void OnApplicationExit(object sender, EventArgs e) //MoreOptionsWindowExit
         {
-            Properties.Settings.Default.Fog = FogCheckBox.Checked;
-            Properties.Settings.Default.LangF = LangFilterCheckBox.Checked;
             Properties.Settings.Default.Save();
             this.Close();
         }
@@ -128,9 +169,9 @@ namespace Contra
 
         private void resOkButton_Click(object sender, EventArgs e)
         {
-            if (Directory.Exists(path))
+            if (Directory.Exists(userDataLeafName()))
             {
-                string text = File.ReadAllText(path + "Options.ini");
+                string text = File.ReadAllText(userDataLeafName() + "Options.ini");
                 {
                     if (!Regex.IsMatch(comboBox1.Text, @"^[0-9]{3,4}x[0-9]{3,4}$")) //if selected res doesn't match valid input (input must match the regex)
                     {
@@ -150,12 +191,16 @@ namespace Contra
                         {
                             MessageBox.Show("Тази резолюция не е валидна.", "Грешка");
                         }
+                        else if (Globals.DE_Checked == true)
+                        {
+                            MessageBox.Show("Diese Auflцsung ist nicht gьltig.", "Fehler");
+                        }
                         //return;
                     }
                     else
                     {
                         string fixedText = comboBox1.Text.Replace("x", " ");
-                        File.WriteAllText(path + "Options.ini", Regex.Replace(File.ReadAllText(path + "Options.ini"), "\r?\nResolution =.*", "\r\nResolution = " + fixedText + "\r\n"));
+                        File.WriteAllText(userDataLeafName() + "Options.ini", Regex.Replace(File.ReadAllText(userDataLeafName() + "Options.ini"), "\r?\nResolution =.*", "\r\nResolution = " + fixedText + "\r\n"));
                         if (Globals.GB_Checked == true)
                         {
                             MessageBox.Show("Resolution changed successfully!");
@@ -171,6 +216,65 @@ namespace Contra
                         else if (Globals.BG_Checked == true)
                         {
                             MessageBox.Show("Резолюцията беше променена успешно!");
+                        }
+                        else if (Globals.DE_Checked == true)
+                        {
+                            MessageBox.Show("Auflцsung erfolgreich geдndert!");
+                        }
+                    }
+                }
+            }
+            else if (Directory.Exists(myDocPath))
+            {
+                string text = File.ReadAllText(myDocPath + "Options.ini");
+                {
+                    if (!Regex.IsMatch(comboBox1.Text, @"^[0-9]{3,4}x[0-9]{3,4}$")) //if selected res doesn't match valid input (input must match the regex)
+                    {
+                        if (Globals.GB_Checked == true)
+                        {
+                            MessageBox.Show("This resolution is not valid.", "Error");
+                        }
+                        else if (Globals.RU_Checked == true)
+                        {
+                            MessageBox.Show("Это разрешение экрана не является действительным.", "Ошибка");
+                        }
+                        else if (Globals.UA_Checked == true)
+                        {
+                            MessageBox.Show("Це розширення не є дійсним.", "Помилка");
+                        }
+                        else if (Globals.BG_Checked == true)
+                        {
+                            MessageBox.Show("Тази резолюция не е валидна.", "Грешка");
+                        }
+                        else if (Globals.DE_Checked == true)
+                        {
+                            MessageBox.Show("Diese Auflцsung ist nicht gьltig.", "Fehler");
+                        }
+                        //return;
+                    }
+                    else
+                    {
+                        string fixedText = comboBox1.Text.Replace("x", " ");
+                        File.WriteAllText(myDocPath + "Options.ini", Regex.Replace(File.ReadAllText(myDocPath + "Options.ini"), "\r?\nResolution =.*", "\r\nResolution = " + fixedText + "\r\n"));
+                        if (Globals.GB_Checked == true)
+                        {
+                            MessageBox.Show("Resolution changed successfully!");
+                        }
+                        else if (Globals.RU_Checked == true)
+                        {
+                            MessageBox.Show("Разрешение экрана успешно изменено!");
+                        }
+                        else if (Globals.UA_Checked == true)
+                        {
+                            MessageBox.Show("Розширення успішно змінено!");
+                        }
+                        else if (Globals.BG_Checked == true)
+                        {
+                            MessageBox.Show("Резолюцията беше променена успешно!");
+                        }
+                        else if (Globals.DE_Checked == true)
+                        {
+                            MessageBox.Show("Auflцsung erfolgreich geдndert!");
                         }
                     }
                 }
@@ -201,18 +305,34 @@ namespace Contra
         {
             if (!FogCheckBox.Checked)
             {
-                Globals.FogFX_Checked = false;
+                Properties.Settings.Default.Fog = false;
+                Properties.Settings.Default.Save();
             }
-            else Globals.FogFX_Checked = true;
+            else Properties.Settings.Default.Fog = true;
+            Properties.Settings.Default.Save();
         }
 
         private void LangFilterCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (!LangFilterCheckBox.Checked)
             {
-                Globals.LangF_Checked = false;
+                Properties.Settings.Default.LangF = false;
+                Properties.Settings.Default.Save();
             }
-            else Globals.LangF_Checked = true;
+            else Properties.Settings.Default.LangF = true;
+            Properties.Settings.Default.Save();
+        }
+
+        private void resOkButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            resOkButton.BackgroundImage = (System.Drawing.Image)(Properties.Resources.btnOk3a);
+            resOkButton.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+        }
+
+        private void resOkButton_MouseLeave(object sender, EventArgs e)
+        {
+            resOkButton.BackgroundImage = (System.Drawing.Image)(Properties.Resources.btnOk3);
+            resOkButton.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
         }
     }
 }
