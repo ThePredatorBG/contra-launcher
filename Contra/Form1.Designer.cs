@@ -59,15 +59,20 @@
             this.button1 = new System.Windows.Forms.Button();
             this.radioFlag_GB = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radioFlag_DE = new System.Windows.Forms.RadioButton();
             this.radioFlag_BG = new System.Windows.Forms.RadioButton();
             this.radioFlag_UA = new System.Windows.Forms.RadioButton();
             this.radioFlag_RU = new System.Windows.Forms.RadioButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.Resolution = new System.Windows.Forms.Label();
+            this.moreOptions = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.onlinePlayersBtn = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.refreshOnlinePlayersBtn = new System.Windows.Forms.Button();
             this.playersOnlineLabel = new System.Windows.Forms.Label();
+            this.vpn_start = new System.Windows.Forms.Button();
+            this.labelVpnStatus = new System.Windows.Forms.Label();
+            this.whoIsOnline = new System.Windows.Forms.Button();
+            this.vpnSettingsLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.voicespanel.SuspendLayout();
             this.languagepanel.SuspendLayout();
             this.musicpanel.SuspendLayout();
@@ -82,15 +87,14 @@
             this.RadioEN.ForeColor = System.Drawing.Color.White;
             this.RadioEN.Name = "RadioEN";
             this.RadioEN.TabStop = true;
-            this.toolTip1.SetToolTip(this.RadioEN, resources.GetString("RadioEN.ToolTip"));
             this.RadioEN.UseVisualStyleBackColor = true;
             this.RadioEN.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // RadioRU
             // 
             resources.ApplyResources(this.RadioRU, "RadioRU");
+            this.RadioRU.ForeColor = System.Drawing.Color.White;
             this.RadioRU.Name = "RadioRU";
-            this.toolTip1.SetToolTip(this.RadioRU, resources.GetString("RadioRU.ToolTip"));
             this.RadioRU.UseVisualStyleBackColor = true;
             this.RadioRU.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
@@ -98,9 +102,8 @@
             // 
             resources.ApplyResources(this.RadioOrigQuotes, "RadioOrigQuotes");
             this.RadioOrigQuotes.Cursor = System.Windows.Forms.Cursors.Default;
-            this.RadioOrigQuotes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RadioOrigQuotes.ForeColor = System.Drawing.Color.White;
             this.RadioOrigQuotes.Name = "RadioOrigQuotes";
-            this.toolTip1.SetToolTip(this.RadioOrigQuotes, resources.GetString("RadioOrigQuotes.ToolTip"));
             this.RadioOrigQuotes.UseVisualStyleBackColor = true;
             this.RadioOrigQuotes.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
@@ -108,10 +111,9 @@
             // 
             resources.ApplyResources(this.RadioLocQuotes, "RadioLocQuotes");
             this.RadioLocQuotes.Checked = true;
-            this.RadioLocQuotes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RadioLocQuotes.ForeColor = System.Drawing.Color.White;
             this.RadioLocQuotes.Name = "RadioLocQuotes";
             this.RadioLocQuotes.TabStop = true;
-            this.toolTip1.SetToolTip(this.RadioLocQuotes, resources.GetString("RadioLocQuotes.ToolTip"));
             this.RadioLocQuotes.UseVisualStyleBackColor = true;
             this.RadioLocQuotes.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
@@ -119,10 +121,9 @@
             // 
             resources.ApplyResources(this.MNew, "MNew");
             this.MNew.Checked = true;
-            this.MNew.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.MNew.ForeColor = System.Drawing.Color.White;
             this.MNew.Name = "MNew";
             this.MNew.TabStop = true;
-            this.toolTip1.SetToolTip(this.MNew, resources.GetString("MNew.ToolTip"));
             this.MNew.UseVisualStyleBackColor = true;
             this.MNew.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
             // 
@@ -130,16 +131,15 @@
             // 
             resources.ApplyResources(this.QSCheckBox, "QSCheckBox");
             this.QSCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.QSCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.QSCheckBox.ForeColor = System.Drawing.Color.White;
             this.QSCheckBox.Name = "QSCheckBox";
             this.QSCheckBox.UseVisualStyleBackColor = false;
             // 
             // MStandard
             // 
             resources.ApplyResources(this.MStandard, "MStandard");
-            this.MStandard.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.MStandard.ForeColor = System.Drawing.Color.White;
             this.MStandard.Name = "MStandard";
-            this.toolTip1.SetToolTip(this.MStandard, resources.GetString("MStandard.ToolTip"));
             this.MStandard.UseVisualStyleBackColor = true;
             this.MStandard.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged_1);
             // 
@@ -147,7 +147,7 @@
             // 
             resources.ApplyResources(this.WinCheckBox, "WinCheckBox");
             this.WinCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.WinCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.WinCheckBox.ForeColor = System.Drawing.Color.White;
             this.WinCheckBox.Name = "WinCheckBox";
             this.WinCheckBox.UseVisualStyleBackColor = false;
             this.WinCheckBox.CheckedChanged += new System.EventHandler(this.WinCheckBox_CheckedChanged);
@@ -156,17 +156,16 @@
             // 
             resources.ApplyResources(this.DefaultPics, "DefaultPics");
             this.DefaultPics.Checked = true;
-            this.DefaultPics.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DefaultPics.ForeColor = System.Drawing.Color.White;
             this.DefaultPics.Name = "DefaultPics";
             this.DefaultPics.TabStop = true;
-            this.toolTip1.SetToolTip(this.DefaultPics, resources.GetString("DefaultPics.ToolTip"));
             this.DefaultPics.UseVisualStyleBackColor = true;
             // 
             // GoofyPics
             // 
             resources.ApplyResources(this.GoofyPics, "GoofyPics");
+            this.GoofyPics.ForeColor = System.Drawing.Color.White;
             this.GoofyPics.Name = "GoofyPics";
-            this.toolTip1.SetToolTip(this.GoofyPics, resources.GetString("GoofyPics.ToolTip"));
             this.GoofyPics.UseVisualStyleBackColor = true;
             this.GoofyPics.CheckedChanged += new System.EventHandler(this.GoofyPics_CheckedChanged);
             // 
@@ -208,19 +207,20 @@
             // 
             // versionLabel
             // 
-            resources.ApplyResources(this.versionLabel, "versionLabel");
             this.versionLabel.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.versionLabel, "versionLabel");
             this.versionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(100)))));
             this.versionLabel.Name = "versionLabel";
             // 
             // VPNMoreButton
             // 
             this.VPNMoreButton.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.VPNMoreButton, "VPNMoreButton");
+            this.VPNMoreButton.BackgroundImage = global::Contra.Properties.Resources._button_config;
             this.VPNMoreButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.VPNMoreButton.FlatAppearance.BorderSize = 0;
             this.VPNMoreButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.VPNMoreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.VPNMoreButton, "VPNMoreButton");
             this.VPNMoreButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.VPNMoreButton.Name = "VPNMoreButton";
             this.VPNMoreButton.UseVisualStyleBackColor = false;
@@ -231,19 +231,8 @@
             // 
             // buttonVPNstart
             // 
-            this.buttonVPNstart.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.buttonVPNstart, "buttonVPNstart");
-            this.buttonVPNstart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonVPNstart.FlatAppearance.BorderSize = 0;
-            this.buttonVPNstart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonVPNstart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonVPNstart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonVPNstart.Name = "buttonVPNstart";
-            this.buttonVPNstart.UseVisualStyleBackColor = false;
-            this.buttonVPNstart.Click += new System.EventHandler(this.buttonVPNstart_Click);
-            this.buttonVPNstart.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonVPNstart_MouseDown);
-            this.buttonVPNstart.MouseEnter += new System.EventHandler(this.buttonVPNstart_MouseEnter);
-            this.buttonVPNstart.MouseLeave += new System.EventHandler(this.buttonVPNstart_MouseLeave);
             // 
             // helpbutton
             // 
@@ -422,16 +411,36 @@
             this.radioFlag_GB.TabStop = true;
             this.radioFlag_GB.UseVisualStyleBackColor = false;
             this.radioFlag_GB.CheckedChanged += new System.EventHandler(this.radioFlag_GB_CheckedChanged);
+            this.radioFlag_GB.MouseEnter += new System.EventHandler(this.radioFlag_GB_MouseEnter);
+            this.radioFlag_GB.MouseLeave += new System.EventHandler(this.radioFlag_GB_MouseLeave);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Controls.Add(this.radioFlag_DE);
             this.panel1.Controls.Add(this.radioFlag_BG);
             this.panel1.Controls.Add(this.radioFlag_UA);
             this.panel1.Controls.Add(this.radioFlag_RU);
             this.panel1.Controls.Add(this.radioFlag_GB);
             this.panel1.Name = "panel1";
+            // 
+            // radioFlag_DE
+            // 
+            resources.ApplyResources(this.radioFlag_DE, "radioFlag_DE");
+            this.radioFlag_DE.BackColor = System.Drawing.Color.Transparent;
+            this.radioFlag_DE.BackgroundImage = global::Contra.Properties.Resources.flag_de;
+            this.radioFlag_DE.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioFlag_DE.FlatAppearance.BorderSize = 0;
+            this.radioFlag_DE.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.radioFlag_DE.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.radioFlag_DE.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.radioFlag_DE.Name = "radioFlag_DE";
+            this.radioFlag_DE.TabStop = true;
+            this.radioFlag_DE.UseVisualStyleBackColor = false;
+            this.radioFlag_DE.CheckedChanged += new System.EventHandler(this.radioFlag_DE_CheckedChanged);
+            this.radioFlag_DE.MouseEnter += new System.EventHandler(this.radioFlag_DE_MouseEnter);
+            this.radioFlag_DE.MouseLeave += new System.EventHandler(this.radioFlag_DE_MouseLeave);
             // 
             // radioFlag_BG
             // 
@@ -447,6 +456,8 @@
             this.radioFlag_BG.TabStop = true;
             this.radioFlag_BG.UseVisualStyleBackColor = false;
             this.radioFlag_BG.CheckedChanged += new System.EventHandler(this.radioFlag_BG_CheckedChanged);
+            this.radioFlag_BG.MouseEnter += new System.EventHandler(this.radioFlag_BG_MouseEnter);
+            this.radioFlag_BG.MouseLeave += new System.EventHandler(this.radioFlag_BG_MouseLeave);
             // 
             // radioFlag_UA
             // 
@@ -462,6 +473,8 @@
             this.radioFlag_UA.TabStop = true;
             this.radioFlag_UA.UseVisualStyleBackColor = false;
             this.radioFlag_UA.CheckedChanged += new System.EventHandler(this.radioFlag_UA_CheckedChanged);
+            this.radioFlag_UA.MouseEnter += new System.EventHandler(this.radioFlag_UA_MouseEnter);
+            this.radioFlag_UA.MouseLeave += new System.EventHandler(this.radioFlag_UA_MouseLeave);
             // 
             // radioFlag_RU
             // 
@@ -477,6 +490,8 @@
             this.radioFlag_RU.TabStop = true;
             this.radioFlag_RU.UseVisualStyleBackColor = false;
             this.radioFlag_RU.CheckedChanged += new System.EventHandler(this.radioFlag_RU_CheckedChanged);
+            this.radioFlag_RU.MouseEnter += new System.EventHandler(this.radioFlag_RU_MouseEnter);
+            this.radioFlag_RU.MouseLeave += new System.EventHandler(this.radioFlag_RU_MouseLeave);
             // 
             // toolTip1
             // 
@@ -484,49 +499,92 @@
             this.toolTip1.InitialDelay = 50;
             this.toolTip1.ReshowDelay = 100;
             // 
-            // Resolution
+            // moreOptions
             // 
-            resources.ApplyResources(this.Resolution, "Resolution");
-            this.Resolution.BackColor = System.Drawing.Color.Transparent;
-            this.Resolution.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Resolution.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Resolution.Name = "Resolution";
-            this.Resolution.Click += new System.EventHandler(this.Resolution_Click);
-            this.Resolution.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Resolution_MouseDown);
-            this.Resolution.MouseEnter += new System.EventHandler(this.Resolution_MouseEnter);
-            this.Resolution.MouseLeave += new System.EventHandler(this.Resolution_MouseLeave);
+            this.moreOptions.BackColor = System.Drawing.Color.Transparent;
+            this.moreOptions.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.moreOptions, "moreOptions");
+            this.moreOptions.ForeColor = System.Drawing.Color.White;
+            this.moreOptions.Name = "moreOptions";
+            this.moreOptions.Click += new System.EventHandler(this.Resolution_Click);
+            this.moreOptions.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Resolution_MouseDown);
+            this.moreOptions.MouseEnter += new System.EventHandler(this.Resolution_MouseEnter);
+            this.moreOptions.MouseLeave += new System.EventHandler(this.Resolution_MouseLeave);
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // onlinePlayersBtn
+            // refreshOnlinePlayersBtn
             // 
-            this.onlinePlayersBtn.BackColor = System.Drawing.Color.Transparent;
-            this.onlinePlayersBtn.BackgroundImage = global::Contra.Properties.Resources.refresh;
-            resources.ApplyResources(this.onlinePlayersBtn, "onlinePlayersBtn");
-            this.onlinePlayersBtn.FlatAppearance.BorderSize = 0;
-            this.onlinePlayersBtn.Name = "onlinePlayersBtn";
-            this.onlinePlayersBtn.UseVisualStyleBackColor = false;
-            this.onlinePlayersBtn.Click += new System.EventHandler(this.onlinePlayersBtn_Click);
-            this.onlinePlayersBtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.onlinePlayersBtn_MouseDown);
-            this.onlinePlayersBtn.MouseEnter += new System.EventHandler(this.onlinePlayersBtn_MouseEnter);
-            this.onlinePlayersBtn.MouseLeave += new System.EventHandler(this.onlinePlayersBtn_MouseLeave);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 500;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.refreshOnlinePlayersBtn.BackColor = System.Drawing.Color.Transparent;
+            this.refreshOnlinePlayersBtn.BackgroundImage = global::Contra.Properties.Resources.refresh;
+            resources.ApplyResources(this.refreshOnlinePlayersBtn, "refreshOnlinePlayersBtn");
+            this.refreshOnlinePlayersBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshOnlinePlayersBtn.FlatAppearance.BorderSize = 0;
+            this.refreshOnlinePlayersBtn.Name = "refreshOnlinePlayersBtn";
+            this.refreshOnlinePlayersBtn.UseVisualStyleBackColor = false;
+            this.refreshOnlinePlayersBtn.Click += new System.EventHandler(this.onlinePlayersBtn_Click);
+            this.refreshOnlinePlayersBtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.onlinePlayersBtn_MouseDown);
+            this.refreshOnlinePlayersBtn.MouseEnter += new System.EventHandler(this.onlinePlayersBtn_MouseEnter);
+            this.refreshOnlinePlayersBtn.MouseLeave += new System.EventHandler(this.onlinePlayersBtn_MouseLeave);
             // 
             // playersOnlineLabel
             // 
             resources.ApplyResources(this.playersOnlineLabel, "playersOnlineLabel");
             this.playersOnlineLabel.BackColor = System.Drawing.Color.Transparent;
-            this.playersOnlineLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.playersOnlineLabel.ForeColor = System.Drawing.Color.White;
             this.playersOnlineLabel.Name = "playersOnlineLabel";
+            // 
+            // vpn_start
+            // 
+            this.vpn_start.BackColor = System.Drawing.Color.Transparent;
+            this.vpn_start.BackgroundImage = global::Contra.Properties.Resources.vpn_off;
+            resources.ApplyResources(this.vpn_start, "vpn_start");
+            this.vpn_start.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vpn_start.FlatAppearance.BorderSize = 0;
+            this.vpn_start.Name = "vpn_start";
+            this.vpn_start.UseVisualStyleBackColor = false;
+            this.vpn_start.Click += new System.EventHandler(this.vpn_start_Click);
+            this.vpn_start.MouseDown += new System.Windows.Forms.MouseEventHandler(this.vpn_start_MouseDown);
+            this.vpn_start.MouseEnter += new System.EventHandler(this.vpn_start_MouseEnter);
+            this.vpn_start.MouseLeave += new System.EventHandler(this.vpn_start_MouseLeave);
+            // 
+            // labelVpnStatus
+            // 
+            this.labelVpnStatus.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.labelVpnStatus, "labelVpnStatus");
+            this.labelVpnStatus.ForeColor = System.Drawing.Color.White;
+            this.labelVpnStatus.Name = "labelVpnStatus";
+            // 
+            // whoIsOnline
+            // 
+            this.whoIsOnline.BackColor = System.Drawing.Color.Transparent;
+            this.whoIsOnline.BackgroundImage = global::Contra.Properties.Resources.ppl;
+            resources.ApplyResources(this.whoIsOnline, "whoIsOnline");
+            this.whoIsOnline.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.whoIsOnline.FlatAppearance.BorderSize = 0;
+            this.whoIsOnline.Name = "whoIsOnline";
+            this.whoIsOnline.UseVisualStyleBackColor = false;
+            this.whoIsOnline.Click += new System.EventHandler(this.whoIsOnline_Click);
+            this.whoIsOnline.MouseDown += new System.Windows.Forms.MouseEventHandler(this.whoIsOnline_MouseDown);
+            this.whoIsOnline.MouseEnter += new System.EventHandler(this.whoIsOnline_MouseEnter);
+            this.whoIsOnline.MouseLeave += new System.EventHandler(this.whoIsOnline_MouseLeave);
+            // 
+            // vpnSettingsLabel
+            // 
+            this.vpnSettingsLabel.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.vpnSettingsLabel, "vpnSettingsLabel");
+            this.vpnSettingsLabel.ForeColor = System.Drawing.Color.White;
+            this.vpnSettingsLabel.Name = "vpnSettingsLabel";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 3000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -534,10 +592,14 @@
             this.BackgroundImage = global::Contra.Properties.Resources.background;
             resources.ApplyResources(this, "$this");
             this.ControlBox = false;
+            this.Controls.Add(this.vpnSettingsLabel);
+            this.Controls.Add(this.whoIsOnline);
+            this.Controls.Add(this.labelVpnStatus);
+            this.Controls.Add(this.vpn_start);
             this.Controls.Add(this.playersOnlineLabel);
-            this.Controls.Add(this.onlinePlayersBtn);
+            this.Controls.Add(this.refreshOnlinePlayersBtn);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Resolution);
+            this.Controls.Add(this.moreOptions);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.VPNMoreButton);
@@ -563,6 +625,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.voicespanel.ResumeLayout(false);
@@ -614,11 +677,16 @@
         private System.Windows.Forms.RadioButton radioFlag_UA;
         private System.Windows.Forms.RadioButton radioFlag_RU;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Label Resolution;
+        private System.Windows.Forms.Label moreOptions;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button onlinePlayersBtn;
+        private System.Windows.Forms.Button refreshOnlinePlayersBtn;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label playersOnlineLabel;
+        private System.Windows.Forms.Button vpn_start;
+        private System.Windows.Forms.Label labelVpnStatus;
+        private System.Windows.Forms.Button whoIsOnline;
+        private System.Windows.Forms.Label vpnSettingsLabel;
+        private System.Windows.Forms.RadioButton radioFlag_DE;
     }
 }
 

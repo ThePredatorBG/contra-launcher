@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace Contra
 {
-    internal class Rename : Form
-    {
-        public static string BigToCtr;
-    }
     public static class Globals
     {
         public static bool GB_Checked = false;
         public static bool RU_Checked = false;
         public static bool UA_Checked = false;
         public static bool BG_Checked = false;
-        public static string tincpath;
-        public static bool TincFound;
-        public static bool FogFX_Checked = true;
-        public static bool LangF_Checked = true;
+        public static bool DE_Checked = false;
+        public static string userOS;
+        public static string playersOnlineLabel;
     }
 }

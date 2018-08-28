@@ -227,22 +227,6 @@ namespace Contra
                     File.WriteAllText("contravpn/tinc.conf", tincconf);
                 }
             }
-            //else if (File.Exists(Globals.tincpath + "/contravpn/tinc.conf"))
-            //{
-            //    string tincconf = File.ReadAllText(Globals.tincpath + "/contravpn/tinc.conf");
-            //    if (UPnPCheckBox.Checked)
-            //    {
-            //        tincconf = tincconf.Replace("UPnP = no", "UPnP = yes");
-            //        File.WriteAllText(Globals.tincpath + "/contravpn/tinc.conf", tincconf);
-            //    }
-            //    else if (!UPnPCheckBox.Checked)
-            //    {
-            //        tincconf = tincconf.Replace("UPnP = yes", "UPnP = no");
-            //        File.WriteAllText(Globals.tincpath + "/contravpn/tinc.conf", tincconf);
-            //    }
-            //}
-
-            // else MessageBox.Show("\"tinc.conf\" not found! Toggling UPnP on/off has no effect.", "Error");
         }
 
         private void AutoConnectCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -261,22 +245,6 @@ namespace Contra
                     File.WriteAllText("contravpn/tinc.conf", tincconf);
                 }
             }
-            //else if (File.Exists(Globals.tincpath + "/contravpn/tinc.conf"))
-            //{
-            //    string tincconf = File.ReadAllText(Globals.tincpath + "/contravpn/tinc.conf");
-            //    if (AutoConnectCheckBox.Checked)
-            //    {
-            //        tincconf = tincconf.Replace("AutoConnect = no", "AutoConnect = yes");
-            //        File.WriteAllText(Globals.tincpath + "/contravpn/tinc.conf", tincconf);
-            //    }
-            //    else if (!AutoConnectCheckBox.Checked)
-            //    {
-            //        tincconf = tincconf.Replace("AutoConnect = yes", "AutoConnect = no");
-            //        File.WriteAllText(Globals.tincpath + "/contravpn/tinc.conf", tincconf);
-            //    }
-            //}
-
-            //else MessageBox.Show("\"tinc.conf\" not found! Toggling AutoConnect on/off has no effect.", "Error");
         }
 
         //Form1 Form1_Instance = new Form1();

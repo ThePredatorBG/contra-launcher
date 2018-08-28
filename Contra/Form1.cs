@@ -101,7 +101,9 @@ namespace Contra
         public static string myDocPath = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Command and Conquer Generals Zero Hour Data\";
 
 
-        public static bool wait = false;
+        public static bool wait = true;
+
+        public static bool adapterInstalled = false;
 
 
         //**********DRAG FORM CODE START**********
@@ -2023,46 +2025,125 @@ namespace Contra
                     if (adapter.Description.Contains("TAP-Windows Adapter V9") == true && stopDialog == false)
                     {
                         Properties.Settings.Default.adapterExists = true; //?
-                        DialogResult dialogResult = MessageBox.Show("Use existing adapter " + adapter.Name + " for ContraVPN?", "Choose Adapter", MessageBoxButtons.YesNo);
-                        if (dialogResult == DialogResult.Yes)
+                        if (Globals.GB_Checked == true)
                         {
-                            Process netsh = new Process();
-                            netsh.StartInfo.FileName = "netsh.exe";
-                            netsh.StartInfo.UseShellExecute = false;
-                            netsh.StartInfo.RedirectStandardInput = true;
-                            netsh.StartInfo.RedirectStandardOutput = true;
-                            netsh.StartInfo.RedirectStandardError = true;
-                            netsh.StartInfo.CreateNoWindow = true;
-                            netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"ContraVPN\"";
-                            netsh.Start();
-
-                            stopDialog = true;
-                            if (Globals.GB_Checked == true)
+                            DialogResult dialogResult = MessageBox.Show("Use existing adapter " + adapter.Name + " for ContraVPN?", "Choose Adapter", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
                             {
+                                Process netsh = new Process();
+                                netsh.StartInfo.FileName = "netsh.exe";
+                                netsh.StartInfo.UseShellExecute = false;
+                                netsh.StartInfo.RedirectStandardInput = true;
+                                netsh.StartInfo.RedirectStandardOutput = true;
+                                netsh.StartInfo.RedirectStandardError = true;
+                                netsh.StartInfo.CreateNoWindow = true;
+                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"ContraVPN\"";
+                                netsh.Start();
+
+                                stopDialog = true;
+                                adapterInstalled = true;
                                 MessageBox.Show("All done! The new adapter is now in use by ContraVPN!");
                             }
-                            else if (Globals.RU_Checked == true)
+                            else if (dialogResult == DialogResult.No)
                             {
+                                //Properties.Settings.Default.adapterExists = false;
+                            }
+                        }
+                        else if (Globals.RU_Checked == true)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Use existing adapter " + adapter.Name + " for ContraVPN?", "Choose Adapter", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                Process netsh = new Process();
+                                netsh.StartInfo.FileName = "netsh.exe";
+                                netsh.StartInfo.UseShellExecute = false;
+                                netsh.StartInfo.RedirectStandardInput = true;
+                                netsh.StartInfo.RedirectStandardOutput = true;
+                                netsh.StartInfo.RedirectStandardError = true;
+                                netsh.StartInfo.CreateNoWindow = true;
+                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"ContraVPN\"";
+                                netsh.Start();
+
+                                stopDialog = true;
+                                adapterInstalled = true;
                                 MessageBox.Show("Все сделано! Новый адаптер теперь используется ContraVPN!");
                             }
-                            else if (Globals.UA_Checked == true)
+                            else if (dialogResult == DialogResult.No)
                             {
+                                //Properties.Settings.Default.adapterExists = false;
+                            }
+                        }
+                        else if (Globals.UA_Checked == true)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Use existing adapter " + adapter.Name + " for ContraVPN?", "Choose Adapter", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                Process netsh = new Process();
+                                netsh.StartInfo.FileName = "netsh.exe";
+                                netsh.StartInfo.UseShellExecute = false;
+                                netsh.StartInfo.RedirectStandardInput = true;
+                                netsh.StartInfo.RedirectStandardOutput = true;
+                                netsh.StartInfo.RedirectStandardError = true;
+                                netsh.StartInfo.CreateNoWindow = true;
+                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"ContraVPN\"";
+                                netsh.Start();
+
+                                stopDialog = true;
+                                adapterInstalled = true;
                                 MessageBox.Show("Все зроблено! Новий адаптер тепер використовується ContraVPN!");
                             }
-                            else if (Globals.BG_Checked == true)
+                            else if (dialogResult == DialogResult.No)
                             {
+                                //Properties.Settings.Default.adapterExists = false;
+                            }
+                        }
+                        else if (Globals.BG_Checked == true)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Желаете ли да използвате " + adapter.Name + " за ContraVPN?", "Изберете адаптер", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                Process netsh = new Process();
+                                netsh.StartInfo.FileName = "netsh.exe";
+                                netsh.StartInfo.UseShellExecute = false;
+                                netsh.StartInfo.RedirectStandardInput = true;
+                                netsh.StartInfo.RedirectStandardOutput = true;
+                                netsh.StartInfo.RedirectStandardError = true;
+                                netsh.StartInfo.CreateNoWindow = true;
+                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"ContraVPN\"";
+                                netsh.Start();
+
+                                stopDialog = true;
+                                adapterInstalled = true;
                                 MessageBox.Show("Готово! Новият адаптер вече се ползва от ContraVPN!");
                             }
-                            else if (Globals.DE_Checked == true)
+                            else if (dialogResult == DialogResult.No)
                             {
+                                //Properties.Settings.Default.adapterExists = false;
+                            }
+                        }
+                        else if (Globals.DE_Checked == true)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Use existing adapter " + adapter.Name + " for ContraVPN?", "Choose Adapter", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                Process netsh = new Process();
+                                netsh.StartInfo.FileName = "netsh.exe";
+                                netsh.StartInfo.UseShellExecute = false;
+                                netsh.StartInfo.RedirectStandardInput = true;
+                                netsh.StartInfo.RedirectStandardOutput = true;
+                                netsh.StartInfo.RedirectStandardError = true;
+                                netsh.StartInfo.CreateNoWindow = true;
+                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"ContraVPN\"";
+                                netsh.Start();
+
+                                stopDialog = true;
+                                adapterInstalled = true;
                                 MessageBox.Show("Alles Fertig! Der neue Adapter wird nun von ContraVPN benutzt!");
                             }
-                            //Application.Restart();
-                            //Environment.Exit(0);
-                        }
-                        else if (dialogResult == DialogResult.No)
-                        {
-                            //Properties.Settings.Default.adapterExists = false;
+                            else if (dialogResult == DialogResult.No)
+                            {
+                                //Properties.Settings.Default.adapterExists = false;
+                            }
                         }
                     }
                 }
@@ -2159,8 +2240,8 @@ namespace Contra
                     MessageBox.Show(ex.Message, "Error");
                 }
             }
-            //else if (Properties.Settings.Default.adapterInstalled == false || Properties.Settings.Default.adapterExists == false) //if (Properties.Settings.Default.stopDialog == false)
-            else if (Properties.Settings.Default.adapterInstalled == false) //if (Properties.Settings.Default.stopDialog == false)
+            //else if (adapterInstalled == false || Properties.Settings.Default.adapterExists == false) //if (Properties.Settings.Default.stopDialog == false)
+            else if (adapterInstalled == false) //if (Properties.Settings.Default.stopDialog == false)
             {
                 try
                 {
@@ -2194,7 +2275,7 @@ namespace Contra
                     adapter.StartInfo.CreateNoWindow = true;
                     adapter.Start();
                     adapter.WaitForExit();
-                    Properties.Settings.Default.adapterInstalled = true;
+                    adapterInstalled = true;
                     if (Globals.GB_Checked == true)
                     {
                         MessageBox.Show("A new TAP-Windows Adapter V9 has been installed. You may now allow it to be used by ContraVPN (selecting \"Yes\" on the first dialog message).", "Adapter Installed");

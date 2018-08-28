@@ -200,7 +200,7 @@ namespace Contra
                     else
                     {
                         string fixedText = comboBox1.Text.Replace("x", " ");
-                        File.WriteAllText(userDataLeafName() + "Options.ini", Regex.Replace(File.ReadAllText(userDataLeafName() + "Options.ini"), "\r?\nResolution =.*", "\r\nResolution = " + fixedText + "\r\n"));
+                        File.WriteAllText(userDataLeafName() + "Options.ini", Regex.Replace(File.ReadAllText(userDataLeafName() + "Options.ini"), "\r?\nResolution =.*", "\r\nResolution = " + fixedText + "\r"));
                         if (Globals.GB_Checked == true)
                         {
                             MessageBox.Show("Resolution changed successfully!");

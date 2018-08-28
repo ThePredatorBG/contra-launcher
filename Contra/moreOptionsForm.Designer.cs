@@ -35,7 +35,7 @@
             this.LangFilterCheckBox = new System.Windows.Forms.CheckBox();
             this.FogCheckBox = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelResolution = new System.Windows.Forms.Label();
             this.resOkButton = new System.Windows.Forms.Button();
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
@@ -72,7 +72,7 @@
             this.LangFilterCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.LangFilterCheckBox.Checked = true;
             this.LangFilterCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.LangFilterCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LangFilterCheckBox.ForeColor = System.Drawing.Color.White;
             this.LangFilterCheckBox.Name = "LangFilterCheckBox";
             this.LangFilterCheckBox.UseVisualStyleBackColor = false;
             this.LangFilterCheckBox.CheckedChanged += new System.EventHandler(this.LangFilterCheckBox_CheckedChanged);
@@ -83,7 +83,7 @@
             this.FogCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.FogCheckBox.Checked = true;
             this.FogCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.FogCheckBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.FogCheckBox.ForeColor = System.Drawing.Color.White;
             this.FogCheckBox.Name = "FogCheckBox";
             this.FogCheckBox.UseVisualStyleBackColor = false;
             this.FogCheckBox.CheckedChanged += new System.EventHandler(this.FogCheckBox_CheckedChanged);
@@ -109,19 +109,25 @@
             resources.GetString("comboBox1.Items13")});
             this.comboBox1.Name = "comboBox1";
             // 
-            // label1
+            // labelResolution
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.labelResolution, "labelResolution");
+            this.labelResolution.BackColor = System.Drawing.Color.Transparent;
+            this.labelResolution.ForeColor = System.Drawing.Color.White;
+            this.labelResolution.Name = "labelResolution";
             // 
             // resOkButton
             // 
+            this.resOkButton.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.resOkButton, "resOkButton");
+            this.resOkButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.resOkButton.FlatAppearance.BorderSize = 0;
+            this.resOkButton.ForeColor = System.Drawing.Color.White;
             this.resOkButton.Name = "resOkButton";
-            this.resOkButton.UseVisualStyleBackColor = true;
+            this.resOkButton.UseVisualStyleBackColor = false;
             this.resOkButton.Click += new System.EventHandler(this.resOkButton_Click);
+            this.resOkButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.resOkButton_MouseDown);
+            this.resOkButton.MouseLeave += new System.EventHandler(this.resOkButton_MouseLeave);
             // 
             // toolTip3
             // 
@@ -136,7 +142,7 @@
             resources.ApplyResources(this, "$this");
             this.ControlBox = false;
             this.Controls.Add(this.resOkButton);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelResolution);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.LangFilterCheckBox);
             this.Controls.Add(this.FogCheckBox);
@@ -145,6 +151,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "moreOptionsForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,7 +164,7 @@
         private System.Windows.Forms.CheckBox LangFilterCheckBox;
         private System.Windows.Forms.CheckBox FogCheckBox;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelResolution;
         private System.Windows.Forms.Button resOkButton;
         private System.Windows.Forms.ToolTip toolTip3;
     }
