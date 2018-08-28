@@ -157,30 +157,6 @@ namespace Contra.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string tincpath {
-            get {
-                return ((string)(this["tincpath"]));
-            }
-            set {
-                this["tincpath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool TincFound {
-            get {
-                return ((bool)(this["TincFound"]));
-            }
-            set {
-                this["TincFound"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool FirstRun {
             get {
@@ -296,6 +272,114 @@ namespace Contra.Properties {
             }
             set {
                 this["ShowConsole"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool adapterExists {
+            get {
+                return ((bool)(this["adapterExists"]));
+            }
+            set {
+                this["adapterExists"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string IP_Label {
+            get {
+                return ((string)(this["IP_Label"]));
+            }
+            set {
+                this["IP_Label"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool stopDialog1 {
+            get {
+                return ((bool)(this["stopDialog1"]));
+            }
+            set {
+                this["stopDialog1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool adapterInstalled {
+            get {
+                return ((bool)(this["adapterInstalled"]));
+            }
+            set {
+                this["adapterInstalled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string concatName {
+            get {
+                return ((string)(this["concatName"]));
+            }
+            set {
+                this["concatName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string concatDesc {
+            get {
+                return ((string)(this["concatDesc"]));
+            }
+            set {
+                this["concatDesc"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool newAdapter {
+            get {
+                return ((bool)(this["newAdapter"]));
+            }
+            set {
+                this["newAdapter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Flag_DE {
+            get {
+                return ((bool)(this["Flag_DE"]));
+            }
+            set {
+                this["Flag_DE"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point playersOnlineWindowLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["playersOnlineWindowLocation"]));
+            }
+            set {
+                this["playersOnlineWindowLocation"] = value;
             }
         }
     }
