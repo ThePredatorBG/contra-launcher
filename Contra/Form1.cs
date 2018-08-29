@@ -1032,6 +1032,38 @@ namespace Contra
             }
         }
 
+        public static void addFirewallExceptions()
+        {
+            List<string> exes = new List<string>
+                        {
+                            "game.dat", "Contra_Launcher.exe", @"contravpn\" + Globals.userOS + @"\tinc.exe", @"contravpn\" + Globals.userOS + @"\tincd.exe"
+                        };
+            Process netsh = new Process();
+            netsh.StartInfo.FileName = "netsh.exe";
+            netsh.StartInfo.UseShellExecute = false;
+            netsh.StartInfo.RedirectStandardInput = true;
+            netsh.StartInfo.RedirectStandardOutput = true;
+            netsh.StartInfo.RedirectStandardError = true;
+            netsh.StartInfo.CreateNoWindow = true;
+            foreach (string exe in exes)
+            {
+                string ExeWithoutExtension = exe;
+                int index = exe.LastIndexOf(".");
+                if (index > 0)
+                    ExeWithoutExtension = exe.Substring(0, index);
+//                ExeWithoutExtension = ExeWithoutExtension.Replace("\"", "");
+
+                netsh.StartInfo.Arguments = "advfirewall firewall show rule name=" + "\"" + ExeWithoutExtension + "\"";
+                MessageBox.Show("advfirewall firewall show rule name=" + "\"" + ExeWithoutExtension + "\"");
+                if (netsh.ExitCode == 0)
+                {
+                    netsh.StartInfo.Arguments = "advfirewall firewall add rule name=" + "\"" + ExeWithoutExtension + "\"" + " dir=in action=allow program=" + "\"" + Environment.CurrentDirectory + @"\" + exe + "\"" + " enable=yes";
+                    MessageBox.Show("advfirewall firewall add rule name=" + "\"" + ExeWithoutExtension + "\"" + " dir=in action=allow program=" + "\"" + Environment.CurrentDirectory + @"\" + exe + "\"" + " enable=yes");
+                }
+                netsh.Start();
+            }
+        }
+
         public void StartVPN()
         {
             Process tinc = new Process();
@@ -2042,6 +2074,7 @@ namespace Contra
 
                                 stopDialog = true;
                                 adapterInstalled = true;
+                                addFirewallExceptions();
                                 MessageBox.Show("All done! The new adapter is now in use by ContraVPN!");
                             }
                             else if (dialogResult == DialogResult.No)
@@ -2066,6 +2099,7 @@ namespace Contra
 
                                 stopDialog = true;
                                 adapterInstalled = true;
+                                addFirewallExceptions();
                                 MessageBox.Show("Все сделано! Новый адаптер теперь используется ContraVPN!");
                             }
                             else if (dialogResult == DialogResult.No)
@@ -2090,6 +2124,7 @@ namespace Contra
 
                                 stopDialog = true;
                                 adapterInstalled = true;
+                                addFirewallExceptions();
                                 MessageBox.Show("Все зроблено! Новий адаптер тепер використовується ContraVPN!");
                             }
                             else if (dialogResult == DialogResult.No)
@@ -2114,6 +2149,7 @@ namespace Contra
 
                                 stopDialog = true;
                                 adapterInstalled = true;
+                                addFirewallExceptions();
                                 MessageBox.Show("Готово! Новият адаптер вече се ползва от ContraVPN!");
                             }
                             else if (dialogResult == DialogResult.No)
@@ -2138,6 +2174,7 @@ namespace Contra
 
                                 stopDialog = true;
                                 adapterInstalled = true;
+                                addFirewallExceptions();
                                 MessageBox.Show("Alles Fertig! Der neue Adapter wird nun von ContraVPN benutzt!");
                             }
                             else if (dialogResult == DialogResult.No)
@@ -2275,26 +2312,65 @@ namespace Contra
                     adapter.StartInfo.CreateNoWindow = true;
                     adapter.Start();
                     adapter.WaitForExit();
-                    adapterInstalled = true;
                     if (Globals.GB_Checked == true)
                     {
-                        MessageBox.Show("A new TAP-Windows Adapter V9 has been installed. You may now allow it to be used by ContraVPN (selecting \"Yes\" on the first dialog message).", "Adapter Installed");
+                        if (adapter.ExitCode == 0)
+                        {
+                            MessageBox.Show("A new TAP-Windows Adapter V9 has been installed. You may now allow it to be used by ContraVPN (selecting \"Yes\" on the first dialog message).", "Adapter Installed");
+                            adapterInstalled = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("TAP-Windows Adapter V9 installation failed.", "Adapter Install Failed");
+                        }
                     }
                     else if (Globals.RU_Checked == true)
                     {
-                        MessageBox.Show("Был установлен новый адаптер TAP-Windows V9. Теперь вы можете разрешить его использовать ContraVPN (выбирая \"Да\" в первом диалоговом сообщении).", "Адаптер установлен");
+                        if (adapter.ExitCode == 0)
+                        {
+                            MessageBox.Show("Был установлен новый адаптер TAP-Windows V9. Теперь вы можете разрешить его использовать ContraVPN (выбирая \"Да\" в первом диалоговом сообщении).", "Адаптер установлен");
+                            adapterInstalled = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("TAP-Windows Adapter V9 installation failed.", "Adapter Install Failed");
+                        }
                     }
                     else if (Globals.UA_Checked == true)
                     {
-                        MessageBox.Show("Був встановлений новий TAP-Windows Adapter V9. Тепер ви можете дозволити його використовувати ContraVPN (вибравши \"Так\" у першому діалоговому вікні).", "Адаптер установлено");
+                        if (adapter.ExitCode == 0)
+                        {
+                            MessageBox.Show("Був встановлений новий TAP-Windows Adapter V9. Тепер ви можете дозволити його використовувати ContraVPN (вибравши \"Так\" у першому діалоговому вікні).", "Адаптер установлено");
+                            adapterInstalled = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("TAP-Windows Adapter V9 installation failed.", "Adapter Install Failed");
+                        }
                     }
                     else if (Globals.BG_Checked == true)
                     {
-                        MessageBox.Show("Нов TAP-Windows Adapter V9 беше инсталиран. Сега можете позволите той да бъде използван от ContraVPN (избирайки \"Да\" на първото съобщение)", "Адаптерът е инсталиран");
+                        if (adapter.ExitCode == 0)
+                        {
+                            MessageBox.Show("Нов TAP-Windows Adapter V9 беше инсталиран. Сега можете позволите той да бъде използван от ContraVPN (избирайки \"Да\" на първото съобщение)", "Адаптерът е инсталиран");
+                            adapterInstalled = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Инсталацията на TAP-Windows Adapter V9 се провали.", "Грешка");
+                        }
                     }
                     else if (Globals.DE_Checked == true)
                     {
-                        MessageBox.Show("Ein neuer TAP-Windows Adapter V9 wurde installiert. Du solltest ihm nicht erlauben von ContraVPN benutzt zu werden (Wдhle \"yes\" auf dem ersten dialog Fenster)", "Adapter installiert");
+                        if (adapter.ExitCode == 0)
+                        {
+                            MessageBox.Show("Ein neuer TAP-Windows Adapter V9 wurde installiert. Du solltest ihm nicht erlauben von ContraVPN benutzt zu werden (Wдhle \"yes\" auf dem ersten dialog Fenster)", "Adapter installiert");
+                            adapterInstalled = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("TAP-Windows Adapter V9 installation failed.", "Adapter Install Failed");
+                        }
                     }
                     DisplayDnsConfiguration();
                 }
