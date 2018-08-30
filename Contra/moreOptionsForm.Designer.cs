@@ -38,6 +38,7 @@
             this.labelResolution = new System.Windows.Forms.Label();
             this.resOkButton = new System.Windows.Forms.Button();
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button17
@@ -135,12 +136,20 @@
             this.toolTip3.InitialDelay = 50;
             this.toolTip3.ReshowDelay = 100;
             // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // moreOptionsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::Contra.Properties.Resources.vpnbg;
             resources.ApplyResources(this, "$this");
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.resOkButton);
             this.Controls.Add(this.labelResolution);
             this.Controls.Add(this.comboBox1);
@@ -167,5 +176,6 @@
         private System.Windows.Forms.Label labelResolution;
         private System.Windows.Forms.Button resOkButton;
         private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.Button button1;
     }
 }

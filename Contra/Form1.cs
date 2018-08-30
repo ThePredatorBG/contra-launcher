@@ -85,6 +85,18 @@ namespace Contra
 
             delTmpChunk();
 
+            //Delete tinc.log if file size > 5 MB
+            Process tincLog = new Process();
+            tincLog.StartInfo.FileName = Environment.CurrentDirectory + @"\contravpn\tinc.log";
+            if (File.Exists(Environment.CurrentDirectory + @"\contravpn\tinc.log"))
+            {
+                double fileSize = new FileInfo(tincLog.StartInfo.FileName).Length;
+                if ((fileSize / 1048576.0) > 5)
+                {
+                    File.Delete(Environment.CurrentDirectory + @"\contravpn\tinc.log");
+                }
+            }
+
         }
 
         public static string userDataLeafName()
@@ -151,10 +163,6 @@ namespace Contra
                 {
                     MessageBox.Show("Du hast Contra im falschen ordner installiert. Installiere es in dem Zero Hour ordner in dem die \"generals.exe\" ist.", "Fehler");
                 }
-            }
-            else
-            {
-                //
             }
         }
 
@@ -1050,17 +1058,19 @@ namespace Contra
                 string ExeWithoutExtension = exe;
                 int index = exe.LastIndexOf(".");
                 if (index > 0)
-                    ExeWithoutExtension = exe.Substring(0, index);
-//                ExeWithoutExtension = ExeWithoutExtension.Replace("\"", "");
-
-                netsh.StartInfo.Arguments = "advfirewall firewall show rule name=" + "\"" + ExeWithoutExtension + "\"";
-                MessageBox.Show("advfirewall firewall show rule name=" + "\"" + ExeWithoutExtension + "\"");
-                if (netsh.ExitCode == 0)
                 {
-                    netsh.StartInfo.Arguments = "advfirewall firewall add rule name=" + "\"" + ExeWithoutExtension + "\"" + " dir=in action=allow program=" + "\"" + Environment.CurrentDirectory + @"\" + exe + "\"" + " enable=yes";
-                    MessageBox.Show("advfirewall firewall add rule name=" + "\"" + ExeWithoutExtension + "\"" + " dir=in action=allow program=" + "\"" + Environment.CurrentDirectory + @"\" + exe + "\"" + " enable=yes");
+                    ExeWithoutExtension = exe.Substring(0, index);
                 }
+
+                netsh.StartInfo.Arguments = "advfirewall firewall show rule name=" + "\"Contra - " + ExeWithoutExtension + "\"";
                 netsh.Start();
+                netsh.WaitForExit();
+                if (netsh.ExitCode != 0)
+                {
+                    netsh.StartInfo.Arguments = "advfirewall firewall add rule name=" + "\"Contra - " + ExeWithoutExtension + "\"" + " dir=in action=allow program=" + "\"" + Environment.CurrentDirectory + @"\" + exe + "\"" + " enable=yes";
+                    netsh.Start();
+                    netsh.WaitForExit();
+                }
             }
         }
 
@@ -1445,6 +1455,9 @@ namespace Contra
                 {
                     //
                 }
+
+                //Add Firewall exceptions.
+                addFirewallExceptions();
 
                 //Show message on first run.
                 if (getCurrentCulture() == "en-US")
@@ -2074,7 +2087,6 @@ namespace Contra
 
                                 stopDialog = true;
                                 adapterInstalled = true;
-                                addFirewallExceptions();
                                 MessageBox.Show("All done! The new adapter is now in use by ContraVPN!");
                             }
                             else if (dialogResult == DialogResult.No)
@@ -2099,7 +2111,6 @@ namespace Contra
 
                                 stopDialog = true;
                                 adapterInstalled = true;
-                                addFirewallExceptions();
                                 MessageBox.Show("Все сделано! Новый адаптер теперь используется ContraVPN!");
                             }
                             else if (dialogResult == DialogResult.No)
@@ -2124,7 +2135,6 @@ namespace Contra
 
                                 stopDialog = true;
                                 adapterInstalled = true;
-                                addFirewallExceptions();
                                 MessageBox.Show("Все зроблено! Новий адаптер тепер використовується ContraVPN!");
                             }
                             else if (dialogResult == DialogResult.No)
@@ -2149,7 +2159,6 @@ namespace Contra
 
                                 stopDialog = true;
                                 adapterInstalled = true;
-                                addFirewallExceptions();
                                 MessageBox.Show("Готово! Новият адаптер вече се ползва от ContraVPN!");
                             }
                             else if (dialogResult == DialogResult.No)
@@ -2174,7 +2183,6 @@ namespace Contra
 
                                 stopDialog = true;
                                 adapterInstalled = true;
-                                addFirewallExceptions();
                                 MessageBox.Show("Alles Fertig! Der neue Adapter wird nun von ContraVPN benutzt!");
                             }
                             else if (dialogResult == DialogResult.No)
