@@ -64,56 +64,85 @@ namespace Contra
             }
 
             //Get current resolution
-            if (Directory.Exists(userDataLeafName()))
+            try
             {
-                string s = File.ReadAllText(userDataLeafName() + "Options.ini");
-                List<string> found = new List<string>();
-                string line;
-                using (StringReader file = new StringReader(s))
+                if (Directory.Exists(userDataLeafName()))
                 {
-                    while ((line = file.ReadLine()) != null)
+                    string s = File.ReadAllText(userDataLeafName() + "Options.ini");
+                    List<string> found = new List<string>();
+                    string line;
+                    using (StringReader file = new StringReader(s))
                     {
-                        if (line.Contains("Resolution ="))
+                        while ((line = file.ReadLine()) != null)
                         {
-                            found.Add(line);
-                            s = line;
-                            s = s.Substring(s.IndexOf('=') + 2);
-                            s = s.TrimEnd();
-                            string s2 = s.Replace(" ", "x");
-                            //                        MessageBox.Show(s2); //shows current res
-                            Properties.Settings.Default.Res = s2;
-                            Properties.Settings.Default.Save();
+                            if (line.Contains("Resolution ="))
+                            {
+                                found.Add(line);
+                                s = line;
+                                s = s.Substring(s.IndexOf('=') + 2);
+                                s = s.TrimEnd();
+                                string s2 = s.Replace(" ", "x");
+                                //                        MessageBox.Show(s2); //shows current res
+                                Properties.Settings.Default.Res = s2;
+                                Properties.Settings.Default.Save();
+                            }
                         }
                     }
                 }
-            }
-            else if (Directory.Exists(myDocPath))
-            {
-                string s = File.ReadAllText(myDocPath + "Options.ini");
-                List<string> found = new List<string>();
-                string line;
-                using (StringReader file = new StringReader(s))
+                else if (Directory.Exists(myDocPath))
                 {
-                    while ((line = file.ReadLine()) != null)
+                    string s = File.ReadAllText(myDocPath + "Options.ini");
+                    List<string> found = new List<string>();
+                    string line;
+                    using (StringReader file = new StringReader(s))
                     {
-                        if (line.Contains("Resolution ="))
+                        while ((line = file.ReadLine()) != null)
                         {
-                            found.Add(line);
-                            s = line;
-                            s = s.Substring(s.IndexOf('=') + 2);
-                            s = s.TrimEnd();
-                            string s2 = s.Replace(" ", "x");
-                            //                        MessageBox.Show(s2); //shows current res
-                            Properties.Settings.Default.Res = s2;
-                            Properties.Settings.Default.Save();
+                            if (line.Contains("Resolution ="))
+                            {
+                                found.Add(line);
+                                s = line;
+                                s = s.Substring(s.IndexOf('=') + 2);
+                                s = s.TrimEnd();
+                                string s2 = s.Replace(" ", "x");
+                                //                        MessageBox.Show(s2); //shows current res
+                                Properties.Settings.Default.Res = s2;
+                                Properties.Settings.Default.Save();
+                            }
                         }
                     }
                 }
-            }
-            comboBox1.Text = Properties.Settings.Default.Res;
+                comboBox1.Text = Properties.Settings.Default.Res;
 
-            FogCheckBox.Checked = Properties.Settings.Default.Fog;
-            LangFilterCheckBox.Checked = Properties.Settings.Default.LangF;
+                FogCheckBox.Checked = Properties.Settings.Default.Fog;
+                LangFilterCheckBox.Checked = Properties.Settings.Default.LangF;
+            }
+            catch
+            {
+                if (!File.Exists(userDataLeafName() + "Options.ini") || (!File.Exists(myDocPath + "Options.ini")))
+                {
+                    if (Globals.GB_Checked == true)
+                    {
+                        MessageBox.Show("Options.ini not found! Could not load current resolution.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (Globals.RU_Checked == true)
+                    {
+                        MessageBox.Show("Options.ini not found! Could not load current resolution.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (Globals.UA_Checked == true)
+                    {
+                        MessageBox.Show("Options.ini not found! Could not load current resolution.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (Globals.BG_Checked == true)
+                    {
+                        MessageBox.Show("Options.ini not found! Could not load current resolution.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (Globals.DE_Checked == true)
+                    {
+                        MessageBox.Show("Options.ini not found! Could not load current resolution.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         public string userDataLeafName()
@@ -169,113 +198,142 @@ namespace Contra
 
         private void resOkButton_Click(object sender, EventArgs e)
         {
-            if (Directory.Exists(userDataLeafName()))
+            try
             {
-                string text = File.ReadAllText(userDataLeafName() + "Options.ini");
+                if (Directory.Exists(userDataLeafName()))
                 {
-                    if (!Regex.IsMatch(comboBox1.Text, @"^[0-9]{3,4}x[0-9]{3,4}$")) //if selected res doesn't match valid input (input must match the regex)
+                    string text = File.ReadAllText(userDataLeafName() + "Options.ini");
                     {
-                        if (Globals.GB_Checked == true)
+                        if (!Regex.IsMatch(comboBox1.Text, @"^[0-9]{3,4}x[0-9]{3,4}$")) //if selected res doesn't match valid input (input must match the regex)
                         {
-                            MessageBox.Show("This resolution is not valid.", "Error");
+                            if (Globals.GB_Checked == true)
+                            {
+                                MessageBox.Show("This resolution is not valid.", "Error");
+                            }
+                            else if (Globals.RU_Checked == true)
+                            {
+                                MessageBox.Show("Это разрешение экрана не является действительным.", "Ошибка");
+                            }
+                            else if (Globals.UA_Checked == true)
+                            {
+                                MessageBox.Show("Це розширення не є дійсним.", "Помилка");
+                            }
+                            else if (Globals.BG_Checked == true)
+                            {
+                                MessageBox.Show("Тази резолюция не е валидна.", "Грешка");
+                            }
+                            else if (Globals.DE_Checked == true)
+                            {
+                                MessageBox.Show("Diese Auflцsung ist nicht gьltig.", "Fehler");
+                            }
+                            //return;
                         }
-                        else if (Globals.RU_Checked == true)
+                        else
                         {
-                            MessageBox.Show("Это разрешение экрана не является действительным.", "Ошибка");
+                            string fixedText = comboBox1.Text.Replace("x", " ");
+                            File.WriteAllText(userDataLeafName() + "Options.ini", Regex.Replace(File.ReadAllText(userDataLeafName() + "Options.ini"), "\r?\nResolution =.*", "\r\nResolution = " + fixedText + "\r"));
+                            if (Globals.GB_Checked == true)
+                            {
+                                MessageBox.Show("Resolution changed successfully!");
+                            }
+                            else if (Globals.RU_Checked == true)
+                            {
+                                MessageBox.Show("Разрешение экрана успешно изменено!");
+                            }
+                            else if (Globals.UA_Checked == true)
+                            {
+                                MessageBox.Show("Розширення успішно змінено!");
+                            }
+                            else if (Globals.BG_Checked == true)
+                            {
+                                MessageBox.Show("Резолюцията беше променена успешно!");
+                            }
+                            else if (Globals.DE_Checked == true)
+                            {
+                                MessageBox.Show("Auflцsung erfolgreich geдndert!");
+                            }
                         }
-                        else if (Globals.UA_Checked == true)
-                        {
-                            MessageBox.Show("Це розширення не є дійсним.", "Помилка");
-                        }
-                        else if (Globals.BG_Checked == true)
-                        {
-                            MessageBox.Show("Тази резолюция не е валидна.", "Грешка");
-                        }
-                        else if (Globals.DE_Checked == true)
-                        {
-                            MessageBox.Show("Diese Auflцsung ist nicht gьltig.", "Fehler");
-                        }
-                        //return;
                     }
-                    else
+                }
+                else if (Directory.Exists(myDocPath))
+                {
+                    string text = File.ReadAllText(myDocPath + "Options.ini");
                     {
-                        string fixedText = comboBox1.Text.Replace("x", " ");
-                        File.WriteAllText(userDataLeafName() + "Options.ini", Regex.Replace(File.ReadAllText(userDataLeafName() + "Options.ini"), "\r?\nResolution =.*", "\r\nResolution = " + fixedText + "\r"));
-                        if (Globals.GB_Checked == true)
+                        if (!Regex.IsMatch(comboBox1.Text, @"^[0-9]{3,4}x[0-9]{3,4}$")) //if selected res doesn't match valid input (input must match the regex)
                         {
-                            MessageBox.Show("Resolution changed successfully!");
+                            if (Globals.GB_Checked == true)
+                            {
+                                MessageBox.Show("This resolution is not valid.", "Error");
+                            }
+                            else if (Globals.RU_Checked == true)
+                            {
+                                MessageBox.Show("Это разрешение экрана не является действительным.", "Ошибка");
+                            }
+                            else if (Globals.UA_Checked == true)
+                            {
+                                MessageBox.Show("Це розширення не є дійсним.", "Помилка");
+                            }
+                            else if (Globals.BG_Checked == true)
+                            {
+                                MessageBox.Show("Тази резолюция не е валидна.", "Грешка");
+                            }
+                            else if (Globals.DE_Checked == true)
+                            {
+                                MessageBox.Show("Diese Auflцsung ist nicht gьltig.", "Fehler");
+                            }
+                            //return;
                         }
-                        else if (Globals.RU_Checked == true)
+                        else
                         {
-                            MessageBox.Show("Разрешение экрана успешно изменено!");
-                        }
-                        else if (Globals.UA_Checked == true)
-                        {
-                            MessageBox.Show("Розширення успішно змінено!");
-                        }
-                        else if (Globals.BG_Checked == true)
-                        {
-                            MessageBox.Show("Резолюцията беше променена успешно!");
-                        }
-                        else if (Globals.DE_Checked == true)
-                        {
-                            MessageBox.Show("Auflцsung erfolgreich geдndert!");
+                            string fixedText = comboBox1.Text.Replace("x", " ");
+                            File.WriteAllText(myDocPath + "Options.ini", Regex.Replace(File.ReadAllText(myDocPath + "Options.ini"), "\r?\nResolution =.*", "\r\nResolution = " + fixedText + "\r\n"));
+                            if (Globals.GB_Checked == true)
+                            {
+                                MessageBox.Show("Resolution changed successfully!");
+                            }
+                            else if (Globals.RU_Checked == true)
+                            {
+                                MessageBox.Show("Разрешение экрана успешно изменено!");
+                            }
+                            else if (Globals.UA_Checked == true)
+                            {
+                                MessageBox.Show("Розширення успішно змінено!");
+                            }
+                            else if (Globals.BG_Checked == true)
+                            {
+                                MessageBox.Show("Резолюцията беше променена успешно!");
+                            }
+                            else if (Globals.DE_Checked == true)
+                            {
+                                MessageBox.Show("Auflцsung erfolgreich geдndert!");
+                            }
                         }
                     }
                 }
             }
-            else if (Directory.Exists(myDocPath))
+            catch
             {
-                string text = File.ReadAllText(myDocPath + "Options.ini");
+                if (!File.Exists(userDataLeafName() + "Options.ini") || (!File.Exists(myDocPath + "Options.ini")))
                 {
-                    if (!Regex.IsMatch(comboBox1.Text, @"^[0-9]{3,4}x[0-9]{3,4}$")) //if selected res doesn't match valid input (input must match the regex)
+                    if (Globals.GB_Checked == true)
                     {
-                        if (Globals.GB_Checked == true)
-                        {
-                            MessageBox.Show("This resolution is not valid.", "Error");
-                        }
-                        else if (Globals.RU_Checked == true)
-                        {
-                            MessageBox.Show("Это разрешение экрана не является действительным.", "Ошибка");
-                        }
-                        else if (Globals.UA_Checked == true)
-                        {
-                            MessageBox.Show("Це розширення не є дійсним.", "Помилка");
-                        }
-                        else if (Globals.BG_Checked == true)
-                        {
-                            MessageBox.Show("Тази резолюция не е валидна.", "Грешка");
-                        }
-                        else if (Globals.DE_Checked == true)
-                        {
-                            MessageBox.Show("Diese Auflцsung ist nicht gьltig.", "Fehler");
-                        }
-                        //return;
+                        MessageBox.Show("Options.ini not found! Could not set new resolution.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else
+                    else if (Globals.RU_Checked == true)
                     {
-                        string fixedText = comboBox1.Text.Replace("x", " ");
-                        File.WriteAllText(myDocPath + "Options.ini", Regex.Replace(File.ReadAllText(myDocPath + "Options.ini"), "\r?\nResolution =.*", "\r\nResolution = " + fixedText + "\r\n"));
-                        if (Globals.GB_Checked == true)
-                        {
-                            MessageBox.Show("Resolution changed successfully!");
-                        }
-                        else if (Globals.RU_Checked == true)
-                        {
-                            MessageBox.Show("Разрешение экрана успешно изменено!");
-                        }
-                        else if (Globals.UA_Checked == true)
-                        {
-                            MessageBox.Show("Розширення успішно змінено!");
-                        }
-                        else if (Globals.BG_Checked == true)
-                        {
-                            MessageBox.Show("Резолюцията беше променена успешно!");
-                        }
-                        else if (Globals.DE_Checked == true)
-                        {
-                            MessageBox.Show("Auflцsung erfolgreich geдndert!");
-                        }
+                        MessageBox.Show("Options.ini not found! Could not set new resolution.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (Globals.UA_Checked == true)
+                    {
+                        MessageBox.Show("Options.ini not found! Could not set new resolution.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (Globals.BG_Checked == true)
+                    {
+                        MessageBox.Show("Options.ini not found! Could not set new resolution.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (Globals.DE_Checked == true)
+                    {
+                        MessageBox.Show("Options.ini not found! Could not set new resolution.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

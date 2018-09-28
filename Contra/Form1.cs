@@ -1415,8 +1415,44 @@ namespace Contra
             return cultureStr;
         }
 
+        bool IsWindows8OrNewer()
+        {
+            var os = Environment.OSVersion;
+            return os.Platform == PlatformID.Win32NT &&
+                   (os.Version.Major > 6 || (os.Version.Major == 6 && os.Version.Minor >= 2));
+        }
+
         private void Form1_Shown(object sender, EventArgs e)
         {
+
+            //Show warning if Options.ini isn't found and the user is running Windows 8 or more recent.
+            if (IsWindows8OrNewer() == true)
+            {
+                if (!File.Exists(userDataLeafName() + "Options.ini") || (!File.Exists(myDocPath + "Options.ini")))
+                {
+                    if (Globals.GB_Checked == true)
+                    {
+                        MessageBox.Show("Options.ini not found, therefore the game will not start!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (Globals.RU_Checked == true)
+                    {
+                        MessageBox.Show("Options.ini not found, therefore the game will not start!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (Globals.UA_Checked == true)
+                    {
+                        MessageBox.Show("Options.ini not found, therefore the game will not start!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (Globals.BG_Checked == true)
+                    {
+                        MessageBox.Show("Options.ini not found, therefore the game will not start!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (Globals.DE_Checked == true)
+                    {
+                        MessageBox.Show("Options.ini not found, therefore the game will not start!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+
             if (Properties.Settings.Default.FirstRun)
             {
                 try
@@ -1451,7 +1487,7 @@ namespace Contra
                         }
                     }
                 }
-                catch (Exception ex)
+                catch //(Exception ex)
                 {
                     //
                 }
@@ -2326,6 +2362,7 @@ namespace Contra
                         {
                             MessageBox.Show("A new TAP-Windows Adapter V9 has been installed. You may now allow it to be used by ContraVPN (selecting \"Yes\" on the first dialog message).", "Adapter Installed");
                             adapterInstalled = true;
+                            DisplayDnsConfiguration();
                         }
                         else
                         {
@@ -2338,6 +2375,7 @@ namespace Contra
                         {
                             MessageBox.Show("Был установлен новый адаптер TAP-Windows V9. Теперь вы можете разрешить его использовать ContraVPN (выбирая \"Да\" в первом диалоговом сообщении).", "Адаптер установлен");
                             adapterInstalled = true;
+                            DisplayDnsConfiguration();
                         }
                         else
                         {
@@ -2350,6 +2388,7 @@ namespace Contra
                         {
                             MessageBox.Show("Був встановлений новий TAP-Windows Adapter V9. Тепер ви можете дозволити його використовувати ContraVPN (вибравши \"Так\" у першому діалоговому вікні).", "Адаптер установлено");
                             adapterInstalled = true;
+                            DisplayDnsConfiguration();
                         }
                         else
                         {
@@ -2362,6 +2401,7 @@ namespace Contra
                         {
                             MessageBox.Show("Нов TAP-Windows Adapter V9 беше инсталиран. Сега можете позволите той да бъде използван от ContraVPN (избирайки \"Да\" на първото съобщение)", "Адаптерът е инсталиран");
                             adapterInstalled = true;
+                            DisplayDnsConfiguration();
                         }
                         else
                         {
@@ -2374,13 +2414,13 @@ namespace Contra
                         {
                             MessageBox.Show("Ein neuer TAP-Windows Adapter V9 wurde installiert. Du solltest ihm nicht erlauben von ContraVPN benutzt zu werden (Wдhle \"yes\" auf dem ersten dialog Fenster)", "Adapter installiert");
                             adapterInstalled = true;
+                            DisplayDnsConfiguration();
                         }
                         else
                         {
                             MessageBox.Show("TAP-Windows Adapter V9 installation failed.", "Adapter Install Failed");
                         }
                     }
-                    DisplayDnsConfiguration();
                 }
                 catch (Exception ex)
                 {
@@ -2407,49 +2447,70 @@ namespace Contra
                 //shows everything ipconfig                    MessageBox.Show(s);
                 ipconfig.WaitForExit();
                 ipconfig.Close();
-                if (File.Exists(userDataLeafName() + "Options.ini") || (File.Exists(myDocPath + "Options.ini")))
+                try
                 {
-                    List<string> found = new List<string>();
-                    string line;
-                    using (StringReader file = new StringReader(s))
+                    if (File.Exists(userDataLeafName() + "Options.ini") || (File.Exists(myDocPath + "Options.ini")))
                     {
-                        while ((line = file.ReadLine()) != null)
+                        List<string> found = new List<string>();
+                        string line;
+                        using (StringReader file = new StringReader(s))
                         {
-                            if (line.Contains("10.10.10."))
+                            while ((line = file.ReadLine()) != null)
                             {
-                                found.Add(line);
-                                s = line;
-                                s = s.Substring(s.IndexOf(':') + 1);
-                                Properties.Settings.Default.IP_Label = "ContraVPN IP: " + s;
-                                //                                                     MessageBox.Show(s); //shows tincIP
+                                if (line.Contains("10.10.10."))
+                                {
+                                    found.Add(line);
+                                    s = line;
+                                    s = s.Substring(s.IndexOf(':') + 1);
+                                    Properties.Settings.Default.IP_Label = "ContraVPN IP: " + s;
+                                    //                                                     MessageBox.Show(s); //shows tincIP
+                                }
                             }
                         }
                     }
-                }
-                if (Directory.Exists(userDataLeafName()))
-                {
-                    string text = File.ReadAllText(userDataLeafName() + "Options.ini");
-                    if (!text.Contains("10.10.10."))
+                    if (Directory.Exists(userDataLeafName()))
                     {
-                        File.WriteAllText(userDataLeafName() + "Options.ini", Regex.Replace(File.ReadAllText(userDataLeafName() + "Options.ini"), "\r?\nIPAddress =.*", "\r\nIPAddress =" + s + "\r\n"));
+                        string text = File.ReadAllText(userDataLeafName() + "Options.ini");
+                        if (!text.Contains("10.10.10."))
+                        {
+                            File.WriteAllText(userDataLeafName() + "Options.ini", Regex.Replace(File.ReadAllText(userDataLeafName() + "Options.ini"), "\r?\nIPAddress =.*", "\r\nIPAddress =" + s + "\r\n"));
+                        }
+                    }
+                    else if (Directory.Exists(myDocPath))
+                    {
+                        string text = File.ReadAllText(myDocPath + "Options.ini");
+                        if (!text.Contains("10.10.10."))
+                        {
+                            File.WriteAllText(myDocPath + "Options.ini", Regex.Replace(File.ReadAllText(myDocPath + "Options.ini"), "\r?\nIPAddress =.*", "\r\nIPAddress =" + s + "\r\n"));
+                        }
                     }
                 }
-                else if (Directory.Exists(myDocPath))
+                catch
                 {
-                    string text = File.ReadAllText(myDocPath + "Options.ini");
-                    if (!text.Contains("10.10.10."))
+                    if (!File.Exists(userDataLeafName() + "Options.ini") || (!File.Exists(myDocPath + "Options.ini")))
                     {
-                        File.WriteAllText(myDocPath + "Options.ini", Regex.Replace(File.ReadAllText(myDocPath + "Options.ini"), "\r?\nIPAddress =.*", "\r\nIPAddress =" + s + "\r\n"));
+                        if (Globals.GB_Checked == true)
+                        {
+                            MessageBox.Show("Options.ini not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (Globals.RU_Checked == true)
+                        {
+                            MessageBox.Show("Options.ini not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (Globals.UA_Checked == true)
+                        {
+                            MessageBox.Show("Options.ini not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (Globals.BG_Checked == true)
+                        {
+                            MessageBox.Show("Options.ini not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (Globals.DE_Checked == true)
+                        {
+                            MessageBox.Show("Options.ini not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
-                //else if (Directory.Exists(xppath))
-                //{
-                //    string text = File.ReadAllText(xppath + "Options.ini");
-                //    if (!text.Contains("10.10.10."))
-                //    {
-                //        File.WriteAllText(xppath + "Options.ini", Regex.Replace(File.ReadAllText(path + "Options.ini"), "\r?\nIPAddress =.*", "\r\nIPAddress =" + s + "\r\n"));
-                //    }
-                //}
             }
             else
             {
@@ -2483,6 +2544,17 @@ namespace Contra
                 if (onlinePlayersForm is onlinePlayersForm)
                 {
                     onlinePlayersForm.Close();
+
+                    if (onlinePlayersForm.WindowState == FormWindowState.Normal)
+                    {
+                        Properties.Settings.Default.playersOnlineWindowLocation = onlinePlayersForm.Location;
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.playersOnlineWindowLocation = onlinePlayersForm.RestoreBounds.Location;
+                    }
+                    Properties.Settings.Default.Save();
+
                     new onlinePlayersForm().Show();
                     return;
                 }
