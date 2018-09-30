@@ -145,15 +145,22 @@ namespace Contra
             }
         }
 
-        public string userDataLeafName()
+        public static string userDataLeafName()
         {
             var o = string.Empty;
-            var TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Command and Conquer Generals Zero Hour");
-            if (TincRegistryPath != null)
+            var userDataRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Command and Conquer Generals Zero Hour");
+            if (userDataRegistryPath != null)
             {
-                o = TincRegistryPath.GetValue("UserDataLeafName") as string;
+                o = userDataRegistryPath.GetValue("UserDataLeafName") as string;
             }
-            return System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + o + @"\";
+            if (o != null)
+            {
+                return System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + o + @"\";
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public static string myDocPath = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Command and Conquer Generals Zero Hour Data\";

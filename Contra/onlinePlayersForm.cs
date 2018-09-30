@@ -47,8 +47,8 @@ namespace Contra
             if (tincdByName.Length > 0) //if tincd is already running
             {
                 Process onlinePlayers = new Process();
-                onlinePlayers.StartInfo.Arguments = "--config=\"" + Environment.CurrentDirectory + "\\contravpn\" --pidfile=\"" + Environment.CurrentDirectory + "\\contravpn\\tinc.pid\"";
-                onlinePlayers.StartInfo.FileName = Environment.CurrentDirectory + @"\contravpn\" + Globals.userOS + @"\tinc.exe";
+                onlinePlayers.StartInfo.Arguments = "--config=\"" + Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\" --pidfile=\"" + Environment.CurrentDirectory + "\\contra\\vpn\\tinc.pid\"";
+                onlinePlayers.StartInfo.FileName = Environment.CurrentDirectory + @"\contra\vpn\" + Globals.userOS + @"\tinc.exe";
                 onlinePlayers.StartInfo.UseShellExecute = false;
                 onlinePlayers.StartInfo.RedirectStandardInput = true;
                 onlinePlayers.StartInfo.RedirectStandardOutput = true;

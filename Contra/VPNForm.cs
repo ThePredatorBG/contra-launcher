@@ -101,34 +101,34 @@ namespace Contra
             }
 
             //Append UPnP line to tinc.conf if missing.
-            if ((File.Exists("contravpn/tinc.conf")) && ((File.ReadAllText("contravpn/tinc.conf").Contains("UPnP")) == false))
+            if ((File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")) && ((File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf").Contains("UPnP")) == false))
             {
                 string AppendUPnP = Environment.NewLine + "UPnP = no";
-                File.AppendAllText("contravpn/tinc.conf", AppendUPnP);
+                File.AppendAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf", AppendUPnP);
             }
 
             //Append AutoConnect line to tinc.conf if missing.
-            if ((File.Exists("contravpn/tinc.conf")) && ((File.ReadAllText("contravpn/tinc.conf").Contains("AutoConnect")) == false))
+            if ((File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")) && ((File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf").Contains("AutoConnect")) == false))
             {
                 string AppendUPnP = Environment.NewLine + "AutoConnect = no";
-                File.AppendAllText("contravpn/tinc.conf", AppendUPnP);
+                File.AppendAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf", AppendUPnP);
             }
 
             //Read from tinc.conf and check/uncheck our checkboxes depending on content:
-            if ((File.Exists("contravpn/tinc.conf")) && ((File.ReadAllText("contravpn/tinc.conf").Contains("UPnP = no"))))
+            if ((File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")) && ((File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf").Contains("UPnP = no"))))
             {
                 UPnPCheckBox.Checked = false;
             }
-            else if ((File.Exists("contravpn/tinc.conf")) && (File.ReadAllText("contravpn/tinc.conf").Contains("UPnP = yes")))
+            else if ((File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")) && (File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf").Contains("UPnP = yes")))
             {
                 UPnPCheckBox.Checked = true;
             }
 
-            if ((File.Exists("contravpn/tinc.conf")) && (File.ReadAllText("contravpn/tinc.conf").Contains("AutoConnect = no")))
+            if ((File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")) && (File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf").Contains("AutoConnect = no")))
             {
                 AutoConnectCheckBox.Checked = false;
             }
-            else if ((File.Exists("contravpn/tinc.conf")) && (File.ReadAllText("contravpn/tinc.conf").Contains("AutoConnect = yes")))
+            else if ((File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")) && (File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf").Contains("AutoConnect = yes")))
             {
                 AutoConnectCheckBox.Checked = true;
             }
@@ -213,36 +213,36 @@ namespace Contra
 
         private void UPnPCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if ((File.Exists("contravpn/tinc.conf")))
+            if ((File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")))
             {
-                string tincconf = File.ReadAllText("contravpn/tinc.conf");
+                string tincconf = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf");
                 if (UPnPCheckBox.Checked)
                 {
                     tincconf = tincconf.Replace("UPnP = no", "UPnP = yes");
-                    File.WriteAllText("contravpn/tinc.conf", tincconf);
+                    File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf", tincconf);
                 }
                 else if (!UPnPCheckBox.Checked)
                 {
                     tincconf = tincconf.Replace("UPnP = yes", "UPnP = no");
-                    File.WriteAllText("contravpn/tinc.conf", tincconf);
+                    File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf", tincconf);
                 }
             }
         }
 
         private void AutoConnectCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if ((File.Exists("contravpn/tinc.conf")))
+            if ((File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")))
             {
-                string tincconf = File.ReadAllText("contravpn/tinc.conf");
+                string tincconf = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf");
                 if (AutoConnectCheckBox.Checked)
                 {
                     tincconf = tincconf.Replace("AutoConnect = no", "AutoConnect = yes");
-                    File.WriteAllText("contravpn/tinc.conf", tincconf);
+                    File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf", tincconf);
                 }
                 else if (!AutoConnectCheckBox.Checked)
                 {
                     tincconf = tincconf.Replace("AutoConnect = yes", "AutoConnect = no");
-                    File.WriteAllText("contravpn/tinc.conf", tincconf);
+                    File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf", tincconf);
                 }
             }
         }
@@ -270,7 +270,7 @@ namespace Contra
 
         public void EnterInvKey()
         {
-            if (File.Exists(Environment.CurrentDirectory + @"\contravpn\tinc.conf"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf"))
             {
                 if (Globals.GB_Checked == true)
                 {
@@ -317,7 +317,7 @@ namespace Contra
                 }
                 if (discordVisited == false)
                 {
-                    Process.Start(@"contravpn\discord.url");
+                    Process.Start(@"contra\discord.url");
                     //Process.Start("https://discord.gg/015E6KXXHmdWFXCtt");
                     discordVisited = true;
                 }
@@ -338,10 +338,10 @@ namespace Contra
         public void OpenConsole()
         {
             Process tinc = new Process();
-            tinc.StartInfo.Arguments = "--config=. --pidfile=tinc.pid";
+            tinc.StartInfo.Arguments = "--config=\"" + Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\" --pidfile=tinc.pid";
             tinc.StartInfo.FileName = Globals.userOS + @"\tinc.exe";
-            tinc.StartInfo.WorkingDirectory = Environment.CurrentDirectory + @"\contravpn";
-            if (Directory.Exists(Environment.CurrentDirectory + @"\contravpn\" + Globals.userOS))
+            tinc.StartInfo.WorkingDirectory = Environment.CurrentDirectory + @"\contra\vpn";
+            if (Directory.Exists(Environment.CurrentDirectory + @"\contra\vpn\" + Globals.userOS))
             {
                 tinc.Start();
             }
@@ -375,13 +375,13 @@ namespace Contra
         {
             Process debugLog = new Process();
             debugLog.StartInfo.FileName = "tinc.log";
-            debugLog.StartInfo.WorkingDirectory = Environment.CurrentDirectory + @"\contravpn";
+            debugLog.StartInfo.WorkingDirectory = Environment.CurrentDirectory + @"\contra\vpn";
             //if (File.Exists("tinc" + @"\contravpn" + "contravpn.log"))
-            if (File.Exists(Environment.CurrentDirectory + @"\contravpn\tinc.log"))
+            if (File.Exists(Environment.CurrentDirectory + @"\contra\vpn\tinc.log"))
             {
                 debugLog.Start();
             }
-            else if (!File.Exists(Environment.CurrentDirectory + @"\contravpn\tinc.log"))
+            else if (!File.Exists(Environment.CurrentDirectory + @"\contra\vpn\tinc.log"))
             {
                 if (Globals.GB_Checked == true)
                 {
@@ -518,19 +518,19 @@ namespace Contra
         private void buttonVPNinvOK_Click(object sender, EventArgs e)
         {
             Process tinc = new Process();
-            tinc.StartInfo.Arguments = "--batch --force --config=\"" + Environment.CurrentDirectory + "\\contravpn\" join " + invkeytextBox.Text;
+            tinc.StartInfo.Arguments = "--batch --force --config=\"" + Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\" join " + invkeytextBox.Text;
             //if (invkeytextBox.Text.StartsWith("contra.nsupdate.info"))
             if (Regex.IsMatch(invkeytextBox.Text, @"^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])(:(0|[1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])(/)|/)(.*)$"))
             {
-                tinc.StartInfo.FileName = Environment.CurrentDirectory + @"\contravpn\" + Globals.userOS + @"\tinc.exe";
+                tinc.StartInfo.FileName = Environment.CurrentDirectory + @"\contra\vpn\" + Globals.userOS + @"\tinc.exe";
                 tinc.StartInfo.UseShellExecute = false;
                 tinc.StartInfo.RedirectStandardOutput = true;
                 tinc.StartInfo.RedirectStandardError = true;
                 tinc.StartInfo.CreateNoWindow = true;
                 //                "tinc".Replace("\"", "");
-                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(@"contravpn\");
+                tinc.StartInfo.WorkingDirectory = Path.GetDirectoryName(@"contra\vpn\");
 
-                if (File.Exists(@"contravpn\" + Globals.userOS + @"\tinc.exe"))
+                if (File.Exists(@"contra\vpn\" + Globals.userOS + @"\tinc.exe"))
                 {
                     tinc.Start();
                     string s = tinc.StandardError.ReadToEnd();
@@ -559,16 +559,16 @@ namespace Contra
                         }
 
                         //Turn UPnP on.
-                        if ((File.Exists("contravpn/tinc.conf")) && ((File.ReadAllText("contravpn/tinc.conf").Contains("UPnP")) == false))
+                        if ((File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")) && ((File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf").Contains("UPnP")) == false))
                         {
                             string AppendUPnP = Environment.NewLine + "UPnP = yes";
-                            File.AppendAllText("contravpn/tinc.conf", AppendUPnP);
+                            File.AppendAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf", AppendUPnP);
                         }
-                        else if ((File.Exists("contravpn/tinc.conf")) && ((File.ReadAllText("contravpn/tinc.conf").Contains("UPnP = no")) == true))
+                        else if ((File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")) && ((File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf").Contains("UPnP = no")) == true))
                         {
-                            string text = File.ReadAllText("contravpn/tinc.conf");
+                            string text = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf");
                             text = text.Replace("UPnP = no", "UPnP = yes");
-                            File.WriteAllText("contravpn/tinc.conf", text);
+                            File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf", text);
                         }
                         else
                         {
@@ -695,8 +695,8 @@ namespace Contra
             }
 
             Process tinc = new Process();
-            tinc.StartInfo.Arguments = "--config=\"" + Environment.CurrentDirectory + "\\contravpn\"";
-            tinc.StartInfo.FileName = Environment.CurrentDirectory + @"\contravpn\" + Globals.userOS + @"\tinc.exe";
+            tinc.StartInfo.Arguments = "--config=\"" + Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\"";
+            tinc.StartInfo.FileName = Environment.CurrentDirectory + @"\contra\vpn\" + Globals.userOS + @"\tinc.exe";
             tinc.StartInfo.UseShellExecute = false;
             tinc.StartInfo.RedirectStandardInput = true;
             tinc.StartInfo.RedirectStandardOutput = true;

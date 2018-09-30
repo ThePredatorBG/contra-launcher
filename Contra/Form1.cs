@@ -87,13 +87,13 @@ namespace Contra
 
             //Delete tinc.log if file size > 5 MB
             Process tincLog = new Process();
-            tincLog.StartInfo.FileName = Environment.CurrentDirectory + @"\contravpn\tinc.log";
-            if (File.Exists(Environment.CurrentDirectory + @"\contravpn\tinc.log"))
+            tincLog.StartInfo.FileName = Environment.CurrentDirectory + @"\contra\vpn\tinc.log";
+            if (File.Exists(Environment.CurrentDirectory + @"\contra\vpn\tinc.log"))
             {
                 double fileSize = new FileInfo(tincLog.StartInfo.FileName).Length;
                 if ((fileSize / 1048576.0) > 5)
                 {
-                    File.Delete(Environment.CurrentDirectory + @"\contravpn\tinc.log");
+                    File.Delete(Environment.CurrentDirectory + @"\contra\vpn\tinc.log");
                 }
             }
 
@@ -102,12 +102,19 @@ namespace Contra
         public static string userDataLeafName()
         {
             var o = string.Empty;
-            var TincRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Command and Conquer Generals Zero Hour");
-            if (TincRegistryPath != null)
+            var userDataRegistryPath = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Command and Conquer Generals Zero Hour");
+            if (userDataRegistryPath != null)
             {
-                o = TincRegistryPath.GetValue("UserDataLeafName") as string;
+                o = userDataRegistryPath.GetValue("UserDataLeafName") as string;
             }
-            return System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + o + @"\";
+            if (o != null)
+            {
+                return System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + o + @"\";
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public static string myDocPath = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Command and Conquer Generals Zero Hour Data\";
@@ -571,7 +578,7 @@ namespace Contra
         {
             try
             {
-                Process.Start(@"contravpn\website.url");
+                Process.Start(@"contra\website.url");
                 //Process.Start("https://contra.cncguild.net/oldsite/Eng/index.php");
                 return;
             }
@@ -604,7 +611,7 @@ namespace Contra
         {
             try
             {
-                Process.Start(@"contravpn\moddb.url");
+                Process.Start(@"contra\moddb.url");
                 //Process.Start("https://www.moddb.com/mods/contra");
                 return;
             }
@@ -881,7 +888,7 @@ namespace Contra
         {
             try
             {
-                Process.Start(@"contravpn\discord.url");
+                Process.Start(@"contra\discord.url");
                 //Process.Start("https://discordapp.com/invite/015E6KXXHmdWFXCtt");
                 return;
             }
@@ -895,7 +902,7 @@ namespace Contra
         {
             try
             {
-                Process.Start(@"contravpn\mod-help");
+                Process.Start(@"contra\mod-help");
                 //Process.Start("https://contra.cncguild.net/oldsite/Eng/trouble.php");
                 return;
             }
@@ -1044,7 +1051,7 @@ namespace Contra
         {
             List<string> exes = new List<string>
                         {
-                            "game.dat", "Contra_Launcher.exe", @"contravpn\" + Globals.userOS + @"\tinc.exe", @"contravpn\" + Globals.userOS + @"\tincd.exe"
+                            "game.dat", "Contra_Launcher.exe", @"contra\vpn\" + Globals.userOS + @"\tinc.exe", @"contra\vpn\" + Globals.userOS + @"\tincd.exe"
                         };
             Process netsh = new Process();
             netsh.StartInfo.FileName = "netsh.exe";
@@ -1077,11 +1084,11 @@ namespace Contra
         public void StartVPN()
         {
             Process tinc = new Process();
-            tinc.StartInfo.Arguments = "--no-detach --config=. --debug=3 --pidfile=tinc.pid --option=AddressFamily=ipv4 --option=Interface=ContraVPN";
+            tinc.StartInfo.Arguments = "--no-detach --config=\"" + Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\" --debug=3 --pidfile=tinc.pid --option=AddressFamily=ipv4 --option=Interface=ContraVPN";
             tinc.StartInfo.FileName = Globals.userOS + @"\tincd.exe";
             tinc.StartInfo.UseShellExecute = true;
-            tinc.StartInfo.WorkingDirectory = Environment.CurrentDirectory + @"\contravpn";
-            if (File.Exists(@"contravpn\tinc.conf") && (File.Exists(@"contravpn\" + Globals.userOS + @"\tincd.exe")))
+            tinc.StartInfo.WorkingDirectory = Environment.CurrentDirectory + @"\contra\vpn";
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Contra\vpnconfig\contravpn\tinc.conf") && (File.Exists(@"contra\vpn\" + Globals.userOS + @"\tincd.exe")))
             {
                 if (Globals.GB_Checked == true)
                 {
@@ -1142,7 +1149,7 @@ namespace Contra
                     refreshOnlinePlayersBtn.PerformClick();
                 }
             }
-            else if (!Directory.Exists("contravpn"))
+            else if (!Directory.Exists("contra\vpn"))
             {
                 if (Globals.GB_Checked == true)
                 {
@@ -1165,7 +1172,7 @@ namespace Contra
                     MessageBox.Show("ContraVPN kann nicht gestartet werden, weil der \"contravpn\" ordner existiert nicht!", "Fehler");
                 }
             }
-            else if (!Directory.Exists(@"contravpn\" + Globals.userOS))
+            else if (!Directory.Exists(@"contra\vpn\" + Globals.userOS))
             {
                 if (Globals.GB_Checked == true)
                 {
@@ -1188,7 +1195,7 @@ namespace Contra
                     MessageBox.Show("ContraVPN kann nicht gestartet werden, weil die \"" + Globals.userOS + "\" ordner nicht gefunden wurde.", "Fehler");
                 }
             }
-            else if (!File.Exists(@"contravpn\" + Globals.userOS + @"\tincd.exe"))
+            else if (!File.Exists(@"contra\vpn\" + Globals.userOS + @"\tincd.exe"))
             {
                 if (Globals.GB_Checked == true)
                 {
@@ -1211,7 +1218,7 @@ namespace Contra
                     MessageBox.Show("ContraVPN kann nicht gestartet werden, weil die \"tincd.exe\" datei nicht gefunden wurde.", "Fehler");
                 }
             }
-            else if (Directory.Exists("contravpn") && (!File.Exists(@"contravpn\tinc.conf")))
+            else if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn") && (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")))
             {
                 if (Globals.GB_Checked == true)
                 {
@@ -1239,11 +1246,11 @@ namespace Contra
         public void StartVPN_NoWindow()
         {
             Process tinc = new Process();
-            tinc.StartInfo.Arguments = "--no-detach --config=\"" + Environment.CurrentDirectory + "\\contravpn\" --debug=3 --pidfile=\"" + Environment.CurrentDirectory + "\\contravpn\\tinc.pid\" --logfile=\"" + Environment.CurrentDirectory + "\\contravpn\\tinc.log\" --option=AddressFamily=ipv4 --option=Interface=ContraVPN";
-            tinc.StartInfo.FileName = Environment.CurrentDirectory + @"\contravpn\" + Globals.userOS + @"\tincd.exe";
+            tinc.StartInfo.Arguments = "--no-detach --config=\"" + Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\" --debug=3 --pidfile=\"" + Environment.CurrentDirectory + "\\contra\\vpn\\tinc.pid\" --logfile=\"" + Environment.CurrentDirectory + "\\contra\vpn\\tinc.log\" --option=AddressFamily=ipv4 --option=Interface=ContraVPN";
+            tinc.StartInfo.FileName = Environment.CurrentDirectory + @"\contra\vpn\" + Globals.userOS + @"\tincd.exe";
             tinc.StartInfo.UseShellExecute = false;
             tinc.StartInfo.CreateNoWindow = true;
-            if (File.Exists(@"contravpn\tinc.conf") && (File.Exists(@"contravpn\" + Globals.userOS + @"\tincd.exe")))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Contra\vpnconfig\contravpn\tinc.conf") && (File.Exists(@"contra\vpn\" + Globals.userOS + @"\tincd.exe")))
             {
                 if (Globals.GB_Checked == true)
                 {
@@ -1304,7 +1311,7 @@ namespace Contra
                     refreshOnlinePlayersBtn.PerformClick();
                 }
             }
-            else if (!Directory.Exists("contravpn"))
+            else if (!Directory.Exists("contra\vpn"))
             {
                 if (Globals.GB_Checked == true)
                 {
@@ -1327,7 +1334,7 @@ namespace Contra
                     MessageBox.Show("ContraVPN kann nicht gestartet werden, weil der \"contravpn\" ordner existiert nicht!", "Fehler");
                 }
             }
-            else if (!Directory.Exists(@"contravpn\" + Globals.userOS))
+            else if (!Directory.Exists(@"contra\vpn\" + Globals.userOS))
             {
                 if (Globals.GB_Checked == true)
                 {
@@ -1350,7 +1357,7 @@ namespace Contra
                     MessageBox.Show("ContraVPN kann nicht gestartet werden, weil die \"" + Globals.userOS + "\" ordner nicht gefunden wurde.", "Fehler");
                 }
             }
-            else if (!File.Exists(@"contravpn\" + Globals.userOS + @"\tincd.exe"))
+            else if (!File.Exists(@"contra\vpn\" + Globals.userOS + @"\tincd.exe"))
             {
                 if (Globals.GB_Checked == true)
                 {
@@ -1373,7 +1380,7 @@ namespace Contra
                     MessageBox.Show("ContraVPN kann nicht gestartet werden, weil die \"tincd.exe\" datei nicht gefunden wurde.", "Fehler");
                 }
             }
-            else if (Directory.Exists("contravpn") && (!File.Exists(@"contravpn\tinc.conf")))
+            else if (Directory.Exists("contra\vpn") && (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")))
             {
                 if (Globals.GB_Checked == true)
                 {
@@ -1886,8 +1893,8 @@ namespace Contra
         private void asd()
         {
             Process onlinePlayers = new Process();
-            onlinePlayers.StartInfo.Arguments = "--config=\"" + Environment.CurrentDirectory + "\\contravpn\" --pidfile=\"" + Environment.CurrentDirectory + "\\contravpn\\tinc.pid\"";
-            onlinePlayers.StartInfo.FileName = Environment.CurrentDirectory + @"\contravpn\" + Globals.userOS + @"\tinc.exe";
+            onlinePlayers.StartInfo.Arguments = "--config=\"" + Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\" --pidfile=\"" + Environment.CurrentDirectory + "\\contra\\vpn\\tinc.pid\"";
+            onlinePlayers.StartInfo.FileName = Environment.CurrentDirectory + @"\contra\vpn\" + Globals.userOS + @"\tinc.exe";
             onlinePlayers.StartInfo.UseShellExecute = false;
             onlinePlayers.StartInfo.RedirectStandardInput = true;
             onlinePlayers.StartInfo.RedirectStandardOutput = true;
@@ -1960,10 +1967,10 @@ namespace Contra
         {
             timer1.Enabled = false;
 
-            timer1.Interval = 1;//1000;
+            timer1.Interval = 1000;
             Process onlinePlayers = new Process();
-            onlinePlayers.StartInfo.Arguments = "--config=\"" + Environment.CurrentDirectory + "\\contravpn\" --pidfile=\"" + Environment.CurrentDirectory + "\\contravpn\\tinc.pid\"";
-            onlinePlayers.StartInfo.FileName = Environment.CurrentDirectory + @"\contravpn\" + Globals.userOS + @"\tinc.exe";
+            onlinePlayers.StartInfo.Arguments = "--config=\"" + Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\" --pidfile=\"" + Environment.CurrentDirectory + "\\contra\\vpn\\tinc.pid\"";
+            onlinePlayers.StartInfo.FileName = Environment.CurrentDirectory + @"\contra\vpn\" + Globals.userOS + @"\tinc.exe";
             onlinePlayers.StartInfo.UseShellExecute = false;
             onlinePlayers.StartInfo.RedirectStandardInput = true;
             onlinePlayers.StartInfo.RedirectStandardOutput = true;
@@ -2349,8 +2356,8 @@ namespace Contra
                     string path = Path.GetDirectoryName(Application.ExecutablePath);
                     Process adapter = new Process();
 
-                    adapter.StartInfo.FileName = "\"" + path + @"\contravpn\" + Globals.userOS + @"\devcon.exe" + "\"";
-                    adapter.StartInfo.Arguments = " install " + "\"" + path + @"\contravpn\" + Globals.userOS + @"\OemWin2k.inf" + "\"" + " tap0901";
+                    adapter.StartInfo.FileName = "\"" + path + @"\contra\vpn\" + Globals.userOS + @"\devcon.exe" + "\"";
+                    adapter.StartInfo.Arguments = " install " + "\"" + path + @"\contra\vpn\" + Globals.userOS + @"\OemWin2k.inf" + "\"" + " tap0901";
                     adapter.StartInfo.UseShellExecute = false;
                     adapter.StartInfo.RedirectStandardInput = true;
                     adapter.StartInfo.CreateNoWindow = true;
@@ -2566,7 +2573,7 @@ namespace Contra
             //if (tincdByName.Length > 0) //if tincd is already running
             //{
             //    Process onlinePlayers = new Process();
-            //    onlinePlayers.StartInfo.Arguments = "--config=\"" + Environment.CurrentDirectory + "\\contravpn\" --pidfile=\"" + Environment.CurrentDirectory + "\\contravpn\\tinc.pid\"";
+            //    onlinePlayers.StartInfo.Arguments = "--config=\"" + Environment.CurrentDirectory + "\\contra\vpn\" --pidfile=\"" + Environment.CurrentDirectory + "\\contra\\vpn\\tinc.pid\"";
             //    onlinePlayers.StartInfo.FileName = Environment.CurrentDirectory + @"\contravpn\" + Globals.userOS + @"\tinc.exe";
             //    onlinePlayers.StartInfo.UseShellExecute = false;
             //    onlinePlayers.StartInfo.RedirectStandardInput = true;
@@ -2740,7 +2747,7 @@ namespace Contra
             Process[] tincdByName = Process.GetProcessesByName(tincd.Substring(0, tincd.LastIndexOf('.')));
             if (tincdByName.Length == 0)
             {
-                timer1.Interval = 3000;
+                timer1.Interval = 5000;
             }
         }
 
