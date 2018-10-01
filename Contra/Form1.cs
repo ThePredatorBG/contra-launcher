@@ -96,7 +96,57 @@ namespace Contra
                     File.Delete(Environment.CurrentDirectory + @"\contra\vpn\tinc.log");
                 }
             }
+        }
 
+        string newVersion = "";
+
+        public void DownloadUpdate()
+        {
+            //URL of the updated file
+            string url = "https://www.dropbox.com/blabla";
+
+            //Declare new WebClient object
+            WebClient wc = new WebClient();
+            wc.DownloadFileCompleted += new AsyncCompletedEventHandler(wc_DownloadFileCompleted);
+            wc.DownloadFileAsync(new Uri(url), Application.StartupPath + "/AutoUpdate(1).exe");
+        }
+
+        void wc_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            //Show a message when the download has completed
+            MessageBox.Show("Your application is now up-to-date!\n\nThe application will now restart!", "Update Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Application.Restart();
+        }
+
+        //Create method to check for an update
+        public void GetUpdate()
+        {
+            //Declare new WebClient object
+            WebClient wc = new WebClient();
+            string textFile = wc.DownloadString("https://gist.githubusercontent.com/ThePredatorBG/65e9e36d85c5def6adf7a0a5c73fb15a/raw/gistfile1.txt");
+            string versionText = textFile.Substring(textFile.LastIndexOf("Version: ") + 9);
+            string versionText2 = versionText.Substring(0, versionText.IndexOf("#"));
+            ThreadHelperClass.SetText(this, verLabel, versionText2);
+            newVersion = versionText2;
+            //verLabel.Text = verLabel.Text + Application.ProductVersion;
+            //verLabel.Text = verLabel.Text + newVersion;
+
+            //If there is a new version, call the DownloadUpdate method
+            if (newVersion != Application.ProductVersion)
+            {
+                MessageBox.Show("An update is available! Click OK to download and restart!", "Update Available", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DownloadUpdate();
+            }
+        }
+
+        private void motdTimer_Tick(object sender, EventArgs e)
+        {
+            if (MOTD.Text.Length > 0)
+            {
+                MOTD.Text = MOTD.Text.Substring(1) + MOTD.Text.Substring(0, 1);
+
+                //MOTD.Text = MOTD.Text.Substring(1, MOTD.Text.Length - 1) + MOTD.Text.Substring(0, 1);
+            }
         }
 
         public static string userDataLeafName()
@@ -1429,8 +1479,118 @@ namespace Contra
                    (os.Version.Major > 6 || (os.Version.Major == 6 && os.Version.Minor >= 2));
         }
 
+        public static class ThreadHelperClass
+        {
+            delegate void SetTextCallback(Form f, Control ctrl, string text);
+            /// <summary>
+            /// Set text property of various controls
+            /// </summary>
+            /// <param name="form">The calling form</param>
+            /// <param name="ctrl"></param>
+            /// <param name="text"></param>
+            public static void SetText(Form form, Control ctrl, string text)
+            {
+                // InvokeRequired required compares the thread ID of the 
+                // calling thread to the thread ID of the creating thread. 
+                // If these threads are different, it returns true. 
+                if (ctrl.InvokeRequired)
+                {
+                    SetTextCallback d = new SetTextCallback(SetText);
+                    form.Invoke(d, new object[] { form, ctrl, text });
+                }
+                else
+                {
+                    ctrl.Text = text;
+                }
+            }
+        }
+
+        int downloadUpdate = 0;
+
+        // This method is executed on the worker thread and makes 
+        // a thread-safe call on the TextBox control. 
+        private void ThreadProcSafe()
+        {
+            using (WebClient client = new WebClient())
+            {
+                if (downloadUpdate == 0)
+                {
+                    //Check for launcher update once per launch.
+                    GetUpdate();
+                    downloadUpdate = 1;
+                }
+                string txtFile = client.DownloadString("https://gist.githubusercontent.com/ThePredatorBG/65e9e36d85c5def6adf7a0a5c73fb15a/raw/gistfile1.txt");
+                if (Globals.GB_Checked == true)
+                {
+                    string MOTDText = txtFile.Substring(txtFile.LastIndexOf("MOTD-EN: ") + 9);
+                    string MOTDText2 = MOTDText.Substring(0, MOTDText.IndexOf("#"));
+                    ThreadHelperClass.SetText(this, MOTD, MOTDText2);
+                }
+                else if (Globals.RU_Checked == true)
+                {
+                    string MOTDText = txtFile.Substring(txtFile.LastIndexOf("MOTD-RU: ") + 9);
+                    string MOTDText2 = MOTDText.Substring(0, MOTDText.IndexOf("#"));
+                    ThreadHelperClass.SetText(this, MOTD, MOTDText2);
+                }
+                else if (Globals.UA_Checked == true)
+                {
+                    string MOTDText = txtFile.Substring(txtFile.LastIndexOf("MOTD-UA: ") + 9);
+                    string MOTDText2 = MOTDText.Substring(0, MOTDText.IndexOf("#"));
+                    ThreadHelperClass.SetText(this, MOTD, MOTDText2);
+                }
+                else if (Globals.BG_Checked == true)
+                {
+                    byte[] bytes = Encoding.Default.GetBytes(txtFile);
+                    txtFile = Encoding.UTF8.GetString(bytes);
+                    string MOTDText = txtFile.Substring(txtFile.LastIndexOf("MOTD-BG: ") + 9);
+                    string MOTDText2 = MOTDText.Substring(0, MOTDText.IndexOf("#"));
+                    ThreadHelperClass.SetText(this, MOTD, MOTDText2);
+                }
+                else if (Globals.DE_Checked == true)
+                {
+                    string MOTDText = txtFile.Substring(txtFile.LastIndexOf("MOTD-DE: ") + 9);
+                    string MOTDText2 = MOTDText.Substring(0, MOTDText.IndexOf("#"));
+                    ThreadHelperClass.SetText(this, MOTD, MOTDText2);
+                }
+            }
+        }
+
         private void Form1_Shown(object sender, EventArgs e)
         {
+            //Message of the Day
+            //try
+            //{
+            //    using (WebClient client = new WebClient())
+            //    {
+            //        if (Globals.GB_Checked == true)
+            //        {
+            //            //MOTD.Text = client.DownloadString("https://gist.githubusercontent.com/ThePredatorBG/d7af1184eb6a7a90b62e8277ada4b1dd/raw/090a6dc5c6ecd0aa20db1654cce831ecf6c5828a/gistfile1.txt");
+            //        }
+            //        else if (Globals.RU_Checked == true)
+            //        {
+            //            //MOTD.Text = client.DownloadString("https://gist.githubusercontent.com/ThePredatorBG/d7af1184eb6a7a90b62e8277ada4b1dd/raw/090a6dc5c6ecd0aa20db1654cce831ecf6c5828a/gistfile1.txt");
+            //        }
+            //        else if (Globals.UA_Checked == true)
+            //        {
+            //            //MOTD.Text = client.DownloadString("https://gist.githubusercontent.com/ThePredatorBG/d7af1184eb6a7a90b62e8277ada4b1dd/raw/090a6dc5c6ecd0aa20db1654cce831ecf6c5828a/gistfile1.txt");
+            //        }
+            //        else if (Globals.BG_Checked == true)
+            //        {
+            //            //string myString = client.DownloadString("https://gist.githubusercontent.com/ThePredatorBG/cec510b72d5b232df3ed2c9e01276af5/raw/1458a1c51077ae2e8ffc927a0324d5de723d558e/gistfile1.txt");
+            //            //byte[] bytes = Encoding.Default.GetBytes(myString);
+            //            //myString = Encoding.UTF8.GetString(bytes);
+            //            //MOTD.Text = myString;
+            //        }
+            //        else if (Globals.DE_Checked == true)
+            //        {
+            //            //MOTD.Text = client.DownloadString("https://gist.githubusercontent.com/ThePredatorBG/d7af1184eb6a7a90b62e8277ada4b1dd/raw/090a6dc5c6ecd0aa20db1654cce831ecf6c5828a/gistfile1.txt");
+            //        }
+            //    }
+            //}
+            //catch
+            //{
+
+            //}
 
             //Show warning if Options.ini isn't found and the user is running Windows 8 or more recent.
             if (IsWindows8OrNewer() == true)
@@ -1623,6 +1783,17 @@ namespace Contra
                 refreshOnlinePlayersBtn.PerformClick();
             }
             else vpnIP();
+
+            //Load MOTD
+            try
+            {
+                {
+                    System.Threading.Thread demoThread =
+                       new System.Threading.Thread(new System.Threading.ThreadStart(this.ThreadProcSafe));
+                    demoThread.Start();
+                }
+            }
+            catch { }
         }
 
         private void radioFlag_RU_CheckedChanged(object sender, EventArgs e)
@@ -1676,6 +1847,17 @@ namespace Contra
                 refreshOnlinePlayersBtn.PerformClick();
             }
             else vpnIP();
+
+            //Load MOTD
+            try
+            {
+                {
+                    System.Threading.Thread demoThread =
+                       new System.Threading.Thread(new System.Threading.ThreadStart(this.ThreadProcSafe));
+                    demoThread.Start();
+                }
+            }
+            catch { }
         }
 
         private void radioFlag_UA_CheckedChanged(object sender, EventArgs e)
@@ -1729,6 +1911,17 @@ namespace Contra
                 refreshOnlinePlayersBtn.PerformClick();
             }
             else vpnIP();
+
+            //Load MOTD
+            try
+            {
+                {
+                    System.Threading.Thread demoThread =
+                       new System.Threading.Thread(new System.Threading.ThreadStart(this.ThreadProcSafe));
+                    demoThread.Start();
+                }
+            }
+            catch { }
         }
 
         private void radioFlag_BG_CheckedChanged(object sender, EventArgs e)
@@ -1782,6 +1975,17 @@ namespace Contra
                 refreshOnlinePlayersBtn.PerformClick();
             }
             else vpnIP();
+
+            //Load MOTD
+            try
+            {
+                {
+                    System.Threading.Thread demoThread =
+                       new System.Threading.Thread(new System.Threading.ThreadStart(this.ThreadProcSafe));
+                    demoThread.Start();
+                }
+            }
+            catch { }
         }
 
         private void radioFlag_DE_CheckedChanged(object sender, EventArgs e)
@@ -1837,6 +2041,17 @@ namespace Contra
                 refreshOnlinePlayersBtn.PerformClick();
             }
             else vpnIP();
+
+            //Load MOTD
+            try
+            {
+                {
+                    System.Threading.Thread demoThread =
+                       new System.Threading.Thread(new System.Threading.ThreadStart(this.ThreadProcSafe));
+                    demoThread.Start();
+                }
+            }
+            catch { }
         }
 
         private void Resolution_Click(object sender, EventArgs e)

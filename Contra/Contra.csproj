@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Contra</RootNamespace>
-    <AssemblyName>Contra Launcher</AssemblyName>
+    <AssemblyName>Contra_Launcher</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -77,6 +77,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marquee.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Marquee.Designer.cs">
+      <DependentUpon>Marquee.cs</DependentUpon>
     </Compile>
     <Compile Include="moreOptionsForm.cs">
       <SubType>Form</SubType>

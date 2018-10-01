@@ -73,6 +73,10 @@
             this.whoIsOnline = new System.Windows.Forms.Button();
             this.vpnSettingsLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.MOTD1 = new System.Windows.Forms.Label();
+            this.motdTimer = new System.Windows.Forms.Timer(this.components);
+            this.verLabel = new System.Windows.Forms.Label();
+            this.MOTD = new Contra.Marquee();
             this.voicespanel.SuspendLayout();
             this.languagepanel.SuspendLayout();
             this.musicpanel.SuspendLayout();
@@ -583,8 +587,35 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 3000;
+            this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // MOTD1
+            // 
+            this.MOTD1.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.MOTD1, "MOTD1");
+            this.MOTD1.ForeColor = System.Drawing.Color.White;
+            this.MOTD1.Name = "MOTD1";
+            // 
+            // motdTimer
+            // 
+            this.motdTimer.Tick += new System.EventHandler(this.motdTimer_Tick);
+            // 
+            // verLabel
+            // 
+            this.verLabel.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.verLabel, "verLabel");
+            this.verLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(100)))));
+            this.verLabel.Name = "verLabel";
+            // 
+            // MOTD
+            // 
+            this.MOTD.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.MOTD, "MOTD");
+            this.MOTD.ForeColor = System.Drawing.Color.White;
+            this.MOTD.Name = "MOTD";
+            this.MOTD.Speed = 1;
+            this.MOTD.yOffset = 0;
             // 
             // Form1
             // 
@@ -592,6 +623,9 @@
             this.BackgroundImage = global::Contra.Properties.Resources.background;
             resources.ApplyResources(this, "$this");
             this.ControlBox = false;
+            this.Controls.Add(this.verLabel);
+            this.Controls.Add(this.MOTD);
+            this.Controls.Add(this.MOTD1);
             this.Controls.Add(this.vpnSettingsLabel);
             this.Controls.Add(this.whoIsOnline);
             this.Controls.Add(this.labelVpnStatus);
@@ -687,6 +721,10 @@
         private System.Windows.Forms.Button whoIsOnline;
         private System.Windows.Forms.Label vpnSettingsLabel;
         private System.Windows.Forms.RadioButton radioFlag_DE;
+        private System.Windows.Forms.Label MOTD1;
+        private System.Windows.Forms.Timer motdTimer;
+        private Marquee MOTD;
+        private System.Windows.Forms.Label verLabel;
     }
 }
 
