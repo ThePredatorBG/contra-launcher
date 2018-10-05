@@ -341,7 +341,7 @@ namespace Contra
             tinc.StartInfo.Arguments = "--config=\"" + Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\" --pidfile=tinc.pid";
             tinc.StartInfo.FileName = Globals.userOS + @"\tinc.exe";
             tinc.StartInfo.WorkingDirectory = Environment.CurrentDirectory + @"\contra\vpn";
-            if (Directory.Exists(Environment.CurrentDirectory + @"\contra\vpn\" + Globals.userOS))
+            if (Directory.Exists(Environment.CurrentDirectory + @"\contra\vpn\" + Globals.userOS)  && (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")))
             {
                 tinc.Start();
             }

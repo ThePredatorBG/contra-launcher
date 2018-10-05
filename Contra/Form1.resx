@@ -1429,10 +1429,10 @@
     <value>NoControl</value>
   </data>
   <data name="MOTD.Location" type="System.Drawing.Point, System.Drawing">
-    <value>255, 578</value>
+    <value>25, 578</value>
   </data>
   <data name="MOTD.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 22</value>
+    <value>750, 22</value>
   </data>
   <data name="MOTD.TabIndex" type="System.Int32, mscorlib">
     <value>64</value>
@@ -1536,6 +1536,9 @@
         AAAAD/4HAA//DwAP//8AD///AA///wAP//8AD///AA///wAP//8AD///AAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 600</value>

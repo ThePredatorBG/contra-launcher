@@ -15,6 +15,7 @@ using System.Text.RegularExpressions;
 using System.Timers;
 using System.Net;
 using System.Net.NetworkInformation;
+using System.Reflection;
 
 namespace Contra
 {
@@ -96,6 +97,16 @@ namespace Contra
                     File.Delete(Environment.CurrentDirectory + @"\contra\vpn\tinc.log");
                 }
             }
+
+            //Load DiscordRPC.dll
+            if (File.Exists((@"contra\DiscordRPC.dll")))
+            {
+                //Assembly assembly = Assembly.LoadFrom("DiscordRPC.dll");
+                Assembly assembly = Assembly.LoadFrom(@"contra\DiscordRPC.dll");
+                Type type = assembly.GetType("DiscordRPC.Program");
+                object instance = Activator.CreateInstance(type);
+                MethodInfo[] methods = type.GetMethods();
+            }
         }
 
         string newVersion = "";
@@ -103,12 +114,12 @@ namespace Contra
         public void DownloadUpdate()
         {
             //URL of the updated file
-            string url = "https://www.dropbox.com/blabla";
+            string url = "https://github.com/ThePredatorBG/contra-launcher/raw/master/Contra/bin/Release/Contra_Launcher.exe";
 
             //Declare new WebClient object
             WebClient wc = new WebClient();
             wc.DownloadFileCompleted += new AsyncCompletedEventHandler(wc_DownloadFileCompleted);
-            wc.DownloadFileAsync(new Uri(url), Application.StartupPath + "/AutoUpdate(1).exe");
+            wc.DownloadFileAsync(new Uri(url), Application.StartupPath + "/ContraLauncher(1).exe");
         }
 
         void wc_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
@@ -126,15 +137,16 @@ namespace Contra
             string textFile = wc.DownloadString("https://gist.githubusercontent.com/ThePredatorBG/65e9e36d85c5def6adf7a0a5c73fb15a/raw/gistfile1.txt");
             string versionText = textFile.Substring(textFile.LastIndexOf("Version: ") + 9);
             string versionText2 = versionText.Substring(0, versionText.IndexOf("#"));
-            ThreadHelperClass.SetText(this, verLabel, versionText2);
+            //    ThreadHelperClass.SetText(this, verLabel, versionText2); //setting verLabel to latest ver - unused
             newVersion = versionText2;
+
             //verLabel.Text = verLabel.Text + Application.ProductVersion;
             //verLabel.Text = verLabel.Text + newVersion;
 
             //If there is a new version, call the DownloadUpdate method
             if (newVersion != Application.ProductVersion)
             {
-                MessageBox.Show("An update is available! Click OK to download and restart!", "Update Available", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Contra Launcher version " + versionText2 + " is available! Click OK to update and restart!", "Update Available", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DownloadUpdate();
             }
         }
@@ -447,14 +459,27 @@ namespace Contra
                 {
                     Directory.Move(@"Data\Scripts1", @"Data\Scripts");
                 }
-                if (File.Exists("Install_Final.bmp") && File.Exists("Install_Final_ZHC.bmp"))
+                //if (File.Exists("Install_Final.bmp") && File.Exists("Install_Final_ZHC.bmp"))
+                //{
+                //    File.Move("Install_Final.bmp", "Install_Final_Contra.bmp");
+                //    File.Move("Install_Final_ZHC.bmp", "Install_Final.bmp");
+                //}
+                //if (File.Exists("Install_Final_Contra.bmp") && File.Exists("Install_Final_ZHC.bmp"))
+                //{
+                //    File.Move("Install_Final_ZHC.bmp", "Install_Final.bmp");
+                //}
+
+                if (File.Exists("Install_Final_ZH.bmp"))
                 {
-                    File.Move("Install_Final.bmp", "Install_Final_Contra.bmp");
-                    File.Move("Install_Final_ZHC.bmp", "Install_Final.bmp");
-                }
-                if (File.Exists("Install_Final_Contra.bmp") && File.Exists("Install_Final_ZHC.bmp"))
-                {
-                    File.Move("Install_Final_ZHC.bmp", "Install_Final.bmp");
+                    try
+                    {
+                        File.SetAttributes("Install_Final.bmp", FileAttributes.Normal);
+                        File.SetAttributes("Install_Final_ZH.bmp", FileAttributes.Normal);
+                        File.SetAttributes("Install_Final_Contra.bmp", FileAttributes.Normal);
+                        File.Copy("Install_Final_ZH.bmp", "Install_Final.bmp", true);
+                    }
+                    catch
+                    { }
                 }
             }
             catch //(Exception ex)
@@ -568,15 +593,27 @@ namespace Contra
                 {
                     Directory.Move(@"Data\Scripts", @"Data\Scripts1");
                 }
-                if (File.Exists("Install_Final_Contra.bmp") && File.Exists("Install_Final_ZHC.bmp") && File.Exists("Install_Final.bmp"))
+                //if (File.Exists("Install_Final_Contra.bmp") && File.Exists("Install_Final_ZHC.bmp") && File.Exists("Install_Final.bmp"))
+                //{
+                //    File.Move("Install_Final.bmp", "Install_Final_ZHC.bmp");
+                //    File.Move("Install_Final_Contra.bmp", "Install_Final.bmp");
+                //}
+                //if (File.Exists("Install_Final_Contra.bmp") && File.Exists("Install_Final.bmp"))
+                //{
+                //    File.Move("Install_Final.bmp", "Install_Final_ZHC.bmp");
+                //    File.Move("Install_Final_Contra.bmp", "Install_Final.bmp");
+                //}
+                if (File.Exists("Install_Final.bmp") && (File.Exists("Install_Final_Contra.bmp")))
                 {
-                    File.Move("Install_Final.bmp", "Install_Final_ZHC.bmp");
-                    File.Move("Install_Final_Contra.bmp", "Install_Final.bmp");
-                }
-                if (File.Exists("Install_Final_Contra.bmp") && File.Exists("Install_Final.bmp"))
-                {
-                    File.Move("Install_Final.bmp", "Install_Final_ZHC.bmp");
-                    File.Move("Install_Final_Contra.bmp", "Install_Final.bmp");
+                    try
+                    {
+                        File.SetAttributes("Install_Final.bmp", FileAttributes.Normal);
+                        File.SetAttributes("Install_Final_ZH.bmp", FileAttributes.Normal);
+                        File.SetAttributes("Install_Final_Contra.bmp", FileAttributes.Normal);
+                        File.Copy("Install_Final.bmp", "Install_Final_ZH.bmp", true);
+                        File.Copy("Install_Final_Contra.bmp", "Install_Final.bmp", true);
+                    }
+                    catch { }
                 }
                 if (WinCheckBox.Checked && QSCheckBox.Checked)
                 {
@@ -811,6 +848,12 @@ namespace Contra
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (Properties.Settings.Default.UpgradeRequired)
+            {
+                Properties.Settings.Default.Upgrade();
+                Properties.Settings.Default.UpgradeRequired = false;
+                Properties.Settings.Default.Save();
+            }
             RadioEN.Checked = Properties.Settings.Default.LangEN;
             RadioRU.Checked = Properties.Settings.Default.LangRU;
             MNew.Checked = Properties.Settings.Default.MusicNew;
@@ -892,6 +935,15 @@ namespace Contra
             {
                 Properties.Settings.Default.IP_Label = "ContraVPN IP: unbekannt";
             }
+
+            //This renames the original file so any shortcut works and names it accordingly after the update
+            if (System.IO.File.Exists(Application.StartupPath + "/Contra_Launcher(1).exe"))
+            {
+                System.IO.File.Move(Application.StartupPath + "/Contra_Launcher.exe", Application.StartupPath + "/Contra_Launcher(2).exe");
+                System.IO.File.Move(Application.StartupPath + "/Contra_Launcher(1).exe", Application.StartupPath + "/Contra_Launcher.exe");
+                System.IO.File.Delete(Application.StartupPath + "/Contra_Launcher(2).exe");
+            }
+
             this.Close();
         }
 
@@ -952,7 +1004,7 @@ namespace Contra
         {
             try
             {
-                Process.Start(@"contra\mod-help");
+                Process.Start(@"contra\mod-help.url");
                 //Process.Start("https://contra.cncguild.net/oldsite/Eng/trouble.php");
                 return;
             }
@@ -1134,7 +1186,7 @@ namespace Contra
         public void StartVPN()
         {
             Process tinc = new Process();
-            tinc.StartInfo.Arguments = "--no-detach --config=\"" + Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\" --debug=3 --pidfile=tinc.pid --option=AddressFamily=ipv4 --option=Interface=ContraVPN";
+            tinc.StartInfo.Arguments = "--no-detach --config=\"" + Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\" --debug=3 --pidfile=\"" + Environment.CurrentDirectory + "\\contra\\vpn\\tinc.pid\" --option=AddressFamily=ipv4 --option=Interface=ContraVPN";
             tinc.StartInfo.FileName = Globals.userOS + @"\tincd.exe";
             tinc.StartInfo.UseShellExecute = true;
             tinc.StartInfo.WorkingDirectory = Environment.CurrentDirectory + @"\contra\vpn";
@@ -1199,27 +1251,27 @@ namespace Contra
                     refreshOnlinePlayersBtn.PerformClick();
                 }
             }
-            else if (!Directory.Exists("contra\vpn"))
+            else if (!Directory.Exists(@"contra\vpn"))
             {
                 if (Globals.GB_Checked == true)
                 {
-                    MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder does not exist!", "Error");
+                    MessageBox.Show("Cannot start ContraVPN because \"contra\\vpn\" folder does not exist!", "Error");
                 }
                 else if (Globals.RU_Checked == true)
                 {
-                    MessageBox.Show("Не удается запустить ContraVPN, потому что папка \"contravpn\" не существует!", "Ошибка");
+                    MessageBox.Show("Не удается запустить ContraVPN, потому что папка \"contra\\vpn\" не существует!", "Ошибка");
                 }
                 else if (Globals.UA_Checked == true)
                 {
-                    MessageBox.Show("Не вдається запустити ContraVPN, оскільки папка \"contravpn\" не існує!", "Помилка");
+                    MessageBox.Show("Не вдається запустити ContraVPN, оскільки папка \"contra\\vpn\" не існує!", "Помилка");
                 }
                 else if (Globals.BG_Checked == true)
                 {
-                    MessageBox.Show("ContraVPN не можа да се стартира, защото \"contravpn\" папката не съществува!", "Грешка");
+                    MessageBox.Show("ContraVPN не можа да се стартира, защото \"contra\\vpn\" папката не съществува!", "Грешка");
                 }
                 else if (Globals.DE_Checked == true)
                 {
-                    MessageBox.Show("ContraVPN kann nicht gestartet werden, weil der \"contravpn\" ordner existiert nicht!", "Fehler");
+                    MessageBox.Show("ContraVPN kann nicht gestartet werden, weil der \"contra\\vpn\" ordner existiert nicht!", "Fehler");
                 }
             }
             else if (!Directory.Exists(@"contra\vpn\" + Globals.userOS))
@@ -1268,7 +1320,7 @@ namespace Contra
                     MessageBox.Show("ContraVPN kann nicht gestartet werden, weil die \"tincd.exe\" datei nicht gefunden wurde.", "Fehler");
                 }
             }
-            else if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn") && (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")))
+            else if (Directory.Exists(@"contra\vpn") && (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")))
             {
                 if (Globals.GB_Checked == true)
                 {
@@ -1361,27 +1413,27 @@ namespace Contra
                     refreshOnlinePlayersBtn.PerformClick();
                 }
             }
-            else if (!Directory.Exists("contra\vpn"))
+            else if (!Directory.Exists(@"contra\vpn"))
             {
                 if (Globals.GB_Checked == true)
                 {
-                    MessageBox.Show("Cannot start ContraVPN because \"contravpn\" folder does not exist!", "Error");
+                    MessageBox.Show("Cannot start ContraVPN because \"contra\\vpn\" folder does not exist!", "Error");
                 }
                 else if (Globals.RU_Checked == true)
                 {
-                    MessageBox.Show("Не удается запустить ContraVPN, потому что папка \"contravpn\" не существует!", "Ошибка");
+                    MessageBox.Show("Не удается запустить ContraVPN, потому что папка \"contra\\vpn\" не существует!", "Ошибка");
                 }
                 else if (Globals.UA_Checked == true)
                 {
-                    MessageBox.Show("Не вдається запустити ContraVPN, оскільки папка \"contravpn\" не існує!", "Помилка");
+                    MessageBox.Show("Не вдається запустити ContraVPN, оскільки папка \"contra\\vpn\" не існує!", "Помилка");
                 }
                 else if (Globals.BG_Checked == true)
                 {
-                    MessageBox.Show("ContraVPN не можа да се стартира, защото \"contravpn\" папката не съществува!", "Грешка");
+                    MessageBox.Show("ContraVPN не можа да се стартира, защото \"contra\\vpn\" папката не съществува!", "Грешка");
                 }
                 else if (Globals.DE_Checked == true)
                 {
-                    MessageBox.Show("ContraVPN kann nicht gestartet werden, weil der \"contravpn\" ordner existiert nicht!", "Fehler");
+                    MessageBox.Show("ContraVPN kann nicht gestartet werden, weil der \"contra\\vpn\" ordner existiert nicht!", "Fehler");
                 }
             }
             else if (!Directory.Exists(@"contra\vpn\" + Globals.userOS))
@@ -1430,7 +1482,7 @@ namespace Contra
                     MessageBox.Show("ContraVPN kann nicht gestartet werden, weil die \"tincd.exe\" datei nicht gefunden wurde.", "Fehler");
                 }
             }
-            else if (Directory.Exists("contra\vpn") && (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")))
+            else if (Directory.Exists(@"contra\vpn") && (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra\\vpnconfig\\contravpn\\tinc.conf")))
             {
                 if (Globals.GB_Checked == true)
                 {
@@ -1505,7 +1557,8 @@ namespace Contra
             }
         }
 
-        int downloadUpdate = 0;
+        bool downloadTextFile = false;
+        bool seekForUpdate = true;
 
         // This method is executed on the worker thread and makes 
         // a thread-safe call on the TextBox control. 
@@ -1513,11 +1566,15 @@ namespace Contra
         {
             using (WebClient client = new WebClient())
             {
-                if (downloadUpdate == 0)
+                if (downloadTextFile == false)
                 {
                     //Check for launcher update once per launch.
-                    GetUpdate();
-                    downloadUpdate = 1;
+                    if (seekForUpdate == true)
+                    {
+                        seekForUpdate = false;
+                        GetUpdate();
+                    }
+                    downloadTextFile = true;
                 }
                 string txtFile = client.DownloadString("https://gist.githubusercontent.com/ThePredatorBG/65e9e36d85c5def6adf7a0a5c73fb15a/raw/gistfile1.txt");
                 if (Globals.GB_Checked == true)
@@ -1622,6 +1679,71 @@ namespace Contra
 
             if (Properties.Settings.Default.FirstRun)
             {
+                //If there are older Contra config folders, this means Contra Launcher has been
+                //ran before on this PC, so in this case, we skip first run welcome message.
+                int directoryCount = System.IO.Directory.GetDirectories(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Contra").Length;
+
+                //Show message on first run.
+                if (getCurrentCulture() == "en-US")
+                {
+                    radioFlag_GB.Checked = true;
+                    if (directoryCount <= 1)
+                    {
+                        MessageBox.Show("Welcome to Contra 009 Final! Since this is your first time running this launcher, we would like to let you know that you have a new opportunity to play Contra online via ContraVPN! We highly recommend you to join our Discord community!");
+                    }
+                }
+                else if (getCurrentCulture() == "ru-RU")
+                {
+                    radioFlag_RU.Checked = true;
+                    if (directoryCount <= 1)
+                    {
+                        MessageBox.Show("Добро пожаловать в Contra 009 Final! Поскольку это Ваш первый запуск этого лаунчера, мы хотим сообщить Вам о том, что у Вас есть новая возможность играть в Contra онлайн через ContraVPN! Мы настоятельно рекомендуем Вам присоедениться к нашей группе Discord.");
+                    }
+                }
+                else if (getCurrentCulture() == "uk-UA")
+                {
+                    radioFlag_UA.Checked = true;
+                    if (directoryCount <= 1)
+                    {
+                        MessageBox.Show("Ласкаво просимо до Contra 009 Final! Оскільки це Ваш перший запуск цього лаунчера, ми хочемо повідомити Вас про те, що у Вас є нова можливість відтворити Contra онлайн через ContraVPN! Ми максимально рекомендуємо Вам приєднатися до нашої спільноти Discord.");
+                    }
+                }
+                else if (getCurrentCulture() == "bg-BG")
+                {
+                    radioFlag_BG.Checked = true;
+                    if (directoryCount <= 1)
+                    {
+                        MessageBox.Show("Добре дошли в Contra 009 Final! Тъй като това е първото Ви стартиране на Contra, бихме искали да знаете, че имате нова възможност да играете Contra онлайн чрез ContraVPN! Силно препоръчваме да се присъедините към нашата Discord общност! Еее... то и български имало бе! ;)");
+                    }
+                }
+                else if (getCurrentCulture() == "de-DE")
+                {
+                    radioFlag_DE.Checked = true;
+                    if (directoryCount <= 1)
+                    {
+                        MessageBox.Show("Wilkommen zu Contra 009 Final! Da du diesen launcher zum ersten mal ausfьhrst wollten wir dich wissen lassen, dass du eine neue Mцglichkeit hast Contra online zu spielen ьber ContraVPN! Wir empfehlen dir unserem Discord Server beizutreten.");
+                    }
+                }
+                else
+                {
+                    radioFlag_GB.Checked = true;
+                    if (directoryCount <= 1)
+                    {
+                        MessageBox.Show("Welcome to Contra 009 Final! Since this is your first time running this launcher, we would like to let you know that you have a new opportunity to play Contra online via ContraVPN! We highly recommend you to join our Discord community!");
+                    }
+                }
+
+                //Delete old Contra config folders
+                System.IO.DirectoryInfo di = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Contra");
+
+                foreach (DirectoryInfo dir in di.EnumerateDirectories())
+                {
+                    if (dir.Name.Contains("vpnconfig") == true) //do not delete vpnconfig folder
+                    {
+                        continue;
+                    }
+                    dir.Delete(true);
+                }
                 try
                 {
                     //Enable Tournament Mode (limit super weapons and super units) on first run.
@@ -1662,37 +1784,6 @@ namespace Contra
                 //Add Firewall exceptions.
                 addFirewallExceptions();
 
-                //Show message on first run.
-                if (getCurrentCulture() == "en-US")
-                {
-                    radioFlag_GB.Checked = true;
-                    MessageBox.Show("Welcome to Contra 009 Final! Since this is your first time running this launcher, we would like to let you know that you have a new opportunity to play Contra online via ContraVPN! We highly recommend you to join our Discord community!");
-                }
-                else if (getCurrentCulture() == "ru-RU")
-                {
-                    radioFlag_RU.Checked = true;
-                    MessageBox.Show("Добро пожаловать в Contra 009 Final! Поскольку это Ваш первый запуск этого лаунчера, мы хотим сообщить Вам о том, что у Вас есть новая возможность играть в Contra онлайн через ContraVPN! Мы настоятельно рекомендуем Вам присоедениться к нашей группе Discord.");
-                }
-                else if (getCurrentCulture() == "uk-UA")
-                {
-                    radioFlag_UA.Checked = true;
-                    MessageBox.Show("Ласкаво просимо до Contra 009 Final! Оскільки це Ваш перший запуск цього лаунчера, ми хочемо повідомити Вас про те, що у Вас є нова можливість відтворити Contra онлайн через ContraVPN! Ми максимально рекомендуємо Вам приєднатися до нашої спільноти Discord.");
-                }
-                else if (getCurrentCulture() == "bg-BG")
-                {
-                    radioFlag_BG.Checked = true;
-                    MessageBox.Show("Добре дошли в Contra 009 Final! Тъй като това е първото Ви стартиране на Contra, бихме искали да знаете, че имате нова възможност да играете Contra онлайн чрез ContraVPN! Силно препоръчваме да се присъедините към нашата Discord общност! Еее... то и български имало бе! ;)");
-                }
-                else if (getCurrentCulture() == "de-DE")
-                {
-                    radioFlag_DE.Checked = true;
-                    MessageBox.Show("Wilkommen zu Contra 009 Final! Da du diesen launcher zum ersten mal ausfьhrst wollten wir dich wissen lassen, dass du eine neue Mцglichkeit hast Contra online zu spielen ьber ContraVPN! Wir empfehlen dir unserem Discord Server beizutreten.");
-                }
-                else
-                {
-                    radioFlag_GB.Checked = true;
-                    MessageBox.Show("Welcome to Contra 009 Final! Since this is your first time running this launcher, we would like to let you know that you have a new opportunity to play Contra online via ContraVPN! We highly recommend you to join our Discord community!");
-                }
                 Properties.Settings.Default.FirstRun = false;
                 Properties.Settings.Default.Save();
             }
@@ -1771,6 +1862,8 @@ namespace Contra
             toolTip1.SetToolTip(refreshOnlinePlayersBtn, "Refresh online players.");
             toolTip1.SetToolTip(whoIsOnline, "Show who is online.");
             toolTip1.SetToolTip(vpn_start, "Start/close ContraVPN.");
+            //verLabel.Text = "Launcher version: " + Application.ProductVersion;
+            versionLabel.Text = "Contra Project Team 2018 - Version 009 Final - Launcher: " + Application.ProductVersion;
 
             string tincd = "tincd.exe";
             Process[] tincdByName = Process.GetProcessesByName(tincd.Substring(0, tincd.LastIndexOf('.')));
@@ -1783,6 +1876,16 @@ namespace Contra
                 refreshOnlinePlayersBtn.PerformClick();
             }
             else vpnIP();
+            if (tincdByName.Length > 0) //if tinc is already running
+            {
+                labelVpnStatus.Text = "On";
+                refreshOnlinePlayersBtn.PerformClick();
+            }
+            if (tincdByName.Length == 0) //if tinc is not running
+            {
+                playersOnlineLabel.Text = "ContraVPN disabled";
+                labelVpnStatus.Text = "Off";
+            }
 
             //Load MOTD
             try
@@ -1831,10 +1934,9 @@ namespace Contra
             DefaultPics.Text = "По умолч.";
             GoofyPics.Text = "Смешные";
             moreOptions.Text = "Больше опций";
-            versionLabel.Text = "Contra Project Team 2018 - Версия 009 Финал";
-            playersOnlineLabel.Text = "ContraVPN выключено";
-            labelVpnStatus.Text = "Выкл.";
+            versionLabel.Text = "Contra Project Team 2018 - Версия 009 Финал - Launcher: " + Application.ProductVersion;
             vpnSettingsLabel.Text = "Настройки VPN";
+            //verLabel.Text = "Launcher version: " + Application.ProductVersion;
 
             string tincd = "tincd.exe";
             Process[] tincdByName = Process.GetProcessesByName(tincd.Substring(0, tincd.LastIndexOf('.')));
@@ -1847,6 +1949,16 @@ namespace Contra
                 refreshOnlinePlayersBtn.PerformClick();
             }
             else vpnIP();
+            if (tincdByName.Length > 0) //if tinc is already running
+            {
+                labelVpnStatus.Text = "Вкл.";
+                refreshOnlinePlayersBtn.PerformClick();
+            }
+            if (tincdByName.Length == 0) //if tinc is not running
+            {
+                playersOnlineLabel.Text = "ContraVPN выключено";
+                labelVpnStatus.Text = "Выкл."; ;
+            }
 
             //Load MOTD
             try
@@ -1895,10 +2007,9 @@ namespace Contra
             DefaultPics.Text = "За замовч.";
             GoofyPics.Text = "Смішні";
             moreOptions.Text = "Більше опцій";
-            versionLabel.Text = "Contra Project Team 2018 - Версія 009 Фінал";
-            playersOnlineLabel.Text = "ContraVPN вимкнено";
-            labelVpnStatus.Text = "Вимк.";
+            versionLabel.Text = "Contra Project Team 2018 - Версія 009 Фінал - Launcher: " + Application.ProductVersion;
             vpnSettingsLabel.Text = "Настройки VPN";
+            //verLabel.Text = "Launcher version: " + Application.ProductVersion;
 
             string tincd = "tincd.exe";
             Process[] tincdByName = Process.GetProcessesByName(tincd.Substring(0, tincd.LastIndexOf('.')));
@@ -1911,6 +2022,16 @@ namespace Contra
                 refreshOnlinePlayersBtn.PerformClick();
             }
             else vpnIP();
+            if (tincdByName.Length > 0) //if tinc is already running
+            {
+                labelVpnStatus.Text = "Ввімк.";
+                refreshOnlinePlayersBtn.PerformClick();
+            }
+            if (tincdByName.Length == 0) //if tinc is not running
+            {
+                playersOnlineLabel.Text = "ContraVPN вимкнено";
+                labelVpnStatus.Text = "Вимк.";
+            }
 
             //Load MOTD
             try
@@ -1959,10 +2080,9 @@ namespace Contra
             DefaultPics.Text = "По подр.";
             GoofyPics.Text = "Забавни";
             moreOptions.Text = "Доп. Опции";
-            versionLabel.Text = "Contra Екип 2018 - Версия 009 Final";
-            playersOnlineLabel.Text = "ContraVPN изключен";
-            labelVpnStatus.Text = "Изкл.";
+            versionLabel.Text = "Contra Екип 2018 - Версия 009 Final - Launcher: " + Application.ProductVersion;
             vpnSettingsLabel.Text = "VPN Настройки";
+            //verLabel.Text = "Версия на лаунчера: " + Application.ProductVersion;
 
             string tincd = "tincd.exe";
             Process[] tincdByName = Process.GetProcessesByName(tincd.Substring(0, tincd.LastIndexOf('.')));
@@ -1975,6 +2095,16 @@ namespace Contra
                 refreshOnlinePlayersBtn.PerformClick();
             }
             else vpnIP();
+            if (tincdByName.Length > 0) //if tinc is already running
+            {
+                labelVpnStatus.Text = "Вкл.";
+                refreshOnlinePlayersBtn.PerformClick();
+            }
+            if (tincdByName.Length == 0) //if tinc is not running
+            {
+                playersOnlineLabel.Text = "ContraVPN изключен";
+                labelVpnStatus.Text = "Изкл.";
+            }
 
             //Load MOTD
             try
@@ -2025,10 +2155,9 @@ namespace Contra
             DefaultPics.Text = "Standard";
             GoofyPics.Text = "Lustig";
             moreOptions.Text = "Einstellungen";
-            versionLabel.Text = "Contra Projekt Team 2018 - Version 009 Final";
-            playersOnlineLabel.Text = "ContraVPN deaktiviert";
-            labelVpnStatus.Text = "Aus";
+            versionLabel.Text = "Contra Projekt Team 2018 - Version 009 Final - Launcher: " + Application.ProductVersion;
             vpnSettingsLabel.Text = "VPN Einstellungen";
+            //verLabel.Text = "Launcher version: " + Application.ProductVersion;
 
             string tincd = "tincd.exe";
             Process[] tincdByName = Process.GetProcessesByName(tincd.Substring(0, tincd.LastIndexOf('.')));
@@ -2041,6 +2170,16 @@ namespace Contra
                 refreshOnlinePlayersBtn.PerformClick();
             }
             else vpnIP();
+            if (tincdByName.Length > 0) //if tinc is already running
+            {
+                labelVpnStatus.Text = "An";
+                refreshOnlinePlayersBtn.PerformClick();
+            }
+            if (tincdByName.Length == 0) //if tinc is not running
+            {
+                playersOnlineLabel.Text = "ContraVPN deaktiviert";
+                labelVpnStatus.Text = "Aus";
+            }
 
             //Load MOTD
             try
@@ -2340,7 +2479,7 @@ namespace Contra
                                 netsh.StartInfo.RedirectStandardOutput = true;
                                 netsh.StartInfo.RedirectStandardError = true;
                                 netsh.StartInfo.CreateNoWindow = true;
-                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"ContraVPN\"";
+                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"contra\\vpn\"";
                                 netsh.Start();
 
                                 stopDialog = true;
@@ -2364,7 +2503,7 @@ namespace Contra
                                 netsh.StartInfo.RedirectStandardOutput = true;
                                 netsh.StartInfo.RedirectStandardError = true;
                                 netsh.StartInfo.CreateNoWindow = true;
-                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"ContraVPN\"";
+                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"contra\\vpn\"";
                                 netsh.Start();
 
                                 stopDialog = true;
@@ -2388,7 +2527,7 @@ namespace Contra
                                 netsh.StartInfo.RedirectStandardOutput = true;
                                 netsh.StartInfo.RedirectStandardError = true;
                                 netsh.StartInfo.CreateNoWindow = true;
-                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"ContraVPN\"";
+                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"contra\\vpn\"";
                                 netsh.Start();
 
                                 stopDialog = true;
@@ -2412,7 +2551,7 @@ namespace Contra
                                 netsh.StartInfo.RedirectStandardOutput = true;
                                 netsh.StartInfo.RedirectStandardError = true;
                                 netsh.StartInfo.CreateNoWindow = true;
-                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"ContraVPN\"";
+                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"contra\\vpn\"";
                                 netsh.Start();
 
                                 stopDialog = true;
@@ -2436,7 +2575,7 @@ namespace Contra
                                 netsh.StartInfo.RedirectStandardOutput = true;
                                 netsh.StartInfo.RedirectStandardError = true;
                                 netsh.StartInfo.CreateNoWindow = true;
-                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"ContraVPN\"";
+                                netsh.StartInfo.Arguments = "interface set interface name = " + "\"" + adapter.Name + "\"" + " newname = \"contra\\vpn\"";
                                 netsh.Start();
 
                                 stopDialog = true;
@@ -2495,31 +2634,39 @@ namespace Contra
                             vpn_start.BackgroundImage = (System.Drawing.Image)(Properties.Resources.vpn_off);
                             refreshOnlinePlayersBtn.Hide();
                             whoIsOnline.Hide();
-                            if (Globals.GB_Checked == true)
+                            foreach (Form onlinePlayersForm in Application.OpenForms)
                             {
-                                playersOnlineLabel.Text = "ContraVPN disabled";
-                                labelVpnStatus.Text = "Off";
+                                if (onlinePlayersForm is onlinePlayersForm)
+                                {
+                                    onlinePlayersForm.Close();
+                                    return;
+                                }
                             }
-                            else if (Globals.RU_Checked == true)
-                            {
-                                playersOnlineLabel.Text = "ContraVPN выключено";
-                                labelVpnStatus.Text = "Выкл.";
-                            }
-                            else if (Globals.UA_Checked == true)
-                            {
-                                playersOnlineLabel.Text = "ContraVPN вимкнено";
-                                labelVpnStatus.Text = "Вимк.";
-                            }
-                            else if (Globals.BG_Checked == true)
-                            {
-                                playersOnlineLabel.Text = "ContraVPN изключен";
-                                labelVpnStatus.Text = "Изкл.";
-                            }
-                            else if (Globals.DE_Checked == true)
-                            {
-                                playersOnlineLabel.Text = "ContraVPN deaktiviert";
-                                labelVpnStatus.Text = "Aus";
-                            }
+                            //if (Globals.GB_Checked == true)
+                            //{
+                            //    playersOnlineLabel.Text = "ContraVPN disabled";
+                            //    labelVpnStatus.Text = "Off";
+                            //}
+                            //else if (Globals.RU_Checked == true)
+                            //{
+                            //    playersOnlineLabel.Text = "ContraVPN выключено";
+                            //    labelVpnStatus.Text = "Выкл.";
+                            //}
+                            //else if (Globals.UA_Checked == true)
+                            //{
+                            //    playersOnlineLabel.Text = "ContraVPN вимкнено";
+                            //    labelVpnStatus.Text = "Вимк.";
+                            //}
+                            //else if (Globals.BG_Checked == true)
+                            //{
+                            //    playersOnlineLabel.Text = "ContraVPN изключен";
+                            //    labelVpnStatus.Text = "Изкл.";
+                            //}
+                            //else if (Globals.DE_Checked == true)
+                            //{
+                            //    playersOnlineLabel.Text = "ContraVPN deaktiviert";
+                            //    labelVpnStatus.Text = "Aus";
+                            //}
                             return;
                         }
                     }

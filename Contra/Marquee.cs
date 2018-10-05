@@ -26,7 +26,7 @@ namespace Contra
             public Marquee()
             {
                 textBrush = new SolidBrush(Color.White);
-                backBrush = new SolidBrush(Color.FromArgb(20,10,10));
+                backBrush = new SolidBrush(Color.FromArgb(10,5,0));
                 yOffset = 0;
                 Speed = 1;
                 MarqueeTimer = new Timer();
