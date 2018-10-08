@@ -151,16 +151,6 @@ namespace Contra
             }
         }
 
-        private void motdTimer_Tick(object sender, EventArgs e)
-        {
-            if (MOTD.Text.Length > 0)
-            {
-                MOTD.Text = MOTD.Text.Substring(1) + MOTD.Text.Substring(0, 1);
-
-                //MOTD.Text = MOTD.Text.Substring(1, MOTD.Text.Length - 1) + MOTD.Text.Substring(0, 1);
-            }
-        }
-
         public static string userDataLeafName()
         {
             var o = string.Empty;
@@ -880,6 +870,31 @@ namespace Contra
                     tincdByName.Kill();
                     tincdByName.WaitForExit();
                     tincdByName.Dispose();
+                }
+                if (Globals.GB_Checked == true)
+                {
+                    Properties.Settings.Default.IP_Label = "ContraVPN IP: unknown";
+                    labelVpnStatus.Text = "Off";
+                }
+                else if (Globals.RU_Checked == true)
+                {
+                    labelVpnStatus.Text = "Выкл.";
+                    Properties.Settings.Default.IP_Label = "ContraVPN IP: неизвестно";
+                }
+                else if (Globals.UA_Checked == true)
+                {
+                    labelVpnStatus.Text = "Вимк.";
+                    Properties.Settings.Default.IP_Label = "ContraVPN IP: невідомо";
+                }
+                else if (Globals.BG_Checked == true)
+                {
+                    labelVpnStatus.Text = "Изкл.";
+                    Properties.Settings.Default.IP_Label = "ContraVPN IP: неизвестен";
+                }
+                else if (Globals.DE_Checked == true)
+                {
+                    labelVpnStatus.Text = "Aus";
+                    Properties.Settings.Default.IP_Label = "ContraVPN IP: unbekannt";
                 }
             }
         }

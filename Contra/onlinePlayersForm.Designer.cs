@@ -111,7 +111,7 @@
             // onlinePlayersLabel
             // 
             this.onlinePlayersLabel.AutoSize = true;
-            this.onlinePlayersLabel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.onlinePlayersLabel.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
             this.onlinePlayersLabel.ForeColor = System.Drawing.Color.White;
             this.onlinePlayersLabel.Location = new System.Drawing.Point(8, 10);
             this.onlinePlayersLabel.Name = "onlinePlayersLabel";
@@ -135,7 +135,7 @@
             // 
             this.playersOnlineLabel.AutoSize = true;
             this.playersOnlineLabel.BackColor = System.Drawing.Color.Transparent;
-            this.playersOnlineLabel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            this.playersOnlineLabel.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.playersOnlineLabel.ForeColor = System.Drawing.Color.White;
             this.playersOnlineLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.playersOnlineLabel.Location = new System.Drawing.Point(18, 50);

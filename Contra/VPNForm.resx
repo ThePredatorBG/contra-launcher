@@ -178,7 +178,7 @@
     <value>True</value>
   </data>
   <data name="UPnPCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
+    <value>Calibri, 15px, style=Bold</value>
   </data>
   <data name="UPnPCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 157</value>
@@ -208,7 +208,7 @@
     <value>True</value>
   </data>
   <data name="AutoConnectCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
+    <value>Calibri, 15px, style=Bold</value>
   </data>
   <data name="AutoConnectCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 182</value>
@@ -315,83 +315,11 @@
   <data name="&gt;&gt;buttonVPNconsole.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;labelEnterInvite.Name" xml:space="preserve">
-    <value>labelEnterInvite</value>
-  </data>
-  <data name="&gt;&gt;labelEnterInvite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelEnterInvite.Parent" xml:space="preserve">
-    <value>InvitePanel</value>
-  </data>
-  <data name="&gt;&gt;labelEnterInvite.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvclose.Name" xml:space="preserve">
-    <value>buttonVPNinvclose</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvclose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvclose.Parent" xml:space="preserve">
-    <value>InvitePanel</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvclose.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvOK.Name" xml:space="preserve">
-    <value>buttonVPNinvOK</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvOK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvOK.Parent" xml:space="preserve">
-    <value>InvitePanel</value>
-  </data>
-  <data name="&gt;&gt;buttonVPNinvOK.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;invkeytextBox.Name" xml:space="preserve">
-    <value>invkeytextBox</value>
-  </data>
-  <data name="&gt;&gt;invkeytextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;invkeytextBox.Parent" xml:space="preserve">
-    <value>InvitePanel</value>
-  </data>
-  <data name="&gt;&gt;invkeytextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="InvitePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 135</value>
-  </data>
-  <data name="InvitePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 100</value>
-  </data>
-  <data name="InvitePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="InvitePanel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;InvitePanel.Name" xml:space="preserve">
-    <value>InvitePanel</value>
-  </data>
-  <data name="&gt;&gt;InvitePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InvitePanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;InvitePanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="labelEnterInvite.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="labelEnterInvite.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 9.75pt, style=Bold</value>
+    <value>Calibri, 13px, style=Bold</value>
   </data>
   <data name="labelEnterInvite.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 9</value>
@@ -419,6 +347,9 @@
   </data>
   <data name="buttonVPNinvclose.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="buttonVPNinvclose.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.4px</value>
   </data>
   <data name="buttonVPNinvclose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -452,6 +383,9 @@
   </data>
   <data name="buttonVPNinvOK.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="buttonVPNinvOK.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.4px</value>
   </data>
   <data name="buttonVPNinvOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -501,8 +435,32 @@
   <data name="&gt;&gt;invkeytextBox.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="InvitePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>50, 135</value>
+  </data>
+  <data name="InvitePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
+  </data>
+  <data name="InvitePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="InvitePanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;InvitePanel.Name" xml:space="preserve">
+    <value>InvitePanel</value>
+  </data>
+  <data name="&gt;&gt;InvitePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InvitePanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;InvitePanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="labelInvite.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
+    <value>Calibri, 15px, style=Bold</value>
   </data>
   <data name="labelInvite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -535,7 +493,7 @@
     <value>7</value>
   </data>
   <data name="labelConsole.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
+    <value>Calibri, 15px, style=Bold</value>
   </data>
   <data name="labelConsole.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -568,7 +526,7 @@
     <value>6</value>
   </data>
   <data name="labelMonitor.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
+    <value>Calibri, 15px, style=Bold</value>
   </data>
   <data name="labelMonitor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -603,6 +561,9 @@
   <metadata name="toolTip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>23, 11</value>
   </metadata>
+  <data name="portTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11px</value>
+  </data>
   <data name="portTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>129, 249</value>
   </data>
@@ -628,7 +589,7 @@
     <value>Right</value>
   </data>
   <data name="labelPort.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
+    <value>Calibri, 15px, style=Bold</value>
   </data>
   <data name="labelPort.Location" type="System.Drawing.Point, System.Drawing">
     <value>30, 249</value>
@@ -661,7 +622,7 @@
     <value>Flat</value>
   </data>
   <data name="portOkButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
+    <value>Microsoft Sans Serif, 11px</value>
   </data>
   <data name="portOkButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -694,7 +655,7 @@
     <value>True</value>
   </data>
   <data name="showConsoleCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
+    <value>Calibri, 15px, style=Bold</value>
   </data>
   <data name="showConsoleCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -727,7 +688,7 @@
     <value>True</value>
   </data>
   <data name="IP_Label.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11.25pt, style=Bold</value>
+    <value>Calibri, 15px, style=Bold</value>
   </data>
   <data name="IP_Label.Location" type="System.Drawing.Point, System.Drawing">
     <value>30, 27</value>
