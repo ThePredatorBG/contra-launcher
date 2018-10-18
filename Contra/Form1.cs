@@ -1166,9 +1166,14 @@ namespace Contra
 
         public static void addFirewallExceptions()
         {
-            List<string> exes = new List<string>
+            Dictionary<string, string> exes = new Dictionary<string, string>
                         {
-                            "game.dat", "Contra_Launcher.exe", @"contra\vpn\" + Globals.userOS + @"\tinc.exe", @"contra\vpn\" + Globals.userOS + @"\tincd.exe"
+                            {"game.dat","udp"},
+                            {"Contra_Launcher.exe","tcp"},
+                            {@"contra\vpn\" + Globals.userOS + @"\tinc.exe","tcp"},
+                            {@"contra\vpn\" + Globals.userOS + @"\tinc.exe","udp"},
+                            {@"contra\vpn\" + Globals.userOS + @"\tincd.exe","tcp"},
+                            {@"contra\vpn\" + Globals.userOS + @"\tincd.exe","udp"}
                         };
             Process netsh = new Process();
             netsh.StartInfo.FileName = "netsh.exe";
@@ -1177,13 +1182,14 @@ namespace Contra
             netsh.StartInfo.RedirectStandardOutput = true;
             netsh.StartInfo.RedirectStandardError = true;
             netsh.StartInfo.CreateNoWindow = true;
-            foreach (string exe in exes)
+            foreach (KeyValuePair<string,string> exe in exes)
             {
-                string ExeWithoutExtension = exe;
-                int index = exe.LastIndexOf(".");
+                string ExeWithoutExtension = exe.Key;
+                string Protocol = exe.Value;
+                int index = exe.Key.LastIndexOf(".");
                 if (index > 0)
                 {
-                    ExeWithoutExtension = exe.Substring(0, index);
+                    ExeWithoutExtension = exe.Key.Substring(0, index);
                 }
 
                 netsh.StartInfo.Arguments = "advfirewall firewall show rule name=" + "\"Contra - " + ExeWithoutExtension + "\"";
@@ -1191,7 +1197,7 @@ namespace Contra
                 netsh.WaitForExit();
                 if (netsh.ExitCode != 0)
                 {
-                    netsh.StartInfo.Arguments = "advfirewall firewall add rule name=" + "\"Contra - " + ExeWithoutExtension + "\"" + " dir=in action=allow program=" + "\"" + Environment.CurrentDirectory + @"\" + exe + "\"" + " enable=yes";
+                    netsh.StartInfo.Arguments = "advfirewall firewall add rule name=" + "\"Contra - " + ExeWithoutExtension + "\"" + " dir=in action=allow program=" + "\"" + Environment.CurrentDirectory + @"\" + exe.Key + "\"" + " protocol=" + Protocol + " enable=yes";
                     netsh.Start();
                     netsh.WaitForExit();
                 }
