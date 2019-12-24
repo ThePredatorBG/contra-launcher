@@ -2,7 +2,7 @@
 Mod Text: 009 Final Patch 2$
 Launcher: 1.1.0.0$
 ZeroTier: 1.4.6$
-MOTD-EN: $
+MOTD-EN: We are working on fixing VPN issues. You can temporarily play on RadminVPN. Name: JohnyF, Password: 111111$
 MOTD-RU: $
 MOTD-UA: $
 MOTD-BG: $
